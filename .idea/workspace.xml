@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/categorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/categorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/vendor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
