@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -337,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573827595578</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="product pagina aangepast &#10;sql connectie gemaakt">
+      <created>1573832275122</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1573832275122</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +384,7 @@
     <MESSAGE value="Search dingen gefixt" />
     <MESSAGE value="Fill images script" />
     <MESSAGE value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
+    <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="product pagina aangepast &#10;sql connectie gemaakt" />
   </component>
 </project>
