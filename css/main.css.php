@@ -7,8 +7,8 @@ include_once "../app/vendor.php";
 ?>
 
 .content-container {
-    width: 35vw;
-    margin-left: 30vw;
+    width: 50vw;
+    margin-left: 25vw;
     margin-top: 5vh;
 }
 

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +40,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -342,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573832275122</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Betere formatting in 404 pagina.">
+      <created>1573839632024</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1573839632024</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +392,7 @@
     <MESSAGE value="Fill images script" />
     <MESSAGE value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
     <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="product pagina aangepast &#10;sql connectie gemaakt" />
+    <MESSAGE value="Betere formatting in 404 pagina." />
+    <option name="LAST_COMMIT_MESSAGE" value="Betere formatting in 404 pagina." />
   </component>
 </project>
