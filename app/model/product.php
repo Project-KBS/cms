@@ -46,11 +46,13 @@ class Product {
     }
 
     /**
-     * Leest alle producten uit de database.
+     * Zoekt in de database naar producten met een bepaalde StockItemID
+     * Geeft dan vanuit de database de kolommen van de select
+     * Filtert de search zodat deze een integer is
      *
      * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
      * @param int      $limit      Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
-     *
+     * @param int      $Search     Zoekt op de StockItemID
      * @return PDOStatement
      */
     public static function getbyid($database, $Search, $limit = 1000) {
@@ -71,20 +73,25 @@ class Product {
                       p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
                       p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
                       p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
-                      p.LastEditedBy, p.ValidFrom, p.ValidTo
+                      p.LastEditedBy, p.ValidFrom, p.ValidTo, gr.StockGroupName, h.QuantityOnHand
                   FROM
                       " . self::TABLE_NAME . " p
                   LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  WHERE p.StockItemID = $Search
+                  LEFT JOIN stockitemstockgroups g ON p.StockItemID = g.StockItemID
+                  LEFT JOIN stockgroups gr ON gr.StockGroupID = g.StockGroupID
+                  LEFT JOIN stockitemholdings h on h.StockItemID = p.StockItemID
+                  WHERE p.StockItemID = :ItemID
                   LIMIT :limiet";
 
         $stmt = $database->prepare($query);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
+
+        $stmt->bindValue(":ItemID",   $Search,    PDO::PARAM_INT);
 
         // Voer de query uit
         $stmt->execute();
