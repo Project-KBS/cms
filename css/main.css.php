@@ -11,3 +11,9 @@ include_once "../app/vendor.php";
     margin-left: 30vw;
     margin-top: 5vh;
 }
+
+.Big-button{
+    width: 500px;
+    height: 200px;
+    font-size: 40px;
+}

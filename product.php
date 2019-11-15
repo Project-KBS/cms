@@ -4,10 +4,11 @@
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
 
 // Deze pagina vereist een GET parameter: "id" met integer value van het product.
 // Als deze param niet meegegeven is sturen we de user terug naar index.php
-if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === false) {
+if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
     header("Location: index.php");
 }
 
@@ -60,11 +61,39 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === fals
             <!-- Inhoud van de pagina -->
             <div class="content-container">
 
-                <?php
 
-                    // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
+
+
+                <?php
+                // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
+
+                $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
+                if($stmt->rowCount()> 0){
+
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                extract($row);
+                print($StockItemName . "<br>");
+
+                    // HIER KOMT HTML
+                ?>
+
+                <h1>Mijn product</h1>
+
+
+
+
+                <?php
+                }
+
+
+                else{include("tpl/Foutproduct.html");
+                }
+
+
 
                 ?>
+            </div>
         </div>
         <div class="footer-container">
 

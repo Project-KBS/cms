@@ -14,7 +14,7 @@ class Product {
      */
     public static function read($database, $limit = 1000) {
         // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
-        if (filter_var($limit, FILTER_VALIDATE_INT) === false
+        if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
             || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
 
@@ -28,10 +28,10 @@ class Product {
                       p.LastEditedBy, p.ValidFrom, p.ValidTo
                   FROM
                       " . self::TABLE_NAME . " p
-                  JOIN suppliers s ON p.SupplierID = s.SupplierID
-                  JOIN colors c ON p.ColorID = c.ColorID
-                  JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
+                  LEFT JOIN colors c ON p.ColorID = c.ColorID
+                  LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   LIMIT :limiet";
 
         $stmt = $database->prepare($query);
@@ -46,6 +46,54 @@ class Product {
     }
 
     /**
+     * Leest alle producten uit de database.
+     *
+     * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
+     * @param int      $limit      Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     *
+     * @return PDOStatement
+     */
+    public static function getbyid($database, $Search, $limit = 1000) {
+        // Als limiet geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
+        if (filter_var($limit, FILTER_VALIDATE_INT) == false
+            || $limit < MIN_PRODUCT_RETURN_AMOUNT
+            || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
+
+            $limit = DEFAULT_PRODUCT_RETURN_AMOUNT;
+        }
+
+        if (filter_var($Search, FILTER_VALIDATE_INT) == false) {
+
+            $Search = DEFAULT_PRODUCT_RETURN_AMOUNT;
+        }
+
+        $query = "SELECT
+                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
+                      p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
+                      p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
+                      p.LastEditedBy, p.ValidFrom, p.ValidTo
+                  FROM
+                      " . self::TABLE_NAME . " p
+                  LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
+                  LEFT JOIN colors c ON p.ColorID = c.ColorID
+                  LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  WHERE p.StockItemID = $Search
+                  LIMIT :limiet";
+
+        $stmt = $database->prepare($query);
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
+
+        // Voer de query uit
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
+    /**
      * Zoekt in de product tabel naar $zoekterm.
      *
      * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
@@ -56,7 +104,7 @@ class Product {
      */
     public static function zoek($database, $zoekterm, $limit = 1000) {
         // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
-        if (filter_var($limit, FILTER_VALIDATE_INT) === false
+        if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
             || $limit > MAX_PRODUCT_RETURN_AMOUNT) {
 
@@ -70,10 +118,10 @@ class Product {
                       p.LastEditedBy, p.ValidFrom, p.ValidTo
                   FROM
                       " . self::TABLE_NAME . " p
-                  JOIN suppliers s ON p.SupplierID = s.SupplierID
-                  JOIN colors c ON p.ColorID = c.ColorID
-                  JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                  JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
+                  LEFT JOIN colors c ON p.ColorID = c.ColorID
+                  LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
+                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   WHERE p.StockItemName LIKE :zoekterm
                   LIMIT :limiet";
 
