@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -319,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573741572759</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Cherry-pick jobs veranderingen">
+      <created>1573824510278</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1573824510278</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +366,7 @@
     <MESSAGE value="joejoe" />
     <MESSAGE value="Search dingen gefixt" />
     <MESSAGE value="Fill images script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fill images script" />
+    <MESSAGE value="Cherry-pick jobs veranderingen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cherry-pick jobs veranderingen" />
   </component>
 </project>

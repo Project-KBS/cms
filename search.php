@@ -50,7 +50,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
             <!-- Inhoud pagina -->
             <div class="content-container">
-                <form name="filter" method="get" action="search.php?search=<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>">
+                <form name="filter" method="get">
                     <fieldset>
                         <p>
                             <label>Aantal producten: </label>
@@ -67,6 +67,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 <option value = "PrijsASC">Prijs oplopend</option>
                                 <option value = "PrijsDESC">Prijs aflopend</option>
                             </select>
+                            <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>" />
                         </p>
                     </fieldset>
                     <input type="submit" name="submit" value="ok">
@@ -101,7 +102,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
                     // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt.
                     $aantal = DEFAULT_PRODUCT_RETURN_AMOUNT;
-                    if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) === false) {
+                    if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
                         $aantal = $_GET['Hoeveelheid'];
                     }
 
