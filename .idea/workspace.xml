@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -349,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573839632024</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Vergroot pagina breedte naar 50% van het scherm">
+      <created>1573839784715</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1573839784715</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +400,7 @@
     <MESSAGE value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
     <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
     <MESSAGE value="Betere formatting in 404 pagina." />
-    <option name="LAST_COMMIT_MESSAGE" value="Betere formatting in 404 pagina." />
+    <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vergroot pagina breedte naar 50% van het scherm" />
   </component>
 </project>
