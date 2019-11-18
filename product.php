@@ -110,13 +110,13 @@ function specificaties(){
                                                                 }
                                                              ?>" id="Productphoto"><br>
                             </div>
-                            <div id="linksonder" class="col-6" style="background: black">
+                            <div id="linksonder" style="background: black">
 
                                 <?php
-                                $images = MediaPortal::getProductImages($StockItemID);
-                                foreach ($images as $image) {
 
-                                    print("HOI<br><br>")
+                                $images = MediaPortal::getProductImages($StockItemID);
+
+                                foreach ($images as $image) {
                                     ?>
 
                                     <img src="data:image/png;base64, <?php print($image)   ?> ">

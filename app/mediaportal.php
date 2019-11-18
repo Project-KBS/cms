@@ -45,9 +45,9 @@ class MediaPortal {
         $directory = "mp/product/$productId/";
 
         // Als de product directory bestaat
-        if (file_exists($directory)) {
+        if (file_exists($directory) && is_dir($directory)) {
             $images = [];
-            $paths = glob($directory . "*.{jpeg,png}", GLOB_BRACE);
+            $paths = glob($directory . "**.{jpg,png}", GLOB_BRACE);
             foreach ($paths as $path) {
                 $images[] = base64_encode(file_get_contents($path));
             }
