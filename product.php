@@ -12,6 +12,11 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
     header("Location: index.php");
 }
 
+
+function specificaties(){
+
+}
+
 // TODO ---------------------------------------------
 
 ?>
@@ -97,7 +102,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     <div id="geheel" class="row">
 
                         <div id="links" class="col-6" style="background: hotpink">
-                            <img src="data:image/png;base64, <?php print($Photo) ?> "><br>
+                            <img src="data:image/png;base64, <?php print($Photo) ?>" id="Productphoto"><br>
 
                         </div>
 
@@ -114,15 +119,46 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                             </h3>
 
                             <div id="winkelwagen">
-                                <input type="number" >
+                                <input type="number" min="0">
                                 <input type="submit" value="Toevoegen aan winkelwagen">
+                                <script></script>
                             </div>
                             <h3>Productomschrijving</h3>
+
+                            <?php
+                            if(isset($MarketingComments)){
+                                print($MarketingComments);
+                            }
+                            ?>
 
                             <hr>
 
                             <h3>Productspecificaties</h3>
+                            <?php
 
+                            if(isset($SupplierName)){
+                                print("Leverancier $SupplierName <br>");
+                            }
+                            if(isset($ColorName)){
+                                print("Kleur: $ColorName <br>");
+                            }
+                            if(isset($Brand)){
+                                print("Merk: $Brand <br>");
+                            }
+                            if(isset($Size)){
+                                print("Grootte: $Size<br>");
+                            }
+                            if(isset($QuantityPerOuter)){
+                                print("Het aantal per verpakking: $QuantityPerOuter <br>");
+                            }
+                            if(isset($TypicalWeightPerUnit)){
+                                print("Het gewicht: $TypicalWeightPerUnit <br>");
+                            }
+                            if(isset($IsChillerStock)){
+                                print("Gekoeld: Ja<br>");
+                            }
+
+                            ?>
 
 
                         </div>

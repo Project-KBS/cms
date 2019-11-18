@@ -17,3 +17,7 @@ include_once "../app/vendor.php";
     height: 200px;
     font-size: 40px;
 }
+
+#Productphoto{
+    width: 100%;
+}
