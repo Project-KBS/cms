@@ -99,11 +99,7 @@ function specificaties(){
                     ?>
                     </h3>
 
-
                     <div id="geheel" class="row">
-
-                        <div id="links" class="col-6" style="background: hotpink; padding: 0">
-                            <img src="data:image/png;base64, <?php print($Photo) ?>" id="Productphoto"><br>
                         <div id="links" class="col-6" style="background: hotpink">
                             <img src="data:image/png;base64, <?php
                                                                 if (isset($Photo) && $Photo != null) {

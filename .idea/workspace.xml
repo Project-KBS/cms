@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Productspecificatie en omschrijving aangepast">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,15 +70,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/v1/product" />
-      <recent name="$PROJECT_DIR$/api/v1/categorie" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -377,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574075573335</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Mediaportaal klasse + laad categorie foto als productfoto niet in database">
+      <created>1574080733867</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1574080733867</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +405,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
@@ -424,6 +429,7 @@
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
     <MESSAGE value="Zet sorteer ding direct in query zonder te checken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zet sorteer ding direct in query zonder te checken" />
+    <MESSAGE value="Mediaportaal klasse + laad categorie foto als productfoto niet in database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mediaportaal klasse + laad categorie foto als productfoto niet in database" />
   </component>
 </project>
