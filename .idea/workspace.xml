@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mp/categorie/1/thumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mp/product/1/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mp/product/1/2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vendor/modernizr-3.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vendor/modernizr-3.7.1.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mp/categorie/1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
@@ -372,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574074192233</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Zet sorteer ding direct in query zonder te checken">
+      <created>1574075573335</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1574075573335</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +402,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
@@ -419,6 +426,7 @@
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Productspecificatie en omschrijving aangepast" />
+    <MESSAGE value="Zet sorteer ding direct in query zonder te checken" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zet sorteer ding direct in query zonder te checken" />
   </component>
 </project>
