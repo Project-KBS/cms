@@ -101,12 +101,12 @@ function specificaties(){
 
                     <div id="geheel" class="row">
 
-                        <div id="links" class="col-6" style="background: hotpink">
+                        <div id="links" class="col-6" style="background: hotpink; padding: 0">
                             <img src="data:image/png;base64, <?php print($Photo) ?>" id="Productphoto"><br>
 
                         </div>
 
-                        <div id="rechts" class="col-6" style="background: aqua">
+                        <div id="rechts" class="col-6" style="background: aqua; padding: 0">
                             <h1>€ <?php print($RecommendedRetailPrice) ?></h1>
 
                             <h3> <?php
@@ -135,11 +135,14 @@ function specificaties(){
                                     }
                                 </script>
                             </div>
+                            <br>
+
+                            <!-- Omschrijving van het product wordt gekeken of deze bestaat en print hem wanneer hij bestaat-->
                             <h3>Productomschrijving</h3>
 
                             <?php
-                            if(isset($MarketingComments)){
-                                print($MarketingComments);
+                            if(isset($SearchDetails) && $SearchDetails != null){
+                                print($SearchDetails);
                             }
                             ?>
 
@@ -147,26 +150,27 @@ function specificaties(){
 
                             <h3>Productspecificaties</h3>
                             <?php
-
-                            if(isset($SupplierName)){
-                                print("Leverancier $SupplierName <br>");
+                            //Controleert of de waarde bestaat en daarna of het geen null waarde is.
+                            //Daarna wordt de informatie geprint
+                            if(isset($SupplierName) && $SupplierName != null) {
+                                print("Leverancier: $SupplierName <br>");
                             }
-                            if(isset($ColorName)){
+                            if(isset($ColorName) && $ColorName != null) {
                                 print("Kleur: $ColorName <br>");
                             }
-                            if(isset($Brand)){
+                            if(isset($Brand) && $Brand!=null){
                                 print("Merk: $Brand <br>");
                             }
-                            if(isset($Size)){
+                            if(isset($Size) && $Size !=null){
                                 print("Grootte: $Size<br>");
                             }
-                            if(isset($QuantityPerOuter)){
+                            if(isset($QuantityPerOuter) && $QuantityPerOuter != null){
                                 print("Het aantal per verpakking: $QuantityPerOuter <br>");
                             }
-                            if(isset($TypicalWeightPerUnit)){
+                            if(isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
                                 print("Het gewicht: $TypicalWeightPerUnit <br>");
                             }
-                            if(isset($IsChillerStock)){
+                            if(isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
                                 print("Gekoeld: Ja<br>");
                             }
 
