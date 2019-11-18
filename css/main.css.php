@@ -22,7 +22,7 @@ include_once "../app/vendor.php";
     width: 100%;
 }
 
-.SearchProductDisplay{
+.ProductDisplay{
     border-style: solid;
     border-color: black;
     border-width: 1px;
@@ -35,22 +35,22 @@ include_once "../app/vendor.php";
     color: black;
 }
 
-.SearchProductDisplay:hover{
+.ProductDisplay:hover{
     background-color: #D3EBE9;
     color: #020042;
 }
 
-.SearchProductDisplayLeft{
+.ProductDisplayLeft{
     float: left;
     width: 20vw;
 }
 
-.SearchProductDisplayRight{
+.ProductDisplayRight{
     float: right;
     width: 25vw;
     height: 35vh;
 }
 
-.SearchProductDisplayPrice{
+.ProductDisplayPrice{
 
 }

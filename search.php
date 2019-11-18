@@ -135,14 +135,14 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                         //Laat alle zoekresultaten zien
                         print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
-                        print("<div class='SearchProductDisplay'>");
-                        print("<div class='SearchProductDisplayLeft'>");
+                        print("<div class='ProductDisplay'>");
+                        print("<div class='ProductDisplayLeft'>");
                         print('<img src="data:image/png;base64,' . $Photo . '">');
                         print("</div>");
-                        print("<div class='SearchProductDisplayRight'>");
+                        print("<div class='ProductDisplayRight'>");
                         print("<h3>" . $StockItemName . "</h3>");
                         print("<p>description</p>");
-                        print("<div class='SearchProductDisplayPrice'>");
+                        print("<div class='ProductDisplayPrice'>");
                         print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
                         print("</div>");
                         print("</div>");
