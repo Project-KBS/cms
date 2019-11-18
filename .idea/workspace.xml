@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/liveSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
-    </list>
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -375,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574074192233</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="SearchProductDisplay CSS gemaakt">
+      <created>1574081922514</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1574081922514</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +399,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
@@ -422,6 +423,7 @@
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="Productspecificatie en omschrijving aangepast" />
+    <MESSAGE value="SearchProductDisplay CSS gemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="SearchProductDisplay CSS gemaakt" />
   </component>
 </project>

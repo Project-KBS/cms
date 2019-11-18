@@ -122,7 +122,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
 
                     $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $aantal));
-
+                    print("<h1>Zoekresultaten</h1>");
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -134,11 +134,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
 
                         //Laat alle zoekresultaten zien
-                        print("<a href='product.php?id=" . $StockItemID . "'>");
-                        print($StockItemName . "<br>");
-                        print('<img src="data:image/png;base64,' . $Photo . '"><br>');
+                        print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
+                        print("<div class='SearchProductDisplay'>");
+                        print("<div class='SearchProductDisplayLeft'>");
+                        print('<img src="data:image/png;base64,' . $Photo . '">');
+                        print("</div>");
+                        print("<div class='SearchProductDisplayRight'>");
+                        print("<h3>" . $StockItemName . "</h3>");
+                        print("<p>description</p>");
+                        print("<div class='SearchProductDisplayPrice'>");
+                        print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
+                        print("</div>");
+                        print("</div>");
+                        print("</div>");
                         print("</a>");
-                        print("Prijs: " . $RecommendedRetailPrice . "<br><br><br>");
 
                     }
 

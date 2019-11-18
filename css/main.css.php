@@ -21,3 +21,36 @@ include_once "../app/vendor.php";
 #Productphoto{
     width: 100%;
 }
+
+.SearchProductDisplay{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 1vw;
+    margin-bottom: 2vw;
+    background-color: #DFF5F3;
+    width: 50vw;
+    height: 40vh;
+    color: black;
+}
+
+.SearchProductDisplay:hover{
+    background-color: #D3EBE9;
+    color: #020042;
+}
+
+.SearchProductDisplayLeft{
+    float: left;
+    width: 20vw;
+}
+
+.SearchProductDisplayRight{
+    float: right;
+    width: 25vw;
+    height: 35vw;
+}
+
+.SearchProductDisplayPrice{
+
+}
