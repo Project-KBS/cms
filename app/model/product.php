@@ -103,13 +103,14 @@ class Product {
     /**
      * Zoekt in de product tabel naar $zoekterm.
      *
-     * @param PDO      $database   Een database connectie object (verkrijg met Database::getConnectie();)
-     * @param string   $zoekterm   Waar je op wilt zoeken
-     * @param int      $limit      Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
+     * @param PDO $database Een database connectie object (verkrijg met Database::getConnectie();)
+     * @param string $zoekterm Waar je op wilt zoeken
+     * @param string $OrderBy Dit wordt letterlijk in de query gezet zonder sql injection protectie dus wees veilig lol.
+     * @param int $limit Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
      *
      * @return PDOStatement
      */
-    public static function zoek($database, $zoekterm, $OrderBy, $limit = 1000) {
+    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $limit = 1000) {
         // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
@@ -131,7 +132,7 @@ class Product {
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   WHERE p.StockItemName LIKE :zoekterm
-                  ORDER BY :OrderBy
+                  ORDER BY " . $OrderBy . "
                   LIMIT :limiet";
 
         $stmt = $database->prepare($query);
@@ -142,9 +143,6 @@ class Product {
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":zoekterm", $zoekterm, PDO::PARAM_STR);
         $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
-        $stmt->bindValue(":OrderBy", $OrderBy, PDO::PARAM_STR);
-
-
 
         // Voer de query uit
         $stmt->execute();

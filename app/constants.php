@@ -24,5 +24,5 @@ const MIN_PRODUCT_RETURN_AMOUNT = 1;
 /**
  * Dit is de default sorteer volgorde: A-Z
  */
-const DEFAULT_PRODUCT_ORDER = "ASC";
+const DEFAULT_PRODUCT_SORT_ORDER = "ASC";
 

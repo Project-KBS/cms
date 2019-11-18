@@ -87,21 +87,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         $aantal = $_GET['Hoeveelheid'];
                     }
                     // defaults voor wanneer het filter niet is ingevuld
-                    $AscDesc = DEFAULT_PRODUCT_ORDER;
-                    $OrderBy = "p.RecommendedRetailPrice";
+                    $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
                     //if-statement om te kijken op welke manier de resultaten gesorteerd moeten worden
                     /**
                      * Hij geeft wel aan dat hij de juiste parameters krijgt, maar het werkt nog niet, kan iemand hier naar kijken
                      */
                     if(isset($_GET['Sort'])){
-                        if($_GET['Sort'] == "NaamASC"){
+                        if($_GET['Sort'] === "NaamASC"){
                             $OrderBy = "p.StockItemName ASC";
-                        } elseif ($_GET['Sort'] == "NaamDESC"){
+                        } elseif ($_GET['Sort'] === "NaamDESC"){
                             $OrderBy = "p.StockItemName DESC";
-                        } elseif ($_GET['Sort'] == "PrijsASC"){
+                        } elseif ($_GET['Sort'] === "PrijsASC"){
                             $OrderBy = "p.RecommendedRetailPrice ASC";
-                        } elseif($_GET['Sort'] == "PrijsDESC"){
+                        } elseif($_GET['Sort'] === "PrijsDESC"){
                             $OrderBy = "p.RecommendedRetailPrice DESC";
                         }
                     }
