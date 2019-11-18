@@ -149,7 +149,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     }
 
                 } else {
-                    print("Geen zoekterm opgegeven!!!!");
+                    print("Geen zoekterm opgegeven");
                 }
 
                 ?>

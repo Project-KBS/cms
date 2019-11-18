@@ -5,6 +5,13 @@ header('Content-Type: text/css');
 // Uit vendor.php zijn we de constanten nodig. (voor kleuren etc)
 include_once "../app/vendor.php";
 ?>
+#knop{
+    width: 5vw;
+    height: 100%;
+}
+#knop:hover{
+    opacity: 15;
+}
 
 .content-container {
     width: 50vw;

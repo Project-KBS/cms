@@ -28,7 +28,7 @@
         <div id="navigatie-site-container" class="responsive-container">
             <form autocomplete="off" action="search.php" name="zoekForm" method="get" >
                 <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
-                <a><input type="submit" value="Search" name="knop" </a>
+                <a><input type="submit" value="Search" name="knop" id="knop" </a>
             </form>
             <a href="winkelmand.php" class="flex-push"><div>Winkelmandje</div></a>
             <a href="inloggen.php"><div>Inloggen</div></a>

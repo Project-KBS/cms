@@ -131,6 +131,7 @@ class Product {
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  
                   WHERE p.StockItemName LIKE :zoekterm
                   ORDER BY " . $OrderBy . "
                   LIMIT :limiet";
