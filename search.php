@@ -63,10 +63,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             </select>
                             <label>Sorteren: </label>
                             <select name = "Sort">
-                                <option value = "NaamASC" selected="selected">A-Z</option>
-                                <option value = "NaamDESC">Z-A</option>
-                                <option value = "PrijsASC">Prijs oplopend</option>
-                                <option value = "PrijsDESC">Prijs aflopend</option>
+                                <option value = "NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
+                                <option value = "NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
+                                <option value = "PrijsASC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC') ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
+                                <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
                             </select>
                             <label>Categorie: </label>
                             <select name = "Categorie">
@@ -100,10 +100,29 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
                         $aantal = $_GET['Hoeveelheid'];
                     }
+                    // defaults voor wanneer het filter niet is ingevuld
+                    $AscDesc = DEFAULT_PRODUCT_ORDER;
+                    $OrderBy = "p.RecommendedRetailPrice";
+
+                    //if-statement om te kijken op welke manier de resultaten gesorteerd moeten worden
+                    /**
+                     * Hij geeft wel aan dat hij de juiste parameters krijgt, maar het werkt nog niet, kan iemand hier naar kijken
+                     */
+                    if(isset($_GET['Sort'])){
+                        if($_GET['Sort'] == "NaamASC"){
+                            $OrderBy = "p.StockItemName ASC";
+                        } elseif ($_GET['Sort'] == "NaamDESC"){
+                            $OrderBy = "p.StockItemName DESC";
+                        } elseif ($_GET['Sort'] == "PrijsASC"){
+                            $OrderBy = "p.RecommendedRetailPrice ASC";
+                        } elseif($_GET['Sort'] == "PrijsDESC"){
+                            $OrderBy = "p.RecommendedRetailPrice DESC";
+                        }
+                    }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
-                    $AscDesc = DEFAULT_PRODUCT_ORDER;
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, "DESC", $aantal));
+
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $aantal));
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -112,28 +131,15 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
 
-                        // Deze if/elseif statement wordt gebruikt om te kijken waarop de klant de zoekpagina wilt sorteren, de default is A-Z
-                        // Deze code kan niet worden verplaatst naar boven in de code, vóór de extract($row) kent hij de gebruikte variabelen nog niet en geeft hij dus foutmeldingen.
-                        if($_GET['Sort'] == "NaamASC"){
-                            $OrderBy = $StockItemName;
-                            $AscDesc = "ASC";
-                        } elseif ($_GET['Sort'] == "NaamDESC"){
-                            $OrderBy = $StockItemName;
-                            $AscDesc = "DESC";
-                        } elseif ($_GET['Sort'] == "PrijsASC"){
-                            $OrderBy = $UnitPrice;
-                            $AscDesc = "ASC";
-                        } elseif($_GET['Sort'] == "PrijsDESC"){
-                            $OrderBy = $StockItemName;
-                            $AscDesc = "DESC";
-                        }
+
+
 
                         //Laat alle zoekresultaten zien
                         print("<a href='product.php?id=" . $StockItemID . "'>");
                         print($StockItemName . "<br>");
                         print('<img src="data:image/png;base64,' . $Photo . '"><br>');
                         print("</a>");
-                        print("Prijs: " . $UnitPrice . "<br><br><br>");
+                        print("Prijs: " . $RecommendedRetailPrice . "<br><br><br>");
 
                     }
 

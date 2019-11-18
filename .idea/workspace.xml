@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12e8c7dd-e47e-4905-a7bb-8c10c5fa4f81" name="Default Changelist" comment="Toevoegen van een categorie filter dropdown menu">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -369,14 +371,7 @@
       <option name="project" value="LOCAL" />
       <updated>1574074192233</updated>
     </task>
-    <task id="LOCAL-00036" summary="Toevoegen van een categorie filter dropdown menu">
-      <created>1574074602631</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1574074602631</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +393,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Initial commit" />
     <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
@@ -422,7 +418,6 @@
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
-    <MESSAGE value="Toevoegen van een categorie filter dropdown menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Toevoegen van een categorie filter dropdown menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Productspecificatie en omschrijving aangepast" />
   </component>
 </project>
