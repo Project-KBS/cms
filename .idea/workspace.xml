@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +30,19 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
     </option>
@@ -46,6 +53,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
@@ -54,10 +62,11 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
@@ -113,7 +122,8 @@
       <workItem from="1572803298741" duration="7000" />
       <workItem from="1573063431466" duration="4718000" />
       <workItem from="1573646340708" duration="7558000" />
-      <workItem from="1573816198036" duration="2829000" />
+      <workItem from="1573742185538" duration="224000" />
+      <workItem from="1573742428129" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1568753957418</created>
@@ -318,21 +328,35 @@
       <option name="project" value="LOCAL" />
       <updated>1573741572759</updated>
     </task>
-    <task id="LOCAL-00030" summary="Volgorde van wat je ziet aangepast + prijs toegevoegd">
-      <created>1573816441522</created>
+    <task id="LOCAL-00030" summary="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken">
+      <created>1573827595577</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1573816441522</updated>
+      <updated>1573827595578</updated>
     </task>
-    <task id="LOCAL-00031" summary="Volgorde van wat je ziet aangepast + prijs toegevoegd">
-      <created>1573816447837</created>
+    <task id="LOCAL-00031" summary="product pagina aangepast &#10;sql connectie gemaakt">
+      <created>1573832275122</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1573816447837</updated>
+      <updated>1573832275122</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Betere formatting in 404 pagina.">
+      <created>1573839632024</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1573839632024</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Vergroot pagina breedte naar 50% van het scherm">
+      <created>1573839784715</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1573839784715</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,17 +397,10 @@
     <MESSAGE value="joejoe" />
     <MESSAGE value="Search dingen gefixt" />
     <MESSAGE value="Fill images script" />
-    <MESSAGE value="Volgorde van wat je ziet aangepast + prijs toegevoegd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Volgorde van wat je ziet aangepast + prijs toegevoegd" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/constants.php</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
+    <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
+    <MESSAGE value="Betere formatting in 404 pagina." />
+    <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vergroot pagina breedte naar 50% van het scherm" />
   </component>
 </project>

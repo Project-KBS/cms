@@ -4,10 +4,11 @@
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
 
 // Deze pagina vereist een GET parameter: "id" met integer value van het product.
 // Als deze param niet meegegeven is sturen we de user terug naar index.php
-if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === false) {
+if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
     header("Location: index.php");
 }
 
@@ -61,10 +62,85 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) === fals
             <div class="content-container">
 
                 <?php
+                // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
 
-                    // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
+                $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
+                if($stmt->rowCount()> 0) {
+
+                    $categories = array();
+
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        extract($row);
+
+                        array_push($categories, $StockGroupName);
+                    }
+
+                    $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
+
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    extract($row);
+
+                    //Opmaak van de pagina
+                    ?>
+
+                    <h1> <?php print($StockItemName) ?></h1>
+
+                    <h3> <?php
+                        foreach ($categories as $index => $value) {
+                        print($value." ");
+                    }
+                    ?>
+                    </h3>
+
+
+                    <div id="geheel" class="row">
+
+                        <div id="links" class="col-6" style="background: hotpink">
+                            <img src="data:image/png;base64, <?php print($Photo) ?> "><br>
+
+                        </div>
+
+                        <div id="rechts" class="col-6" style="background: aqua">
+                            <h1>€ <?php print($RecommendedRetailPrice) ?></h1>
+
+                            <h3> <?php
+                                if($QuantityOnHand > 0) {
+                                    print("Op voorraad");
+                                } else {
+                                    print("In de backorder");
+                                }
+                                ?>
+                            </h3>
+
+                            <div id="winkelwagen">
+                                <input type="number" >
+                                <input type="submit" value="Toevoegen aan winkelwagen">
+                            </div>
+                            <h3>Productomschrijving</h3>
+
+                            <hr>
+
+                            <h3>Productspecificaties</h3>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                <?php
+                } else {
+                    include("tpl/Foutproduct.html");
+                }
+
+
 
                 ?>
+            </div>
+
         </div>
         <div class="footer-container">
 
