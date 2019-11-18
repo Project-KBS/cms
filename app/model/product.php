@@ -143,13 +143,11 @@ class Product {
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":zoekterm", $zoekterm, PDO::PARAM_STR);
         $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
-
         // Voer de query uit
         $stmt->execute();
 
         return $stmt;
     }
-
     /** Interne ID van dit product*/
     public $StockItemID;
     /** Naam van dit product*/

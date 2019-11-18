@@ -7,12 +7,26 @@
              <a href="index.php"><img src="img/logo/small-250x90.png" alt="Logo"></a>
         </div>
      </div>
+    <?php
+    //Maakt een array van de item namen, dit wordt gebruikt om suggesties  te geven tijdens het typen.
+    //Hier moet ik nog verder naar kijken.
+    include_once ("app/model/product.php");
 
+    $stmt = (Product::read(Database::getConnection()));
+    $namen = [];
+    while ($product = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        extract($product);
+        $namen[] = $StockItemName;
+    }
+
+    //print_r($namen);
+
+    ?>
     <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
     <div id="navigatie-site">
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
-            <form autocomplete="off" action="search.php" name="zoekForm" method="get">
+            <form autocomplete="off" action="search.php" name="zoekForm" method="get" >
                 <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
                 <a><input type="submit" value="Search" name="knop" </a>
             </form>
