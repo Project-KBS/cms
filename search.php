@@ -118,8 +118,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
 
                         //Laat alle zoekresultaten zien
+                        print("<a href='product.php?id=" . $StockItemID . "'>");
                         print($StockItemName . "<br>");
                         print('<img src="data:image/png;base64,' . $Photo . '"><br>');
+                        print("</a>");
                         print("Prijs: " . $UnitPrice . "<br><br><br>");
 
                     }
