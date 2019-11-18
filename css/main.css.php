@@ -8,6 +8,7 @@ include_once "../app/vendor.php";
 #knop{
     width: 5vw;
     height: 100%;
+    padding: 0;
 }
 #knop:hover{
     opacity: 15;
