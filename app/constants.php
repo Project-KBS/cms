@@ -21,4 +21,8 @@ const MAX_PRODUCT_RETURN_AMOUNT = 200;
  * Dit is hoeveel producten er minimaal getoond kunnen worden
  */
 const MIN_PRODUCT_RETURN_AMOUNT = 1;
+/**
+ * Dit is de default sorteer volgorde: A-Z
+ */
+const DEFAULT_PRODUCT_ORDER = "ASC";
 
