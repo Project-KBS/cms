@@ -12,7 +12,7 @@
     <div id="navigatie-site">
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
-            <form action="search.php" name="zoekForm" method="get">
+            <form autocomplete="off" action="search.php" name="zoekForm" method="get">
                 <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"><div></div></a>
                 <a><input type="submit" value="Search" name="knop" </a>
             </form>
