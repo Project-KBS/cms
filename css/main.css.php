@@ -48,7 +48,7 @@ include_once "../app/vendor.php";
 .SearchProductDisplayRight{
     float: right;
     width: 25vw;
-    height: 35vw;
+    height: 35vh;
 }
 
 .SearchProductDisplayPrice{
