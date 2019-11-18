@@ -55,10 +55,11 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         <p>
                             <label>Aantal producten: </label>
                             <select name = "Hoeveelheid">
-                                <option value = "5">5</option>
-                                <option value = "10">10</option>
-                                <option value = "20">20</option>
-                                <option value = "50">50</option>
+                                <!-- het stukje php code tussen de <option> zorgt er voor dat de waarde geselecteerd blijft na het klikken op OK-->
+                                <option value = "5" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '5') ? 'selected="selected"' : ''; ?>>5</option>
+                                <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
+                                <option value = "20" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '20') ? 'selected="selected"' : ''; ?>>20</option>
+                                <option value = "50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
                             </select>
                             <label>Sorteren: </label>
                             <select name = "Sort">
@@ -68,9 +69,9 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 <option value = "PrijsDESC">Prijs aflopend</option>
                             </select>
                             <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>" />
-                        </p>
+                            <input type="submit" name="submit" value="ok">
                     </fieldset>
-                    <input type="submit" name="submit" value="ok">
+                        </p>
                 </form>
 
                 <?php
