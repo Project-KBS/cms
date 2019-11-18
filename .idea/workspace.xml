@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,9 +40,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
     </option>
@@ -55,6 +53,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
@@ -364,14 +363,7 @@
       <option name="project" value="LOCAL" />
       <updated>1574070824845</updated>
     </task>
-    <task id="LOCAL-00035" summary="Hoeveelheid producten per pagina is gefixt, het aantal blijft nu ook in het zoekvak staan.">
-      <created>1574071527558</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1574071527558</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +408,6 @@
     <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
     <MESSAGE value="Betere formatting in 404 pagina." />
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
-    <MESSAGE value="Hoeveelheid producten per pagina is gefixt, het aantal blijft nu ook in het zoekvak staan." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hoeveelheid producten per pagina is gefixt, het aantal blijft nu ook in het zoekvak staan." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vergroot pagina breedte naar 50% van het scherm" />
   </component>
 </project>

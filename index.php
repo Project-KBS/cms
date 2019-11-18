@@ -66,7 +66,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                     print($StockItemName . "<br>");
                     print('<img src="data:image/png;base64,' . $Photo . '"><br>');
                     print("</a>");
-                    print("Prijs: " . $UnitPrice . "<br><br><br>");
+                    print("Prijs: " . $RecommendedRetailPrice . "<br><br><br>");
                 }
                 ?>
             </div>
