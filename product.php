@@ -3,6 +3,7 @@
 // Uit deze php bestanden gebruiken wij functies of variabelen:
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
+include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
 
@@ -103,6 +104,14 @@ function specificaties(){
 
                         <div id="links" class="col-6" style="background: hotpink; padding: 0">
                             <img src="data:image/png;base64, <?php print($Photo) ?>" id="Productphoto"><br>
+                        <div id="links" class="col-6" style="background: hotpink">
+                            <img src="data:image/png;base64, <?php
+                                                                if (isset($Photo) && $Photo != null) {
+                                                                    print($Photo);
+                                                                } else {
+                                                                    print(MediaPortal::getCategoryImage(1));
+                                                                }
+                                                             ?>" id="Productphoto"><br>
 
                         </div>
 
@@ -135,9 +144,6 @@ function specificaties(){
                                     }
                                 </script>
                             </div>
-                            <br>
-
-                            <!-- Omschrijving van het product wordt gekeken of deze bestaat en print hem wanneer hij bestaat-->
                             <h3>Productomschrijving</h3>
 
                             <?php
