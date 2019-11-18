@@ -55,7 +55,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         <p>
                             <label>Aantal producten: </label>
                             <select name = "Hoeveelheid">
-                                <!-- het stukje php code tussen de <option> zorgt er voor dat de waarde geselecteerd blijft na het klikken op OK-->
+                                <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
                                 <option value = "5" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '5') ? 'selected="selected"' : ''; ?>>5</option>
                                 <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
                                 <option value = "20" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '20') ? 'selected="selected"' : ''; ?>>20</option>
@@ -63,7 +63,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             </select>
                             <label>Sorteren: </label>
                             <select name = "Sort">
-                                <option value = "NaamASC">A-Z</option>
+                                <option value = "NaamASC" selected="selected">A-Z</option>
                                 <option value = "NaamDESC">Z-A</option>
                                 <option value = "PrijsASC">Prijs oplopend</option>
                                 <option value = "PrijsDESC">Prijs aflopend</option>
@@ -75,26 +75,6 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 </form>
 
                 <?php
-
-                //check of het filter is aangepast
-                //pas filter toe
-                //Hier moet ik nog naar kijken, zal ik volgende week doen
-                /*
-                    if($_GET['SortName'] == "NaamASC"){
-                        $OrderBy = $StockItemName;
-                        $AscDesc = "ASC";
-                    } elseif ($_GET['SortName'] == "NaamDESC"){
-                        $OrderBy = $StockItemName;
-                        $AscDesc = "DESC";
-                    } elseif ($_GET['Sort'] == "PrijsASC"){
-                        $OrderBy = $UnitPrice;
-                        $AscDesc = "ASC";
-                    } elseif($_GET['Sort'] == "PrijsDESC"){
-                        $OrderBy = $StockItemName;
-                        $AscDesc = "DESC";
-                    }
-                }*/
-
                 // Check of er een zoekterm is opgegeven in de URL
                 if (isset($_GET['search'])) {
                     $zoekterm = $_GET['search'];
@@ -108,7 +88,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $aantal));
+                    $AscDesc = DEFAULT_PRODUCT_ORDER;
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, "DESC", $aantal));
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -117,6 +98,21 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
 
+                        // Deze if/elseif statement wordt gebruikt om te kijken waarop de klant de zoekpagina wilt sorteren, de default is A-Z
+                        // Deze code kan niet worden verplaatst naar boven in de code, vóór de extract($row) kent hij de gebruikte variabelen nog niet en geeft hij dus foutmeldingen.
+                        if($_GET['Sort'] == "NaamASC"){
+                            $OrderBy = $StockItemName;
+                            $AscDesc = "ASC";
+                        } elseif ($_GET['Sort'] == "NaamDESC"){
+                            $OrderBy = $StockItemName;
+                            $AscDesc = "DESC";
+                        } elseif ($_GET['Sort'] == "PrijsASC"){
+                            $OrderBy = $UnitPrice;
+                            $AscDesc = "ASC";
+                        } elseif($_GET['Sort'] == "PrijsDESC"){
+                            $OrderBy = $StockItemName;
+                            $AscDesc = "DESC";
+                        }
 
                         //Laat alle zoekresultaten zien
                         print("<a href='product.php?id=" . $StockItemID . "'>");
