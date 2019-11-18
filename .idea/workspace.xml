@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mediaportal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/mediaportal.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,14 +34,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
@@ -68,21 +66,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mp/categorie/1" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
-      <recent name="$PROJECT_DIR$/api/v1/product" />
-      <recent name="$PROJECT_DIR$/api/v1/categorie" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -373,26 +370,26 @@
       <option name="project" value="LOCAL" />
       <updated>1574074192233</updated>
     </task>
-    <task id="LOCAL-00036" summary="SearchProductDisplay CSS gemaakt">
-      <created>1574081922514</created>
+    <task id="LOCAL-00036" summary="Zet sorteer ding direct in query zonder te checken">
+      <created>1574075573335</created>
       <option name="number" value="00036" />
       <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1574081922514</updated>
+      <updated>1574075573335</updated>
     </task>
-    <task id="LOCAL-00037" summary="SearchProductDisplay CSS gemaakt">
-      <created>1574081969858</created>
+    <task id="LOCAL-00037" summary="Mediaportaal klasse + laad categorie foto als productfoto niet in database">
+      <created>1574080733867</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1574081969858</updated>
+      <updated>1574080733867</updated>
     </task>
-    <task id="LOCAL-00038" summary="SearchProductDisplay CSS aangepast">
-      <created>1574082166835</created>
+    <task id="LOCAL-00038" summary="Fout gemerged....................">
+      <created>1574080857859</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1574082166835</updated>
+      <updated>1574080857859</updated>
     </task>
     <option name="localTasksCounter" value="39" />
     <servers />
@@ -416,7 +413,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
     <MESSAGE value="Merge latest offline changes" />
@@ -439,8 +435,9 @@
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
-    <MESSAGE value="SearchProductDisplay CSS gemaakt" />
-    <MESSAGE value="SearchProductDisplay CSS aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="SearchProductDisplay CSS aangepast" />
+    <MESSAGE value="Zet sorteer ding direct in query zonder te checken" />
+    <MESSAGE value="Mediaportaal klasse + laad categorie foto als productfoto niet in database" />
+    <MESSAGE value="Fout gemerged...................." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fout gemerged...................." />
   </component>
 </project>

@@ -10,17 +10,17 @@ class MediaPortal {
     /**
      * Verkrijg de categorie afbeelding in Base64 encoding.
      *
-     * @param int $id De categorie ID.
-     * @return string afbeelding in base64.
-     * @throws Exception
+     * @param int $categoryId De categorie ID.
+     * @return string Een afbeelding in base64.
+     * @throws Exception Als er geen afbeelding bestaat voor de categorie.
      */
-    public static function getCategoryImage(int $id) {
+    public static function getCategoryImage(int $categoryId) {
         // Check eerst of $id een getal is
-        if (filter_var($id, FILTER_VALIDATE_INT) == false) {
+        if (filter_var($categoryId, FILTER_VALIDATE_INT) == false) {
             throw new Exception("Fout in categorie nummer");
         }
 
-        $filename = "mp/categorie/$id/thumb.jpg";
+        $filename = "mp/categorie/$categoryId/thumb.jpg";
 
         // Als het bestand bestaat
         if (file_exists($filename)) {
@@ -31,10 +31,37 @@ class MediaPortal {
     }
 
     /**
+     * Verkrijg een array met base64-encoded foto's behorend tot $productId
+     *
+     * @param int $productId
+     * @return array Met base64 encoded foto's
+     * @throws Exception
+     */
+    public static function getProductImages(int $productId) {
+        if (filter_var($productId, FILTER_VALIDATE_INT) == false) {
+            throw new Exception("Fout in categorie nummer");
+        }
+
+        $directory = "mp/product/$productId/";
+
+        // Als de product directory bestaat
+        if (file_exists($directory)) {
+            $images = [];
+            $paths = glob($directory . "*.{jpeg,png}", GLOB_BRACE);
+            foreach ($paths as $path) {
+                $images[] = base64_encode(file_get_contents($path));
+            }
+            return $images;
+        } else {
+            throw new Exception("Bestand niet gevonden");
+        }
+    }
+
+    /**
      * Van deze klasse mogen geen instanties gemaakt worden, dus maak de constructor privé.
      */
     private function __construct() {
-        throw new AssertionError("Gebruik getConnection() !!!");
+        throw new AssertionError("Gebruik de static methods !!!");
     }
 
     /**
