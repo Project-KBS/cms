@@ -101,13 +101,31 @@ function specificaties(){
 
                     <div id="geheel" class="row">
                         <div id="links" class="col-6" style="background: hotpink">
+                            <div id="linksboven">
                             <img src="data:image/png;base64, <?php
                                                                 if (isset($Photo) && $Photo != null) {
                                                                     print($Photo);
                                                                 } else {
-                                                                    print(MediaPortal::getCategoryImage(1));
+                                                                    print(MediaPortal::getCategoryImage($StockGroupID));
                                                                 }
                                                              ?>" id="Productphoto"><br>
+                            </div>
+                            <div id="linksonder" class="col-6" style="background: black">
+
+                                <?php
+                                $images = MediaPortal::getProductImages($StockItemID);
+                                foreach ($images as $image) {
+
+                                    print("HOI<br><br>")
+                                    ?>
+
+                                    <img src="data:image/png;base64, <?php print($image)   ?> ">
+
+                                    <?php
+                                }
+                                ?>
+
+                            </div>
 
                         </div>
 
@@ -130,7 +148,7 @@ function specificaties(){
                                     // Dit is het input veld
                                     const hoeveelheid_input = document.getElementById('hoeveelheid_input');
 
-                                    // Listen for input event on numInput.
+                                    // Listen for input event on numInput. ( blokkeert negatieve getallen)
                                     hoeveelheid_input.onkeydown = function(e) {
                                         if(!((e.keyCode > 95 && e.keyCode < 106)
                                             || (e.keyCode > 47 && e.keyCode < 58)
