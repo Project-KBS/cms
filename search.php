@@ -90,7 +90,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (isset($_GET['search'])) {
+                if ($_GET['search']!=NULL) {
                     $zoekterm = $_GET['search'];
 
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
