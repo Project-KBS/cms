@@ -68,7 +68,6 @@ function specificaties(){
             <div class="content-container">
 
                 <?php
-                // TODO ------ HIER MOET DE INHOUD VAN PRODUCT PAGINA KOMEN!!!!!!!
 
                 $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
                 if($stmt->rowCount()> 0) {
@@ -110,18 +109,39 @@ function specificaties(){
                                                                 }
                                                              ?>" id="Productphoto"><br>
                             </div>
-                            <div id="linksonder" style="background: black" >
+                            <div id="linksonder" style="background: black">
+
+                                <script>
+                                    const hoofdfoto = document.getElementById("Productphoto");
+                                </script>
 
                                 <?php
 
+                                // Zoek alle productfoto's
                                 $images = MediaPortal::getProductImages($StockItemID);
 
+                                // Zet de hoofdfoto ook in deze array
+                                array_unshift($images, $Photo);
+
+                                $teller = 0;
                                 foreach ($images as $image) {
                                     ?>
 
-                                    <img style="width: 25%; padding: 10px"  src="data:image/png;base64, <?php print($image)   ?> ">
+                                    <img id="foto<?php print($teller)?>"style="width: 25%; padding: 10px"  src="data:image/png;base64, <?php print($image) ?> ">
+
+                                    <script>
+                                        const foto<?php print($teller)?> = document.getElementById("foto<?php print($teller)?>");
+
+                                        // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
+                                        foto<?php print($teller)?>.addEventListener("click", function() {
+                                            hoofdfoto.setAttribute("src", foto<?php print($teller)?>.getAttribute("src"));
+                                        });
+
+
+                                    </script>
 
                                     <?php
+                                    $teller++;
                                 }
                                 ?>
 
