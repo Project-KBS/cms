@@ -141,7 +141,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         print("</div>");
                         print("<div class='ProductDisplayRight'>");
                         print("<h3>" . $StockItemName . "</h3>");
-                        print("<p>description</p>");
+                        print("<p>" . $SearchDetails . "</p>");
                         print("<div class='ProductDisplayPrice'>");
                         print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
                         print("</div>");

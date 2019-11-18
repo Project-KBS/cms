@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -398,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574082624686</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="code gecomprimeerd">
+      <created>1574082932002</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1574082932002</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +428,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
     <MESSAGE value="Merge latest offline changes" />
     <MESSAGE value="Update endpoint api-info to use constants defined in vendor.php" />
     <MESSAGE value="Laad navigatiebalk met categorieen uit vanuit database" />
@@ -445,6 +452,7 @@
     <MESSAGE value="Mediaportaal klasse + laad categorie foto als productfoto niet in database" />
     <MESSAGE value="Fout gemerged...................." />
     <MESSAGE value="ff naam classes aangepast" />
-    <option name="LAST_COMMIT_MESSAGE" value="ff naam classes aangepast" />
+    <MESSAGE value="code gecomprimeerd" />
+    <option name="LAST_COMMIT_MESSAGE" value="code gecomprimeerd" />
   </component>
 </project>

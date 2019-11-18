@@ -69,7 +69,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                     print("</div>");
                     print("<div class='ProductDisplayRight'>");
                     print("<h3>" . $StockItemName . "</h3>");
-                    print("<p>description</p>");
+                    print("<p>" . $SearchDetails . "</p>");
                     print("<div class='ProductDisplayPrice'>");
                     print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
                     print("</div></div></div></a>");
