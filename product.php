@@ -110,7 +110,7 @@ function specificaties(){
                                                                 }
                                                              ?>" id="Productphoto"><br>
                             </div>
-                            <div id="linksonder" style="background: black">
+                            <div id="linksonder" style="background: black" >
 
                                 <?php
 
@@ -119,7 +119,7 @@ function specificaties(){
                                 foreach ($images as $image) {
                                     ?>
 
-                                    <img src="data:image/png;base64, <?php print($image)   ?> ">
+                                    <img style="width: 25%; padding: 10px"  src="data:image/png;base64, <?php print($image)   ?> ">
 
                                     <?php
                                 }
