@@ -69,7 +69,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 <option value = "PrijsDESC">Prijs aflopend</option>
                             </select>
                             <label>Categorie: </label>
-                            <select name = "Categorie">
+                            <select name = "Category">
                                 <option value = "0" selected="selected">Geen filter</option>
                                 <option value = "1">Novelty Items</option>
                                 <option value = "2">Clothing</option>
