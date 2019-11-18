@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -363,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574070824845</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Productspecificatie en omschrijving aangepast">
+      <created>1574074192233</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1574074192233</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +415,8 @@
     <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
     <MESSAGE value="Betere formatting in 404 pagina." />
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vergroot pagina breedte naar 50% van het scherm" />
+    <MESSAGE value="Productspecificatie/omschrijving aangepast" />
+    <MESSAGE value="Productspecificatie en omschrijving aangepast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Productspecificatie en omschrijving aangepast" />
   </component>
 </project>
