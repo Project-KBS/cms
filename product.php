@@ -119,9 +119,21 @@ function specificaties(){
                             </h3>
 
                             <div id="winkelwagen">
-                                <input type="number" min="0">
+                                <input type="number" id="hoeveelheid_input" min="0">
                                 <input type="submit" value="Toevoegen aan winkelwagen">
-                                <script></script>
+                                <script>
+                                    // Dit is het input veld
+                                    const hoeveelheid_input = document.getElementById('hoeveelheid_input');
+
+                                    // Listen for input event on numInput.
+                                    hoeveelheid_input.onkeydown = function(e) {
+                                        if(!((e.keyCode > 95 && e.keyCode < 106)
+                                            || (e.keyCode > 47 && e.keyCode < 58)
+                                            || e.keyCode === 8)) {
+                                            return false;
+                                        }
+                                    }
+                                </script>
                             </div>
                             <h3>Productomschrijving</h3>
 
