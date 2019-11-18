@@ -68,6 +68,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 <option value = "PrijsASC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC') ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
                                 <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
                             </select>
+                            <label>Categorie: </label>
+                            <select name = "Categorie">
+                                <option value = "0" selected="selected">Geen filter</option>
+                                <option value = "1">Novelty Items</option>
+                                <option value = "2">Clothing</option>
+                                <option value = "3">Mugs</option>
+                                <option value = "4">T-Shirts</option>
+                                <option value = "5">Airline Novelties</option>
+                                <option value = "6">Computing Novelties</option>
+                                <option value = "7">USB Novelties</option>
+                                <option value = "8">Furry Footwear</option>
+                                <option value = "9">Toys</option>
+                                <option value = "10">Packaging Materials</option>
+                            </select>
                             <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>" />
                             <input type="submit" name="submit" value="ok">
                     </fieldset>
