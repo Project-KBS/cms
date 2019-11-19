@@ -10,12 +10,12 @@ const IS_DEBUGGING_ENABLED = true;
 /**
  * Dit is hoeveel producten er normaal worden getoond
  */
-const DEFAULT_PRODUCT_RETURN_AMOUNT = 20;
+const DEFAULT_PRODUCT_RETURN_AMOUNT = 500;
 
 /**
  * Dit is hoeveel producten er maximaal getoond kunnen worden (beveiliging tegen server overload en DDoS)
  */
-const MAX_PRODUCT_RETURN_AMOUNT = 200;
+const MAX_PRODUCT_RETURN_AMOUNT = 1000;
 
 /**
  * Dit is hoeveel producten er minimaal getoond kunnen worden
