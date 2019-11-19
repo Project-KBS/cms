@@ -70,17 +70,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             </select>
                             <label>Categorie: </label>
                             <select name = "Categorie">
-                                <option value = "0" selected="selected">Geen filter</option>
-                                <option value = "1">Novelty Items</option>
-                                <option value = "2">Clothing</option>
-                                <option value = "3">Mugs</option>
-                                <option value = "4">T-Shirts</option>
-                                <option value = "5">Airline Novelties</option>
-                                <option value = "6">Computing Novelties</option>
-                                <option value = "7">USB Novelties</option>
-                                <option value = "8">Furry Footwear</option>
-                                <option value = "9">Toys</option>
-                                <option value = "10">Packaging Materials</option>
+                                <option value = "0" <?php echo (isset($_GET['Categorie']) && $_GET['Categorie'] == '0') ? 'selected="selected"' : ''; ?>>Geen filter</option>
+                                <?php
+                                    //Zoals in header_template.php ook gedaan wordt, worden hier de categorieen opgehaald.
+                                    $stmt = (Categorie::read(Database::getConnection()));
+                                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                        extract($row);
+
+                                        //Deze regels zorgen ervoor dat elke categorie een filter optie krijgt.
+                                        print("<option value = '" . $StockGroupID . "' ");
+                                        echo (isset($_GET['Categorie']) && $_GET['Categorie'] == $StockGroupID) ? 'selected="selected"' : '';
+                                        print(">" . $StockGroupName . "</option>");
+
+                                    }
+                                ?>
                             </select>
                             <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>" />
                             <input type="submit" name="submit" value="ok">
