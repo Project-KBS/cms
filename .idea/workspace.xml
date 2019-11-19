@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +41,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -431,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574185824959</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen">
+      <created>1574188761790</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1574188761790</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +459,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Database class" />
     <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
@@ -478,6 +483,7 @@
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
     <MESSAGE value="Pagina functie werkt bijna" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagina functie werkt bijna" />
+    <MESSAGE value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
   </component>
 </project>

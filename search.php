@@ -99,53 +99,52 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
                     //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
                     // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt.
-                    $aantal = DEFAULT_PRODUCT_RETURN_AMOUNT;
+                    $aantalPerPaginaFilter = DEFAULT_PRODUCT_RETURN_AMOUNT;
                     if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
-                        $aantal = $_GET['Hoeveelheid'];
+                        $aantalPerPaginaFilter = $_GET['Hoeveelheid'];
                     }
                     // defaults voor wanneer het filter niet is ingevuld
-                    $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
+                    $orderByFilter = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
-                //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
-                if (isset($_GET["page"]) && filter_var($_GET["page"], FILTER_VALIDATE_INT) == true) {
-                    $page = $_GET["page"];
-                } else {
-                    $page = 1;
-                };
-
-                //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
-                //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
-                $start_from = ($page-1) * $aantal;
-
-                //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                if(isset($_GET['Sort'])) {
-                    switch ($_GET['Sort']) {
-                        case "NaamASC";
-                            $OrderBy = "p.StockItemName ASC";
-                            break;
-                        case "NaamDESC";
-                            $OrderBy = "p.StockItemName DESC";
-                            break;
-                        case "PrijsASC";
-                            $OrderBy = "p.RecommendedRetailPrice ASC";
-                            break;
-                        case "PrijsDESC";
-                            $OrderBy = "p.RecommendedRetailPrice DESC";
-                            break;
+                    //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
+                    if (isset($_GET["page"]) && filter_var($_GET["page"], FILTER_VALIDATE_INT) == true) {
+                        $selectedPage = $_GET["page"];
+                    } else {
+                        $selectedPage = 1;
                     }
-                }
 
-                // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
-                $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $start_from, $aantal));
-                print("<h1>Zoekresultaten</h1>");
+                    //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
+                    //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
+                    $startFrom = ($selectedPage - 1) * $aantalPerPaginaFilter;
 
-                // Per rij die we uit de database halen voeren we een stukje code uit
-                $i = 0;
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
+                    if(isset($_GET['Sort'])) {
+                        switch ($_GET['Sort']) {
+                            case "NaamASC";
+                                $orderByFilter = "p.StockItemName ASC";
+                                break;
+                            case "NaamDESC";
+                                $orderByFilter = "p.StockItemName DESC";
+                                break;
+                            case "PrijsASC";
+                                $orderByFilter = "p.RecommendedRetailPrice ASC";
+                                break;
+                            case "PrijsDESC";
+                                $orderByFilter = "p.RecommendedRetailPrice DESC";
+                                break;
+                        }
+                    }
 
-                    // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
-                    // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
-                    extract($row);
+                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
+                    print("<h1>Zoekresultaten</h1>");
+
+                    // Per rij die we uit de database halen voeren we een stukje code uit
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                        // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
+                        // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
+                        extract($row);
 
                     ?>
                     <!--Laat alle zoekresultaten zien-->
@@ -165,43 +164,50 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     </a>
 
                 <?php
-                    $i ++;
-                }
-                $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-                ?>
-                <div class='aantalPaginas'>
-                <button class=\"back\">Forward</button>
-                <button class=\"back\">Back</button>
-                    <?php
-                //Hier reken je uit hoeveel pagina's er nodig zijn door het aantal gevonden artikelen
-                //Dit klopt nog niet, de href fundtie stinkt als een motherfucker
-                //Als je aan het einde van de url handmatig &page='een getal' invoert doet hij het wel.
-                //Het probleem zit 'm er in dat hij de hoeveelheid gevonden producten ($aantal) deelt door zichzelf ($i), hierdoor is het altijd 1.
-                //$aantal moet het totaal aantal gevonden dingen zijn, maar ik weet niet hoe ik dit moet fixen :((
-
-                    //$total_pages = ceil($row["total"] / $aa);
-
-                $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 0, 1000000))->rowCount();
-
-                $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $i + 1);
-
-                printf("TOTAAL: %d <br>", $totaalAantalPaginas);
-
-                if ($totaalAantalPaginas > 0) {
-                    for ($pagina = 1; $pagina < ceil($totaalAantalProductenMatchingFilter / $i + 1); $pagina++) {
-                        //Hij plakt er nu gewoon '&page=1' achter, ongeacht of die er al instaat
-                        print("<a href='" . $url . "&page=" . $pagina . "'>$pagina </a>");
                     }
+                ?>
+
+                <div class='aantalPaginas'>
+                    <button class=\"back\">Forward</button>
+                    <button class="back">Back</button>
+
+                    <?php
+
+                    // Job: dit werkt niet als je https gebruikt of een server achter een proxy hebt dus gebruik gewoon request_uri
+                    //$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $url = "$_SERVER[REQUEST_URI]";
+
+                    // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (dus NIET het aantal van de vorige query gebruiken!!!!)
+                    $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, 0, 1000000))->rowCount();
+                    $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
+
+                    printf("<p>%d pagina's gevonden.</p>", $totaalAantalPaginas-1);
+
+                    // Voor elke pagina zet print hij een klikbaar nummertje
+                    for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {
+
+                        ?>
+
+                        <!-- Hij plakt er nu gewoon '&page=69' achter, ongeacht of die er al instaat -->
+                        <a href='<?php print($url . "&page=" . $paginaNummer ) ?>'><?php print($paginaNummer) ?></a>
+
+                        <?php
+                    }
+                    ?>
+
+                </div>
+
+                <?php
+
+                } else {
+                    print("Geen zoekterm opgegeven");
                 }
-                print("</div>");
-            } else {
-                print("Geen zoekterm opgegeven");
-            }
+
+                // FIXME ------ DIT KAN WEG NEEM IK AAN ???? ----
                 /*
                         //checkt of het product al is geprint.
                         //producten kunnen hier herhalen doordat ze meerdere categorieen hebben.
-                        }elseif(in_array($StockItemID, $ProductRepeatCheck)===FALSE){
+                    } elseif (in_array($StockItemID, $ProductRepeatCheck)===FALSE) {
                             array_push($ProductRepeatCheck, $StockItemID, $StockItemName);
                             $ProductCount++;
                             print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
@@ -217,10 +223,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             print("</div></div></div></a>");
                         }
                     }
-                    print($ProductCount);
-                } else {
-                    print("Geen zoekterm opgegeven");
-                }*/
+                        print($ProductCount);
+                    } else {
+                        print("Geen zoekterm opgegeven");
+                    }
+                */
+                // FIXME --------------------------------------------------------
 
                 ?>
 
