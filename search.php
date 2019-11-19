@@ -170,6 +170,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 //Hier reken je uit hoeveel pagina's er nodig zijn door het aantal gevonden artikelen
                 //Dit klopt nog niet, de href fundtie stinkt als een motherfucker
                 //Als je aan het einde van de url handmatig &page='een getal' invoert doet hij het wel.
+                //Het probleem zit 'm er in dat hij de hoeveelheid gevonden producten ($aantal) deelt door zichzelf ($i), hierdoor is het altijd 1.
+                //$i moet het totaal aantal gevonden dingen zijn, maar ik weet niet hoe ik dit moet fixen :((
                 for($aantalPaginas = 1; $aantalPaginas < ceil(($i/$aantal)+1); $aantalPaginas++){
                     //Hij plakt er nu gewoon '&page=1' achter, ongeacht of die er al instaat
                     print("<a href='". $url . "&page=" . $aantalPaginas . "'>$aantalPaginas</a>");
