@@ -123,13 +123,14 @@ class Product {
                       p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
                       p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
                       p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
-                      p.LastEditedBy, p.ValidFrom, p.ValidTo
+                      p.LastEditedBy, p.ValidFrom, p.ValidTo, g.StockGroupID
                   FROM
                       " . self::TABLE_NAME . " p
                   LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID                  
+                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  LEFT JOIN stockitemstockgroups g ON p.StockItemID = g.StockItemID                  
                   WHERE p.StockItemName LIKE :zoekterm
                   ORDER BY " . $OrderBy . "
                   LIMIT :limiet";

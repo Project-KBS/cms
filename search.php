@@ -139,18 +139,33 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
 
                         //Laat alle zoekresultaten zien
-                        print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
-                        print("<div class='ProductDisplay'>");
-                        print("<div class='ProductDisplayLeft'>");
-                        print('<img src="data:image/png;base64,' . $Photo . '">');
-                        print("</div>");
-                        print("<div class='ProductDisplayRight'>");
-                        print("<h3>" . $StockItemName . "</h3>");
-                        print("<p>" . $SearchDetails . "</p>");
-                        print("<div class='ProductDisplayPrice'>");
-                        print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
-                        print("</div></div></div></a>");
-
+                        if(isset($_GET['Categorie']) && $_GET['Categorie'] > 0) {
+                            if($_GET['Categorie'] == $StockGroupID) {
+                                print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
+                                print("<div class='ProductDisplay'>");
+                                print("<div class='ProductDisplayLeft'>");
+                                print('<img src="data:image/png;base64,' . $Photo . '">');
+                                print("</div>");
+                                print("<div class='ProductDisplayRight'>");
+                                print("<h3>" . $StockItemName . "</h3>");
+                                print("<p>" . $SearchDetails . "</p>");
+                                print("<div class='ProductDisplayPrice'>");
+                                print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
+                                print("</div></div></div></a>");
+                            }
+                        }else{
+                            print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
+                            print("<div class='ProductDisplay'>");
+                            print("<div class='ProductDisplayLeft'>");
+                            print('<img src="data:image/png;base64,' . $Photo . '">');
+                            print("</div>");
+                            print("<div class='ProductDisplayRight'>");
+                            print("<h3>" . $StockItemName . "</h3>");
+                            print("<p>" . $SearchDetails . "</p>");
+                            print("<div class='ProductDisplayPrice'>");
+                            print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
+                            print("</div></div></div></a>");
+                        }
                     }
 
                 } else {
