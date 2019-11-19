@@ -21,10 +21,16 @@ const MAX_PRODUCT_RETURN_AMOUNT = 1000;
  * Dit is hoeveel producten er minimaal getoond kunnen worden
  */
 const MIN_PRODUCT_RETURN_AMOUNT = 1;
+
 /**
  * Dit is de default sorteer volgorde: A-Z
  */
 const DEFAULT_PRODUCT_SORT_ORDER = "ASC";
+
+/**
+ * Dit is de default sorteer volgorde inclusief SQL dinges
+ */
+const DEFAULT_PRODUCT_ORDER_BY = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
 /**
  * Vanaf welk resultaat je normaal moet zoeken in de query

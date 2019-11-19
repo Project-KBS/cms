@@ -77,11 +77,13 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                         extract($row);
 
-                                        //Deze regels zorgen ervoor dat elke categorie een filter optie krijgt.
-                                        //print("<option value = '" . $StockGroupID . "' ");
-                                        /*echo (isset($_GET['Categorie']) && $_GET['Categorie'] == $StockGroupID) ? 'selected="selected"' : '';
-                                        print(">" . $StockGroupName . "</option>");*/
+                                        ?>
 
+                                        <option value='<?php print($StockGroupID) ?>' <?php if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
+                                                                                                print("selected=\"selected\"");
+                                                                                            } ?>><?php print($StockGroupName) ?></option>
+
+                                        <?php
                                     }
                                 ?>
                             </select>
@@ -135,8 +137,14 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         }
                     }
 
+                    // Moeten we categorie-specifiek zoeken?
+                    $selectedCategory = null;
+                    if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
+                        $selectedCategory = $_GET["Categorie"];
+                    }
+
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
                     print("<h1>Zoekresultaten</h1>");
 
                     // Per rij die we uit de database halen voeren we een stukje code uit
@@ -179,7 +187,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $url = "$_SERVER[REQUEST_URI]";
 
                     // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (hier wordt een nieuwe query gebruikt omdat de vorige het aantal met limit weergeeft!!!!!)
-                    $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, 0, MAX_PRODUCT_RETURN_AMOUNT))->rowCount();
+                    $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, 0, MAX_PRODUCT_RETURN_AMOUNT))->rowCount();
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
                     printf("<p>%d pagina's gevonden. (%d producten getoond, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);

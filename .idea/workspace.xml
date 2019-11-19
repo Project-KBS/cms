@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,13 +130,6 @@
       <workItem from="1574089842311" duration="2043000" />
       <workItem from="1574156201878" duration="1130000" />
       <workItem from="1574164367526" duration="9555000" />
-    </task>
-    <task id="LOCAL-00002" summary="Database class">
-      <created>1568754704168</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1568754704168</updated>
     </task>
     <task id="LOCAL-00003" summary="Set return type in json">
       <created>1568805480201</created>
@@ -473,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574193831095</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Fix z-index value van de navigatie-categorieen balk">
+      <created>1574194399791</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1574194399792</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +496,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Bovenste navigatiebalk" />
     <MESSAGE value="Push flexbox items in navigatie-site naar correcte plaats" />
     <MESSAGE value="Maak een template van de header zodat we hem kunnen hergebruiken" />
     <MESSAGE value="Zet database.php om naar een singleton" />
@@ -520,6 +520,7 @@
     <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
     <MESSAGE value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
     <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
+    <MESSAGE value="Fix z-index value van de navigatie-categorieen balk" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix z-index value van de navigatie-categorieen balk" />
   </component>
 </project>

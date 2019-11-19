@@ -104,13 +104,20 @@ class Product {
      *
      * @param PDO    $database     Een database connectie object (verkrijg met Database::getConnectie();)
      * @param string $zoekterm     Waar je op wilt zoeken
+     * @param int    $categorie    ID van de categorie waar in te zoeken (mag null zijn om niet categorie-specifiek te zoeken)
      * @param string $OrderBy      Dit wordt letterlijk in de query gezet zonder sql injection protectie dus wees veilig lol.
      * @param int    $StartFrom    Vanaf welk aantal gestart moet worden.
      * @param int    $limit        Hoeveel producten er gereturned moeten worden. (default en max values staan in constants.php)
      *
      * @return PDOStatement
      */
-    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $StartFrom = DEFAULT_PRODUCT_START_FROM, $limit = DEFAULT_PRODUCT_RETURN_AMOUNT) {
+    public static function zoek($database,
+                                $zoekterm,
+                                $categorie = null,
+                                $OrderBy   = DEFAULT_PRODUCT_ORDER_BY,
+                                $StartFrom = DEFAULT_PRODUCT_START_FROM,
+                                $limit     = DEFAULT_PRODUCT_RETURN_AMOUNT) {
+
         // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
@@ -127,6 +134,16 @@ class Product {
             $StartFrom = DEFAULT_PRODUCT_START_FROM;
         }
 
+        // Als er categorie-specifiek wordt gezocht
+        if ($categorie != null) {
+            // Als $Categorie geen correcte integer is.
+            if (filter_var($categorie, FILTER_VALIDATE_INT) == false
+                || $categorie < 0) {
+
+                $categorie = null;
+            }
+        }
+
         $query = "SELECT
                       p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
                       p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
@@ -140,7 +157,8 @@ class Product {
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
                   WHERE p.StockItemName LIKE :zoekterm
                   
-                  " . "
+                  " . ($categorie != null ? "AND p.StockItemID IN (SELECT sub.StockItemID FROM StockItemStockGroups sub WHERE sub.StockGroupID = :categorie)" : "") .  "
+                  
                   ORDER BY " . $OrderBy . "
                   LIMIT :begin, :limiet";
 
@@ -153,6 +171,12 @@ class Product {
         $stmt->bindValue(":zoekterm", $zoekterm,  PDO::PARAM_STR);
         $stmt->bindValue(":limiet",   $limit,     PDO::PARAM_INT);
         $stmt->bindValue(":begin",    $StartFrom, PDO::PARAM_INT);
+
+        // Als er categorie-specifiek wordt gezocht, voeg hem in
+        if ($categorie != null) {
+            $stmt->bindValue(":categorie", $categorie, PDO::PARAM_INT);
+        }
+
         // Voer de query uit
         $stmt->execute();
 
