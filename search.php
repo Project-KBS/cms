@@ -53,7 +53,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 <form name="filter" method="get">
                     <fieldset>
                         <p>
-                            <label>Producten per pagina: </label>
+                            <label>Aantal producten: </label>
                             <select name = "Hoeveelheid">
                                 <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
                                 <option value = "5" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '5') ? 'selected="selected"' : ''; ?>>5</option>
@@ -103,30 +103,28 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
                         $aantal = $_GET['Hoeveelheid'];
                     }
+                    // defaults voor wanneer het filter niet is ingevuld
+                    $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
-                // defaults voor wanneer het filter niet is ingevuld
-                $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
-                //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                    if(isset($_GET['Sort'])) {
-                        switch ($_GET['Sort']) {
-                            case "NaamASC";
-                                $OrderBy = "p.StockItemName ASC";
-                                break;
-                            case "NaamDESC";
-                                $OrderBy = "p.StockItemName DESC";
-                                break;
-                            case "PrijsASC";
-                                $OrderBy = "p.RecommendedRetailPrice ASC";
-                                break;
-                            case "PrijsDESC";
-                                $OrderBy = "p.RecommendedRetailPrice DESC";
-                                break;
-                        }
+                    //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
+                    switch($_GET['Sort']){
+                        case "NaamASC";
+                            $OrderBy = "p.StockItemName ASC";
+                            break;
+                        case "NaamDESC";
+                            $OrderBy = "p.StockItemName DESC";
+                            break;
+                        case "PrijsASC";
+                            $OrderBy = "p.RecommendedRetailPrice ASC";
+                            break;
+                        case "PrijsDESC";
+                            $OrderBy = "p.RecommendedRetailPrice DESC";
+                            break;
                     }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
 
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy));
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $aantal));
                     print("<h1>Zoekresultaten</h1>");
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -134,6 +132,9 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
                         // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
+
+
+
 
                         //Laat alle zoekresultaten zien
                         print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
@@ -150,17 +151,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     }
 
-
                 } else {
                     print("Geen zoekterm opgegeven");
                 }
+
                 ?>
+
             </div>
+
         </div>
         <div class="footer-container">
             <?php
                // include("tpl/footer_template.php");
             ?>
+
         </div>
     </body>
 </html>

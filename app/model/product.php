@@ -90,6 +90,7 @@ class Product {
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":limiet",   $limit,    PDO::PARAM_INT);
+
         $stmt->bindValue(":ItemID",   $Search,    PDO::PARAM_INT);
 
         // Voer de query uit
@@ -109,7 +110,7 @@ class Product {
      *
      * @return PDOStatement
      */
-    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $limit = DEFAULT_PRODUCT_RETURN_AMOUNT) {
+    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $limit = 1000) {
         // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
@@ -129,7 +130,8 @@ class Product {
                   LEFT JOIN suppliers s ON p.SupplierID = s.SupplierID
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
-                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID                  
+                  LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
+                  
                   WHERE p.StockItemName LIKE :zoekterm
                   ORDER BY " . $OrderBy . "
                   LIMIT :limiet";
