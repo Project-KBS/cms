@@ -150,11 +150,11 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                         <!-- Print dit resultaat -->
                         <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
-                            <div class='ProductDisplay'>
-                                <div class='ProductDisplayLeft'>
+                            <div class='row ProductDisplay'>
+                                <div class='col-6 ProductDisplayLeft'>
                                     <img src="data:image/png;base64,<?php print($Photo)?>">
                                 </div>
-                                <div class='ProductDisplayRight'>
+                                <div class='col-6 ProductDisplayRight'>
                                     <h3><?php print($StockItemName)?></h3>
                                     <p><?php print($SearchDetails)?></p>
                                     <div class='ProductDisplayPrice'>
@@ -178,7 +178,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     //$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $url = "$_SERVER[REQUEST_URI]";
 
-                    // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (dus NIET het aantal van de vorige query gebruiken!!!!)
+                    // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (hier wordt een nieuwe query gebruikt omdat de vorige het aantal met limit weergeeft!!!!!)
                     $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, 0, 1000000))->rowCount();
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 

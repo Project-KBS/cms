@@ -30,10 +30,8 @@ include_once "../app/vendor.php";
     width: 100%;
 }
 
-.ProductDisplay{
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+.ProductDisplay {
+    border: 1px solid black;
     border-radius: 3px;
     padding: 1vw;
     margin-bottom: 2vw;
@@ -41,25 +39,31 @@ include_once "../app/vendor.php";
     width: 50vw;
     height: 40vh;
     color: black;
+
+    max-height: 15.25em;
 }
 
-.ProductDisplay:hover{
+.ProductDisplay:hover {
     background-color: #D3EBE9;
     color: #020042;
 }
 
-.ProductDisplayLeft{
-    float: left;
-    width: 20vw;
+.ProductDisplayLeft {
+    height: 100%;
 }
 
-.ProductDisplayRight{
-    float: right;
-    width: 25vw;
-    height: 35vh;
+/* Zorg dat alle afbeeldingen binnen het vakje blijven */
+.ProductDisplayLeft img {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.ProductDisplayPrice{
+.ProductDisplayRight {
+
+}
+
+.ProductDisplayPrice {
 
 }
 /*Knoppen voor de productpaginas */

@@ -62,11 +62,11 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                     extract($row);
                     //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02 ?>
                     <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
-                        <div class='ProductDisplay'>
-                            <div class='ProductDisplayLeft'>
+                        <div class='row ProductDisplay'>
+                            <div class='col-6 ProductDisplayLeft'>
                                 <img src="data:image/png;base64,<?php print($Photo)?>">
                             </div>
-                            <div class='ProductDisplayRight'>
+                            <div class='col-6 ProductDisplayRight'>
                                 <h3><?php print($StockItemName)?></h3>
                                 <p><?php print($SearchDetails)?></p>
                                 <div class='ProductDisplayPrice'>
