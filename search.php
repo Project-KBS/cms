@@ -98,7 +98,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
                     //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
-                    // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt.
+                    // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt (zie constants.php)
                     $aantalPerPaginaFilter = DEFAULT_PRODUCT_RETURN_AMOUNT;
                     if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
                         $aantalPerPaginaFilter = $_GET['Hoeveelheid'];
@@ -179,10 +179,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $url = "$_SERVER[REQUEST_URI]";
 
                     // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (hier wordt een nieuwe query gebruikt omdat de vorige het aantal met limit weergeeft!!!!!)
-                    $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, 0, 1000000))->rowCount();
+                    $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $orderByFilter, 0, MAX_PRODUCT_RETURN_AMOUNT))->rowCount();
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
-                    printf("<p>%d pagina's gevonden.</p>", $totaalAantalPaginas-1);
+                    printf("<p>%d pagina's gevonden. (%d producten getoond, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
 
                     // Voor elke pagina zet print hij een klikbaar nummertje
                     for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {

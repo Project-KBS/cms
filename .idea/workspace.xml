@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Zet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -459,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574191904287</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Verwijder quotes rondom product id bij links naar product.php">
+      <created>1574192200460</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1574192200460</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +488,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Merge latest offline changes" />
     <MESSAGE value="Update endpoint api-info to use constants defined in vendor.php" />
     <MESSAGE value="Laad navigatiebalk met categorieen uit vanuit database" />
     <MESSAGE value="Bovenste navigatiebalk" />
@@ -506,6 +512,7 @@
     <MESSAGE value="Correcte URL bij pagina nummer linkjes" />
     <MESSAGE value="Fix style" />
     <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gebruik bootstrap columns in productdispaly" />
+    <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verwijder quotes rondom product id bij links naar product.php" />
   </component>
 </project>
