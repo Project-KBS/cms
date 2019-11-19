@@ -126,8 +126,13 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
 
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 5));
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 2000));
                     print("<h1>Zoekresultaten</h1>");
+                    //maakt een teller aan voor het aantal producten met dit filter
+                    $ProductCount=0;
+                    //maakt een lege array aan voor het checken op herhalende producten
+                    $ProductRepeatCheck=array();
+
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -137,10 +142,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
 
 
-
                         //Laat alle zoekresultaten zien
                         if(isset($_GET['Categorie']) && $_GET['Categorie'] > 0) {
                             if($_GET['Categorie'] == $StockGroupID) {
+                                $ProductCount++;
                                 print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
                                 print("<div class='ProductDisplay'>");
                                 print("<div class='ProductDisplayLeft'>");
@@ -153,7 +158,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
                                 print("</div></div></div></a>");
                             }
-                        }else{
+
+                        //checkt of het product al is geprint.
+                        //producten kunnen hier herhalen doordat ze meerdere categorieen hebben.
+                        }elseif(in_array($StockItemID, $ProductRepeatCheck)===FALSE){
+                            array_push($ProductRepeatCheck, $StockItemID, $StockItemName);
+                            $ProductCount++;
                             print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
                             print("<div class='ProductDisplay'>");
                             print("<div class='ProductDisplayLeft'>");
@@ -167,7 +177,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             print("</div></div></div></a>");
                         }
                     }
-
+                    print($ProductCount);
                 } else {
                     print("Geen zoekterm opgegeven");
                 }
