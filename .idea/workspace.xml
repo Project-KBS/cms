@@ -437,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574188761790</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Correcte URL bij pagina nummer linkjes">
+      <created>1574189853918</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1574189853918</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +466,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Set return type in json" />
     <MESSAGE value="Use worldwideimporters database" />
     <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
     <MESSAGE value="Merge latest offline changes" />
@@ -484,6 +490,7 @@
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
     <MESSAGE value="Pagina functie werkt bijna" />
     <MESSAGE value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
+    <MESSAGE value="Correcte URL bij pagina nummer linkjes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcte URL bij pagina nummer linkjes" />
   </component>
 </project>

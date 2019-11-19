@@ -85,7 +85,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                     }
                                 ?>
                             </select>
-                            <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) {echo $_GET["search"]; }?>" />
+                            <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) { echo $_GET["search"]; }?>" />
                             <input type="submit" name="submit" value="ok">
                     </fieldset>
                         </p>
@@ -93,8 +93,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (trim($_GET['search']) != NULL) {
-                    $zoekterm = $_GET['search'];
+                if (isset($_GET["search"]) && $_GET["search"] != NULL) {
+                    $zoekterm = trim($_GET['search']);
 
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
                     //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
@@ -146,26 +146,27 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
 
-                    ?>
-                    <!--Laat alle zoekresultaten zien-->
-                    <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
-                        <div class='ProductDisplay'>
-                           <div class='ProductDisplayLeft'>
-                                <img src="data:image/png;base64,<?php print($Photo)?>">
-                           </div>
-                            <div class='ProductDisplayRight'>
-                                <h3><?php print($StockItemName)?></h3>
-                                <p><?php print($SearchDetails)?></p>
-                            <div class='ProductDisplayPrice'>
-                                <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
-                            </div>
-                            </div>
-                        </div>
-                    </a>
+                        ?>
 
-                <?php
-                    }
-                ?>
+                        <!-- Print dit resultaat -->
+                        <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
+                            <div class='ProductDisplay'>
+                                <div class='ProductDisplayLeft'>
+                                    <img src="data:image/png;base64,<?php print($Photo)?>">
+                                </div>
+                                <div class='ProductDisplayRight'>
+                                    <h3><?php print($StockItemName)?></h3>
+                                    <p><?php print($SearchDetails)?></p>
+                                    <div class='ProductDisplayPrice'>
+                                        <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <?php
+                        }
+                    ?>
 
                 <div class='aantalPaginas'>
                     <button class=\"back\">Forward</button>
