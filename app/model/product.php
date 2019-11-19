@@ -110,7 +110,7 @@ class Product {
      *
      * @return PDOStatement
      */
-    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $StartFrom,  $limit = DEFAULT_PRODUCT_RETURN_AMOUNT) {
+    public static function zoek($database, $zoekterm, $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER, $StartFrom = DEFAULT_PRODUCT_START_FROM, $limit = DEFAULT_PRODUCT_RETURN_AMOUNT) {
         // Als $limit geen integer is, of niet binnen de grenzen valt, wordt de standaard limiet gehanteerd.
         if (filter_var($limit, FILTER_VALIDATE_INT) == false
             || $limit < MIN_PRODUCT_RETURN_AMOUNT
@@ -119,6 +119,13 @@ class Product {
             $limit = DEFAULT_PRODUCT_RETURN_AMOUNT;
         }
 
+        // StartFrom mag niet lager zijn dan 0 en niet hoger zijn dan $limit want dan crasht de SQL query
+        if (filter_var($StartFrom, FILTER_VALIDATE_INT) == false
+            || $StartFrom < 0
+            || $StartFrom > $limit) {
+
+            $StartFrom = DEFAULT_PRODUCT_START_FROM;
+        }
 
         $query = "SELECT
                       p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,

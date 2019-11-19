@@ -26,3 +26,7 @@ const MIN_PRODUCT_RETURN_AMOUNT = 1;
  */
 const DEFAULT_PRODUCT_SORT_ORDER = "ASC";
 
+/**
+ * Vanaf welk resultaat je normaal moet zoeken in de query
+ */
+const DEFAULT_PRODUCT_START_FROM = 0;
