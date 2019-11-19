@@ -106,59 +106,80 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     // defaults voor wanneer het filter niet is ingevuld
                     $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
-                    //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                    if(isset($_GET['sort'])) {
-                        switch ($_GET['Sort']) {
-                            case "NaamASC";
-                                $OrderBy = "p.StockItemName ASC";
-                                break;
-                            case "NaamDESC";
-                                $OrderBy = "p.StockItemName DESC";
-                                break;
-                            case "PrijsASC";
-                                $OrderBy = "p.RecommendedRetailPrice ASC";
-                                break;
-                            case "PrijsDESC";
-                                $OrderBy = "p.RecommendedRetailPrice DESC";
-                                break;
-                        }
+                //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+                //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
+                //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
+                $start_from = ($page-1) * $aantal;
+
+                //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
+                if(isset($_GET['sort'])) {
+                    switch ($_GET['Sort']) {
+                        case "NaamASC";
+                            $OrderBy = "p.StockItemName ASC";
+                            break;
+                        case "NaamDESC";
+                            $OrderBy = "p.StockItemName DESC";
+                            break;
+                        case "PrijsASC";
+                            $OrderBy = "p.RecommendedRetailPrice ASC";
+                            break;
+                        case "PrijsDESC";
+                            $OrderBy = "p.RecommendedRetailPrice DESC";
+                            break;
                     }
+                }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
 
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 2000));
-                    print("<h1>Zoekresultaten</h1>");
-                    //maakt een teller aan voor het aantal producten met dit filter
-                    $ProductCount=0;
-                    //maakt een lege array aan voor het checken op herhalende producten
-                    $ProductRepeatCheck=array();
+                $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $start_from,  $aantal));
+                print("<h1>Zoekresultaten</h1>");
+                // Per rij die we uit de database halen voeren we een stukje code uit
+                $i = 0;
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                    // Per rij die we uit de database halen voeren we een stukje code uit
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
+                    // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
+                    extract($row);
+                    ?>
+                    <!--Laat alle zoekresultaten zien-->
+                    <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
+                        <div class='ProductDisplay'>
+                           <div class='ProductDisplayLeft'>
+                                <img src="data:image/png;base64,<?php print($Photo)?>">
+                           </div>
+                            <div class='ProductDisplayRight'>
+                                <h3><?php print($StockItemName)?></h3>
+                                <p><?php print($SearchDetails)?></p>
+                            <div class='ProductDisplayPrice'>
+                                <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
+                            </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php
+                    $i ++;
+                }
+                $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-                        // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
-                        // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
-                        extract($row);
-
-
-
-                        //Laat alle zoekresultaten zien
-                        if(isset($_GET['Categorie']) && $_GET['Categorie'] > 0) {
-                            if($_GET['Categorie'] == $StockGroupID) {
-                                $ProductCount++;
-                                print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
-                                print("<div class='ProductDisplay'>");
-                                print("<div class='ProductDisplayLeft'>");
-                                print('<img src="data:image/png;base64,' . $Photo . '">');
-                                print("</div>");
-                                print("<div class='ProductDisplayRight'>");
-                                print("<h3>" . $StockItemName . "</h3>");
-                                print("<p>" . $SearchDetails . "</p>");
-                                print("<div class='ProductDisplayPrice'>");
-                                print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
-                                print("</div></div></div></a>");
-                            }
-
+                ?>
+                <div class='aantalPaginas'>
+                <button class=\"back\">Forward</button>'
+                <button class=\"back\">Back</button>'
+                    <?php
+                //Hier reken je uit hoeveel pagina's er nodig zijn door het aantal gevonden artikelen
+                //Dit klopt nog niet, de href fundtie stinkt als een motherfucker
+                //Als je aan het einde van de url handmatig &page='een getal' invoert doet hij het wel.
+                for($aantalPaginas = 1; $aantalPaginas < ceil(($i/$aantal)+1); $aantalPaginas++){
+                    //Hij plakt er nu gewoon '&page=1' achter, ongeacht of die er al instaat
+                    print("<a href='". $url . "&page=" . $aantalPaginas . "'>$aantalPaginas</a>");
+                    print($i);
+                }
+                print("</div");
+            } else {
+                print("Geen zoekterm opgegeven");
+            }
+                /*
                         //checkt of het product al is geprint.
                         //producten kunnen hier herhalen doordat ze meerdere categorieen hebben.
                         }elseif(in_array($StockItemID, $ProductRepeatCheck)===FALSE){
@@ -180,7 +201,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     print($ProductCount);
                 } else {
                     print("Geen zoekterm opgegeven");
-                }
+                }*/
 
                 ?>
 

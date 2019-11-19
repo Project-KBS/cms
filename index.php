@@ -60,19 +60,22 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
                     // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                     extract($row);
-
-                    // Laat de resultaten zien van read();
-                    print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
-                    print("<div class='ProductDisplay'>");
-                    print("<div class='ProductDisplayLeft'>");
-                    print('<img src="data:image/png;base64,' . $Photo . '">');
-                    print("</div>");
-                    print("<div class='ProductDisplayRight'>");
-                    print("<h3>" . $StockItemName . "</h3>");
-                    print("<p>" . $SearchDetails . "</p>");
-                    print("<div class='ProductDisplayPrice'>");
-                    print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
-                    print("</div></div></div></a>");
+                    //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02 ?>
+                    <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
+                        <div class='ProductDisplay'>
+                            <div class='ProductDisplayLeft'>
+                                <img src="data:image/png;base64,<?php print($Photo)?>">
+                            </div>
+                            <div class='ProductDisplayRight'>
+                                <h3><?php print($StockItemName)?></h3>
+                                <p><?php print($SearchDetails)?></p>
+                                <div class='ProductDisplayPrice'>
+                                    <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <?php
                 }
                 ?>
             </div>
