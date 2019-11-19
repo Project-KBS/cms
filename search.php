@@ -78,9 +78,9 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                         extract($row);
 
                                         //Deze regels zorgen ervoor dat elke categorie een filter optie krijgt.
-                                        print("<option value = '" . $StockGroupID . "' ");
-                                        echo (isset($_GET['Categorie']) && $_GET['Categorie'] == $StockGroupID) ? 'selected="selected"' : '';
-                                        print(">" . $StockGroupName . "</option>");
+                                        //print("<option value = '" . $StockGroupID . "' ");
+                                        /*echo (isset($_GET['Categorie']) && $_GET['Categorie'] == $StockGroupID) ? 'selected="selected"' : '';
+                                        print(">" . $StockGroupName . "</option>");*/
 
                                     }
                                 ?>
@@ -93,7 +93,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (trim($_GET['search'])!=NULL) {
+                if (trim($_GET['search']) != NULL) {
                     $zoekterm = $_GET['search'];
 
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
@@ -107,13 +107,18 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
                 //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
-                if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+                if (isset($_GET["page"]) && filter_var($_GET["page"], FILTER_VALIDATE_INT) == true) {
+                    $page = $_GET["page"];
+                } else {
+                    $page = 1;
+                };
+
                 //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
                 //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
                 $start_from = ($page-1) * $aantal;
 
                 //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                if(isset($_GET['sort'])) {
+                if(isset($_GET['Sort'])) {
                     switch ($_GET['Sort']) {
                         case "NaamASC";
                             $OrderBy = "p.StockItemName ASC";
@@ -130,10 +135,10 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     }
                 }
 
-                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
-
-                $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $start_from,  $aantal));
+                // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
+                $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $start_from, $aantal));
                 print("<h1>Zoekresultaten</h1>");
+
                 // Per rij die we uit de database halen voeren we een stukje code uit
                 $i = 0;
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -141,6 +146,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     // Dit zorgt er voor dat we alle database attributen kunnen gebruiken als variabelen
                     // (bijv. kolom "StockItemName" kunnen we gebruiken in PHP als "$StockItemName") (PHPStorm geeft rood streepje aan maar het werkt wel)
                     extract($row);
+
                     ?>
                     <!--Laat alle zoekresultaten zien-->
                     <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
@@ -157,6 +163,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             </div>
                         </div>
                     </a>
+
                 <?php
                     $i ++;
                 }
@@ -164,21 +171,30 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 ?>
                 <div class='aantalPaginas'>
-                <button class=\"back\">Forward</button>'
-                <button class=\"back\">Back</button>'
+                <button class=\"back\">Forward</button>
+                <button class=\"back\">Back</button>
                     <?php
                 //Hier reken je uit hoeveel pagina's er nodig zijn door het aantal gevonden artikelen
                 //Dit klopt nog niet, de href fundtie stinkt als een motherfucker
                 //Als je aan het einde van de url handmatig &page='een getal' invoert doet hij het wel.
                 //Het probleem zit 'm er in dat hij de hoeveelheid gevonden producten ($aantal) deelt door zichzelf ($i), hierdoor is het altijd 1.
                 //$aantal moet het totaal aantal gevonden dingen zijn, maar ik weet niet hoe ik dit moet fixen :((
-                    $total_pages = ceil($row["total"] / $aa);
-                for($aantalPaginas = 1; $aantalPaginas < ceil(($i/$aantal)+1); $aantalPaginas++){
-                    //Hij plakt er nu gewoon '&page=1' achter, ongeacht of die er al instaat
-                    print("<a href='". $url . "&page=" . $aantalPaginas . "'>$aantalPaginas</a>");
-                    print($i);
+
+                    //$total_pages = ceil($row["total"] / $aa);
+
+                $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 0, 1000000))->rowCount();
+
+                $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $i + 1);
+
+                printf("TOTAAL: %d <br>", $totaalAantalPaginas);
+
+                if ($totaalAantalPaginas > 0) {
+                    for ($pagina = 1; $pagina < ceil($totaalAantalProductenMatchingFilter / $i + 1); $pagina++) {
+                        //Hij plakt er nu gewoon '&page=1' achter, ongeacht of die er al instaat
+                        print("<a href='" . $url . "&page=" . $pagina . "'>$pagina </a>");
+                    }
                 }
-                print("</div");
+                print("</div>");
             } else {
                 print("Geen zoekterm opgegeven");
             }
