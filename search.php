@@ -126,7 +126,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
 
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, $aantal));
+                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $OrderBy, 5));
                     print("<h1>Zoekresultaten</h1>");
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
