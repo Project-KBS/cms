@@ -61,7 +61,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                     // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                     extract($row);
                     //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02 ?>
-                    <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
+                    <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                         <div class='row ProductDisplay'>
                             <div class='col-6 ProductDisplayLeft'>
                                 <img src="data:image/png;base64,<?php print($Photo)?>">

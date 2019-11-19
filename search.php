@@ -149,7 +149,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         ?>
 
                         <!-- Print dit resultaat -->
-                        <a href='product.php?id="<?php print($StockItemID)?>"' class='SearchProductDisplayLink'>
+                        <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                             <div class='row ProductDisplay'>
                                 <div class='col-6 ProductDisplayLeft'>
                                     <img src="data:image/png;base64,<?php print($Photo)?>">

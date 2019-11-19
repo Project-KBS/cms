@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
@@ -453,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574190090199</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Gebruik bootstrap columns in productdispaly">
+      <created>1574191904287</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1574191904287</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +481,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Return error if database is offline, create methods for returning data, create constants file" />
     <MESSAGE value="Merge latest offline changes" />
     <MESSAGE value="Update endpoint api-info to use constants defined in vendor.php" />
     <MESSAGE value="Laad navigatiebalk met categorieen uit vanuit database" />
@@ -500,6 +505,7 @@
     <MESSAGE value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
     <MESSAGE value="Correcte URL bij pagina nummer linkjes" />
     <MESSAGE value="Fix style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix style" />
+    <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gebruik bootstrap columns in productdispaly" />
   </component>
 </project>
