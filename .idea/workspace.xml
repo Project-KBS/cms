@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,13 +129,6 @@
       <workItem from="1574089842311" duration="2043000" />
       <workItem from="1574156201878" duration="1130000" />
       <workItem from="1574164367526" duration="9555000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <created>1568753957418</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1568753957418</updated>
     </task>
     <task id="LOCAL-00002" summary="Database class">
       <created>1568754704168</created>
@@ -473,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574193410483</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Check of $StartFrom een correcte waarde heeft, geef anders een default">
+      <created>1574193831095</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1574193831095</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Laad navigatiebalk met categorieen uit vanuit database" />
     <MESSAGE value="Bovenste navigatiebalk" />
     <MESSAGE value="Push flexbox items in navigatie-site naar correcte plaats" />
     <MESSAGE value="Maak een template van de header zodat we hem kunnen hergebruiken" />
@@ -520,6 +519,7 @@
     <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
     <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
     <MESSAGE value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
+    <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
   </component>
 </project>

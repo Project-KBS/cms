@@ -75,6 +75,9 @@ include_once "../app/vendor.php";
     background: <?php echo VENDOR_THEME_COLOR_PRIMARY ?>;
 
     overflow: hidden;
+
+    /* De z-index zorgt er voor dat de balk boven de content van de pagina blijft */
+    z-index: 69;
 }
 
 /* Dit zijn de individuele elementen binnen de navigatiebalk*/
