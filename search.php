@@ -103,20 +103,20 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     // defaults voor wanneer het filter niet is ingevuld
                     $OrderBy = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
 
-                    //if-statement om te kijken op welke manier de resultaten gesorteerd moeten worden
-                    /**
-                     * Hij geeft wel aan dat hij de juiste parameters krijgt, maar het werkt nog niet, kan iemand hier naar kijken
-                     */
-                    if(isset($_GET['Sort'])){
-                        if($_GET['Sort'] === "NaamASC"){
+                    //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
+                    switch($_GET['Sort']){
+                        case "NaamASC";
                             $OrderBy = "p.StockItemName ASC";
-                        } elseif ($_GET['Sort'] === "NaamDESC"){
+                            break;
+                        case "NaamDESC";
                             $OrderBy = "p.StockItemName DESC";
-                        } elseif ($_GET['Sort'] === "PrijsASC"){
+                            break;
+                        case "PrijsASC";
                             $OrderBy = "p.RecommendedRetailPrice ASC";
-                        } elseif($_GET['Sort'] === "PrijsDESC"){
+                            break;
+                        case "PrijsDESC";
                             $OrderBy = "p.RecommendedRetailPrice DESC";
-                        }
+                            break;
                     }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
