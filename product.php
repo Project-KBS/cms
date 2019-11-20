@@ -200,20 +200,16 @@ function specificaties(){
                                         const source<?php print($teller)?> = video<?php print($teller); ?>.getElementsByTagName('source')[0];
                                         const thumbnail<?php print($teller)?> = document.getElementById("thumbnail<?php print($teller)?>");
 
-                                        // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
-                                        video<?php print($teller)?>.addEventListener("click", function() {
+                                        const functie<?php print($teller)?> = function() {
                                             hoofdvideo.style.display="block";
                                             hoofdfoto.style.display="none";
                                             hoofdvideosource.src= source<?php print($teller)?>.src;
                                             hoofdvideo.load();
-                                        });
+                                        };
 
-                                        thumbnail<?php print($teller)?>.addEventListener("click", function() {
-                                            hoofdvideo.style.display="block";
-                                            hoofdfoto.style.display="none";
-                                            hoofdvideosource.src= source<?php print($teller)?>.src;
-                                            hoofdvideo.load();
-                                        });
+                                        // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
+                                        video<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
+                                        thumbnail<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
 
 
                                     </script>
