@@ -141,14 +141,13 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 break;
                         }
                     }
-                    $selectedCategory = $_GET['Categorie'];
 
                     // Moeten we categorie-specifiek zoeken?
 
                     if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
                         $selectedCategory = $_GET["Categorie"];
-                    } else{
-     //                   $selectedCategory = $_GET['Categorie'];
+                    } else {
+                        $selectedCategory = null;
                     }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:

@@ -144,6 +144,13 @@ class Product {
             }
         }
 
+        $isInt = filter_var($zoekterm, FILTER_VALIDATE_INT) == true;
+
+        if ($isInt) {
+            $StartFrom = 0;
+            $limit = 10;
+        }
+
         $query = "SELECT
                       p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
                       p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
@@ -155,20 +162,26 @@ class Product {
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  WHERE p.StockItemName LIKE :zoekterm 
-                  
+                  " . ($isInt ? " WHERE p.StockItemID = :zoektermi " : "WHERE p.StockItemName LIKE :zoekterm" )  . "
+
                   " . ($categorie != null ? "AND p.StockItemID IN (SELECT sub.StockItemID FROM StockItemStockGroups sub WHERE sub.StockGroupID = :categorie)" : "") .  "
-                  
+
                   ORDER BY " . $OrderBy . "
                   LIMIT :begin, :limiet";
 
         $stmt = $database->prepare($query);
 
-        // Zet wildcards aan het begin en eind van de zoekterm
-        $zoekterm = "%" . $zoekterm . "%";
+        if (!$isInt) {
+            // Zet wildcards aan het begin en eind van de zoekterm
+            $zoekterm = "%" . $zoekterm . "%";
+        }
 
-        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
-        $stmt->bindValue(":zoekterm", $zoekterm,  PDO::PARAM_STR);
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen\
+        if ($isInt) {
+            $stmt->bindValue(":zoektermi", $zoekterm, PDO::PARAM_INT);
+        } else {
+            $stmt->bindValue(":zoekterm", $zoekterm, PDO::PARAM_STR);
+        }
         $stmt->bindValue(":limiet",   $limit,     PDO::PARAM_INT);
         $stmt->bindValue(":begin",    $StartFrom, PDO::PARAM_INT);
 
