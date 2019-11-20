@@ -28,9 +28,9 @@ include_once "../app/vendor.php";
 
 /* 404 pagina niet gevonden knop om terug te gaan naar de homepage */
 .Big-button{
-    width: 500px;
-    height: 200px;
-    font-size: 40px;
+    width: 25vw;
+    height: 20vh;
+    font-size: 2vw;
 }
 
 .Productphoto{

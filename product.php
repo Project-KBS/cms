@@ -121,8 +121,11 @@ function specificaties(){
                             <div id="linksonder">
 
                                 <script>
+                                    /* Maakt een variabele aan voor de foto */
                                     const hoofdfoto = document.getElementById("Productphoto");
+                                    /* Maakt een variabele aan voor de video */
                                     const hoofdvideo = document.getElementById("Productvideo");
+                                    /* Maakt een variabele aan voor de videosource */
                                     const hoofdvideosource = hoofdvideo.getElementsByTagName('source')[0];
                                 </script>
 
@@ -145,6 +148,7 @@ function specificaties(){
                                 }
 
                                 $teller = 0;
+                                // Deze loop zorgt ervoor dat de thumbnailfoto's onder de hoofdfoto komen. Er worden meerdere geprint
                                 foreach ($images as $image) {
                                     ?>
 
@@ -159,9 +163,9 @@ function specificaties(){
                                         foto<?php print($teller)?>.addEventListener("click", function() {
                                             // Kopieer letterlijk de waarde van het source attribuut van de foto naar de hoofdfoto
                                             hoofdfoto.setAttribute("src", foto<?php print($teller)?>.getAttribute("src"));
-
-                                            // Verberg de hoofdfoto indien hij er nog staat
+                                            /* Zorgt ervoor dat de video niet zichtbaar is*/
                                             hoofdvideo.style.display="none";
+                                            /* Zorgt ervoor dat de foto zichtbaar wordt */
                                             hoofdfoto.style.display="block";
                                         });
                                     </script>
@@ -177,11 +181,10 @@ function specificaties(){
                                 $teller = 0;
                                 foreach ($videos as $video) {
                                     ?>
+                                    <!-- plakt het rode play emblem OP de videos zodat deze te onderscheiden zijn van foto's -->
+                                    <img id="thumbnail<?php print($teller)?>" style="width: 10%; padding: 10px; z-index: 2; position: absolute"  src="img/video/video.png">
 
-                                    <!-- De rode knop overlay -->
-                                    <img id="thumbnail<?php print($teller)?>" style="width: 10%; padding: 10px; z-index: 2; position: absolute" src="img/video/video.png">
-
-                                    <!-- Deze video preview -->
+                                    <!-- Maakt een kleine weergave van de video voor het overzicht-->
                                     <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px; z-index: 1">
                                         <source src=<?php print($video); ?> type="video/mp4">
                                         Your browser does not support HTML5 video.
@@ -212,7 +215,7 @@ function specificaties(){
                                         // Als je op de video klikt dan wordt de functie uitgevoerd
                                         video<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
 
-                                        // Als je op de rode knop klikt dan wordt de functie uitgevoerd
+                                        // Als je op de rode knop klikt dan wordt de functie ook uitgevoerd
                                         thumbnail<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
                                     </script>
 
@@ -228,9 +231,11 @@ function specificaties(){
                         </div>
 
                         <div id="rechts" class="col-6" style=" padding: 0">
+                            <!-- Print de prijs-->
                             <h1>€ <?php print($RecommendedRetailPrice) ?></h1>
 
                             <h3> <?php
+                                // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
                                 if($QuantityOnHand > 0) {
                                     print("Op voorraad");
                                 } else {
@@ -259,9 +264,10 @@ function specificaties(){
                             <h3>Productomschrijving</h3>
 
                             <?php
-                                if(isset($SearchDetails) && $SearchDetails != null){
-                                    print($SearchDetails);
-                                }
+                            //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
+                            if(isset($SearchDetails) && $SearchDetails != null){
+                                print($SearchDetails);
+                            }
                             ?>
 
                             <hr>
@@ -300,6 +306,7 @@ function specificaties(){
 
                 <?php
                 } else {
+                    // Voor de veiligheid en tegen errors geeft dit een foutmelding aan de gebruiker wanneer een product niet bestaat van dat ID
                     include("tpl/Foutproduct.html");
                 }
 

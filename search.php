@@ -201,6 +201,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                         <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                             <div class='row ProductDisplay'>
                                 <div class='col-6 ProductDisplayLeft'>
+                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
                                     <img src="data:image/png;base64, <?php
                                                                     if (isset($Photo) && $Photo != null) {
                                                                         print($Photo);
