@@ -14,6 +14,13 @@ include_once "../app/vendor.php";
     opacity: 15;
 }
 
+.content-container-home {
+    width: 80vw;
+    height: 40vw;
+    margin-left: 10vw;
+    margin-top: 5vh;
+}
+
 .content-container {
     width: 50vw;
     margin-left: 25vw;
@@ -31,18 +38,62 @@ include_once "../app/vendor.php";
     width: 100%;
 }
 
-
 .ProductDisplay {
     border: 1px solid black;
     border-radius: 3px;
     padding: 1vw;
     margin-bottom: 2vw;
     background-color: #DFF5F3;
-    width: 50vw;
-    height: 40vh;
+    width: 45vw;
     color: black;
-
     max-height: 15.25em;
+}
+
+.ProductDisplay1 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    height: 60vh;
+}
+
+.ProductDisplay2 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 20vw;
+    height: 60vh;
+}
+
+.ProductDisplay3 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 40vw;
+    height: 60vh;
+}
+
+.ProductDisplay4 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 60vw;
+    height: 60vh;
 }
 
 .ProductDisplay:hover {
@@ -50,8 +101,23 @@ include_once "../app/vendor.php";
     color: #020042;
 }
 
+.ProductDisplayTop {
+
+}
+
+/* Zorg dat alle afbeeldingen binnen het vakje blijven */
+.ProductDisplayTop img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ProductDisplayBottom {
+
+}
+
 .ProductDisplayLeft {
-    height: 100%;
+    height: 25vh;
 }
 
 /* Zorg dat alle afbeeldingen binnen het vakje blijven */

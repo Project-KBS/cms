@@ -194,3 +194,29 @@ include_once "../app/vendor.php";
 /* Hier begint de css van de footer
  */
 
+.footer {
+    background: <?php echo VENDOR_THEME_COLOR_DARK ?>;
+}
+
+.footer-left {
+    position: absolute;
+    width: 30vw;
+    height: 30vh;
+    background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
+}
+
+.footer-center {
+    position: absolute;
+    width: 40vw;
+    height: 30vh;
+    margin-left: 30vw;
+    background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
+}
+
+.footer-right {
+    position: absolute;
+    width: 30vw;
+    height: 30vh;
+    margin-left: 70vw;
+    background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
+}
