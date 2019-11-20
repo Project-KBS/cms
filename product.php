@@ -188,7 +188,7 @@ function specificaties(){
 
                                     <script>
                                         const video<?php print($teller)?> = document.getElementById("video<?php print($teller)?>");
-                                        const source<?php print($teller)?> = video.getElementsByTagName('source')[0];
+                                        const source<?php print($teller)?> = video<?php print($teller); ?>.getElementsByTagName('source')[0];
 
 
                                         // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
