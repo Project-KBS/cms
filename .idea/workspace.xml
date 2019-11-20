@@ -41,8 +41,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -129,13 +129,6 @@
       <workItem from="1574156201878" duration="1130000" />
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
-    </task>
-    <task id="LOCAL-00005" summary="Return error if database is offline, create methods for returning data, create constants file">
-      <created>1570621058409</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1570621058409</updated>
     </task>
     <task id="LOCAL-00006" summary="Merge latest offline changes">
       <created>1572526007545</created>
@@ -473,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574248086527</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Check if debugging is enabled before throwing error">
+      <created>1574249681738</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1574249681738</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Maak een template van de header zodat we hem kunnen hergebruiken" />
     <MESSAGE value="Zet database.php om naar een singleton" />
     <MESSAGE value="Zet read() functies in model om naar static functions" />
     <MESSAGE value="oinjkl" />
@@ -520,6 +519,7 @@
     <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
     <MESSAGE value="Fix z-index value van de navigatie-categorieen balk" />
     <MESSAGE value="videoplayer java script" />
-    <option name="LAST_COMMIT_MESSAGE" value="videoplayer java script" />
+    <MESSAGE value="Check if debugging is enabled before throwing error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check if debugging is enabled before throwing error" />
   </component>
 </project>

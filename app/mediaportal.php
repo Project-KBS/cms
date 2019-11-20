@@ -29,7 +29,7 @@ class MediaPortal {
             if (IS_DEBUGGING_ENABLED) {
                 throw new Exception("Bestand niet gevonden");
             } else {
-                return null;
+                return "";
             }
         }
     }
@@ -60,7 +60,7 @@ class MediaPortal {
             if (IS_DEBUGGING_ENABLED) {
                 throw new Exception("Bestand niet gevonden");
             } else {
-                return null;
+                return array();
             }
         }
     }
@@ -86,7 +86,7 @@ class MediaPortal {
             if (IS_DEBUGGING_ENABLED) {
                 throw new Exception("Bestand niet gevonden");
             } else {
-                return null;
+                return array();
             }
         }
     }
