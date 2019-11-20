@@ -39,7 +39,7 @@ class MediaPortal {
      */
     public static function getProductImages(int $productId) {
         if (filter_var($productId, FILTER_VALIDATE_INT) == false) {
-            throw new Exception("Fout in categorie nummer");
+            throw new Exception("Fout in product nummer");
         }
 
         $directory = "mp/product/$productId/";
@@ -52,6 +52,28 @@ class MediaPortal {
                 $images[] = base64_encode(file_get_contents($path));
             }
             return $images;
+        } else {
+            throw new Exception("Bestand niet gevonden");
+        }
+    }
+
+    /**
+     * Verkrijg een array met video's filepaths behorend tot $productId
+     *
+     * @param int $productId
+     * @return array Met base64 encoded video filepaths
+     * @throws Exception
+     */
+    public static function getProductVideos(int $productId) {
+        if (filter_var($productId, FILTER_VALIDATE_INT) == false) {
+            throw new Exception("Fout in product nummer");
+        }
+
+        $directory = "mp/product/$productId/";
+
+        // Als de product directory bestaat
+        if (file_exists($directory) && is_dir($directory)) {
+            return glob($directory . "**.{mp4,ogg}", GLOB_BRACE);
         } else {
             throw new Exception("Bestand niet gevonden");
         }
