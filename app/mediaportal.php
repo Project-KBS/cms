@@ -26,7 +26,11 @@ class MediaPortal {
         if (file_exists($filename)) {
             return base64_encode(file_get_contents($filename));
         } else {
-            throw new Exception("Bestand niet gevonden");
+            if (IS_DEBUGGING_ENABLED) {
+                throw new Exception("Bestand niet gevonden");
+            } else {
+                return null;
+            }
         }
     }
 
@@ -53,7 +57,11 @@ class MediaPortal {
             }
             return $images;
         } else {
-            throw new Exception("Bestand niet gevonden");
+            if (IS_DEBUGGING_ENABLED) {
+                throw new Exception("Bestand niet gevonden");
+            } else {
+                return null;
+            }
         }
     }
 
@@ -75,7 +83,11 @@ class MediaPortal {
         if (file_exists($directory) && is_dir($directory)) {
             return glob($directory . "**.{mp4,ogg}", GLOB_BRACE);
         } else {
-            throw new Exception("Bestand niet gevonden");
+            if (IS_DEBUGGING_ENABLED) {
+                throw new Exception("Bestand niet gevonden");
+            } else {
+                return null;
+            }
         }
     }
 
