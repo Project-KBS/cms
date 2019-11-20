@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/sale_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/sale_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,9 +43,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
     </option>
@@ -66,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Webprogrammeren" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
   </component>
@@ -129,6 +131,13 @@
       <workItem from="1574156201878" duration="1130000" />
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
+    </task>
+    <task id="LOCAL-00003" summary="Set return type in json">
+      <created>1568805480201</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568805480201</updated>
     </task>
     <task id="LOCAL-00004" summary="Use worldwideimporters database">
       <created>1570547540409</created>
@@ -466,14 +475,7 @@
       <option name="project" value="LOCAL" />
       <updated>1574194399792</updated>
     </task>
-    <task id="LOCAL-00052" summary="fotos en test mp4&#10;&#10;Video in caroussel ( work in progress)&#10;bij css aantal comments">
-      <created>1574245559251</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1574245559252</updated>
-    </task>
-    <option name="localTasksCounter" value="53" />
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,6 +497,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Push flexbox items in navigatie-site naar correcte plaats" />
     <MESSAGE value="Maak een template van de header zodat we hem kunnen hergebruiken" />
     <MESSAGE value="Zet database.php om naar een singleton" />
     <MESSAGE value="Zet read() functies in model om naar static functions" />
@@ -519,7 +522,6 @@
     <MESSAGE value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
     <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
     <MESSAGE value="Fix z-index value van de navigatie-categorieen balk" />
-    <MESSAGE value="fotos en test mp4&#10;&#10;Video in caroussel ( work in progress)&#10;bij css aantal comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="fotos en test mp4&#10;&#10;Video in caroussel ( work in progress)&#10;bij css aantal comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix z-index value van de navigatie-categorieen balk" />
   </component>
 </project>

@@ -56,9 +56,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                             <label>Producten per pagina: </label>
                             <select name = "Hoeveelheid">
                                 <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
-                                <option value = "5" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '5') ? 'selected="selected"' : ''; ?>>5</option>
                                 <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
-                                <option value = "20" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '20') ? 'selected="selected"' : ''; ?>>20</option>
+                                <option value = "25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
                                 <option value = "50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
                             </select>
                             <label>Sorteren: </label>
@@ -79,9 +78,11 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                                         ?>
 
-                                        <option value='<?php print($StockGroupID) ?>' <?php if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
-                                                                                                print("selected=\"selected\"");
-                                                                                            } ?>><?php print($StockGroupName) ?></option>
+                                        <option value='<?php print($StockGroupID) ?>'
+                                            <?php if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
+                                                        print("selected=\"selected\"");
+                                                    } ?>><?php print($StockGroupName) ?>
+                                        </option>
 
                                         <?php
                                     }

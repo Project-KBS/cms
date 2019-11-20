@@ -51,6 +51,9 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
             <!-- Inhoud pagina -->
             <div class="content-container">
                 <?php
+                //Als de sales template klaar is kunnen we de comments hier onder weghalen en dan worden de sales bovenaan de pagina geladen.
+                //include("tpl/sale_template.php");
+
                 // Alle SQL magie en PDO connectie shit gebeurt in `Product::read()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
                 // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
                 $stmt = (Product::read(Database::getConnection(), 5));
@@ -84,7 +87,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
         <div class="footer-container">
             <?php
-            //    include("tpl/footer_template.php");
+            // include("tpl/footer_template.php");
             ?>
 
         </div>
