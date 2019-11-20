@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Aanpassing grootte video">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cms/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +41,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -132,13 +130,6 @@
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
       <workItem from="1574253911143" duration="518000" />
-    </task>
-    <task id="LOCAL-00008" summary="Laad navigatiebalk met categorieen uit vanuit database">
-      <created>1572633241255</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1572633241255</updated>
     </task>
     <task id="LOCAL-00009" summary="Bovenste navigatiebalk">
       <created>1572716601119</created>
@@ -476,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574254604337</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Responsive product grid in index.php">
+      <created>1574269238525</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1574269238525</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +496,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="oinjkl" />
     <MESSAGE value="CSS geüpdate" />
     <MESSAGE value="Zoekbalk ding" />
     <MESSAGE value="joejoe" />
@@ -523,6 +520,7 @@
     <MESSAGE value="Check if debugging is enabled before throwing error" />
     <MESSAGE value="Return empty array instead of null" />
     <MESSAGE value="Aanpassing grootte video" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aanpassing grootte video" />
+    <MESSAGE value="Responsive product grid in index.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Responsive product grid in index.php" />
   </component>
 </project>

@@ -76,9 +76,9 @@ include_once "../app/vendor.php";
 }
 
 /**
- * Extra regels die op product-display gelden als de user er met de muis overheen gaat
+ * Extra regels die op onderliggende items van het product-display gelden als de user er met de muis overheen gaat
  */
-.product-display:hover {
+.product-display *:hover {
     /* Opmaak eigenschappen */
     text-decoration: none;
 }
