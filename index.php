@@ -50,42 +50,43 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
             <!-- Inhoud pagina -->
             <div class="content-container-home">
+                <div id="product-sectie" class="d-flex flex-row">
                 <?php
                 //Als de sales template klaar is kunnen we de comments hier onder weghalen en dan worden de sales bovenaan de pagina geladen.
                 //include("tpl/sale_template.php");
 
                 // Alle SQL magie en PDO connectie shit gebeurt in `Product::read()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
-                // Maar er is nog geen zoekfunctie in Product::read dus die moeten we nog maken. De volgende code laadt de 5 eerste producten in de DB en geeft ze weer:
-                $stmt = (Product::read(Database::getConnection(), 4));
+                // De volgende code laadt de 16 eerste producten in de DB en geeft ze weer:
+                $stmt = (Product::read(Database::getConnection(), 16));
 
-                $Productnumber=1;
                 // Per rij die we uit de database halen voeren we een stukje code uit
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
 
                         // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
                         extract($row);
                         //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02
 
-
                         ?>
-                        <a href='product.php?id=<?php print($StockItemID) ?>' class='SearchProductDisplayLink'>
-                            <div class='ProductDisplay<?php print($Productnumber); $Productnumber++; ?>'>
-                                <div class='ProductDisplayTop'>
+
+                        <div class="product-display d-flex">
+                            <a href="product.php?id=<?php print($StockItemID) ?>">
+                                <div class="product-foto">
                                     <img src="data:image/png;base64,<?php print($Photo) ?>">
                                 </div>
-                                <div class='ProductDisplayBottom'>
-                                    <h3><?php print($StockItemName) ?></h3>
+                                <div class="product-beschrijving">
+                                    <h4><?php print($StockItemName) ?></h4>
                                     <p><?php print($SearchDetails) ?></p>
-                                    <div class='ProductDisplayPrice'>
-                                        <h5>Prijs: <?php print($RecommendedRetailPrice) ?></h5>
+                                    <div class="product-prijs">
+                                        <h5>€<?php print($RecommendedRetailPrice) ?></h5>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
+
                         <?php
                 }
                 ?>
+                </div>
             </div>
 
         </div>
