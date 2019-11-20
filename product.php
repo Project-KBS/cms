@@ -311,7 +311,7 @@ function specificaties(){
 
             <!-- Print de footer (contact info, etc.) -->
             <?php
-                 // include("tpl/footer_template.php");
+                 include("tpl/footer_template.php");
             ?>
 
         </div>

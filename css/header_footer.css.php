@@ -9,9 +9,24 @@ include_once "../app/vendor.php";
 ?>
 
 /* Dit is de gehele header area, "promotie" en "navigatie" vallen hierbinnen. */
- #header {
+#header {
      background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
- }
+}
+
+#footer {
+    padding: 3vw;
+
+    background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
+    color: <?php echo VENDOR_THEME_COLOR_TEXT_DISABLED ?>;
+}
+
+#footer hr {
+    
+}
+
+#footer div {
+    padding: 0 2vw;
+}
 
 #promotie {
     margin: 1.2rem 0 0.9rem 0;

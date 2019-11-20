@@ -1,44 +1,47 @@
-<footer class="footer">
-    <div class="footer-top"></div>
-    <div class="footer-left">
-        <img src="img/logo/small-250x90.png">
-        <h3>Over <span>Wide World Importers</span></h3>
+<footer id="footer" class="row">
 
-        <p class="footer-links">
-            <a href="#">Home</a>
-            |
-            <a href="#">About</a>
-            |
-            <a href="#">Contact</a>
+    <div id="footer-links" class="col-4">
+
+        <h3>Over Wide World Importers</h3>
+        <hr>
+
+        <p>
+            Wij zijn een importeur en distributeur van groothandelsartikelen zoals kleding, speelgoed en etenswaren.
+            Ons bedrijf is gevestigd in de baai van San Francisco in de Verenigde Staten.
         </p>
-        <p class="footer-company-name">Wide World Importers.</p>
+
     </div>
 
-    <div class="footer-center">
-        <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span><-insert address-><!-- Hier komt het adres wat we moeten invullen --></p>
-        </div>
+    <div id="footer-midden" class="col-4">
 
-        <div>
-            <i class="fa fa-phone"></i>
-            <p><-insert phonenumber-><!-- Hier komt het telefoonnummer --></p>
-        </div>
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="<!-- Hier moet een href komen met een mailadres -->"></a>emailadres</a></p>
-        </div>
+        <h3>Contactgegevens</h3>
+        <hr>
+
+        <!-- Vul ff met niets zodat we het kunnen uittesten -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
     </div>
-    <div class="footer-right">
-        <p class="footer-company-about">
-            <span>About the company</span>
-            <-insert company motto-><!-- Hiet moet het motto komen--></p>
-        <div class="footer-icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-youtube"></i></a>
-        </div>
+
+    <div id="footer-rechts" class="col-4">
+
+        <h3>Wat moet hier??</h3>
+        <hr>
+
+        tekst tekst tekst<br>
+        Job is een badass
+
     </div>
+
 </footer>

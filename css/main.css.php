@@ -5,12 +5,14 @@ header('Content-Type: text/css');
 // Uit vendor.php zijn we de constanten nodig. (voor kleuren etc)
 include_once "../app/vendor.php";
 ?>
-#knop{
+
+#knop {
     width: 5vw;
     height: 100%;
     padding: 0;
 }
-#knop:hover{
+
+#knop:hover {
     opacity: 15;
 }
 
@@ -122,16 +124,15 @@ include_once "../app/vendor.php";
  */
 .product-beschrijving h5 {
     /* Opmaak eigenschappen */
-    color: #ff0000;
+    color: <?php echo VENDOR_THEME_COLOR_HIGHLIGHT ?>;
 }
 
 /* Presentation stuff */
 .aantalPaginas {
     width: 50vw;
-    background: #efefef;
+    background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
     padding: 30px 10px;
     box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto 0;
     text-align: center;
 }
