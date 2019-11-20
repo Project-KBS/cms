@@ -198,6 +198,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         ?>
 
                         <!-- Hij plakt er nu gewoon '&page=69' achter, ongeacht of die er al instaat -->
+
                         <a href='<?php print($url . "&page=" . $paginaNummer ) ?>'><?php print($paginaNummer) ?></a>
 
                         <?php

@@ -155,7 +155,7 @@ class Product {
                   LEFT JOIN colors c ON p.ColorID = c.ColorID
                   LEFT JOIN packagetypes u ON p.UnitPackageID = u.PackageTypeID
                   LEFT JOIN packagetypes o ON p.OuterPackageID = o.PackageTypeID
-                  WHERE p.StockItemName LIKE :zoekterm
+                  WHERE p.StockItemName LIKE :zoekterm OR p.StockItemID LIKE :zoekterm
                   
                   " . ($categorie != null ? "AND p.StockItemID IN (SELECT sub.StockItemID FROM StockItemStockGroups sub WHERE sub.StockGroupID = :categorie)" : "") .  "
                   
