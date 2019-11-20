@@ -38,93 +38,104 @@ include_once "../app/vendor.php";
     width: 100%;
 }
 
-/**
- * Dit is de overkoepelende div van alle producten
- *
- * Bootstrap geeft automatisch display:flex!
- */
-#product-sectie {
-    /* Element eigenschappen */
-    position: relative;
-
-    /* Flexbox eigenschappen */
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: stretch;
-    align-content: start;
+.ProductDisplay {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    margin-bottom: 2vw;
+    background-color: #DFF5F3;
+    width: 45vw;
+    color: black;
+    max-height: 15.25em;
 }
 
-/**
- * Dit is een div van een product
- *
- * Bootstrap geeft automatisch display:flex!
- */
-.product-display {
-    /* Element eigenschappen */
-    margin: 1rem;
-    padding: 0.4rem;
-    min-width: 20rem;
-
-    /* Flexbox eigenschappen */
-    flex: 1 15%;
-    flex-direction: column;
-    justify-content: start;
-    align-content: start;
-
-    /* Opmaak eigenschappen */
-    border: 1px solid #d1d1d1;
+.ProductDisplay1 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    height: 60vh;
 }
 
-/**
- * Extra regels die op onderliggende items van het product-display gelden als de user er met de muis overheen gaat
- */
-.product-display *:hover {
-    /* Opmaak eigenschappen */
-    text-decoration: none;
+.ProductDisplay2 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 20vw;
+    height: 60vh;
 }
 
-/**
- * De div met de productfoto
- */
-.product-foto {
+.ProductDisplay3 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 40vw;
+    height: 60vh;
+}
+
+.ProductDisplay4 {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1vw;
+    background-color: #DFF5F3;
+    width: 19vw;
+    color: black;
+    position: absolute;
+    margin-left: 60vw;
+    height: 60vh;
+}
+
+.ProductDisplay:hover {
+    background-color: #D3EBE9;
+    color: #020042;
+}
+
+.ProductDisplayTop {
 
 }
 
-/**
- * De productfoto
- */
-.product-foto img {
-    /* Element eigenschappen */
+/* Zorg dat alle afbeeldingen binnen het vakje blijven */
+.ProductDisplayTop img {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/**
- * De div met info van het product
- */
-.product-beschrijving {
-    /* Element eigenschappen */
-    margin-top: auto;
-    padding-top: 1.4rem;
+.ProductDisplayBottom {
 
-    /* Opmaak eigenschappen */
-    text-align: center;
 }
 
-/**
- * De omschrijving van het product
- */
-.product-beschrijving p {
-    /* Opmaak eigenschappen */
-    color: #555;
+.ProductDisplayLeft {
+    height: 25vh;
 }
 
-/**
- * De prijs tekst
- */
-.product-beschrijving h5 {
-    /* Opmaak eigenschappen */
-    color: #ff0000;
+/* Zorg dat alle afbeeldingen binnen het vakje blijven */
+.ProductDisplayLeft img {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.ProductDisplayRight {
+
+}
+
+.ProductDisplayPrice {
+
+}
+/*Knoppen voor de productpaginas */
+
 
 /* Presentation stuff */
 .aantalPaginas {

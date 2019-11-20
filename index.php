@@ -79,6 +79,10 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                                     <div class="product-prijs">
                                         <h5>€<?php print($RecommendedRetailPrice) ?></h5>
                                     </div>
+                                    <form method="GET" name="winkelmandje" action="/product.php?id=<?php print($StockItemID) ?>">
+                                        <input type="submit" name="id" value="<?php $StockItemID ?>">
+
+                                    </form>
                                 </div>
                             </a>
                         </div>

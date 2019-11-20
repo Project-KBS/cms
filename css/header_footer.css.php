@@ -113,10 +113,24 @@ include_once "../app/vendor.php";
 }
 
 /* Dit is de zoekbalk */
+form{
+    background-color: white;
+}
 #search {
-    margin-left: 5vw;
-    width: 20vw;
+    width: 25vw;
     padding: 0.7rem 1.6rem;
+    padding-right: 0px;
+    border: none;
+}
+#knop{
+
+    width: 6vw;
+    height: 100%;
+    padding: 0;
+    position: ;
+}
+#knop:hover{
+    opacity: 15;
 }
 
 /* ---- utils ---- */
@@ -169,11 +183,8 @@ include_once "../app/vendor.php";
 /* Dit is de grote balk die verschijnt als er een waarschuwing is */
 #warning {
     padding: 1.2rem 2rem;
-
     width: 100%;
-
     background-color: red;
-
     color: white;
     text-align: center;
     font-size: 1.35rem;

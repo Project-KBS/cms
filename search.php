@@ -187,8 +187,6 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     <?php
 
-                    // Job: dit werkt niet als je https gebruikt of een server achter een proxy hebt dus gebruik gewoon request_uri
-                    //$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $url = "$_SERVER[REQUEST_URI]";
 
                     // Dit is hoeveel producten er in totaal zijn die aan de filter voldoen (hier wordt een nieuwe query gebruikt omdat de vorige het aantal met limit weergeeft!!!!!)
