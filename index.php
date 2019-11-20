@@ -50,7 +50,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
             ?>
 
             <!-- Inhoud pagina -->
-            <div class="content-container-home">
+            <div class="content-container">
                 <div id="product-sectie" class="d-flex flex-row">
                 <?php
                 //Als de sales template klaar is kunnen we de comments hier onder weghalen en dan worden de sales bovenaan de pagina geladen.
@@ -63,25 +63,25 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                 // Per rij die we uit de database halen voeren we een stukje code uit
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                        // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
-                        extract($row);
-                        //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02
+                    // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
+                    extract($row);
+                    //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02
 
-                        ?>
+                    ?>
 
-
-
+                        <!-- Print dit resultaat -->
                         <div class="product-display d-flex">
-
+                            <!-- Maakt alles klikbaar zodat de gebruiker naar de pagina gestuurd wordt -->
                             <a href="product.php?id=<?php print($StockItemID) ?>">
                                 <div class="product-foto">
                                     <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
                                     <img src="data:image/png;base64, <?php
-                                    if (isset($Photo) && $Photo != null) {
-                                        print($Photo);
-                                    } else {
-                                        print(MediaPortal::getCategoryImage($StockItemID));
-                                    } ?>">
+                                                                        if (isset($Photo) && $Photo != null) {
+                                                                            print($Photo);
+                                                                        } else {
+                                                                            print(MediaPortal::getCategoryImage($StockItemID));
+                                                                        }
+                                                                      ?>">
                                 </div>
                                 <div class="product-beschrijving">
                                     <h4><?php print($StockItemName) ?></h4>
@@ -93,7 +93,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                             </a>
                         </div>
 
-                        <?php
+                    <?php
                 }
                 ?>
                 </div>
