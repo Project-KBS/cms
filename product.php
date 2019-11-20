@@ -172,13 +172,20 @@ function specificaties(){
 
                                     <?php
                                     $teller++;
-                                }
+                                } ?>
 
+                                <div>
+
+
+
+                                <?php
                                 $teller = 0;
                                 foreach ($videos as $video) {
                                     ?>
 
-                                    <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px">
+                                    <img id="thumbnail<?php print($teller)?>" style="width: 10%; padding: 10px; z-index: 2; position: absolute"  src="img/video/video.png">
+
+                                    <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px; z-index: 1">
                                         <source src=<?php print($video); ?> type="video/mp4">
 
                                         Your browser does not support HTML5 video.
@@ -186,13 +193,22 @@ function specificaties(){
 
                                     </video>
 
+
+
                                     <script>
                                         const video<?php print($teller)?> = document.getElementById("video<?php print($teller)?>");
                                         const source<?php print($teller)?> = video<?php print($teller); ?>.getElementsByTagName('source')[0];
-
+                                        const thumbnail<?php print($teller)?> = document.getElementById("thumbnail<?php print($teller)?>");
 
                                         // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
                                         video<?php print($teller)?>.addEventListener("click", function() {
+                                            hoofdvideo.style.display="block";
+                                            hoofdfoto.style.display="none";
+                                            hoofdvideosource.src= source<?php print($teller)?>.src;
+                                            hoofdvideo.load();
+                                        });
+
+                                        thumbnail<?php print($teller)?>.addEventListener("click", function() {
                                             hoofdvideo.style.display="block";
                                             hoofdfoto.style.display="none";
                                             hoofdvideosource.src= source<?php print($teller)?>.src;
@@ -206,7 +222,7 @@ function specificaties(){
                                     $teller++;
                                 }
                                 ?>
-
+                                </div>
 
 
                             </div>
