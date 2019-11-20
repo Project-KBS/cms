@@ -65,7 +65,7 @@ include_once "../app/vendor.php";
     justify-content: center;
     align-items: center;
 
-    margin: 0 0 4.1rem 0;
+    margin: 0 0 /*4.1rem*/0 0;
     padding: 0;
 
     min-height: 3rem;

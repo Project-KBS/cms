@@ -103,7 +103,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 
         <div class="footer-container">
             <?php
-                include("tpl/footer_template.php");
+                // include("tpl/footer_template.php");
             ?>
 
         </div>

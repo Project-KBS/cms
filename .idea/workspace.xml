@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +31,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="cms" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,13 +135,6 @@
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
       <workItem from="1574253911143" duration="518000" />
-    </task>
-    <task id="LOCAL-00009" summary="Bovenste navigatiebalk">
-      <created>1572716601119</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1572716601119</updated>
     </task>
     <task id="LOCAL-00010" summary="Push flexbox items in navigatie-site naar correcte plaats">
       <created>1572717633105</created>
@@ -476,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574269238525</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Fix text-decoration bij product-display:hover">
+      <created>1574271286832</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1574271286832</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +501,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="CSS geüpdate" />
     <MESSAGE value="Zoekbalk ding" />
     <MESSAGE value="joejoe" />
     <MESSAGE value="Search dingen gefixt" />
@@ -523,6 +525,7 @@
     <MESSAGE value="Return empty array instead of null" />
     <MESSAGE value="Aanpassing grootte video" />
     <MESSAGE value="Responsive product grid in index.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive product grid in index.php" />
+    <MESSAGE value="Fix text-decoration bij product-display:hover" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix text-decoration bij product-display:hover" />
   </component>
 </project>
