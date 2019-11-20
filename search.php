@@ -201,6 +201,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                         <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                             <div class='row ProductDisplay'>
                                 <div class='col-6 ProductDisplayLeft'>
+                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
                                     <img src="data:image/png;base64, <?php
                                                                     if (isset($Photo) && $Photo != null) {
                                                                         print($Photo);
@@ -235,16 +236,15 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
                     //Print de hoeveelheid gevonden producten en het aantal producten per pagina
-                    printf("<p>%d pagina's gevonden. (maximaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
+                    printf("<p>%d pagina's gevonden. (maximaal %d producten per pagina, %d getoond, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $stmt->rowCount(), $totaalAantalProductenMatchingFilter);
 
                     // Voor elke pagina zet print hij een klikbaar nummertje
                     for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {
-
                         ?>
 
                         <!-- Hij plakt er nu gewoon '&page=69' achter, ongeacht of die er al instaat -->
-
                         <a href='<?php print($url . "&page=" . $paginaNummer ) ?>'><?php print($paginaNummer) ?></a>
+
                         <?php
                     }
 
@@ -264,7 +264,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
         </div>
         <div class="footer-container">
             <?php
-               // include("tpl/footer_template.php");
+               include("tpl/footer_template.php");
             ?>
 
         </div>
