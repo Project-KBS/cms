@@ -110,20 +110,27 @@ function specificaties(){
 
 
 
-                                <img src="data:image/png;base64, <?php
+                                <img  src="data:image/png;base64, <?php
                                                                 if (isset($Photo) && $Photo != null) {
                                                                     print($Photo);
                                                                 } else {
                                                                     print(MediaPortal::getCategoryImage($StockGroupID));
                                                                 }
-                                                             ?>" id="Productphoto"><br>
+                                                             ?>" id="Productphoto" class="Productphoto" ><br>
 
+                                <video id="Productvideo" class="Productphoto" style="display: none" controls>
+                                    <source  type="video/mp4">
+
+                                    Your browser does not support HTML5 video.
+                                </video>
 
                             </div>
                             <div id="linksonder">
 
                                 <script>
                                     const hoofdfoto = document.getElementById("Productphoto");
+                                    const hoofdvideo = document.getElementById("Productvideo");
+                                    const hoofdvideosource = hoofdvideo.getElementsByTagName('source')[0];
                                 </script>
 
                                 <?php
@@ -156,6 +163,8 @@ function specificaties(){
                                         // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
                                         foto<?php print($teller)?>.addEventListener("click", function() {
                                             hoofdfoto.setAttribute("src", foto<?php print($teller)?>.getAttribute("src"));
+                                            hoofdvideo.style.display="none";
+                                            hoofdfoto.style.display="block";
                                         });
 
 
@@ -178,6 +187,16 @@ function specificaties(){
                                     </video>
 
                                     <script>
+                                        const video<?php print($teller)?> = document.getElementById("video<?php print($teller)?>");
+                                        const source<?php print($teller)?> = video.getElementsByTagName('source')[0];
+
+
+                                        // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
+                                        video<?php print($teller)?>.addEventListener("click", function() {
+                                            hoofdvideo.style.display="block";
+                                            hoofdfoto.style.display="none";
+                                            hoofdvideosource.src= source<?php print($teller)?>.src;
+                                        });
 
 
                                     </script>
@@ -282,7 +301,7 @@ function specificaties(){
 
             <!-- Print de footer (contact info, etc.) -->
             <?php
-                // include("tpl/footer_template.php");
+                 include("tpl/footer_template.php");
             ?>
 
         </div>

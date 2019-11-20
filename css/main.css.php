@@ -27,9 +27,10 @@ include_once "../app/vendor.php";
     font-size: 40px;
 }
 
-#Productphoto{
+.Productphoto{
     width: 100%;
 }
+
 
 .ProductDisplay {
     border: 1px solid black;
