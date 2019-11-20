@@ -50,7 +50,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
             ?>
 
             <!-- Inhoud pagina -->
-            <div class="content-container">
+            <div class="content-container-home">
                 <div id="product-sectie" class="d-flex flex-row">
                 <?php
                 //Als de sales template klaar is kunnen we de comments hier onder weghalen en dan worden de sales bovenaan de pagina geladen.
