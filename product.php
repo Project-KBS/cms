@@ -196,6 +196,7 @@ function specificaties(){
                                             hoofdvideo.style.display="block";
                                             hoofdfoto.style.display="none";
                                             hoofdvideosource.src= source<?php print($teller)?>.src;
+                                            hoofdvideo.load();
                                         });
 
 
