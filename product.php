@@ -102,25 +102,18 @@ function specificaties(){
                         <div id="links" class="col-6"  >
                             <div id="linksboven">
 
-                               <!-- <video width="500" controls>
-                                    <source src="/mp/product/<?php // print($StockItemID) ?>/video.mp4" type="video/mp4">
+                                <!-- Dit is de hoofdfoto (grote foto) -->
+                                <img src="data:image/png;base64, <?php
+                                                                    if (isset($Photo) && $Photo != null) {
+                                                                        print($Photo);
+                                                                    } else {
+                                                                        print(MediaPortal::getCategoryImage($StockGroupID));
+                                                                    }
+                                                                 ?>" id="Productphoto" class="Productphoto" ><br>
 
-                                    Your browser does not support HTML5 video.
-                                </video> -->
-
-
-
-                                <img  src="data:image/png;base64, <?php
-                                                                if (isset($Photo) && $Photo != null) {
-                                                                    print($Photo);
-                                                                } else {
-                                                                    print(MediaPortal::getCategoryImage($StockGroupID));
-                                                                }
-                                                             ?>" id="Productphoto" class="Productphoto" ><br>
-
+                                <!-- Dit is de hoofdvideo (grote video) die pas zichtbaar wordt als je op een video thumbnail klikt -->
                                 <video id="Productvideo" class="Productphoto" style="display: none" controls>
                                     <source  type="video/mp4">
-
                                     Your browser does not support HTML5 video.
                                 </video>
 
@@ -142,13 +135,13 @@ function specificaties(){
                                 $videos = MediaPortal::getProductVideos($StockItemID);
 
 
-
-                                // Zet de hoofdfoto ook in deze array
+                                // Als er een hoofdfoto is
                                 if (isset($Photo) && $Photo != null) {
+                                    // Zet deze hoofdfoto ook in de thumbnail array.
                                     array_unshift($images, $Photo);
                                 } else {
+                                    // Zet de categorie foto in de thumbnail array
                                     array_unshift($images, MediaPortal::getCategoryImage($StockGroupID));
-
                                 }
 
                                 $teller = 0;
@@ -157,61 +150,70 @@ function specificaties(){
 
                                     <img id="foto<?php print($teller)?>"style="width: 25%; padding: 10px"  src="data:image/png;base64, <?php print($image) ?> ">
 
+                                    <!-- Maak een uniek javascript voor deze foto zodat de foto klikbaar is -->
                                     <script>
+                                        // Dit is de variabele voor deze foto html tag ("<img />")
                                         const foto<?php print($teller)?> = document.getElementById("foto<?php print($teller)?>");
 
                                         // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
                                         foto<?php print($teller)?>.addEventListener("click", function() {
+                                            // Kopieer letterlijk de waarde van het source attribuut van de foto naar de hoofdfoto
                                             hoofdfoto.setAttribute("src", foto<?php print($teller)?>.getAttribute("src"));
+
+                                            // Verberg de hoofdfoto indien hij er nog staat
                                             hoofdvideo.style.display="none";
                                             hoofdfoto.style.display="block";
                                         });
-
-
                                     </script>
 
                                     <?php
                                     $teller++;
                                 } ?>
 
+                                <!-- Maak een aparte div aan omdat de thumbnails een "absolute" positie hebben!!!-->
                                 <div>
-
-
 
                                 <?php
                                 $teller = 0;
                                 foreach ($videos as $video) {
                                     ?>
 
-                                    <img id="thumbnail<?php print($teller)?>" style="width: 10%; padding: 10px; z-index: 2; position: absolute"  src="img/video/video.png">
+                                    <!-- De rode knop overlay -->
+                                    <img id="thumbnail<?php print($teller)?>" style="width: 10%; padding: 10px; z-index: 2; position: absolute" src="img/video/video.png">
 
+                                    <!-- Deze video preview -->
                                     <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px; z-index: 1">
                                         <source src=<?php print($video); ?> type="video/mp4">
-
                                         Your browser does not support HTML5 video.
-
-
                                     </video>
 
-
-
+                                    <!-- Het javascript om de video af te spelen in het groot (op de plaats van de hoofdvideo) -->
                                     <script>
+                                        // Dit is de variabele voor deze video html tag ("<video />")
                                         const video<?php print($teller)?> = document.getElementById("video<?php print($teller)?>");
+                                        // Dit is de variabele voor deze source html tag in de video tag ("<source />")
                                         const source<?php print($teller)?> = video<?php print($teller); ?>.getElementsByTagName('source')[0];
+                                        // Dit is de variabele voor deze rode knop ("<img />")
                                         const thumbnail<?php print($teller)?> = document.getElementById("thumbnail<?php print($teller)?>");
 
+                                        // Deze functie zorgt er voor dat, wanneer hij uitgevoerd wordt, de hoofdvideo source tag de URL krijgt van deze video zijn source tag.
+                                        // Assign de functie naar een variabele zodat we hem niet 2x hoeven te schrijven
                                         const functie<?php print($teller)?> = function() {
+                                            // Verberg de hoofdfoto indien hij er nog staat
                                             hoofdvideo.style.display="block";
                                             hoofdfoto.style.display="none";
+
                                             hoofdvideosource.src= source<?php print($teller)?>.src;
+
+                                            // Herlaad de hoofdvideo om de veranderingen te merken
                                             hoofdvideo.load();
                                         };
 
-                                        // Als je op de foto klikt dan wordt deze foto in de hoofdfoto verplaatst
+                                        // Als je op de video klikt dan wordt de functie uitgevoerd
                                         video<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
+
+                                        // Als je op de rode knop klikt dan wordt de functie uitgevoerd
                                         thumbnail<?php print($teller)?>.addEventListener("click", functie<?php print($teller); ?>);
-
-
                                     </script>
 
                                     <?php
@@ -257,9 +259,9 @@ function specificaties(){
                             <h3>Productomschrijving</h3>
 
                             <?php
-                            if(isset($SearchDetails) && $SearchDetails != null){
-                                print($SearchDetails);
-                            }
+                                if(isset($SearchDetails) && $SearchDetails != null){
+                                    print($SearchDetails);
+                                }
                             ?>
 
                             <hr>
@@ -292,19 +294,14 @@ function specificaties(){
 
                             ?>
 
-
                         </div>
 
-
                     </div>
-
 
                 <?php
                 } else {
                     include("tpl/Foutproduct.html");
                 }
-
-
 
                 ?>
             </div>
@@ -314,7 +311,7 @@ function specificaties(){
 
             <!-- Print de footer (contact info, etc.) -->
             <?php
-                 include("tpl/footer_template.php");
+                 // include("tpl/footer_template.php");
             ?>
 
         </div>

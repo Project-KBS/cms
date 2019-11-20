@@ -4,6 +4,7 @@ include_once("app/vendor.php");          // wordt gebruikt voor website beschrij
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
+include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 ?>
 
 <!doctype html>
@@ -62,16 +63,25 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                 // Per rij die we uit de database halen voeren we een stukje code uit
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                        // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
-                        extract($row);
-                        //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02
+                    // Dit zorgt er voor dat we `$StockItemID` enzo kunnen gebruiken (PHPStorm geeft rood streepje aan maar het werkt wel)
+                    extract($row);
+                    //"perfect" ~ Matthijs Bakker - 19/11/2019 16:02
 
-                        ?>
+                    ?>
 
+                        <!-- Print dit resultaat -->
                         <div class="product-display d-flex">
+                            <!-- Maakt alles klikbaar zodat de gebruiker naar de pagina gestuurd wordt -->
                             <a href="product.php?id=<?php print($StockItemID) ?>">
                                 <div class="product-foto">
-                                    <img src="data:image/png;base64,<?php print($Photo) ?>">
+                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
+                                    <img src="data:image/png;base64, <?php
+                                                                        if (isset($Photo) && $Photo != null) {
+                                                                            print($Photo);
+                                                                        } else {
+                                                                            print(MediaPortal::getCategoryImage($StockItemID));
+                                                                        }
+                                                                      ?>">
                                 </div>
                                 <div class="product-beschrijving">
                                     <h4><?php print($StockItemName) ?></h4>
@@ -87,7 +97,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
                             </a>
                         </div>
 
-                        <?php
+                    <?php
                 }
                 ?>
                 </div>
@@ -97,7 +107,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
         <div class="footer-container">
             <?php
-                include("tpl/footer_template.php");
+                // include("tpl/footer_template.php");
             ?>
 
         </div>

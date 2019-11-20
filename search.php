@@ -4,6 +4,7 @@ include_once("app/vendor.php");          // wordt gebruikt voor website beschrij
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 ?>
 
 <!doctype html>
@@ -49,56 +50,62 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
             ?>
 
             <!-- Inhoud pagina -->
-            <div class="content-container">
-                <form name="filter" method="get">
-                    <fieldset>
-                        <p>
-                            <label>Producten per pagina: </label>
-                            <select name = "Hoeveelheid">
-                                <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
-                                <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
-                                <option value = "25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
-                                <option value = "50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
-                            </select>
-                            <label>Sorteren: </label>
-                            <select name = "Sort">
-                                <option value = "NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
-                                <option value = "NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
-                                <option value = "PrijsASC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC') ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
-                                <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
-                            </select>
-                            <label>Categorie: </label>
-                            <select name = "Categorie">
-                                <option value = "0" <?php echo (isset($_GET['Categorie']) && $_GET['Categorie'] == '0') ? 'selected="selected"' : ''; ?>>Geen filter</option>
-                                <?php
-                                    //Zoals in header_template.php ook gedaan wordt, worden hier de categorieen opgehaald.
-                                    $stmt = (Categorie::read(Database::getConnection()));
-                                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                        extract($row);
+            <div class="content-container-home">
+                <div style="text-align: center">
+                    <!-- TODO willen we de heading naast de form ??? -->
+                    <h1>Zoekresultaten</h1>
+                    <form name="filter" method="get">
+                        <fieldset>
+                            <p>
+                                <label>Producten per pagina: </label>
+                                <select name = "Hoeveelheid">
+                                    <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
+                                    <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
+                                    <option value = "25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
+                                    <option value = "50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
+                                </select>
+                                <label>Sorteren: </label>
+                                <select name = "Sort">
+                                    <option value = "NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
+                                    <option value = "NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
+                                    <option value = "PrijsASC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC') ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
+                                    <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
+                                </select>
+                                <label>Categorie: </label>
+                                <select name = "Categorie">
+                                    <option value = "0" <?php echo (isset($_GET['Categorie']) && $_GET['Categorie'] == '0') ? 'selected="selected"' : ''; ?>>Geen filter</option>
+                                    <?php
+                                        //Zoals in header_template.php ook gedaan wordt, worden hier de categorieen opgehaald.
+                                        $stmt = (Categorie::read(Database::getConnection()));
+                                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                            extract($row);
 
-                                        ?>
+                                            ?>
 
-                                        <option value='<?php print($StockGroupID) ?>'
-                                            <?php if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
+                                            <option value='<?php print($StockGroupID) ?>'
+                                                <?php
+                                                    if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
                                                         print("selected=\"selected\"");
-                                                    } ?>><?php print($StockGroupName) ?>
-                                        </option>
+                                                    }
+                                                ?>>
+                                                <?php print($StockGroupName) ?>
+                                            </option>
 
-                                        <?php
-                                    }
-                                ?>
-                            </select>
-                            <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) { echo $_GET["search"]; }?>" />
-                            <input type="submit" name="submit" value="ok">
-                    </fieldset>
-                        </p>
-                </form>
+                                            <?php
+                                        }
+                                    ?>
+                                </select>
+                                <input type="hidden" name="search" value="<?php if (isset($_GET["search"])) { echo $_GET["search"]; }?>" />
+                                <input type="submit" name="submit" value="ok">
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
 
-                <?php
+            <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (1==1) {
+                if (1==1) { // <-------- FIXME wie de fuck heeft dit gedaan
                     if(isset($_GET['search'])) {
-
                         $zoekterm = trim($_GET['search']);
                     } else{
                         $zoekterm = "";
@@ -125,7 +132,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $startFrom = ($selectedPage - 1) * $aantalPerPaginaFilter;
 
                     //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                    if(isset($_GET['Sort'])) {
+                    if (isset($_GET['Sort'])) {
                         switch ($_GET['Sort']) {
                             case "NaamASC";
                                 $orderByFilter = "p.StockItemName ASC";
@@ -143,7 +150,6 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     }
 
                     // Moeten we categorie-specifiek zoeken?
-
                     if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
                         $selectedCategory = $_GET["Categorie"];
                     } else {
@@ -152,8 +158,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
                     $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
-                    print("<h1>Zoekresultaten</h1>");
 
+                ?>
+
+                <div id="product-sectie" class="d-flex flex-row">
+
+                    <?php
                     // Per rij die we uit de database halen voeren we een stukje code uit
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -164,10 +174,39 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         ?>
 
                         <!-- Print dit resultaat -->
+                        <div class="product-display d-flex">
+                            <!-- Maakt alles klikbaar zodat de gebruiker naar de pagina gestuurd wordt -->
+                            <a href="product.php?id=<?php print($StockItemID) ?>">
+                                <div class="product-foto">
+                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
+                                    <img src="data:image/png;base64, <?php
+                                                                        if (isset($Photo) && $Photo != null) {
+                                                                            print($Photo);
+                                                                        } else {
+                                                                            print(MediaPortal::getCategoryImage($StockItemID));
+                                                                        }
+                                                                      ?>">
+                                </div>
+                                <div class="product-beschrijving">
+                                    <h4><?php print($StockItemName) ?></h4>
+                                    <p><?php print($SearchDetails) ?></p>
+                                    <div class="product-prijs">
+                                        <h5>€<?php print($RecommendedRetailPrice) ?></h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    <!--
                         <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                             <div class='row ProductDisplay'>
                                 <div class='col-6 ProductDisplayLeft'>
-                                    <img src="data:image/png;base64,<?php print($Photo)?>">
+                                    <img src="data:image/png;base64, <?php
+                                                                    if (isset($Photo) && $Photo != null) {
+                                                                        print($Photo);
+                                                                    } else {
+                                                                        print(MediaPortal::getCategoryImage($StockItemID));
+                                                                    } ?>">
                                 </div>
                                 <div class='col-6 ProductDisplayRight'>
                                     <h3><?php print($StockItemName)?></h3>
@@ -178,10 +217,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 </div>
                             </div>
                         </a>
+                    -->
 
                         <?php
                         }
                     ?>
+                </div>
 
                 <div class='aantalPaginas'>
 
@@ -194,7 +235,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
                     //Print de hoeveelheid gevonden producten en het aantal producten per pagina
-                    printf("<p>%d pagina's gevonden. (maxiaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
+                    printf("<p>%d pagina's gevonden. (maximaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
 
                     // Voor elke pagina zet print hij een klikbaar nummertje
                     for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {

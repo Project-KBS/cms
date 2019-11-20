@@ -16,15 +16,14 @@ include_once "../app/vendor.php";
 
 .content-container-home {
     width: 80vw;
-    height: 40vw;
     margin-left: 10vw;
     margin-top: 5vh;
 }
 
 .content-container {
-    width: 50vw;
-    margin-left: 25vw;
-    margin-top: 5vh;
+    width: 50%/*vw*/;
+    margin-left: 25%/*vw*/;
+    margin-top: 5%/*vh*/;
 }
 
 /* 404 pagina niet gevonden knop om terug te gaan naar de homepage */
