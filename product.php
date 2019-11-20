@@ -99,17 +99,28 @@ function specificaties(){
                     </h3>
 
                     <div id="geheel" class="row">
-                        <div id="links" class="col-6" style="background: hotpink">
+                        <div id="links" class="col-6"  >
                             <div id="linksboven">
-                            <img src="data:image/png;base64, <?php
+
+                               <!-- <video width="500" controls>
+                                    <source src="/mp/product/<?php // print($StockItemID) ?>/video.mp4" type="video/mp4">
+
+                                    Your browser does not support HTML5 video.
+                                </video> -->
+
+
+
+                                <img src="data:image/png;base64, <?php
                                                                 if (isset($Photo) && $Photo != null) {
                                                                     print($Photo);
                                                                 } else {
                                                                     print(MediaPortal::getCategoryImage($StockGroupID));
                                                                 }
                                                              ?>" id="Productphoto"><br>
+
+
                             </div>
-                            <div id="linksonder" style="background: black">
+                            <div id="linksonder">
 
                                 <script>
                                     const hoofdfoto = document.getElementById("Productphoto");
@@ -120,8 +131,18 @@ function specificaties(){
                                 // Zoek alle productfoto's
                                 $images = MediaPortal::getProductImages($StockItemID);
 
+                                // Zoek alle productvideo's
+                                $videos = MediaPortal::getProductVideos($StockItemID);
+
+
+
                                 // Zet de hoofdfoto ook in deze array
-                                array_unshift($images, $Photo);
+                                if (isset($Photo) && $Photo != null) {
+                                    array_unshift($images, $Photo);
+                                } else {
+                                    array_unshift($images, MediaPortal::getCategoryImage($StockGroupID));
+
+                                }
 
                                 $teller = 0;
                                 foreach ($images as $image) {
@@ -143,13 +164,33 @@ function specificaties(){
                                     <?php
                                     $teller++;
                                 }
+
+                                $teller = 0;
+                                foreach ($videos as $video) {
+                                    ?>
+
+                                    <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px">
+                                        <source src="/mp/product/<?php  print($StockItemID) ?>/video<?php print($teller); ?>.mp4" type="video/mp4">
+
+                                        Your browser does not support HTML5 video.
+
+
+                                    </video>
+
+
+
+                                    <?php
+                                    $teller++;
+                                }
                                 ?>
+
+
 
                             </div>
 
                         </div>
 
-                        <div id="rechts" class="col-6" style="background: aqua; padding: 0">
+                        <div id="rechts" class="col-6" style=" padding: 0">
                             <h1>€ <?php print($RecommendedRetailPrice) ?></h1>
 
                             <h3> <?php
@@ -208,7 +249,7 @@ function specificaties(){
                                 print("Het aantal per verpakking: $QuantityPerOuter <br>");
                             }
                             if(isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
-                                print("Het gewicht: $TypicalWeightPerUnit <br>");
+                                print("Het gewicht: $TypicalWeightPerUnit Kg<br>");
                             }
                             if(isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
                                 print("Gekoeld: Ja<br>");

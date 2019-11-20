@@ -20,6 +20,7 @@ include_once "../app/vendor.php";
     margin-top: 5vh;
 }
 
+/* 404 pagina niet gevonden knop om terug te gaan naar de homepage */
 .Big-button{
     width: 500px;
     height: 200px;
