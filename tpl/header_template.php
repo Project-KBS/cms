@@ -18,9 +18,6 @@
         extract($product);
         $namen[] = $StockItemName;
     }
-
-    //print_r($namen);
-
     ?>
     <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
     <div id="navigatie-site">
@@ -49,7 +46,7 @@
                 extract($row);
 
                 // Print een HTML element met de naam en een link naar de pagina (de %s worden vervangen door de variabelen na de komma)
-                printf("<a href=\"categorie.php?id=%s\"><div>%s</div></a>", $StockGroupID, $StockGroupName);
+                printf("<a href=\"search.php?Hoeveelheid=%s&Sort=%s&Categorie=%s&search=&submit=ok\"><div>%s</div></a>", DEFAULT_PRODUCT_RETURN_AMOUNT, "NaamASC", $StockGroupID, $StockGroupName);
             }
         ?>
     </div>

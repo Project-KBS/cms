@@ -96,9 +96,13 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 
                 <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (isset($_GET["search"]) && $_GET["search"] != NULL) {
-                    $zoekterm = trim($_GET['search']);
+                if (1==1) {
+                    if(isset($_GET['search'])) {
 
+                        $zoekterm = trim($_GET['search']);
+                    } else{
+                        $zoekterm = "";
+                    }
                     //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
                     //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
                     // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt (zie constants.php)
@@ -137,11 +141,14 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                                 break;
                         }
                     }
+                    $selectedCategory = $_GET['Categorie'];
 
                     // Moeten we categorie-specifiek zoeken?
-                    $selectedCategory = null;
+
                     if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
                         $selectedCategory = $_GET["Categorie"];
+                    } else{
+     //                   $selectedCategory = $_GET['Categorie'];
                     }
 
                     // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
@@ -178,8 +185,6 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     ?>
 
                 <div class='aantalPaginas'>
-                    <button class=\"back\">Forward</button>
-                    <button class="back">Back</button>
 
                     <?php
 
@@ -191,7 +196,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $totaalAantalProductenMatchingFilter = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, 0, MAX_PRODUCT_RETURN_AMOUNT))->rowCount();
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
-                    printf("<p>%d pagina's gevonden. (%d producten getoond, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
+                    //Print de hoeveelheid gevonden producten en het aantal producten per pagina
+                    printf("<p>%d pagina's gevonden. (maxiaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
 
                     // Voor elke pagina zet print hij een klikbaar nummertje
                     for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {
@@ -201,9 +207,9 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         <!-- Hij plakt er nu gewoon '&page=69' achter, ongeacht of die er al instaat -->
 
                         <a href='<?php print($url . "&page=" . $paginaNummer ) ?>'><?php print($paginaNummer) ?></a>
-
                         <?php
                     }
+
                     ?>
 
                 </div>
@@ -213,34 +219,6 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                 } else {
                     print("Geen zoekterm opgegeven");
                 }
-
-                // FIXME ------ DIT KAN WEG NEEM IK AAN ???? ----
-                /*
-                        //checkt of het product al is geprint.
-                        //producten kunnen hier herhalen doordat ze meerdere categorieen hebben.
-                    } elseif (in_array($StockItemID, $ProductRepeatCheck)===FALSE) {
-                            array_push($ProductRepeatCheck, $StockItemID, $StockItemName);
-                            $ProductCount++;
-                            print("<a href='product.php?id=" . $StockItemID . "' class='SearchProductDisplayLink'>");
-                            print("<div class='ProductDisplay'>");
-                            print("<div class='ProductDisplayLeft'>");
-                            print('<img src="data:image/png;base64,' . $Photo . '">');
-                            print("</div>");
-                            print("<div class='ProductDisplayRight'>");
-                            print("<h3>" . $StockItemName . "</h3>");
-                            print("<p>" . $SearchDetails . "</p>");
-                            print("<div class='ProductDisplayPrice'>");
-                            print("<h5>Prijs: " . $RecommendedRetailPrice . "</h5>");
-                            print("</div></div></div></a>");
-                        }
-                    }
-                        print($ProductCount);
-                    } else {
-                        print("Geen zoekterm opgegeven");
-                    }
-                */
-                // FIXME --------------------------------------------------------
-
                 ?>
 
             </div>

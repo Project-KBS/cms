@@ -87,7 +87,7 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
         <div class="footer-container">
             <?php
-            // include("tpl/footer_template.php");
+            include("tpl/footer_template.php");
             ?>
 
         </div>
