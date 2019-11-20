@@ -136,3 +136,8 @@ include_once "../app/vendor.php";
     margin: 20px auto 0;
     text-align: center;
 }
+.WinkelwagenKnop{
+    width: 17vw;
+    height: 3vw;
+    align-content: center;
+}

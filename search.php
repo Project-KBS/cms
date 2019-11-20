@@ -90,7 +90,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                                         print("selected=\"selected\"");
                                                     }
                                                 ?>>
-                                                <?php print($StockGroupName) ?>
+
                                             </option>
 
                                             <?php
@@ -195,6 +195,10 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                     <div class="product-prijs">
                                         <h5>€<?php print($RecommendedRetailPrice) ?></h5>
                                     </div>
+                                    <form method="GET" name="winkelmandje" action="/product.php?id=<?php print($StockItemID) ?>">
+                                        <input type="submit" name="id" class="WinkelwagenKnop" value="<?php $StockItemID ?>">
+                                        <?php print($StockItemID) ?>
+                                    </form>
                                 </div>
                             </a>
                         </div>
