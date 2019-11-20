@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mediaportal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/mediaportal.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,13 +128,7 @@
       <workItem from="1574156201878" duration="1130000" />
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
-    </task>
-    <task id="LOCAL-00006" summary="Merge latest offline changes">
-      <created>1572526007545</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1572526007545</updated>
+      <workItem from="1574253911143" duration="518000" />
     </task>
     <task id="LOCAL-00007" summary="Update endpoint api-info to use constants defined in vendor.php">
       <created>1572526114338</created>
@@ -473,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574249681738</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Return empty array instead of null">
+      <created>1574249814140</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1574249814141</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Zet database.php om naar een singleton" />
     <MESSAGE value="Zet read() functies in model om naar static functions" />
     <MESSAGE value="oinjkl" />
     <MESSAGE value="CSS geüpdate" />
@@ -520,6 +519,7 @@
     <MESSAGE value="Fix z-index value van de navigatie-categorieen balk" />
     <MESSAGE value="videoplayer java script" />
     <MESSAGE value="Check if debugging is enabled before throwing error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check if debugging is enabled before throwing error" />
+    <MESSAGE value="Return empty array instead of null" />
+    <option name="LAST_COMMIT_MESSAGE" value="Return empty array instead of null" />
   </component>
 </project>
