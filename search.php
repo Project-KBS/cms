@@ -4,6 +4,7 @@ include_once("app/vendor.php");          // wordt gebruikt voor website beschrij
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 ?>
 
 <!doctype html>
@@ -167,7 +168,12 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                         <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
                             <div class='row ProductDisplay'>
                                 <div class='col-6 ProductDisplayLeft'>
-                                    <img src="data:image/png;base64,<?php print($Photo)?>">
+                                    <img src="data:image/png;base64, <?php
+                                                                    if (isset($Photo) && $Photo != null) {
+                                                                        print($Photo);
+                                                                    } else {
+                                                                        print(MediaPortal::getCategoryImage($StockItemID));
+                                                                    } ?>">
                                 </div>
                                 <div class='col-6 ProductDisplayRight'>
                                     <h3><?php print($StockItemName)?></h3>
@@ -196,7 +202,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
                     $totaalAantalPaginas = ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1);
 
                     //Print de hoeveelheid gevonden producten en het aantal producten per pagina
-                    printf("<p>%d pagina's gevonden. (maxiaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
+                    printf("<p>%d pagina's gevonden. (maximaal %d producten per pagina, %d totaal)</p>", $totaalAantalPaginas-1, $aantalPerPaginaFilter, $totaalAantalProductenMatchingFilter);
 
                     // Voor elke pagina zet print hij een klikbaar nummertje
                     for ($paginaNummer = 1; $paginaNummer < ceil($totaalAantalProductenMatchingFilter / $aantalPerPaginaFilter + 1); $paginaNummer++) {

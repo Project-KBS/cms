@@ -102,14 +102,7 @@ function specificaties(){
                         <div id="links" class="col-6"  >
                             <div id="linksboven">
 
-                               <!-- <video width="500" controls>
-                                    <source src="/mp/product/<?php // print($StockItemID) ?>/video.mp4" type="video/mp4">
-
-                                    Your browser does not support HTML5 video.
-                                </video> -->
-
-
-
+                                <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
                                 <img  src="data:image/png;base64, <?php
                                                                 if (isset($Photo) && $Photo != null) {
                                                                     print($Photo);
@@ -155,7 +148,7 @@ function specificaties(){
                                 foreach ($images as $image) {
                                     ?>
 
-                                    <img id="foto<?php print($teller)?>"style="width: 25%; padding: 10px"  src="data:image/png;base64, <?php print($image) ?> ">
+                                    <img id="foto<?php print($teller)?>"style="width: 25%; padding: 10px"  src="    data:image/png;base64, <?php print($image) ?> ">
 
                                     <script>
                                         const foto<?php print($teller)?> = document.getElementById("foto<?php print($teller)?>");

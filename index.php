@@ -4,6 +4,7 @@ include_once("app/vendor.php");          // wordt gebruikt voor website beschrij
 include_once("app/database.php");        // wordt gebruikt voor database connectie
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
+include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 ?>
 
 <!doctype html>
@@ -68,10 +69,19 @@ include_once("app/model/product.php");   // wordt gebruikt voor producten ophale
 
                         ?>
 
+
+
                         <div class="product-display d-flex">
+
                             <a href="product.php?id=<?php print($StockItemID) ?>">
                                 <div class="product-foto">
-                                    <img src="data:image/png;base64,<?php print($Photo) ?>">
+                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
+                                    <img src="data:image/png;base64, <?php
+                                    if (isset($Photo) && $Photo != null) {
+                                        print($Photo);
+                                    } else {
+                                        print(MediaPortal::getCategoryImage($StockItemID));
+                                    } ?>">
                                 </div>
                                 <div class="product-beschrijving">
                                     <h4><?php print($StockItemName) ?></h4>
