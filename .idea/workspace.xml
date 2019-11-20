@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/db/placeholder_generic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/placeholder_magento.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/fill_imgs.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/fill_imgs.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,21 +71,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Webprogrammeren" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
+      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
-      <recent name="$PROJECT_DIR$/api/v1/product" />
-      <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -134,13 +136,6 @@
       <workItem from="1574164367526" duration="9555000" />
       <workItem from="1574242442815" duration="1051000" />
       <workItem from="1574253911143" duration="518000" />
-    </task>
-    <task id="LOCAL-00014" summary="oinjkl">
-      <created>1573644871073</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1573644871073</updated>
     </task>
     <task id="LOCAL-00015" summary="oinjkl">
       <created>1573645031953</created>
@@ -478,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574277746304</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fix default sorteer methode">
+      <created>1574279358273</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1574279358274</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +502,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Joins naar left join gemaakt ivm foutmelding.&#10;&#10;Foutproduct.html gemaakt zodat mensen verwezen worden bij een niet geldige productid.&#10;&#10;product.php aangepast zodat je in de database kan zoeken" />
     <MESSAGE value="product pagina aangepast &#10;sql connectie gemaakt" />
     <MESSAGE value="Betere formatting in 404 pagina." />
     <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
@@ -525,6 +526,7 @@
     <MESSAGE value="Zoekpagina results in een flexbox" />
     <MESSAGE value="Foute class bij index.php container" />
     <MESSAGE value="Footertje" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footertje" />
+    <MESSAGE value="Fix default sorteer methode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix default sorteer methode" />
   </component>
 </project>
