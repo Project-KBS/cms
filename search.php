@@ -59,6 +59,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                             <p>
                                 <label>Producten per pagina: </label>
                                 <select name = "Hoeveelheid">
+                                    <!-- TODO dit kan met een for-each loop! -->
                                     <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
                                     <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
                                     <option value = "25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
@@ -66,9 +67,10 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                 </select>
                                 <label>Sorteren: </label>
                                 <select name = "Sort">
+                                    <!-- TODO dit kan met een for-each loop! -->
                                     <option value = "NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
                                     <option value = "NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
-                                    <option value = "PrijsASC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC') ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
+                                    <option value = "PrijsASC" <?php echo ((isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC')||(!isset($_GET["Sort"]))) ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
                                     <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
                                 </select>
                                 <label>Categorie: </label>
@@ -196,29 +198,6 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                 </div>
                             </a>
                         </div>
-
-                    <!--
-                        <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
-                            <div class='row ProductDisplay'>
-                                <div class='col-6 ProductDisplayLeft'>
-                                    <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
-                                    <img src="data:image/png;base64, <?php
-                                                                    if (isset($Photo) && $Photo != null) {
-                                                                        print($Photo);
-                                                                    } else {
-                                                                        print(MediaPortal::getCategoryImage($StockItemID));
-                                                                    } ?>">
-                                </div>
-                                <div class='col-6 ProductDisplayRight'>
-                                    <h3><?php print($StockItemName)?></h3>
-                                    <p><?php print($SearchDetails)?></p>
-                                    <div class='ProductDisplayPrice'>
-                                        <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    -->
 
                         <?php
                         }

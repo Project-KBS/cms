@@ -128,8 +128,7 @@ class Product {
 
         // StartFrom mag niet lager zijn dan 0 en niet hoger zijn dan $limit want dan crasht de SQL query
         if (filter_var($StartFrom, FILTER_VALIDATE_INT) == false
-            || $StartFrom < 0
-            || $StartFrom > $limit) {
+            || $StartFrom < 0) {
 
             $StartFrom = DEFAULT_PRODUCT_START_FROM;
         }
