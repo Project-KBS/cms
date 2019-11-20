@@ -170,14 +170,17 @@ function specificaties(){
                                     ?>
 
                                     <video id="video<?php print($teller)?>" style="width: 25%; padding: 10px">
-                                        <source src="/mp/product/<?php  print($StockItemID) ?>/video<?php print($teller); ?>.mp4" type="video/mp4">
+                                        <source src=<?php print($video); ?> type="video/mp4">
 
                                         Your browser does not support HTML5 video.
 
 
                                     </video>
 
+                                    <script>
 
+
+                                    </script>
 
                                     <?php
                                     $teller++;
