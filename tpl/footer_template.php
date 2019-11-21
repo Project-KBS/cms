@@ -1,13 +1,13 @@
 <footer id="footer" class="row">
 
-    <div id="footer-rechts" class="col-4">
+    <div id="footer-links" class="col-4">
         <h3>Wat moet hier??</h3>
         <hr>
         tekst tekst tekst<br>
 
     </div>
 
-    <div id="footer-links" class="col-4">
+    <div id="footer-midden" class="col-4">
 
         <h3>Over Wide World Importers</h3>
         <hr>
@@ -19,7 +19,7 @@
 
     </div>
 
-    <div id="footer-midden" class="col-4">
+    <div id="footer-rechts" class="col-4">
 
         <h3>Contactgegevens</h3>
         <hr>
