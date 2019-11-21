@@ -140,4 +140,5 @@ include_once "../app/vendor.php";
     width: 17vw;
     height: 3vw;
     align-content: center;
+    align-self: ;
 }
