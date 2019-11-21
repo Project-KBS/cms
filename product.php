@@ -92,8 +92,20 @@ function specificaties(){
                     <h1> <?php print($StockItemName) ?></h1>
 
                     <h3> <?php
+                        //PRINT alle categorieën
+                        if(array_count_values($categories) >1){
+                            Print("Categorieën: ");
+                        } else {
+                            print("Categorie: ");
+                        }
+                        $first = true;
                         foreach ($categories as $index => $value) {
-                        print($value." ");
+                            if($first){
+                            print($value);
+                            $first = false;
+                        } else {
+                                print( ", " . $value );
+                            }
                     }
                     ?>
                     </h3>
