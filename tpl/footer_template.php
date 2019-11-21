@@ -1,5 +1,12 @@
 <footer id="footer" class="row">
 
+    <div id="footer-rechts" class="col-4">
+        <h3>Wat moet hier??</h3>
+        <hr>
+        tekst tekst tekst<br>
+
+    </div>
+
     <div id="footer-links" class="col-4">
 
         <h3>Over Wide World Importers</h3>
@@ -18,30 +25,15 @@
         <hr>
 
         <!-- Vul ff met niets zodat we het kunnen uittesten -->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
+        <?php
+        for($x=0; $x<10;$x++){
+            print("<br>");
+        }
+        ?>
     </div>
 
-    <div id="footer-rechts" class="col-4">
 
-        <h3>Wat moet hier??</h3>
-        <hr>
 
-        tekst tekst tekst<br>
-        Job is een badass
 
-    </div>
 
 </footer>

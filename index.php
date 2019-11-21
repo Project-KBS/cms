@@ -89,8 +89,8 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                     <div class="product-prijs">
                                         <h5>€<?php print($RecommendedRetailPrice) ?></h5>
                                     </div>
-                                    <form method="GET" name="winkelmandje" action="/winkelwagen.php?id=<?php print($StockItemID);?>">
-                                        <input type="submit" name="id" class="WinkelwagenKnop" value="Toevoegen aan winkelwagen">
+                                    <form method="GET" name="winkelmandje" action="/winkelmand.php?id=<?php print($StockItemID);?>">
+                                        <input type="submit" name="id" class="WinkelwagenKnop" value="<?php print($StockItemID);?>">
                                     </form>
                                 </div>
                             </a>
