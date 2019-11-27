@@ -66,6 +66,7 @@ include_once "../app/vendor.php";
     margin: 1rem;
     padding: 0.4rem;
     min-width: 20rem;
+    max-width: 25vw;
 
     /* Flexbox eigenschappen */
     flex: 1 15%;
@@ -139,7 +140,7 @@ include_once "../app/vendor.php";
     text-align: center;
 }
 .WinkelwagenKnop{
-    width: 17vw;
+    width: 100%;
     height: 3vw;
     align-content: center;
     align-self: ;
