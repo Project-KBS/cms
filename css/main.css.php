@@ -127,7 +127,7 @@ include_once "../app/vendor.php";
 .product-beschrijving h5 {
     /* Opmaak eigenschappen */
     color: <?php echo VENDOR_THEME_COLOR_HIGHLIGHT ?>;
-    align-self: end;
+    align-self: flex-end;
 }
 
 /* Presentation stuff */
@@ -143,5 +143,5 @@ include_once "../app/vendor.php";
     width: 100%;
     height: 3vw;
     align-content: center;
-    align-self: ;
+    align-self: flex-end;
 }

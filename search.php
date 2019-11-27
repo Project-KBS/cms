@@ -70,7 +70,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                                     if (isset($_GET["Categorie"]) && $_GET["Categorie"] === $StockGroupID) {
                                                         print("selected=\"selected\"");
                                                     }
-                                                ?>>
+                                                ?>><?php print($StockGroupName);?>
 
                                             </option>
 
