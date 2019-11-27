@@ -21,7 +21,7 @@ include_once "../app/vendor.php";
 }
 
 #footer hr {
-    
+
 }
 
 #footer div {
@@ -222,6 +222,7 @@ form{
 
 .footer {
     background: <?php echo VENDOR_THEME_COLOR_DARK ?>;
+
 }
 
 .footer-left {

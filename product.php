@@ -82,8 +82,8 @@ function specificaties(){
                         $first = true;
                         foreach ($categories as $index => $value) {
                             if($first){
-                            print($value);
-                            $first = false;
+                                print($value);
+                                $first = false;
                         } else {
                                 print( ", " . $value );
                             }
