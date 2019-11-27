@@ -5,6 +5,7 @@ include_once("app/database.php");        // wordt gebruikt voor database connect
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+include_once("app/cart.php");            // Wordt gebruikt om de huidige test producten te gebruiken
 ?>
 
 <!doctype html>
@@ -34,19 +35,44 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
     <div class="content-container-home">
        <div id="geheel" class="row">
 
+           <?php foreach (Cart::get() as $item => $aantal){
+               $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
+
+               $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+               extract($row);
+               ?>
            <!-- Links komen de foto's en informatie van het product-->
-           <div id="links" class="col-6">
 
-           </div>
+               <div id="links" class="col-6">
 
-           <!-- hier komen de aantallen en totaalprijzen-->
-           <div id="midden" class="col-6">
+                   <!-- Foto van product of categorie -->
+                   <img src="data:image/png;base64, <?php
+                                                       if (isset($Photo) && $Photo != null) {
+                                                           print($Photo);
+                                                       } else {
+                                                           print(MediaPortal::getCategoryImage($StockGroupID));
+                                                       }
+                                                        ?>" id="Productphoto" class="Productphoto" >
 
-           </div>
 
+
+                   <?php print($StockItemName) ?>
+
+               </div>
+
+
+               <!-- hier komen de aantallen en totaalprijzen-->
+
+               <div id="midden" class="col-4">
+
+               </div>
+
+
+           <?php } ?>
 
            <!-- Bestelknop komt hier met foto's van betalmethoden-->
-           <div id="rechts" class="col-6">
+           <div id="rechts" class="col-2">
 
            </div>
        </div>
