@@ -1,9 +1,11 @@
 <footer id="footer" class="row">
 
     <div id="footer-links" class="col-4">
-        <h3>Wat moet hier??</h3>
+        <h3>Social media</h3>
         <hr>
-        tekst tekst tekst<br>
+        twitter<br>
+        facebook<br>
+        instagram<br>
 
     </div>
 

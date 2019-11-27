@@ -74,7 +74,7 @@ function specificaties(){
 
                     <h3> <?php
                         //PRINT alle categorieën
-                        if(array_count_values($categories) >1){
+                        if(count($categories) >1){
                             Print("Categorieën: ");
                         } else {
                             print("Categorie: ");

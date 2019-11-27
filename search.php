@@ -157,7 +157,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                         ?>
 
                         <!-- Print dit resultaat -->
-                        <div class="product-display d-flex">
+                        <div class="product-display d-flex" style="max-width: 20%">
                             <!-- Maakt alles klikbaar zodat de gebruiker naar de pagina gestuurd wordt -->
                             <a href="product.php?id=<?php print($StockItemID) ?>">
                                 <div class="product-foto">
