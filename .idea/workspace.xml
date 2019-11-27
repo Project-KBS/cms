@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten">
-      <change afterPath="$PROJECT_DIR$/app/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,13 +134,6 @@
       <workItem from="1574242442815" duration="1051000" />
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
-    </task>
-    <task id="LOCAL-00018" summary="oinjkl">
-      <created>1573645917829</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1573645917829</updated>
     </task>
     <task id="LOCAL-00019" summary="oinjkl">
       <created>1573646442689</created>
@@ -479,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574329936880</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Winkelwagen class placeholder">
+      <created>1574860523880</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1574860523881</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +500,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Vergroot pagina breedte naar 50% van het scherm" />
     <MESSAGE value="Productspecificatie/omschrijving aangepast" />
     <MESSAGE value="Productspecificatie en omschrijving aangepast" />
     <MESSAGE value="Pagina functie werkt bijna" />
@@ -526,6 +524,7 @@
     <MESSAGE value="Fix default sorteer methode" />
     <MESSAGE value="Winkelwagen knop is liiitt yo" />
     <MESSAGE value="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten" />
+    <MESSAGE value="Winkelwagen class placeholder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Winkelwagen class placeholder" />
   </component>
 </project>

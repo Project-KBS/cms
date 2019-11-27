@@ -14,7 +14,13 @@ class Cart {
      */
     public static function get() {
         // TODO
-        return array();
+
+        // ff tijdelijk: voeg 6 stuks van product 1 toe.
+        //                 en 9 stuks van product 7
+        //                 en 1 stuk  van product 9
+        return array(1 => 6,
+                     7 => 9,
+                     9 => 1);
     }
 
     /**
