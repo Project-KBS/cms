@@ -53,6 +53,7 @@ include_once "../app/vendor.php";
     justify-content: start;
     align-items: stretch;
     align-content: start;
+    flex-basis: 0;
 }
 
 /**
