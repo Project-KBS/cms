@@ -30,7 +30,7 @@
                     <h3><?php print($StockItemName)?></h3>
                     <p><?php print($SearchDetails)?></p>
                     <div class='ProductDisplayPrice'>
-                        <h5>Prijs: <?php print($RecommendedRetailPrice)?></h5>
+                        <h5>Prijs: <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2))?></h5>
                     </div>
                 </div>
             </div>

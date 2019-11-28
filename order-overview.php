@@ -34,15 +34,14 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
         <div class="order-overview">
             <table>
                 <?php
-                    foreach (Cart::get() as $item => $aantal){
-                        print($item . " " . $aantal . "<br>");
+                    foreach (Cart::get() as $item => $aantal) {
 
                         $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         extract($row);
-                        print($item . " " . $aantal . " " . $stockItemName . "<br>");
+                        print($item . " " . $aantal . " " . $StockItemName . "<br>");
 
                     }
                 ?>

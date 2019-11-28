@@ -225,7 +225,7 @@ function specificaties(){
 
                         <div id="rechts" class="col-6" style=" padding: 0">
                             <!-- Print de prijs-->
-                            <h1>€ <?php print($RecommendedRetailPrice) ?></h1>
+                            <h1>€ <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h1>
 
                             <h3> <?php
                                 // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
