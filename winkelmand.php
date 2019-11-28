@@ -23,6 +23,20 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
         <div id="warning" class="fixed-top"><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p></div>
     <![endif]-->
 
+    <?php
+
+        // Als er
+        if (isset($_GET["id"])) {
+            $nieuwProduct = $_GET["id"];
+            $nieuwProductId = intval($nieuwProduct);
+
+            if ($nieuwProductId > 0) {
+                Cart::add($nieuwProductId, 1);
+            }
+        }
+
+    ?>
+
     <!-- Hierin  -->
     <div id="pagina-container">
 

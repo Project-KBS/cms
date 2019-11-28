@@ -6,21 +6,49 @@
 class Cart {
 
     /**
-     * Deze functie verkrijgt de winkelmand uit user's sessie.
+     * Deze functie verkrijgt de winkelmand producten uit user's sessie en/of post data.<br />
      *
-     * Hij returnt een array met productId als index en aantal als value.
+     * Hij returnt een array met productId als index en aantal als value.<br />
+     *
+     * De array kan dus ook leeg zijn!!!
      *
      * @return array (int => int)
      */
     public static function get() {
-        // TODO
+        $result = array();
 
-        // ff tijdelijk: voeg 6 stuks van product 1 toe.
-        //                 en 9 stuks van product 7
-        //                 en 1 stuk  van product 9
-        return array(1 => 6,
-                     7 => 9,
-                     9 => 1);
+        // Loop over alle post en sessie elementen
+        foreach ([$_POST, $_SESSION] as $array) {
+            foreach ($array as $index => $value) {
+                $index_num = intval($index);
+                $value_num = intval($value);
+
+                // Check of ze beide integers integers zijn en groter dan 0
+                if ($index_num > 0 && $value_num > 0) {
+                    $result[$index_num] = $value_num;
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Deze functie voegt een product toe aan de winkelmand (user sessie).<br />
+     *
+     * Aantal en productId moeten positief zijn en de sessie moet gestart zijn.
+     *
+     * @param $productId
+     * @param $aantal
+     * @return void
+     */
+    public static function add($productId, $aantal) {
+        // Controleer of productId en aantal integers zijn en of ze hoger dan 0 zijn.
+        session_status() === 0;
+        if (is_int($productId) && $productId > 0 &&
+            is_int($aantal)    && $aantal > 0    ) {
+            $_SESSION[$productId] = $aantal;
+        }
     }
 
     /**

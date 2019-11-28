@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/head-tag-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/head-tag-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -137,13 +139,6 @@
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
-    </task>
-    <task id="LOCAL-00027" summary="Search dingen gefixt">
-      <created>1573736610534</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1573736610534</updated>
     </task>
     <task id="LOCAL-00028" summary="Search dingen gefixt">
       <created>1573738470545</created>
@@ -481,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574947472546</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Form in winkelmand">
+      <created>1574947806478</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1574947806479</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +505,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
     <MESSAGE value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
     <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
     <MESSAGE value="Fix z-index value van de navigatie-categorieen balk" />
@@ -528,6 +529,7 @@
     <MESSAGE value="orderoverview basis neergelegd" />
     <MESSAGE value="Winkelmandje v.1000" />
     <MESSAGE value="Format winkelmand.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Format winkelmand.php" />
+    <MESSAGE value="Form in winkelmand" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form in winkelmand" />
   </component>
 </project>
