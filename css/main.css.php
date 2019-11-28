@@ -189,18 +189,22 @@ include_once "../app/vendor.php";
     background-color: #24b51f;
     color: white;
     border-radius: 1em;
-    padding: 1%;
+    padding: 10%;
     text-align: center;
     font-weight: bold;
     font-family: "Tw Cen MT";
+    width: 200%;
+    text-decoration-color: white;
 }
 
 .ContinueButton:hover{
     background-color: #1d9c19;
     color: white;
     border-radius: 1em;
-    padding: 1%;
+    padding: 10%;
     text-align: center;
     font-weight: bold;
     font-family: "Tw Cen MT";
+    width: 200%;
 }
+

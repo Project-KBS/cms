@@ -64,7 +64,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                 $totalprice = $totalprice + ($RecommendedRetailPrice * $aantal);
                                 ?>
                                 <tr>
-                                    <th class="ProductMandTableEntry1">
+                                    <td class="ProductMandTableEntry1">
                                         <br><img style="max-width: 100%" src="data:image/png;base64, <?php
                                         if (isset($Photo) && $Photo != null) {
                                             print($Photo);
@@ -72,22 +72,22 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                             print(MediaPortal::getCategoryImage($StockItemID));
                                         }
                                         ?>"><br><br>
-                                    </th>
-                                    <th class="ProductMandTableEntry2">
+                                    </td>
+                                    <td class="ProductMandTableEntry2">
                                         <div class="ProductMand">
                                             <div><h4><?php print($StockItemName); ?></h4></div>
                                             <div><?php print($MarketingComments); ?></div>
                                         </div>
-                                    </th>
-                                    <th class="ProductMandTableEntry3">
+                                    </td>
+                                    <td class="ProductMandTableEntry3">
                                         € <?php print($RecommendedRetailPrice); ?>
-                                    </th>
-                                    <th class="ProductMandTableEntry4">
+                                    </td>
+                                    <td class="ProductMandTableEntry4">
                                         <?php print($aantal); ?>
-                                    </th>
-                                    <th class="ProductMandTableEntry5">
+                                    </td>
+                                    <td class="ProductMandTableEntry5">
                                         € <?php print($RecommendedRetailPrice * $aantal); ?>
-                                    </th>
+                                    </td>
                                 </tr>
                                 <?php
                             }
@@ -101,7 +101,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                 </table>
                 <br><br>
                 <div class="row">
-                    <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><div class="col-2 ContinueButton">Afrekenen ></div>
+                    <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><a href="checkout.php"><div class="ContinueButton">Afrekenen ></div></a>
                 </div>
                 <br><br>
             </div>
