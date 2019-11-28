@@ -34,9 +34,11 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
         <!-- Inhoud pagina -->
         <div class="content-container-home">
 
+            <form method="post" action="order-overview.php">
+
             <?php
                 $teller = 0;
-                foreach (Cart::get() as $item => $aantal){
+                foreach (Cart::get() as $item => $aantal) {
                     $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -77,7 +79,7 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
                             </div>
 
                             <div id="Aantal" class="col-1">
-                                <input style="width: 100%" type="number" id="test<?php print($teller); ?>" value="<?php print($aantal); ?>" min="0">
+                                <input style="width: 100%" type="number" id="test<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>" min="0">
                             </div>
 
                             <!-- hier komen de aantallen en totaalprijzen-->
@@ -146,6 +148,8 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
                 </div>
 
             </div>
+
+            </form>
 
         </div>
 

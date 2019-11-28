@@ -44,9 +44,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -137,13 +137,6 @@
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
-    </task>
-    <task id="LOCAL-00026" summary="joejoe">
-      <created>1573735271842</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1573735271842</updated>
     </task>
     <task id="LOCAL-00027" summary="Search dingen gefixt">
       <created>1573736610534</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574939784513</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Format winkelmand.php">
+      <created>1574947472546</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1574947472546</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +503,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
     <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
     <MESSAGE value="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10" />
     <MESSAGE value="Check of $StartFrom een correcte waarde heeft, geef anders een default" />
@@ -528,6 +527,7 @@
     <MESSAGE value="Bereken prijzen inclusief BTW" />
     <MESSAGE value="orderoverview basis neergelegd" />
     <MESSAGE value="Winkelmandje v.1000" />
-    <option name="LAST_COMMIT_MESSAGE" value="Winkelmandje v.1000" />
+    <MESSAGE value="Format winkelmand.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Format winkelmand.php" />
   </component>
 </project>
