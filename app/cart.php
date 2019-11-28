@@ -5,6 +5,8 @@
  */
 class Cart {
 
+    private const SESSION_PREFIX = "product:";
+
     /**
      * Deze functie verkrijgt de winkelmand producten uit user's sessie en/of post data.<br />
      *
@@ -20,7 +22,7 @@ class Cart {
         // Loop over alle post en sessie elementen
         foreach ([$_POST, $_SESSION] as $array) {
             foreach ($array as $index => $value) {
-                $index_num = intval($index);
+                $index_num = intval(str_replace(self::SESSION_PREFIX, "", $index));
                 $value_num = intval($value);
 
                 // Check of ze beide integers integers zijn en groter dan 0
@@ -44,10 +46,28 @@ class Cart {
      */
     public static function add($productId, $aantal) {
         // Controleer of productId en aantal integers zijn en of ze hoger dan 0 zijn.
-        session_status() === 0;
         if (is_int($productId) && $productId > 0 &&
             is_int($aantal)    && $aantal > 0    ) {
-            $_SESSION[$productId] = $aantal;
+
+            // Sessie variabelen met alleen nummers in de key werken niet in PHP, dus gebruik "product:" suffix.
+            $_SESSION[self::SESSION_PREFIX . $productId] = $aantal;
+        }
+    }
+
+    /**
+     * Deze functie updatet de aantallen van de producten in $_SESSION naar $_POST
+     *
+     * @return void
+     */
+    public static function update() {
+        foreach ($_POST as $index => $value) {
+            $index_num = intval(str_replace(self::SESSION_PREFIX, "", $index));
+            $value_num = intval($value);
+
+            // Check of ze beide integers integers zijn en groter dan 0
+            if ($index_num > 0 && $value_num > 0) {
+                self::add($index_num, $value_num);
+            }
         }
     }
 

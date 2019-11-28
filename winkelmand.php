@@ -6,6 +6,8 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
 include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
 include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 include_once("app/cart.php");            // Wordt gebruikt om de huidige test producten te gebruiken
+
+session_start();
 ?>
 
 <!doctype html>

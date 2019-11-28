@@ -18,8 +18,13 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 <body>
     <!-- Onze website werkt niet met Internet Explorer 9 en lager-->
     <!--[if IE]>
-    <div id="warning" class="fixed-top"><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p></div>
+        <div id="warning" class="fixed-top"><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p></div>
     <![endif]-->
+
+    <?php
+        // Update de winkelmand met de laatste aantallen
+        Cart::update();
+    ?>
 
     <!-- Hierin  -->
     <div id="pagina-container">
