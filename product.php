@@ -258,8 +258,11 @@ function specificaties(){
 
                             <?php
                             //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
-                            if(isset($SearchDetails) && $SearchDetails != null){
-                                print($SearchDetails);
+                            if(isset($MarketingComments) && $MarketingComments != null){
+                                print($MarketingComments);
+                            }
+                            else {
+                                print("Er is geen productomschrijving beschikbaar.");
                             }
                             ?>
 
