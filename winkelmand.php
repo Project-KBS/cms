@@ -33,21 +33,26 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
 
     <!-- Inhoud pagina -->
     <div class="content-container-home">
-       <div id="geheel" class="row">
 
-           <?php foreach (Cart::get() as $item => $aantal){
+
+           <?php
+           $teller = 0;
+           foreach (Cart::get() as $item => $aantal){
                $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                extract($row);
                ?>
-           <!-- Links komen de foto's en informatie van het product-->
 
-               <div id="links" class="col-6">
+               <div id="geheel" class="row" style="padding-bottom: 2vh">
 
-                   <!-- Foto van product of categorie -->
-                   <img src="data:image/png;base64, <?php
+
+                   <!-- Links komen de foto's en informatie van het product-->
+                   <div id="Foto" class="col-2">
+
+                       <!-- Foto van product of categorie -->
+                       <img src="data:image/png;base64, <?php
                                                        if (isset($Photo) && $Photo != null) {
                                                            print($Photo);
                                                        } else {
@@ -55,27 +60,90 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
                                                        }
                                                         ?>" id="Productphoto" class="Productphoto" >
 
+                   </div>
+
+                   <div id="Omschrijving" class="col-4">
+
+                       <?php if(isset($StockItemName) && $StockItemName != null){
+                           print($StockItemName);
+                       }
+                       print("<br>");
+                       if(isset($MarketingComments) && $MarketingComments != null){
+                           print($MarketingComments);
+                       }
+                       ?>
+
+                   </div>
+
+                   <div class="col-1">
+                       <input style="width: 100%" type="number" id="test<?php print($teller); ?>" value="<?php print($aantal); ?>" min="0">
+                   </div>
+
+                   <!-- hier komen de aantallen en totaalprijzen-->
+                   <div id="Prijs" class="col-5">
+
+                      <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php print( round($RecommendedRetailPrice * (1+ $TaxRate/100),2)); ?></p>
 
 
-                   <?php print($StockItemName) ?>
+                       <!-- Zorgt ervoor dat je geen negatief getal kan invullen-->
+                       <script>
+                           // Dit is het input veld
+                           const hoeveelheid_input<?php print($teller); ?> = document.getElementById('test<?php print($teller); ?>');
+
+                           // Listen for input event on numInput. ( blokkeert negatieve getallen)
+                           hoeveelheid_input<?php print($teller); ?>.onkeydown = function(e) {
+                               if(!((e.keyCode > 95 && e.keyCode < 106)
+                                   || (e.keyCode > 47 && e.keyCode < 58)
+                                   || e.keyCode === 8)) {
+                                   return false;
+                               }
+                           }
+
+                           //
+                           const totaalprijs<?php print($teller); ?> = document.getElementById(('prijs<?php print($teller); ?>'));
+
+                           hoeveelheid_input<?php print($teller); ?>.onchange = function () {
+                               totaalprijs<?php print($teller); ?>.innerHTML = "Totaalprijs: €"+(hoeveelheid_input<?php print($teller); ?>.value *
+                                                                            <?php print($RecommendedRetailPrice * (1+ $TaxRate/100)) ?>).toFixed(2);
+                           }
+
+                       </script>
+
+
+
+                   </div>
+
 
                </div>
 
+           <?php $teller++; } ?>
 
-               <!-- hier komen de aantallen en totaalprijzen-->
-
-               <div id="midden" class="col-4">
-
-               </div>
-
-
-           <?php } ?>
+        <div class="row">
+        <div id="opvul" class="col-6">
+        </div>
 
            <!-- Bestelknop komt hier met foto's van betalmethoden-->
-           <div id="rechts" class="col-2">
+           <div id="Totaal" class="col-4">
+
+               <!-- Prijzen totaal -->
+               <p>Exclusief btw:</p>
+               <p>Inclusief btw:</p>
+               <p>Totaalprijs: </p>
+
+
+
+
 
            </div>
-       </div>
+            <div id="verstuur" class="col-2">
+
+                <!-- Submit knop en betaalmethoden afbeeldingen -->
+                <input type="submit" value="Verder naar bestellen">
+
+                <img src="img/logo/ideal.png" style="max-width: 60%">
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -83,6 +151,7 @@ include_once("app/cart.php");            // Wordt gebruikt om de huidige test pr
 <div class="footer-container">
     <?php
     include("tpl/footer_template.php");
+
     ?>
 
 </div>
