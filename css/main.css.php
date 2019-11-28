@@ -130,6 +130,14 @@ include_once "../app/vendor.php";
     align-self: flex-end;
 }
 
+/**
+ * Dit zorgt er voor dat de omhoog/omlaag knoppen bij nummer input velden altijd zichtbaar zijn
+ */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
 /* Presentation stuff */
 .aantalPaginas {
     width: 50vw;

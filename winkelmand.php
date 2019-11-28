@@ -27,7 +27,7 @@ session_start();
 
     <?php
 
-        // Als er
+        // Als er een Product ID in de $_GET[] staat voegen we die toe aan de winkelmand.
         if (isset($_GET["id"])) {
             $nieuwProduct = $_GET["id"];
             $nieuwProductId = intval($nieuwProduct);
@@ -51,6 +51,13 @@ session_start();
         <div class="content-container-home">
 
             <form method="post" action="order-overview.php">
+
+                <script>
+
+                    // Dit is de array met alle aantal omhoog/omlaag knoppen.
+                    var input_elementen = [];
+
+                </script>
 
             <?php
                 $teller = 0;
@@ -101,13 +108,16 @@ session_start();
                             <!-- hier komen de aantallen en totaalprijzen-->
                             <div id="Prijs" class="col-5">
 
-                                <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php print( round($RecommendedRetailPrice * (1+ $TaxRate/100),2)); ?></p>
+                                <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php print( round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2)); ?></p>
 
 
                                 <!-- Zorgt ervoor dat je geen negatief getal kan invullen-->
                                 <script>
                                     // Dit is het input veld
                                     const hoeveelheid_input<?php print($teller); ?> = document.getElementById('test<?php print($teller); ?>');
+
+                                    // Voeg dit veld toe aan de input elementen array
+                                    input_elementen.push(hoeveelheid_input<?php print($teller); ?>);
 
                                     // Listen for input event on numInput. ( blokkeert negatieve getallen)
                                     hoeveelheid_input<?php print($teller); ?>.onkeydown = function(e) {
@@ -122,8 +132,12 @@ session_start();
                                     const totaalprijs<?php print($teller); ?> = document.getElementById(('prijs<?php print($teller); ?>'));
 
                                     hoeveelheid_input<?php print($teller); ?>.onchange = function () {
-                                        totaalprijs<?php print($teller); ?>.innerHTML = "Totaalprijs: €" +
+                                        // Bereken de totaalprijs
+                                        totaalprijs<?php print($teller); ?>.innerHTML = "Totaalprijs: € " +
                                             (hoeveelheid_input<?php print($teller); ?>.value * <?php print($RecommendedRetailPrice * (1+ $TaxRate/100)) ?>).toFixed(2);
+
+                                        // Bereken de prijs incl/excl btw opnieuw.
+                                        functie_bereken();
                                     }
 
                                 </script>
@@ -148,10 +162,40 @@ session_start();
                 <!-- Bestelknop komt hier met foto's van betalmethoden-->
                 <div id="Totaal" class="col-3">
 
-                    <!-- Prijzen totaal -->
-                    <p id="prijs-excl">Exclusief btw:</p>
-                    <p id="prijs-incl">Inclusief btw: fuck</p>
-                    <p id="prijs-totaal">Totaalprijs: </p>
+                    <!-- Prijzen totaal-->
+                    <p id="prijs-excl">Exclusief btw: €</p>
+                    <p id="prijs-incl">Inclusief btw: €</p>
+                    <p id="prijs-totaal">Totaalbedrag: €</p>
+
+                    <script>
+
+                        const element_prijs_excl   = document.getElementById("prijs-excl");
+                        const element_prijs_incl   = document.getElementById("prijs-incl");
+                        const element_prijs_totaal = document.getElementById("prijs-totaal");
+
+                        const functie_bereken = function() {
+
+                            let prijsExcl = 0;
+                            let prijsIncl = 0;
+
+                            // foreach loop voor alle input elementen
+                            input_elementen.forEach(function(element, index, array) {
+
+                                // Voeg de totaalprijs van dit product toe
+                                prijsExcl += element.value * <?php print($RecommendedRetailPrice); ?>;
+                                prijsIncl += element.value * <?php print($RecommendedRetailPrice * (1+ $TaxRate/100)); ?>;
+
+                            });
+
+                            // Rond de prijzen af naar 2 decimalen en voeg ze in op de juiste plek
+                            element_prijs_excl  .innerHTML = "Exclusief btw: €" + prijsExcl.toFixed(2);
+                            element_prijs_incl  .innerHTML = "Inclusief btw: €" + prijsIncl.toFixed(2);
+                            element_prijs_totaal.innerHTML = "Totaalbedrag: €" + prijsIncl.toFixed(2);
+                        };
+
+                        functie_bereken();
+
+                    </script>
 
                 </div>
 
