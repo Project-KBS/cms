@@ -145,3 +145,42 @@ include_once "../app/vendor.php";
     align-content: center;
     align-self: flex-end;
 }
+
+.ProductMand{
+    margin: 5%;
+    width: 60%;
+}
+
+.ProductMandTableEntry1{
+    width: 20%;
+    margin: 5%;
+}
+
+.ProductMandTableEntry2{
+    width: 50%;
+    margin: 5%;
+}
+
+.ProductMandTableEntry3{
+    width: 10%;
+    margin: 5%;
+    text-align: center;
+}
+
+.ProductMandTableEntry4{
+    width: 10%;
+    margin: 5%;
+    text-align: center;
+}
+
+.ProductMandTableEntry5{
+    width: 10%;
+    margin: 5%;
+    text-align: center;
+}
+
+.ProductMandTotalLine{
+    border-top-style: solid;
+    border-color: black;
+    border-width: 1px;
+}

@@ -34,6 +34,20 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
         <div class="content-container-home">
             <div class="order-overview">
                 <table>
+                    <tr>
+                        <th class="ProductMandTableEntry1">
+                            Product
+                        </th><th class="ProductMandTableEntry2"></th>
+                        <th class="ProductMandTableEntry3">
+                            Prijs per stuk
+                        </th>
+                        <th class="ProductMandTableEntry4">
+                            Aantal
+                        </th>
+                        <th class="ProductMandTableEntry5">
+                            Totaalprijs
+                        </th>
+                    </tr>
                     <?php
 
                         //hier wordt een variabele gemaakt om de prijs in op te slaan
@@ -46,38 +60,43 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                             extract($row);
-                            $totalprice = $totalprice + ($RecommendedRetailPrice*$aantal);
-                            ?>
-                            <tr>
-                                <th class="ProductMandTableEntry1">
-                                    <br><img style="max-width: 100%" src="data:image/png;base64, <?php
-                        if (isset($Photo) && $Photo != null) {
-                            print($Photo);
-                        } else {
-                            print(MediaPortal::getCategoryImage($StockItemID));
+                            if($aantal>0) {
+                                $totalprice = $totalprice + ($RecommendedRetailPrice * $aantal);
+                                ?>
+                                <tr>
+                                    <th class="ProductMandTableEntry1">
+                                        <br><img style="max-width: 100%" src="data:image/png;base64, <?php
+                                        if (isset($Photo) && $Photo != null) {
+                                            print($Photo);
+                                        } else {
+                                            print(MediaPortal::getCategoryImage($StockItemID));
+                                        }
+                                        ?>"><br><br>
+                                    </th>
+                                    <th class="ProductMandTableEntry2">
+                                        <div class="ProductMand">
+                                            <div><h4><?php print($StockItemName); ?></h4></div>
+                                            <div><?php print($MarketingComments); ?></div>
+                                        </div>
+                                    </th>
+                                    <th class="ProductMandTableEntry3">
+                                        € <?php print($RecommendedRetailPrice); ?>
+                                    </th>
+                                    <th class="ProductMandTableEntry4">
+                                        <?php print($aantal); ?>
+                                    </th>
+                                    <th class="ProductMandTableEntry5">
+                                        € <?php print($RecommendedRetailPrice * $aantal); ?>
+                                    </th>
+                                </tr>
+                                <?php
+                            }
                         }
-                        ?>"><br><br>
-                                </th>
-                                <th class="ProductMandTableEntry2">
-                                    <div class="ProductMand"><div><h4><?php print($StockItemName);?></h4></div><div><?php print($MarketingComments);?></div></div>
-                                </th>
-                                <th class="ProductMandTableEntry3">
-                                    € <?php print($RecommendedRetailPrice);?>
-                                </th>
-                                <th class="ProductMandTableEntry4">
-                                    <?php print($aantal);?>
-                                </th>
-                                <th class="ProductMandTableEntry5">
-                                    € <?php print($RecommendedRetailPrice*$aantal);?>
-                                </th>
-                            </tr>
-                            <?php
 
-                        }
                     ?>
                     <tr class="ProductMandTotalLine">
                         <th class="ProductMandTableEntry1"></th><th class="ProductMandTableEntry2"></th><th class="ProductMandTableEntry3"></th><th class="ProductMandTableEntry4"></th>
-                        <th class="ProductMandTableEntry5">€ <?php print($totalprice);?></th>
+                        <th class="ProductMandTableEntry5">Totaal:<br>€ <?php print($totalprice);?></th>
                     </tr>
                 </table>
                 <br><br><br><br>

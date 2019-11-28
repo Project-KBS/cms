@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Bereken prijzen inclusief BTW">
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/head-tag-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/head-tag-template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +61,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1QyHczHLrqQmMsQ3ztJSpOm7Se3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -136,20 +138,6 @@
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
-    </task>
-    <task id="LOCAL-00023" summary="CSS geüpdate">
-      <created>1573648139534</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1573648139534</updated>
-    </task>
-    <task id="LOCAL-00024" summary="CSS geüpdate">
-      <created>1573650023661</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1573650023661</updated>
     </task>
     <task id="LOCAL-00025" summary="Zoekbalk ding">
       <created>1573650740319</created>
@@ -480,7 +468,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574929270178</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="orderoverview basis neergelegd">
+      <created>1574931701892</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1574931701893</updated>
+    </task>
+    <task id="LOCAL-00073" summary="orderoverview basis neergelegd">
+      <created>1574931739101</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1574931739101</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +504,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Correcte URL bij pagina nummer linkjes" />
     <MESSAGE value="Fix style" />
     <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
     <MESSAGE value="Verwijder quotes rondom product id bij links naar product.php" />
@@ -527,6 +528,7 @@
     <MESSAGE value="Max-width bij product display en knop width gefixed" />
     <MESSAGE value="Fix witte categorien" />
     <MESSAGE value="Bereken prijzen inclusief BTW" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bereken prijzen inclusief BTW" />
+    <MESSAGE value="orderoverview basis neergelegd" />
+    <option name="LAST_COMMIT_MESSAGE" value="orderoverview basis neergelegd" />
   </component>
 </project>

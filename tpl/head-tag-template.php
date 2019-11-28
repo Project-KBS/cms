@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 
 <!-- De beschrijving en eigenschappen van deze pagina -->
+<link rel="icon" href="img/logo/icon.png" type="image/x-icon">
 <title><?php echo VENDOR_NAME ?></title>
 <meta name="description" content="<?php echo VENDOR_DESCRIPTION ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
