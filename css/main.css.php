@@ -184,3 +184,23 @@ include_once "../app/vendor.php";
     border-color: black;
     border-width: 1px;
 }
+
+.ContinueButton{
+    background-color: #24b51f;
+    color: white;
+    border-radius: 1em;
+    padding: 1%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Tw Cen MT";
+}
+
+.ContinueButton:hover{
+    background-color: #1d9c19;
+    color: white;
+    border-radius: 1em;
+    padding: 1%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Tw Cen MT";
+}

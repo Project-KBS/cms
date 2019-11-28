@@ -99,7 +99,11 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                         <th class="ProductMandTableEntry5">Totaal:<br>€ <?php print($totalprice);?></th>
                     </tr>
                 </table>
-                <br><br><br><br>
+                <br><br>
+                <div class="row">
+                    <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><div class="col-2 ContinueButton">Afrekenen ></div>
+                </div>
+                <br><br>
             </div>
         </div>
 
