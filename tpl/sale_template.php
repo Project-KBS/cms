@@ -7,18 +7,23 @@
     */
     //Roepts de zoek() function aan:
     $limit = 2;
-    $stmt = (Product::zoek(Database::getConnection(), $limit ));
+    $stmt = (Product::zoek(Database::getConnection(), $limit));
 
     //Voor elk gevonden item doet hij alles binnen de while-loop
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        //extract zorgt er voor dat je alle collumn namen kan gebruiken al variabelen
+
+        //extract zorgt er voor dat je alle collumn namen kan gebruiken als variabelen
         extract($row);
 
         ?>
+
         <!-- Print dit resultaat -->
         <a href='product.php?id=<?php print($StockItemID)?>' class='SearchProductDisplayLink'>
+
             <div class='row ProductDisplay'>
+
                 <div class='col-6 ProductDisplayLeft'>
+
                     <!--foto van het product wordt geladen -->
                     <img src="data:image/png;base64,<?php print($Photo)?>">
                     <!--de png file wordt geladen en over de foto van het product geplakt.
@@ -26,16 +31,24 @@
                     <img src="/png/sales.png">
 
                 </div>
+
                 <div class='col-6 ProductDisplayRight'>
+
                     <h3><?php print($StockItemName)?></h3>
                     <p><?php print($SearchDetails)?></p>
+
                     <div class='ProductDisplayPrice'>
+
                         <h5>Prijs: <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2))?></h5>
+
                     </div>
+
                 </div>
+
             </div>
+
         </a>
 
         <?php
     }
-    ?>
+?>

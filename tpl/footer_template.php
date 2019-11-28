@@ -1,8 +1,10 @@
 <footer id="footer" class="row">
 
     <div id="footer-links" class="col-4">
+
         <h3>Social media</h3>
         <hr>
+
         twitter<br>
         facebook<br>
         instagram<br>
@@ -28,14 +30,13 @@
 
         <!-- Vul ff met niets zodat we het kunnen uittesten -->
         <?php
-        for($x=0; $x<10;$x++){
-            print("<br>");
-        }
+
+            for($x=0; $x<10;$x++){
+                print("<br>");
+            }
+
         ?>
+
     </div>
-
-
-
-
 
 </footer>

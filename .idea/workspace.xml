@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/Foutproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/Foutproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/sale_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/sale_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,13 +140,6 @@
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
-    </task>
-    <task id="LOCAL-00031" summary="product pagina aangepast &#10;sql connectie gemaakt">
-      <created>1573832275122</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1573832275122</updated>
     </task>
     <task id="LOCAL-00032" summary="Betere formatting in 404 pagina.">
       <created>1573839632024</created>
@@ -481,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574959596462</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Iemand had #responsive-container blijkbaar een class gemaakt???">
+      <created>1574959673745</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1574959673745</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="videoplayer java script" />
     <MESSAGE value="Check if debugging is enabled before throwing error" />
     <MESSAGE value="Return empty array instead of null" />
     <MESSAGE value="Aanpassing grootte video" />
@@ -528,6 +530,7 @@
     <MESSAGE value="Sla producten op in user sessie (nog niet getest want chrome doet kut)" />
     <MESSAGE value="De winkelwagen werkt nu, en refresht de aantallen van winkelmand page" />
     <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Het uitrekenen van totaalbedrag werkt" />
+    <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
+    <option name="LAST_COMMIT_MESSAGE" value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
   </component>
 </project>

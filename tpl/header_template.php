@@ -14,26 +14,48 @@
 
     $stmt = (Product::read(Database::getConnection()));
     $namen = [];
+
     while ($product = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($product);
         $namen[] = $StockItemName;
     }
+
     ?>
     <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
     <div id="navigatie-site">
+
        <!-- De container beperkt de items tot 70% van de schermbreedte-->
         <div id="navigatie-site-container" class="responsive-container">
-            <form autocomplete="off" action="search.php?page=1" name="zoekForm" method="get" >
-                <a><input type="text" placeholder="Typ om te zoeken" name="search" id="search"></a>
-                <a><input type="submit" value="Search" name="knop" id="knop" </a>
+
+            <!-- De zoekbalk -->
+            <form autocomplete="off" action="search.php?page=1" name="zoekForm" method="get">
+
+                <a>
+                    <input type="text" placeholder="Typ om te zoeken" name="search" id="search">
+                </a>
+
+                <a>
+                    <input type="submit" value="Search" name="knop" id="knop">
+                </a>
+
             </form>
-            <a href="winkelmand.php" class="flex-push"><div>Winkelmandje</div></a>
+
+            <a href="winkelmand.php" class="flex-push">
+                <div>Winkelmandje</div>
+            </a>
+            <!--
+            INLOGGEN EN REGISTREREN HEB IK ER UIT GECOMMENT WANT DEZE ZIJN WE NOG NIET NODIG!
             <a href="inloggen.php"><div>Inloggen</div></a>
             <a href="registreren.php"><div>Registreren</div></a>
+            -->
+
         </div>
+
     </div>
+
     <!-- Navigatie balk met categorieen -->
     <div id="navigatie-categorieen">
+
         <?php
             // Alle SQL magie en PDO connectie shit gebeurt in `Product::read` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder.
             $stmt = (Categorie::read(Database::getConnection()));
@@ -49,6 +71,7 @@
                 printf("<a href=\"search.php?Hoeveelheid=%s&Sort=%s&Categorie=%s&search=&submit=ok\"><div>%s</div></a>", DEFAULT_PRODUCT_RETURN_AMOUNT, "NaamASC", $StockGroupID, $StockGroupName);
             }
         ?>
+
     </div>
 
 </div>
