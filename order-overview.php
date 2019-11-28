@@ -31,22 +31,59 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                 </div>
             </div>
         </header>
-        <div class="order-overview">
-            <table>
-                <?php
-                    foreach (Cart::get() as $item => $aantal) {
+        <div class="content-container-home">
+            <div class="order-overview">
+                <table>
+                    <?php
 
-                        $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
+                        //hier wordt een variabele gemaakt om de prijs in op te slaan
+                        $totalprice = 0;
 
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                        foreach (Cart::get() as $item => $aantal){
 
-                        extract($row);
-                        print($item . " " . $aantal . " " . $StockItemName . "<br>");
+                            $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
-                    }
-                ?>
-            </table>
+                            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                            extract($row);
+                            $totalprice = $totalprice + ($RecommendedRetailPrice*$aantal);
+                            ?>
+                            <tr>
+                                <th class="ProductMandTableEntry1">
+                                    <br><img style="max-width: 100%" src="data:image/png;base64, <?php
+                        if (isset($Photo) && $Photo != null) {
+                            print($Photo);
+                        } else {
+                            print(MediaPortal::getCategoryImage($StockItemID));
+                        }
+                        ?>"><br><br>
+                                </th>
+                                <th class="ProductMandTableEntry2">
+                                    <div class="ProductMand"><div><h4><?php print($StockItemName);?></h4></div><div><?php print($MarketingComments);?></div></div>
+                                </th>
+                                <th class="ProductMandTableEntry3">
+                                    € <?php print($RecommendedRetailPrice);?>
+                                </th>
+                                <th class="ProductMandTableEntry4">
+                                    <?php print($aantal);?>
+                                </th>
+                                <th class="ProductMandTableEntry5">
+                                    € <?php print($RecommendedRetailPrice*$aantal);?>
+                                </th>
+                            </tr>
+                            <?php
+
+                        }
+                    ?>
+                    <tr class="ProductMandTotalLine">
+                        <th class="ProductMandTableEntry1"></th><th class="ProductMandTableEntry2"></th><th class="ProductMandTableEntry3"></th><th class="ProductMandTableEntry4"></th>
+                        <th class="ProductMandTableEntry5">€ <?php print($totalprice);?></th>
+                    </tr>
+                </table>
+                <br><br><br><br>
+            </div>
         </div>
+
 
     </div>
     <footer>
