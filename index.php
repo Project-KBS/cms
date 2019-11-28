@@ -54,9 +54,12 @@ session_start();
 
                         <!-- Print dit resultaat -->
                         <div class="product-display d-flex">
+
                             <!-- Maakt alles klikbaar zodat de gebruiker naar de pagina gestuurd wordt -->
                             <a href="product.php?id=<?php print($StockItemID) ?>">
+
                                 <div class="product-foto">
+
                                     <!-- Kijkt of het product een foto in de database heeft, zo niet dan geeft hij de categoriefoto -->
                                     <img src="data:image/png;base64, <?php
                                                                         if (isset($Photo) && $Photo != null) {
@@ -65,18 +68,26 @@ session_start();
                                                                             print(MediaPortal::getCategoryImage($StockItemID));
                                                                         }
                                                                       ?>">
+
                                 </div>
+
                                 <div class="product-beschrijving">
+
                                     <h4><?php print($StockItemName) ?></h4>
                                     <p><?php print($SearchDetails) ?></p>
+
                                     <div class="product-prijs">
                                         <h5>€<?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h5>
                                     </div>
+
                                     <form method="GET" name="winkelmandje" action="winkelmand.php?id=<?php print($StockItemID);?>">
                                         <input type="submit" name="id" class="WinkelwagenKnop" value="<?php print($StockItemID);?>">
                                     </form>
+
                                 </div>
+
                             </a>
+
                         </div>
 
                     <?php

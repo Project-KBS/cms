@@ -212,7 +212,7 @@ form{
 }
 /* Net zoals flex-push alleen worden items op 50% gezet.*/
 .flex-center {
-    margin- left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
