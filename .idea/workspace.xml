@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Fix witte categorien">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Bereken prijzen inclusief BTW">
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/sale_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/sale_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,14 +134,7 @@
       <workItem from="1574242442815" duration="1051000" />
       <workItem from="1574253911143" duration="518000" />
       <workItem from="1574850028731" duration="1012000" />
-      <workItem from="1574928067512" duration="1140000" />
-    </task>
-    <task id="LOCAL-00022" summary="CSS geüpdate">
-      <created>1573647826724</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1573647826724</updated>
+      <workItem from="1574928067512" duration="1382000" />
     </task>
     <task id="LOCAL-00023" summary="CSS geüpdate">
       <created>1573648139534</created>
@@ -484,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574866841448</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Bereken prijzen inclusief BTW">
+      <created>1574929270177</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1574929270178</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +501,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen" />
     <MESSAGE value="Correcte URL bij pagina nummer linkjes" />
     <MESSAGE value="Fix style" />
     <MESSAGE value="Gebruik bootstrap columns in productdispaly" />
@@ -531,6 +525,7 @@
     <MESSAGE value="Voorbeelddata in cart class" />
     <MESSAGE value="Max-width bij product display en knop width gefixed" />
     <MESSAGE value="Fix witte categorien" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix witte categorien" />
+    <MESSAGE value="Bereken prijzen inclusief BTW" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bereken prijzen inclusief BTW" />
   </component>
 </project>

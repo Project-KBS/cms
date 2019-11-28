@@ -244,7 +244,7 @@ function specificaties(){
                                     // Dit is het input veld
                                     const hoeveelheid_input = document.getElementById('hoeveelheid_input');
 
-                                    // Listen for input event on numInput. ( blokkeert negatieve getallen)
+                                    // Als er een min-teken getypt wordt hij verwijderd
                                     hoeveelheid_input.onkeydown = function(e) {
                                         if(!((e.keyCode > 95 && e.keyCode < 106)
                                             || (e.keyCode > 47 && e.keyCode < 58)
