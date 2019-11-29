@@ -34,20 +34,26 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
             <div class="contact-info">
                 <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
                 <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
-                    <?php $inputArray = array(  "Voornaam",
-                                                "Tussenvoegsel",
-                                                "Achternaam",
-                                                "Straatnaam",
-                                                "Huisnummer",
-                                                "Postcode",
-                                                "Woonplaats",
-                                                "Email-adres");
+                    <?php
+                    //array met alle items die je in de form wil hebben
+                    $inputArray = array("Voornaam",
+                                        "Tussenvoegsel",
+                                        "Achternaam",
+                                        "Straatnaam",
+                                        "Huisnummer",
+                                        "Postcode",
+                                        "Woonplaats",
+                                        "Email-adres");
 
+
+                    //foreach loop die van elk item in de array een input veld maakt en het onder elkaar zet
                     foreach($inputArray as $index => $value){
                     ?>
+
                         <div class="row">
                             <div class="col-3 FormLabels"><?php print($value); ?>:</div>
-                            <div class="col-9"><input type="text" placeholder="<?php print($value); ?>" required="required">
+                            <div class="col-9">
+                                <input type="text" placeholder="<?php print($value); ?>" required="required">
                             </div>
                         </div><br>
                     <?php
