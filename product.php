@@ -238,10 +238,11 @@ function specificaties(){
                             </h3>
 
                             <div id="winkelwagen" name="winkelmandje">
-                                <form method="post" >
-                                <input type="number" id="hoeveelheid_input" min="0">
+                                <form method="post" name="winkelmandje" action="">
+                                <input type="number" name="product:<?php print($StockItemID); ?>" id="hoeveelheid_input" min="1">
                                 <input type="submit" value="Toevoegen aan winkelwagen">
                                 </form>
+
 
                                 <script>
                                     // Dit is het input veld

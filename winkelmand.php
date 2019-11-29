@@ -137,7 +137,7 @@ session_start();
                                     const form_input<?php print($teller); ?> = document.getElementById('update-aantal-input');
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
-                                        if(confirm("Press a button!")){
+                                        if(confirm("Weet u dit zeker?")){
                                             geheel<?php print($teller); ?>.style.display = "none";
                                             test<?php print($teller); ?>.value = -1;
 
@@ -275,6 +275,7 @@ session_start();
 
                         <h2>Geen items in winkelmand</h2>
                         <br>
+                        <p> HIER KOMT NOG TEKST BIJ NIKS IN DE WINKELWAGEN</p>
 
                     <?php
 

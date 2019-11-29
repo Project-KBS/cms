@@ -43,7 +43,7 @@ include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen opha
     <div id="pagina-container" style="text-align: center">
 
         <h1>Pagina niet gevonden</h1>
-        <p>Sorry,er wordt hier aan gewerkt. Klik op een categorie of ga terug naar de homepagina.</p><br><br>
+        <p>Sorry er wordt hieraan gewerkt. Klik op een categorie of ga terug naar de homepagina.</p><br><br>
 
         <!-- Deze knop stuurt de gebruiker naar de homepagina -->
         <button class="Big-button" onclick="location.href='index.php'">Verder met shoppen</button>
