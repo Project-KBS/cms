@@ -73,15 +73,15 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                             <div><?php print($MarketingComments); ?></div>
                                         </div>
                                     </div>
-                                    <div id="aantalInMand" class="col-1">
-                                        <div class-1>
-                                            Aantal <?php print($aantal); ?>
-                                        </div>
-                                    </div>
-                                    <div id="retailPrijs" class="col-4">
+                                    <div id="retailPrijs" class="col-2 centerDivText">
                                         € <?php print($roundedRecommendedRetailPrice); ?>
                                     </div>
-                                    <div class="col-1">
+                                    <div id="aantalInMand" class="col-2 centerDivText">
+                                        <div class-1>
+                                            Aantal: <?php print($aantal); ?>
+                                        </div>
+                                    </div>
+                                    <div id="PrijsBTW" class="col-2 centerDivText">
                                         € <?php print($totalPriceInlc); ?>
                                     </div>
             </div>
@@ -98,8 +98,8 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                     ?>
                 <div class="row">
-                    <div id="opvul" class="col-7"></div>
-                    <div id="Totaal" class="col-3">
+                    <div id="opvul" class="col-10"></div>
+                    <div id="Totaal" class="col-2">
 
                         <!-- Prijzen totaal-->
                         <p id="prijs-excl">Exclusief btw: €<?php print($totalPriceExcl); ?></p>

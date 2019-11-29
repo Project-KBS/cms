@@ -185,3 +185,11 @@ input[type=number]::-webkit-outer-spin-button {
 .FormLabels{
     text-align: right;
 }
+
+#photo{
+    width: 100%;
+}
+
+.centerDivText {
+    margin-top: 6%;
+}
