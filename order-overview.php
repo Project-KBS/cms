@@ -110,7 +110,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                 </div>
             <div class="row">
                 <div class="col-4">
-                    <a href="winkelmand.php">Terug naar winkelmand</a>
+                    <a href="index.php">Verder winkelen</a>
                 </div>
                 <div class="col-6"></div>
                 <a href="checkout.php">
