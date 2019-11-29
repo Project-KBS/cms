@@ -55,6 +55,21 @@ class Cart {
     }
 
     /**
+     * Deze functie delete een product van de winkelmand sessie.<br />
+     *
+     * ProductId moet een integer boven de 0 zijn en de sessie moet gestart zijn.
+     *
+     * @param $productId
+     * @return void
+     */
+    public static function delete($productId) {
+        // Controleer of productId of hij hoger is dan 0.
+        if (is_int($productId) && $productId > 0) {
+            unset($_SESSION[self::SESSION_PREFIX . $productId]);
+        }
+    }
+
+    /**
      * Deze functie updatet de aantallen van de producten in $_SESSION naar $_POST
      *
      * @return void
@@ -65,8 +80,12 @@ class Cart {
             $value_num = intval($value);
 
             // Check of ze beide integers integers zijn en groter dan 0
-            if ($index_num > 0 && $value_num > 0) {
-                self::add($index_num, $value_num);
+            if ($index_num > 0) {
+                if ($value_num > 0) {
+                    self::add($index_num, $value_num);
+                } else if ($value_num === -1) {
+                    self::delete($index_num);
+                }
             }
         }
     }
