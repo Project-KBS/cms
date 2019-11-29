@@ -159,40 +159,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: 60%;
 }
 
-.ProductMandTableEntry1{
-    width: 20%;
-    margin: 5%;
-}
-
-.ProductMandTableEntry2{
-    width: 50%;
-    margin: 5%;
-}
-
-.ProductMandTableEntry3{
-    width: 10%;
-    margin: 5%;
-    text-align: center;
-}
-
-.ProductMandTableEntry4{
-    width: 10%;
-    margin: 5%;
-    text-align: center;
-}
-
-.ProductMandTableEntry5{
-    width: 10%;
-    margin: 5%;
-    text-align: center;
-}
-
-.ProductMandTotalLine{
-    border-top-style: solid;
-    border-color: black;
-    border-width: 1px;
-}
-
 .ContinueButton{
     background-color: #24b51f;
     color: white;

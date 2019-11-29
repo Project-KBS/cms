@@ -67,7 +67,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                         }
                                         ?>"><br><br>
                                     </div>
-                                    <div class="product-info" class="col-4">
+                                    <div id="product-info" class="col-4">
                                         <div class="ProductMand">
                                             <div><h4><?php print($StockItemName); ?></h4></div>
                                             <div><?php print($MarketingComments); ?></div>
