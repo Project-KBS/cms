@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tpl/head-tag-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/head-tag-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +44,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -137,13 +138,6 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00033" summary="Vergroot pagina breedte naar 50% van het scherm">
-      <created>1573839784715</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1573839784715</updated>
     </task>
     <task id="LOCAL-00034" summary="Vergroot pagina breedte naar 50% van het scherm">
       <created>1574070824845</created>
@@ -481,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574962080859</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Start de sessie">
+      <created>1575023925360</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1575023925364</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +504,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Return empty array instead of null" />
     <MESSAGE value="Aanpassing grootte video" />
     <MESSAGE value="Responsive product grid in index.php" />
     <MESSAGE value="Fix text-decoration bij product-display:hover" />
@@ -528,6 +528,7 @@
     <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
     <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix formatting in templates" />
+    <MESSAGE value="Start de sessie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start de sessie" />
   </component>
 </project>

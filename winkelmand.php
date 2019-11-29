@@ -54,6 +54,16 @@ session_start();
 
                 <script>
 
+                    class InputVeld {
+
+                        constructor(element, prijs, taxrate) {
+                            this.element = element;
+                            this.prijs = prijs;
+                            this.taxrate = taxrate;
+                        }
+
+                    }
+
                     // Dit is de array met alle aantal omhoog/omlaag knoppen.
                     var input_elementen = [];
 
@@ -116,8 +126,11 @@ session_start();
                                     // Dit is het input veld
                                     const hoeveelheid_input<?php print($teller); ?> = document.getElementById('test<?php print($teller); ?>');
 
+
+                                    var inputVeld = new InputVeld(hoeveelheid_input<?php print($teller); ?>, <?php print($RecommendedRetailPrice); ?>, <?php print($TaxRate); ?>);
+
                                     // Voeg dit veld toe aan de input elementen array
-                                    input_elementen.push(hoeveelheid_input<?php print($teller); ?>);
+                                    input_elementen.push(inputVeld);
 
                                     // Listen for input event on numInput. ( blokkeert negatieve getallen)
                                     hoeveelheid_input<?php print($teller); ?>.onkeydown = function(e) {
@@ -182,8 +195,8 @@ session_start();
                             input_elementen.forEach(function(element, index, array) {
 
                                 // Voeg de totaalprijs van dit product toe
-                                prijsExcl += element.value * <?php print($RecommendedRetailPrice); ?>;
-                                prijsIncl += element.value * <?php print($RecommendedRetailPrice * (1+ $TaxRate/100)); ?>;
+                                prijsExcl += element.element.value * element.prijs;
+                                prijsIncl += element.element.value * (element.prijs * (1 + element.taxrate / 100));
 
                             });
 
