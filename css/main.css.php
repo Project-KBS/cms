@@ -216,3 +216,6 @@ input[type=number]::-webkit-outer-spin-button {
     width: 200%;
 }
 
+.FormLabels{
+    text-align: right;
+}

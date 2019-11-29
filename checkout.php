@@ -34,18 +34,14 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
             <div class="contact-info">
                 <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
                 <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
-                    <input type="text" placeholder="Voornaam" required="required"><br>
-                    <input type="text" placeholder="Tussenvoegsel"><br>
-                    <input type="text" placeholder="Achternaam" required="required"><br>
-                    <input type="text" placeholder="Straatnaam" required="required"><br>
-                    <input type="text" placeholder="Huisnummer" required="required"><br>
-                    <input type="text" placeholder="Postcode" required="required"><br>
-                    <input type="text" placeholder="Woonplaats" required="required"><br>
-                    <input type="email" placeholder="Email-adres" required="required"><br>
-                    <input type="password" placeholder="Wachtwoord"><br>
-                    <input type="wachtwoord" placeholder="Herhaal wachtwoord"><br>
-
-
+                    <div class="row"><div class="col-3 FormLabels">Voornaam:</div><div class="col-9"><input type="text" placeholder="Voorbeeld" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Tussenvoegsel:</div><div class="col-9"><input type="text" placeholder="van der"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Achternaam:</div><div class="col-9"><input type="text" placeholder="Voorbeeld" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Straatnaam:</div><div class="col-9"><input type="text" placeholder="Voorbeeldlaan" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Huisnummer:</div><div class="col-9"><input type="text" placeholder="123a" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Postcode:</div><div class="col-9"><input type="text" placeholder="1234AB" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Woonplaats:</div><div class="col-9"><input type="text" placeholder="Voorbeeld" required="required"></div></div><br>
+                    <div class="row"><div class="col-3 FormLabels">Email-adres:</div><div class="col-9"><input type="email" placeholder="voorbeeld@example.com" required="required"></div></div><br>
                 </form>
             </div>
         </div>
