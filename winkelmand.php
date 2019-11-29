@@ -125,12 +125,12 @@ session_start();
 
                                     const geheel<?php print($teller); ?> = document.getElementById('geheel<?php print($teller); ?>');
 
-                                    //const test<?php //print($teller); ?> = document.getElementById('test<?php //print($teller); ?>');
+                                    const test<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
 
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
                                         geheel<?php print($teller); ?>.style.display = "none";
-                                        //test<?php //print($teller); ?>.value = 0;
+                                        test<?php print($teller); ?>.value = -1;
                                     }
 
 
