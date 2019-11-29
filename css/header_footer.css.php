@@ -228,14 +228,14 @@ form{
 .footer-left {
     position: absolute;
     width: 30vw;
-    height: 30vh;
+    height: 20%;
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
 }
 
 .footer-center {
     position: absolute;
     width: 40vw;
-    height: 30vh;
+    height: 20%;
     margin-left: 30vw;
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
 }
@@ -243,7 +243,7 @@ form{
 .footer-right {
     position: absolute;
     width: 30vw;
-    height: 30vh;
+    height: 20%;
     margin-left: 70vw;
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
 }

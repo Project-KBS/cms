@@ -46,6 +46,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                         foreach (Cart::get() as $item => $aantal){
 
+
                             $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -87,6 +88,11 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                                 <?php
                                 $totalprice += $totalPriceInlc;
+
+                                   ?> <hr>
+                                <?php
+                            } elseif($aantal === 0){
+                                print("Je hebt niks in je winkelmandje");
                             }
                         }   $totalprice = round($totalprice,2);
 
@@ -110,7 +116,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
     <footer>
         <?php
-        //include("tpl/footer_template.php");
+        include("tpl/footer_template.php");
         ?>
     </footer>
 </body>
