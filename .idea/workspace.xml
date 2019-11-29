@@ -44,9 +44,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -138,13 +138,6 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00034" summary="Vergroot pagina breedte naar 50% van het scherm">
-      <created>1574070824845</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1574070824845</updated>
     </task>
     <task id="LOCAL-00035" summary="Productspecificatie en omschrijving aangepast">
       <created>1574074192233</created>
@@ -482,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575023925364</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Winkelmand verwijderknop in progress">
+      <created>1575024867840</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1575024867841</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +504,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Aanpassing grootte video" />
     <MESSAGE value="Responsive product grid in index.php" />
     <MESSAGE value="Fix text-decoration bij product-display:hover" />
     <MESSAGE value="Veel meer comments bij product.php javascripts + fix margins bij header" />
@@ -529,6 +528,7 @@
     <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
     <MESSAGE value="Start de sessie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start de sessie" />
+    <MESSAGE value="Winkelmand verwijderknop in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Winkelmand verwijderknop in progress" />
   </component>
 </project>
