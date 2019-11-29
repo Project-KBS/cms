@@ -79,7 +79,7 @@ session_start();
                     extract($row);
                         ?>
 
-                    <div id="geheel" class="row" style="padding-bottom: 2vh">
+                    <div id="geheel<?php print($teller); ?>" class="row" style="padding-bottom: 2vh">
 
                             <!-- Links komen de foto's en informatie van het product-->
                             <div id="Foto" class="col-2">
@@ -112,7 +112,32 @@ session_start();
                             </div>
 
                             <div id="Aantal" class="col-1">
-                                <input style="width: 100%" type="number" id="test<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>" min="0">
+                                <input style="width: 100%" type="number" id="hoeveelheid<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>" min="0">
+
+                                <!-- Verwijder uit winkelwagen knop -->
+                                <button id="verwijder<?php print($teller); ?>" type="button"  style="width: 100%; margin-top: 0.5em">
+                                    Verwijder
+                                </button>
+
+                                <script>
+                                    // Dit is het input veld
+                                    const verwijderen<?php print($teller); ?> = document.getElementById('verwijder<?php print($teller); ?>');
+
+                                    const geheel<?php print($teller); ?> = document.getElementById('geheel<?php print($teller); ?>');
+
+                                    //const test<?php //print($teller); ?> = document.getElementById('test<?php //print($teller); ?>');
+
+
+                                    verwijderen<?php print($teller); ?>.onclick = function(){
+                                        geheel<?php print($teller); ?>.style.display = "none";
+                                        //test<?php //print($teller); ?>.value = 0;
+                                    }
+
+
+
+
+                                </script>
+
                             </div>
 
                             <!-- hier komen de aantallen en totaalprijzen-->
@@ -124,7 +149,7 @@ session_start();
                                 <!-- Zorgt ervoor dat je geen negatief getal kan invullen-->
                                 <script>
                                     // Dit is het input veld
-                                    const hoeveelheid_input<?php print($teller); ?> = document.getElementById('test<?php print($teller); ?>');
+                                    const hoeveelheid_input<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
 
 
                                     var inputVeld = new InputVeld(hoeveelheid_input<?php print($teller); ?>, <?php print($RecommendedRetailPrice); ?>, <?php print($TaxRate); ?>);
