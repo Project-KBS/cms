@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
-    </list>
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,13 +135,6 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00035" summary="Productspecificatie en omschrijving aangepast">
-      <created>1574074192233</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1574074192233</updated>
     </task>
     <task id="LOCAL-00036" summary="Productspecificatie en omschrijving aangepast">
       <created>1574081782391</created>
@@ -482,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575024867841</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="-1">
+      <created>1575025017614</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1575025017614</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +501,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Responsive product grid in index.php" />
     <MESSAGE value="Fix text-decoration bij product-display:hover" />
     <MESSAGE value="Veel meer comments bij product.php javascripts + fix margins bij header" />
     <MESSAGE value="Zoekpagina results in een flexbox" />
@@ -529,6 +525,7 @@
     <MESSAGE value="Fix formatting in templates" />
     <MESSAGE value="Start de sessie" />
     <MESSAGE value="Winkelmand verwijderknop in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Winkelmand verwijderknop in progress" />
+    <MESSAGE value="-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="-1" />
   </component>
 </project>
