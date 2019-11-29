@@ -25,6 +25,9 @@
 <!-- Bootstrap -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<?php//
-//Is deze session start nodig? Bij mij geeft hij een melding dat er al een gestart is
-// session_start(); ?>
+<?php
+    // Start de sessie als hij nog niet gestart is
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
