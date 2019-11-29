@@ -43,6 +43,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                         //hier wordt een variabele gemaakt om de prijs in op te slaan
                         $totalprice = 0;
 
+
                         foreach (Cart::get() as $item => $aantal){
 
                             $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
@@ -80,13 +81,14 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                         € <?php print($roundedRecommendedRetailPrice); ?>
                                     </div>
                                     <div class="col-1">
-                                        <?php print($totalPriceInlc); ?>
+                                        € <?php print($totalPriceInlc); ?>
                                     </div>
             </div>
 
                                 <?php
+                                $totalprice += $totalPriceInlc;
                             }
-                        }
+                        }   $totalprice = round($totalprice,2);
 
                     ?>
             <hr>
@@ -96,8 +98,8 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                         <!-- Prijzen totaal-->
                         <p id="prijs-excl">Exclusief btw: €<?php print($totalPriceExcl); ?></p>
-                        <p id="prijs-incl">Inclusief btw: €<?php print($totalPriceInlc); ?></p>
-                        <p id="prijs-totaal">Totaalbedrag: €<?php print($totalPriceInlc); ?></p>
+                        <p id="prijs-incl">Inclusief btw: €<?php print($totalprice); ?></p>
+                        <p id="prijs-totaal">Totaalbedrag: €<?php print(round($totalprice,2)); ?></p>
                     </div>
 
                 </div>
