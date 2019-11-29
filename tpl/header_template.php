@@ -4,7 +4,9 @@
     <!-- Dit gedeelte van de header komt in een lijn te staan met de body content -->
     <div id="header-inline" class="responsive-container">
         <div id="promotie">
-             <a href="index.php"><img src="img/logo/small-250x90.png" alt="Logo"></a>
+             <a href="index.php">
+                 <img src="img/logo/small-250x90.png" alt="Logo">
+             </a>
         </div>
      </div>
     <?php

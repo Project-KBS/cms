@@ -132,6 +132,7 @@ session_start();
                                         test<?php print($teller); ?>.value = -1;
 
                                         functie_bereken();
+                                       // window.location.href = "";
                                     }
 
                                 </script>
@@ -148,8 +149,6 @@ session_start();
                                 <script>
                                     // Dit is het input veld
                                     const hoeveelheid_input<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
-
-
                                     var inputVeld = new InputVeld(hoeveelheid_input<?php print($teller); ?>, <?php print($RecommendedRetailPrice); ?>, <?php print($TaxRate); ?>);
 
                                     // Voeg dit veld toe aan de input elementen array

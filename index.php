@@ -80,8 +80,8 @@ session_start();
                                         <h5>€<?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h5>
                                     </div>
 
-                                    <form method="GET" name="winkelmandje" action="winkelmand.php?id=<?php print($StockItemID);?>">
-                                        <input type="submit" name="id" class="WinkelwagenKnop" value="<?php print($StockItemID);?>">
+                                    <form method="POST" name="winkelmandje" action="">
+                                        <input type="submit" name="product:<?php print($StockItemID); ?>" class="WinkelwagenKnop" value="1">
                                     </form>
 
                                 </div>

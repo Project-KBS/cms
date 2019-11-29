@@ -1,3 +1,8 @@
+<?php
+
+include_once("app/cart.php");
+?>
+
 <!-- Dit is de template voor de header, als je een nieuwe <head> tag maakt in een php file, moet je dit includen -->
 <meta charset="utf-8">
 
@@ -30,4 +35,6 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+
+    Cart::update();
 ?>
