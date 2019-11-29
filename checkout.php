@@ -45,15 +45,34 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 
                     foreach($inputArray as $index => $value){
                     ?>
-                        <div class="row">
-                            <div class="col-3 FormLabels"><?php print($value); ?>:</div>
-                            <div class="col-9"><input type="text" placeholder="<?php print($value); ?>" required="required">
-                            </div>
-                        </div><br>
+                    <div class="row">
+                        <div class="col-3 FormLabels">
+                            <?php print($value); ?>:
+                        </div>
+                        <div class="col-9">
+                            <input type="text" placeholder="<?php print($value); ?>" required="required">
+                        </div>
+                    </div>
+                    <br>
                     <?php
                     }
                     ?>
                 </form>
+            </div>
+            <div class="row lineTop">
+                <div class="col-4">
+                    <a href="order-overview.php">Terug naar overzicht</a>
+                </div>
+                <a href="">
+                    <div class="ContinueButton">Betalen ></div>
+                </a>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-2 iDealLogo">
+                    <img class="iDealLogo"src="img/logo/ideal.png" alt="iDeal">
+                </div>
             </div>
         </div>
     </div>
