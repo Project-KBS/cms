@@ -39,6 +39,10 @@ session_start();
 
     ?>
 
+    <form id="update-aantal" style="display: none" method="POST" action="winkelmand.php">
+        <input id="update-aantal-input" type="hidden" name="" value="-1">
+    </form>
+
     <!-- Hierin  -->
     <div id="pagina-container">
 
@@ -126,13 +130,18 @@ session_start();
                                     const geheel<?php print($teller); ?> = document.getElementById('geheel<?php print($teller); ?>');
                                     // Dit is de hoeveelheid input veld
                                     const test<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
+                                    // Dit is het onzichtbare verwijder form
+                                    const form<?php print($teller); ?> = document.getElementById('update-aantal');
+                                    const form_input<?php print($teller); ?> = document.getElementById('update-aantal-input');
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
                                         geheel<?php print($teller); ?>.style.display = "none";
                                         test<?php print($teller); ?>.value = -1;
 
                                         functie_bereken();
-                                       // window.location.href = "";
+                                        form_input<?php print($teller); ?>.name = "<?php print("product:" . $StockItemID); ?>";
+                                        form_input<?php print($teller); ?>.value = "<?php print("-1"); ?>";
+                                        form<?php print($teller); ?>.submit();
                                     }
 
                                 </script>
