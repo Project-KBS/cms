@@ -112,7 +112,7 @@ session_start();
                             </div>
 
                             <div id="Aantal" class="col-1">
-                                <input style="width: 100%" type="number" id="hoeveelheid<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>" min="0">
+                                <input style="width: 100%" type="number" id="hoeveelheid<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>">
 
                                 <!-- Verwijder uit winkelwagen knop -->
                                 <button id="verwijder<?php print($teller); ?>" type="button"  style="width: 100%; margin-top: 0.5em">
@@ -120,21 +120,19 @@ session_start();
                                 </button>
 
                                 <script>
-                                    // Dit is het input veld
+                                    // Dit de verwijder knop
                                     const verwijderen<?php print($teller); ?> = document.getElementById('verwijder<?php print($teller); ?>');
-
+                                    // Dit is de rij met alles over het product
                                     const geheel<?php print($teller); ?> = document.getElementById('geheel<?php print($teller); ?>');
-
+                                    // Dit is de hoeveelheid input veld
                                     const test<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
-
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
                                         geheel<?php print($teller); ?>.style.display = "none";
                                         test<?php print($teller); ?>.value = -1;
+
+                                        functie_bereken();
                                     }
-
-
-
 
                                 </script>
 
@@ -173,6 +171,10 @@ session_start();
                                         // Bereken de totaalprijs
                                         totaalprijs<?php print($teller); ?>.innerHTML = "Totaalprijs: € " +
                                             (hoeveelheid_input<?php print($teller); ?>.value * <?php print($RecommendedRetailPrice * (1+ $TaxRate/100)) ?>).toFixed(2);
+
+                                        if (hoeveelheid_input<?php print($teller);?>.value <= 0) {
+                                            verwijderen<?php print($teller);?>.onclick(null);
+                                        }
 
                                         // Bereken de prijs incl/excl btw opnieuw.
                                         functie_bereken();
@@ -219,9 +221,12 @@ session_start();
                             // foreach loop voor alle input elementen
                             input_elementen.forEach(function(element, index, array) {
 
-                                // Voeg de totaalprijs van dit product toe
-                                prijsExcl += element.element.value * element.prijs;
-                                prijsIncl += element.element.value * (element.prijs * (1 + element.taxrate / 100));
+                                // Als hoeveelheid positief is
+                                if (element.element.value > 0) {
+                                    // Voeg de totaalprijs van dit product toe
+                                    prijsExcl += element.element.value * element.prijs;
+                                    prijsIncl += element.element.value * (element.prijs * (1 + element.taxrate / 100));
+                                }
 
                             });
 
