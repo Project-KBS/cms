@@ -37,7 +37,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
             </div>
         </header>
         <div class="content-container-home">
-            <div id="order-overview" class="row" style="padding-bottom: 2vh">
+
                     <?php
 
                         //hier wordt een variabele gemaakt om de prijs in op te slaan
@@ -55,6 +55,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                 $totalPriceInlc = round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2);
                                 $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1+ $TaxRate/100),2);
                                 ?>
+                                <div id="order-overview" class="row" style="padding-bottom: 2vh">
                                     <div id="photo" class="col-2">
                                         <br><img src="data:image/png;base64, <?php
                                         if (isset($Photo) && $Photo != null) {
@@ -98,17 +99,12 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                         <p id="prijs-incl">Inclusief btw: €<?php print($totalPriceInlc); ?></p>
                         <p id="prijs-totaal">Totaalbedrag: €<?php print($totalPriceInlc); ?></p>
                     </div>
-                    <div class="row">
-                        <div class="col-5">
-                            <a href="winkelmand.php">Terug naar winkelmand</a>
-                        </div>
-                        <div id="opvul" class="col-5"></div>
 
-                        <div class="col-3"></div>
-
-                                pp
-                    </div>
                 </div>
+            <div class="row">
+                <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><a href="checkout.php"><div class="ContinueButton">Afrekenen ></div></a>
+            </div>
+            <br><br>
 
     <footer>
         <?php
