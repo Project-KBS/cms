@@ -58,8 +58,8 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                                 $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1+ $TaxRate/100),2);
                                 ?>
                                 <div id="order-overview" class="row" style="padding-bottom: 2vh">
-                                    <div id="photo" class="col-2">
-                                        <br><img src="data:image/png;base64, <?php
+                                    <div  id="photo" class="col-2">
+                                        <br><img style="width: 100%" src="data:image/png;base64, <?php
                                         if (isset($Photo) && $Photo != null) {
                                             print($Photo);
                                         } else {

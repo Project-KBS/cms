@@ -135,13 +135,17 @@ session_start();
                                     const form_input<?php print($teller); ?> = document.getElementById('update-aantal-input');
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
-                                        geheel<?php print($teller); ?>.style.display = "none";
-                                        test<?php print($teller); ?>.value = -1;
+                                        if(confirm("Press a button!")){
+                                            geheel<?php print($teller); ?>.style.display = "none";
+                                            test<?php print($teller); ?>.value = -1;
 
-                                        functie_bereken();
-                                        form_input<?php print($teller); ?>.name = "<?php print("product:" . $StockItemID); ?>";
-                                        form_input<?php print($teller); ?>.value = "<?php print("-1"); ?>";
-                                        form<?php print($teller); ?>.submit();
+                                            functie_bereken();
+                                            form_input<?php print($teller); ?>.name = "<?php print("product:" . $StockItemID); ?>";
+                                            form_input<?php print($teller); ?>.value = "<?php print("-1"); ?>";
+                                            form<?php print($teller); ?>.submit();
+                                        }
+
+
                                     }
 
                                 </script>

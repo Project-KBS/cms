@@ -237,9 +237,12 @@ function specificaties(){
                                 ?>
                             </h3>
 
-                            <div id="winkelwagen">
+                            <div id="winkelwagen" name="winkelmandje">
+                                <form method="post" >
                                 <input type="number" id="hoeveelheid_input" min="0">
                                 <input type="submit" value="Toevoegen aan winkelwagen">
+                                </form>
+
                                 <script>
                                     // Dit is het input veld
                                     const hoeveelheid_input = document.getElementById('hoeveelheid_input');
