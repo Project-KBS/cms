@@ -37,22 +37,7 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
             </div>
         </header>
         <div class="content-container-home">
-            <div class="order-overview">
-                <table>
-                    <tr>
-                        <th class="ProductMandTableEntry1">
-                            Product
-                        </th><th class="ProductMandTableEntry2"></th>
-                        <th class="ProductMandTableEntry3">
-                            Prijs per stuk
-                        </th>
-                        <th class="ProductMandTableEntry4">
-                            Aantal
-                        </th>
-                        <th class="ProductMandTableEntry5">
-                            Totaalprijs
-                        </th>
-                    </tr>
+            <div id="order-overview" class="row" style="padding-bottom: 2vh">
                     <?php
 
                         //hier wordt een variabele gemaakt om de prijs in op te slaan
@@ -66,54 +51,65 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                             extract($row);
                             if($aantal>0) {
-                                $totalprice = $totalprice + ($RecommendedRetailPrice * $aantal);
+                                $totalPriceExcl = round($totalprice + ($RecommendedRetailPrice * $aantal),2);
+                                $totalPriceInlc = round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2);
+                                $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1+ $TaxRate/100),2);
                                 ?>
-                                <tr>
-                                    <td class="ProductMandTableEntry1">
-                                        <br><img style="max-width: 100%" src="data:image/png;base64, <?php
+                                    <div id="photo" class="col-2">
+                                        <br><img src="data:image/png;base64, <?php
                                         if (isset($Photo) && $Photo != null) {
                                             print($Photo);
                                         } else {
                                             print(MediaPortal::getCategoryImage($StockItemID));
                                         }
                                         ?>"><br><br>
-                                    </td>
-                                    <td class="ProductMandTableEntry2">
+                                    </div>
+                                    <div class="product-info" class="col-4">
                                         <div class="ProductMand">
                                             <div><h4><?php print($StockItemName); ?></h4></div>
                                             <div><?php print($MarketingComments); ?></div>
                                         </div>
-                                    </td>
-                                    <td class="ProductMandTableEntry3">
-                                        € <?php print($RecommendedRetailPrice); ?>
-                                    </td>
-                                    <td class="ProductMandTableEntry4">
-                                        <?php print($aantal); ?>
-                                    </td>
-                                    <td class="ProductMandTableEntry5">
-                                        € <?php print($RecommendedRetailPrice * $aantal); ?>
-                                    </td>
-                                </tr>
+                                    </div>
+                                    <div id="aantalInMand" class="col-1">
+                                        <div class-1>
+                                            Aantal <?php print($aantal); ?>
+                                        </div>
+                                    </div>
+                                    <div id="retailPrijs" class="col-4">
+                                        € <?php print($roundedRecommendedRetailPrice); ?>
+                                    </div>
+                                    <div class="col-1">
+                                        <?php print($totalPriceInlc); ?>
+                                    </div>
+            </div>
+
                                 <?php
                             }
                         }
 
                     ?>
-                    <tr class="ProductMandTotalLine">
-                        <th class="ProductMandTableEntry1"></th><th class="ProductMandTableEntry2"></th><th class="ProductMandTableEntry3"></th><th class="ProductMandTableEntry4"></th>
-                        <th class="ProductMandTableEntry5">Totaal:<br>€ <?php print($totalprice);?></th>
-                    </tr>
-                </table>
-                <br><br>
+            <hr>
                 <div class="row">
-                    <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><a href="checkout.php"><div class="ContinueButton">Afrekenen ></div></a>
+                    <div id="opvul" class="col-7"></div>
+                    <div id="Totaal" class="col-3">
+
+                        <!-- Prijzen totaal-->
+                        <p id="prijs-excl">Exclusief btw: €<?php print($totalPriceExcl); ?></p>
+                        <p id="prijs-incl">Inclusief btw: €<?php print($totalPriceInlc); ?></p>
+                        <p id="prijs-totaal">Totaalbedrag: €<?php print($totalPriceInlc); ?></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <a href="winkelmand.php">Terug naar winkelmand</a>
+                        </div>
+                        <div id="opvul" class="col-5"></div>
+
+                        <div class="col-3"></div>
+
+                                pp
+                    </div>
                 </div>
-                <br><br>
-            </div>
-        </div>
 
-
-    </div>
     <footer>
         <?php
         //include("tpl/footer_template.php");
