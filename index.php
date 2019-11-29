@@ -81,7 +81,8 @@ session_start();
                                     </div>
 
                                     <form method="POST" name="winkelmandje" action="">
-                                        <input type="submit" name="product:<?php print($StockItemID); ?>" class="WinkelwagenKnop" value="1">
+                                        <input type="hidden" name="product:<?php print($StockItemID); ?>" value="1">
+                                        <input type="submit" class="WinkelwagenKnop" value="Toevoegen aan winkelmandje">
                                     </form>
 
                                 </div>
