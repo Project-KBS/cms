@@ -75,7 +75,9 @@ session_start();
 
             <?php
                 $teller = 0;
+                $isResultaat = false;
                 foreach (Cart::get() as $item => $aantal) {
+                    $isResultaat = true;
                     $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -203,64 +205,82 @@ session_start();
                     $teller++;
                 }
 
+                if ($isResultaat) {
+
+
+            ?>
+
+                <div class="row">
+
+                    <div id="opvul" class="col-7">
+
+                    </div>
+
+                    <!-- Bestelknop komt hier met foto's van betalmethoden-->
+                    <div id="Totaal" class="col-3">
+
+                        <!-- Prijzen totaal-->
+                        <p id="prijs-excl">Exclusief btw: €</p>
+                        <p id="prijs-incl">Inclusief btw: €</p>
+                        <p id="prijs-totaal">Totaalbedrag: €</p>
+
+                        <script>
+
+                            const element_prijs_excl = document.getElementById("prijs-excl");
+                            const element_prijs_incl = document.getElementById("prijs-incl");
+                            const element_prijs_totaal = document.getElementById("prijs-totaal");
+
+                            const functie_bereken = function () {
+
+                                let prijsExcl = 0;
+                                let prijsIncl = 0;
+
+                                // foreach loop voor alle input elementen
+                                input_elementen.forEach(function (element, index, array) {
+
+                                    // Als hoeveelheid positief is
+                                    if (element.element.value > 0) {
+                                        // Voeg de totaalprijs van dit product toe
+                                        prijsExcl += element.element.value * element.prijs;
+                                        prijsIncl += element.element.value * (element.prijs * (1 + element.taxrate / 100));
+                                    }
+
+                                });
+
+                                // Rond de prijzen af naar 2 decimalen en voeg ze in op de juiste plek
+                                element_prijs_excl.innerHTML = "Exclusief btw: €" + prijsExcl.toFixed(2);
+                                element_prijs_incl.innerHTML = "Inclusief btw: €" + prijsIncl.toFixed(2);
+                                element_prijs_totaal.innerHTML = "Totaalbedrag: €" + prijsIncl.toFixed(2);
+                            };
+
+                            functie_bereken();
+
+                        </script>
+
+                    </div>
+
+                    <div id="verstuur" class="col-2">
+
+                        <!-- Submit knop en betaalmethoden afbeeldingen -->
+                        <input type="submit" value="Verder naar bestellen">
+
+                        <img src="img/logo/ideal.png" style="max-width: 60%">
+                    </div>
+
+                    <?php
+
+                    } else {
+
+                    ?>
+
+                        <h2>Geen items in winkelmand</h2>
+                        <br>
+
+                    <?php
+
+                    }
+
                 ?>
-
-            <div class="row">
-
-                <div id="opvul" class="col-7">
-
-                </div>
-
-                <!-- Bestelknop komt hier met foto's van betalmethoden-->
-                <div id="Totaal" class="col-3">
-
-                    <!-- Prijzen totaal-->
-                    <p id="prijs-excl">Exclusief btw: €</p>
-                    <p id="prijs-incl">Inclusief btw: €</p>
-                    <p id="prijs-totaal">Totaalbedrag: €</p>
-
-                    <script>
-
-                        const element_prijs_excl   = document.getElementById("prijs-excl");
-                        const element_prijs_incl   = document.getElementById("prijs-incl");
-                        const element_prijs_totaal = document.getElementById("prijs-totaal");
-
-                        const functie_bereken = function() {
-
-                            let prijsExcl = 0;
-                            let prijsIncl = 0;
-
-                            // foreach loop voor alle input elementen
-                            input_elementen.forEach(function(element, index, array) {
-
-                                // Als hoeveelheid positief is
-                                if (element.element.value > 0) {
-                                    // Voeg de totaalprijs van dit product toe
-                                    prijsExcl += element.element.value * element.prijs;
-                                    prijsIncl += element.element.value * (element.prijs * (1 + element.taxrate / 100));
-                                }
-
-                            });
-
-                            // Rond de prijzen af naar 2 decimalen en voeg ze in op de juiste plek
-                            element_prijs_excl  .innerHTML = "Exclusief btw: €" + prijsExcl.toFixed(2);
-                            element_prijs_incl  .innerHTML = "Inclusief btw: €" + prijsIncl.toFixed(2);
-                            element_prijs_totaal.innerHTML = "Totaalbedrag: €" + prijsIncl.toFixed(2);
-                        };
-
-                        functie_bereken();
-
-                    </script>
-
-                </div>
-
-                <div id="verstuur" class="col-2">
-
-                    <!-- Submit knop en betaalmethoden afbeeldingen -->
-                    <input type="submit" value="Verder naar bestellen">
-
-                    <img src="img/logo/ideal.png" style="max-width: 60%">
-                </div>
 
             </div>
 
