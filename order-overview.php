@@ -97,7 +97,6 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
                         }   $totalprice = round($totalprice,2);
 
                     ?>
-            <hr>
                 <div class="row">
                     <div id="opvul" class="col-7"></div>
                     <div id="Totaal" class="col-3">
@@ -110,7 +109,13 @@ include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op 
 
                 </div>
             <div class="row">
-                <div class="col-4"><a href="winkelmand.php">Terug naar winkelmand</a></div><div class="col-6"></div><a href="checkout.php"><div class="ContinueButton">Afrekenen ></div></a>
+                <div class="col-4">
+                    <a href="winkelmand.php">Terug naar winkelmand</a>
+                </div>
+                <div class="col-6"></div>
+                <a href="checkout.php">
+                    <div class="ContinueButton">Afrekenen ></div>
+                </a>
             </div>
             <br><br>
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,10 +44,10 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="j" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -140,13 +139,6 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00039" summary="Productspecificatie en omschrijving aangepast">
-      <created>1574160446641</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1574160446641</updated>
     </task>
     <task id="LOCAL-00040" summary="Productspecificatie en omschrijving aangepast">
       <created>1574161620842</created>
@@ -484,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575034522845</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Update winkelwagen wanneer nieuwe pagina">
+      <created>1575034875764</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1575034875764</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
