@@ -43,6 +43,8 @@ session_start();
                 // De volgende code laadt de 16 eerste producten in de DB en geeft ze weer:
                 $stmt = (Product::read(Database::getConnection(), 16));
 
+
+
                 // Per rij die we uit de database halen voeren we een stukje code uit
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -83,6 +85,8 @@ session_start();
                                     <form method="POST" name="winkelmandje" action="">
                                         <input type="hidden" name="product:<?php print($StockItemID); ?>" value="1">
                                         <input type="submit" class="WinkelwagenKnop" value="Toevoegen aan winkelmandje">
+
+
                                     </form>
 
                                 </div>
