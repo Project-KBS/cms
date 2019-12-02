@@ -14,8 +14,8 @@ $payment = $mollie->payments->create([
         "currency" => "EUR",
         "value" => "10.00"
     ],
-    "description" => "My first API payment",
-    "redirectUrl" => "https://webshop.example.org/order/12345/",
+    "description" => "Wide World Importers",
+    "redirectUrl" => "localhost/confirm-order.php",
     "webhookUrl"  => "https://webshop.example.org/mollie-webhook/",
 ]);
 
