@@ -15,9 +15,11 @@ $payment = $mollie->payments->create([
         "value" => "10.00"
     ],
     "description" => "Wide World Importers",
-    "redirectUrl" => "localhost/confirm-order.php",
+    "redirectUrl" => "http://localhost/confirm-order.php",
     "webhookUrl"  => "https://webshop.example.org/mollie-webhook/",
 ]);
+
+//nu moeten we het payment id opslaan om later te controleren of er betaald is
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
