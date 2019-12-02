@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
     </list>
@@ -139,14 +140,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-      <workItem from="1575279885027" duration="500000" />
-    </task>
-    <task id="LOCAL-00043" summary="Pagina functie werkt bijna">
-      <created>1574185824959</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1574185824959</updated>
+      <workItem from="1575279885027" duration="2615000" />
     </task>
     <task id="LOCAL-00044" summary="Heb ff categorie zoeken uitgezet want de left join veroorzaakt problemen">
       <created>1574188761790</created>
@@ -484,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575039081393</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="knop op checkout in de form verwerkt">
+      <created>1575280414869</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1575280414869</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +507,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Winkelwagen knop is liiitt yo" />
     <MESSAGE value="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten" />
     <MESSAGE value="Winkelwagen class placeholder" />
     <MESSAGE value="Voorbeelddata in cart class" />
@@ -531,6 +531,7 @@
     <MESSAGE value="checkout pagina buttons 2 (commit failed)" />
     <MESSAGE value="checkout pagina buttons 3 (commit failed)" />
     <MESSAGE value="code schoonmaken" />
-    <option name="LAST_COMMIT_MESSAGE" value="code schoonmaken" />
+    <MESSAGE value="knop op checkout in de form verwerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="knop op checkout in de form verwerkt" />
   </component>
 </project>
