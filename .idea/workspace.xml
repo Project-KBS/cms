@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
@@ -140,14 +139,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-      <workItem from="1575279885027" duration="4825000" />
-    </task>
-    <task id="LOCAL-00046" summary="Fix style">
-      <created>1574190090199</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1574190090199</updated>
+      <workItem from="1575279885027" duration="5998000" />
     </task>
     <task id="LOCAL-00047" summary="Gebruik bootstrap columns in productdispaly">
       <created>1574191904287</created>
@@ -485,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575282695243</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="begonnen met ideal integreren v3">
+      <created>1575284768165</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1575284768165</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Voorbeelddata in cart class" />
     <MESSAGE value="Max-width bij product display en knop width gefixed" />
     <MESSAGE value="Fix witte categorien" />
     <MESSAGE value="Bereken prijzen inclusief BTW" />
@@ -532,6 +530,7 @@
     <MESSAGE value="knop op checkout in de form verwerkt" />
     <MESSAGE value="begonnen met ideal integreren" />
     <MESSAGE value="begonnen met ideal integreren v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="begonnen met ideal integreren v2" />
+    <MESSAGE value="begonnen met ideal integreren v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="begonnen met ideal integreren v3" />
   </component>
 </project>
