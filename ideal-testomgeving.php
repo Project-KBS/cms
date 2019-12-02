@@ -8,6 +8,9 @@ include_once("mollie-api-php/vendor/autoload.php");
 $mollie = new \Mollie\Api\MollieApiClient();
 $mollie->setApiKey("test_3mSHuyjnfdsnyBFRKv6P7ucgqPh4Tc"); // deze key zorgt ervoor dat de betaling wordt gekoppeld aan ons account bij Mollie, zodat we daar de betalingen kunnen zien en de betaalmethodes aanpassen.
 
+// genereer een uniek orderID
+$orderId = time();
+
 // een betaling aanmaken
 $payment = $mollie->payments->create([
     "amount" => [
@@ -17,10 +20,13 @@ $payment = $mollie->payments->create([
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
     "webhookUrl"  => "https://webshop.example.org/mollie-webhook/", // geen flauw idee wat dit is
+    "metadata" => [
+        "order_id" => $orderId, // dit geeft de betaling een orderID mee
+    ],
 ]);
 
-//nu moeten we het payment id opslaan om later te controleren of er betaald is
-
+//nu moeten we het paymentID samen met het orderID opslaan om later te controleren of er betaald is
+database_write($orderId, $payment->status);
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
 header("Location: " . $payment->getCheckoutUrl(), true, 303);

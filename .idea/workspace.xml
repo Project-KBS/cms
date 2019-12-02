@@ -139,14 +139,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-      <workItem from="1575279885027" duration="8283000" />
-    </task>
-    <task id="LOCAL-00052" summary="videoplayer java script">
-      <created>1574247998212</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1574247998212</updated>
+      <workItem from="1575279885027" duration="9769000" />
     </task>
     <task id="LOCAL-00053" summary="videoplayer java script">
       <created>1574248086527</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575290865839</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD">
+      <created>1575293700284</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1575293700284</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Format winkelmand.php" />
     <MESSAGE value="Form in winkelmand" />
     <MESSAGE value="Sla producten op in user sessie (nog niet getest want chrome doet kut)" />
     <MESSAGE value="De winkelwagen werkt nu, en refresht de aantallen van winkelmand page" />
@@ -531,6 +530,7 @@
     <MESSAGE value="checkout.php foute merge gefixed v2" />
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix" />
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix nu echt xD" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout.php foute merge gefixed v3 laatste fix nu echt xD" />
+    <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
   </component>
 </project>
