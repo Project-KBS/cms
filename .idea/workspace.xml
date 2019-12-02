@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +44,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="j" />
@@ -139,14 +139,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-      <workItem from="1575279885027" duration="5998000" />
-    </task>
-    <task id="LOCAL-00047" summary="Gebruik bootstrap columns in productdispaly">
-      <created>1574191904287</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1574191904287</updated>
+      <workItem from="1575279885027" duration="6812000" />
     </task>
     <task id="LOCAL-00048" summary="Verwijder quotes rondom product id bij links naar product.php">
       <created>1574192200460</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575284768165</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="ideal-testomgeving gecomment">
+      <created>1575289605676</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1575289605676</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Max-width bij product display en knop width gefixed" />
     <MESSAGE value="Fix witte categorien" />
     <MESSAGE value="Bereken prijzen inclusief BTW" />
     <MESSAGE value="orderoverview basis neergelegd" />
@@ -531,6 +530,7 @@
     <MESSAGE value="begonnen met ideal integreren" />
     <MESSAGE value="begonnen met ideal integreren v2" />
     <MESSAGE value="begonnen met ideal integreren v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="begonnen met ideal integreren v3" />
+    <MESSAGE value="ideal-testomgeving gecomment" />
+    <option name="LAST_COMMIT_MESSAGE" value="ideal-testomgeving gecomment" />
   </component>
 </project>
