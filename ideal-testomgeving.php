@@ -14,7 +14,7 @@ $payment = $mollie->payments->create([
         "currency" => "EUR", //deze waarde zorgt voor het type valuta van de betaling
         "value" => "10.00"// deze waarde is het totaal inclusief BTW worden
     ],
-    "description" => "Wide World Importers", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
+    "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
     "webhookUrl"  => "https://webshop.example.org/mollie-webhook/", // geen flauw idee wat dit is
 ]);
