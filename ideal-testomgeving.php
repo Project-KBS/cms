@@ -1,15 +1,15 @@
 <?php
 // dit is een testontwerp en zo veilig als het achtereind van een paard natuurlijk
 
-
+include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 
+
 // de mollie API activeren en een key zetten.
-$mollie = new \Mollie\Api\MollieApiClient();
-$mollie->setApiKey("test_3mSHuyjnfdsnyBFRKv6P7ucgqPh4Tc"); // deze key zorgt ervoor dat de betaling wordt gekoppeld aan ons account bij Mollie, zodat we daar de betalingen kunnen zien en de betaalmethodes aanpassen.
+$mollie = Mollie::getApi();
 
 // genereer een uniek orderID
-$orderId = time();
+$orderId = microtime() + rand(0, 999);
 
 // een betaling aanmaken
 $payment = $mollie->payments->create([
@@ -18,7 +18,7 @@ $payment = $mollie->payments->create([
         "value" => "10.00"// deze waarde is het totaal inclusief BTW worden
     ],
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
-    "redirectUrl" => "http://localhost/confirm-order.php", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
+    "redirectUrl" => "http://localhost/confirm-order.php?orderId=$orderId", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
     "webhookUrl"  => "https://webshop.example.org/mollie-webhook/", // geen flauw idee wat dit is
     "metadata" => [
         "order_id" => $orderId, // dit geeft de betaling een orderID mee
@@ -26,8 +26,11 @@ $payment = $mollie->payments->create([
 ]);
 
 //nu moeten we het paymentID samen met het orderID opslaan om later te controleren of er betaald is
-database_write($orderId, $payment->status);
+// dit moeten we vervangen door onze eigen database
+//database_write($orderId, $payment->status);
+// TODO sla het paymentId op in de order database (LINK DEZE MET ORDER ID) zodat we hem in confirm-order.php weer kunnen krijgen
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
+
 ?>
