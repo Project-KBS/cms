@@ -4,7 +4,6 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,13 +139,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00042" summary="Productspecificatie en omschrijving aangepast">
-      <created>1574185458543</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1574185458543</updated>
+      <workItem from="1575279885027" duration="500000" />
     </task>
     <task id="LOCAL-00043" summary="Pagina functie werkt bijna">
       <created>1574185824959</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575037884993</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="code schoonmaken">
+      <created>1575039081393</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1575039081393</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix default sorteer methode" />
     <MESSAGE value="Winkelwagen knop is liiitt yo" />
     <MESSAGE value="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten" />
     <MESSAGE value="Winkelwagen class placeholder" />
@@ -531,6 +530,7 @@
     <MESSAGE value="checkout pagina buttons" />
     <MESSAGE value="checkout pagina buttons 2 (commit failed)" />
     <MESSAGE value="checkout pagina buttons 3 (commit failed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout pagina buttons 3 (commit failed)" />
+    <MESSAGE value="code schoonmaken" />
+    <option name="LAST_COMMIT_MESSAGE" value="code schoonmaken" />
   </component>
 </project>

@@ -61,15 +61,16 @@
                         <?php
                             }
                         ?>
+
+                        <div class="row lineTop">
+                            <div class="col-4">
+                                <a href="order-overview.php">Terug naar overzicht</a>
+                            </div>
+                            <a href="">
+                                <input type="submit" value="Betalen >" class="ContinueButton">
+                            </a>
+                        </div>
                     </form>
-                </div>
-                <div class="row lineTop">
-                    <div class="col-4">
-                        <a href="order-overview.php">Terug naar overzicht</a>
-                    </div>
-                    <a href="">
-                        <div class="ContinueButton">Betalen ></div>
-                    </a>
                 </div>
                 <br>
                 <div class="row">
