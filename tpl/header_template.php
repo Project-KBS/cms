@@ -43,7 +43,24 @@
             </form>
 
             <a href="winkelmand.php" class="flex-push">
-                <div>Winkelmandje</div>
+                <div>Winkelmandje
+
+                <?php
+                    $telling = count(Cart::get());
+
+                    if ($telling > 0) {
+                        if ($telling < 1000) {
+                            print("(".$telling.")");
+
+                        }
+                        else{
+                            print("(1.000+)");
+                        }
+
+                    }
+                ?>
+
+                </div>
             </a>
             <!--
             INLOGGEN EN REGISTREREN HEB IK ER UIT GECOMMENT WANT DEZE ZIJN WE NOG NIET NODIG!

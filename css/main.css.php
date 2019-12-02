@@ -193,3 +193,14 @@ input[type=number]::-webkit-outer-spin-button {
 .centerDivText {
     margin-top: 6%;
 }
+
+.iDealLogo{
+    max-width: 100%;
+}
+
+.lineTop{
+    border-top-color: black;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding-top: 2%;
+}

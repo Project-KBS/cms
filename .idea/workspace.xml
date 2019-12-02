@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,20 +140,6 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-    </task>
-    <task id="LOCAL-00040" summary="Productspecificatie en omschrijving aangepast">
-      <created>1574161620842</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1574161620842</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Productspecificatie en omschrijving aangepast">
-      <created>1574161768953</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1574161768953</updated>
     </task>
     <task id="LOCAL-00042" summary="Productspecificatie en omschrijving aangepast">
       <created>1574185458543</created>
@@ -484,7 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575034875764</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="checkout pagina buttons 2 (commit failed)">
+      <created>1575037333009</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1575037333009</updated>
+    </task>
+    <task id="LOCAL-00090" summary="checkout pagina buttons 3 (commit failed)">
+      <created>1575037884993</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1575037884993</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,9 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Zoekpagina results in een flexbox" />
-    <MESSAGE value="Foute class bij index.php container" />
-    <MESSAGE value="Footertje" />
     <MESSAGE value="Fix default sorteer methode" />
     <MESSAGE value="Winkelwagen knop is liiitt yo" />
     <MESSAGE value="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten" />
@@ -531,6 +528,9 @@
     <MESSAGE value="-1" />
     <MESSAGE value="Verwijder knop werkt" />
     <MESSAGE value="Update winkelwagen wanneer nieuwe pagina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update winkelwagen wanneer nieuwe pagina" />
+    <MESSAGE value="checkout pagina buttons" />
+    <MESSAGE value="checkout pagina buttons 2 (commit failed)" />
+    <MESSAGE value="checkout pagina buttons 3 (commit failed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkout pagina buttons 3 (commit failed)" />
   </component>
 </project>
