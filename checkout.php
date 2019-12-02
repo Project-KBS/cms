@@ -36,7 +36,7 @@
             <div class="content-container-home">
                 <div class="contact-info">
                     <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
-                    <form id="contact-info-form" method="post" action="">
+                    <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
                         <?php
                             $inputArray = array(    "Voornaam",
                                                     "Tussenvoegsel",
