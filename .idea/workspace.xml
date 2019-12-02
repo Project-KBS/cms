@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,21 +138,7 @@
       <workItem from="1574850028731" duration="1012000" />
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
-      <workItem from="1575279885027" duration="6812000" />
-    </task>
-    <task id="LOCAL-00048" summary="Verwijder quotes rondom product id bij links naar product.php">
-      <created>1574192200460</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1574192200460</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Fix query voor $totaalAantalProductenMatchingFilter + set standaard 10">
-      <created>1574193410483</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1574193410483</updated>
+      <workItem from="1575279885027" duration="7177000" />
     </task>
     <task id="LOCAL-00050" summary="Check of $StartFrom een correcte waarde heeft, geef anders een default">
       <created>1574193831095</created>
@@ -484,7 +469,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575289605676</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="checkout.php foute merge gefixed">
+      <created>1575290383462</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1575290383462</updated>
+    </task>
+    <task id="LOCAL-00098" summary="checkout.php foute merge gefixed v2">
+      <created>1575290482422</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1575290482422</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,8 +505,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix witte categorien" />
-    <MESSAGE value="Bereken prijzen inclusief BTW" />
     <MESSAGE value="orderoverview basis neergelegd" />
     <MESSAGE value="Winkelmandje v.1000" />
     <MESSAGE value="Format winkelmand.php" />
@@ -531,6 +528,8 @@
     <MESSAGE value="begonnen met ideal integreren v2" />
     <MESSAGE value="begonnen met ideal integreren v3" />
     <MESSAGE value="ideal-testomgeving gecomment" />
-    <option name="LAST_COMMIT_MESSAGE" value="ideal-testomgeving gecomment" />
+    <MESSAGE value="checkout.php foute merge gefixed" />
+    <MESSAGE value="checkout.php foute merge gefixed v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkout.php foute merge gefixed v2" />
   </component>
 </project>

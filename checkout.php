@@ -36,7 +36,7 @@
             <div class="content-container-home">
                 <div class="contact-info">
                     <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
-                    <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
+                    <form id="contact-info-form" method="post" action="">
                         <?php
                             $inputArray = array(    "Voornaam",
                                                     "Tussenvoegsel",
@@ -66,7 +66,7 @@
                             <div class="col-4">
                                 <a href="order-overview.php">Terug naar overzicht</a>
                             </div>
-                            <a href="">
+                            <a href="ideal-testomgeving.php">
                                 <input type="submit" value="Betalen >" class="ContinueButton">
                             </a>
                         </div>
