@@ -54,22 +54,23 @@
                                 <?php print($value); ?>:
                             </div>
                             <div class="col-9">
-                                <input type="text" placeholder="<?php print($value); ?>" required="required">
+                                <input type="text" placeholder="<?php print($value); ?>" <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
                             </div>
                         </div>
                         <br>
                         <?php
                             }
                         ?>
+
+                        <div class="row lineTop">
+                            <div class="col-4">
+                                <a href="order-overview.php">Terug naar overzicht</a>
+                            </div>
+                            <a href="">
+                                <input type="submit" value="Betalen >" class="ContinueButton">
+                            </a>
+                        </div>
                     </form>
-                </div>
-                <div class="row lineTop">
-                    <div class="col-4">
-                        <a href="order-overview.php">Terug naar overzicht</a>
-                    </div>
-                    <a href="">
-                        <div class="ContinueButton">Betalen ></div>
-                    </a>
                 </div>
                 <br>
                 <div class="row">
