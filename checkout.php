@@ -5,6 +5,7 @@
     include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
     include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
     include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+    //include_once("composer/mollie.json");
 ?>
 
 <!doctype html>
@@ -35,7 +36,7 @@
             <div class="content-container-home">
                 <div class="contact-info">
                     <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
-                    <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
+                    <form id="contact-info-form" method="post" action="">
                         <?php
                             $inputArray = array(    "Voornaam",
                                                     "Tussenvoegsel",
@@ -54,12 +55,35 @@
                                 <?php print($value); ?>:
                             </div>
                             <div class="col-9">
+<<<<<<< Updated upstream
                                 <input type="text" placeholder="<?php print($value); ?>" <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
+=======
+                                <input type="text" placeholder="<?php print($value); ?>" name="<?php print($value);?>" required="required">
+>>>>>>> Stashed changes
                             </div>
                         </div>
                         <br>
                         <?php
                             }
+                            print('<input type="submit" value="submit"> ');
+                            /*
+                             * Dit moet wat worden om de iDeal testomgeving te fixen
+                            if(isset($_POST['submit'])){
+                                $mollie = new \Mollie\Api\MollieApiClient();
+                                $mollie->setApiKey("test_wy2mdWeV32D6nJdqkbtpn392Q9zDg7");
+
+                                $payment = $mollie->payments->create([
+                                    "amount" => [
+                                        "currency" => "EUR",
+                                        "value" => "10.00"
+                                    ],
+                                    "description" => "My first API payment",
+                                    "redirectUrl" => "https://webshop.example.org/order/12345/",
+                                    "webhookUrl"  => "https://webshop.example.org/mollie-webhook/",
+                                    "method"      => \Mollie\Api\Types\PaymentMethod::IDEAL,
+                                    "issuer"      => $selectedIssuerId, // e.g. "ideal_INGBNL2A"
+                                ]);
+                            }*/
                         ?>
 
                         <div class="row lineTop">
@@ -72,6 +96,18 @@
                         </div>
                     </form>
                 </div>
+<<<<<<< Updated upstream
+=======
+                 <!--Ronald, please zet deze knoppen in de form hier boven
+                <div class="row lineTop">
+                    <div class="col-4">
+                        <a href="order-overview.php">Terug naar overzicht</a>
+                    </div>
+                    <a href="">
+                        <div class="ContinueButton">Betalen ></div>
+                    </a>
+                </div>
+>>>>>>> Stashed changes
                 <br>
                 <div class="row">
                     <div class="col-4"></div>
@@ -79,6 +115,7 @@
                         <img class="iDealLogo"src="img/logo/ideal.png" alt="iDeal">
                     </div>
                 </div>
+                -->
             </div>
         </div>
         <footer>
