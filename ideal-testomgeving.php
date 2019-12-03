@@ -1,11 +1,12 @@
 <?php
-
-insertCustomer(getConnection(),$_POST['Voornaam'],$_POST['Tussenvoegsel'],$_POST['Achternaam'],$_POST['Straatnaam'],$_POST['Huisnummer'],$_POST['Postcode'],$_POST['Woonplaats']);
-
 // dit is een testontwerp en zo veilig als het achtereind van een paard natuurlijk
 
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
+include_once("app/model/customer.php");
+include_once("app/database.php");
+
+customer::insertCustomer(Database::getConnection(),$_POST['Voornaam'],$_POST['Tussenvoegsel'],$_POST['Achternaam'],$_POST['Straatnaam'],$_POST['Huisnummer'],$_POST['Postcode'],$_POST['Woonplaats']);
 
 
 // de mollie API activeren en een key zetten.

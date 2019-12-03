@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,20 +140,6 @@
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
-    </task>
-    <task id="LOCAL-00054" summary="Check if debugging is enabled before throwing error">
-      <created>1574249681738</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1574249681738</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Return empty array instead of null">
-      <created>1574249814140</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1574249814141</updated>
     </task>
     <task id="LOCAL-00056" summary="Aanpassing grootte video">
       <created>1574254604336</created>
@@ -487,7 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575366318025</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="begin schrijven klantinfo in database">
+      <created>1575373851686</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1575373851686</updated>
+    </task>
+    <task id="LOCAL-00104" summary="begin schrijven klantinfo in database v2">
+      <created>1575374026598</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1575374026598</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,8 +506,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Sla producten op in user sessie (nog niet getest want chrome doet kut)" />
-    <MESSAGE value="De winkelwagen werkt nu, en refresht de aantallen van winkelmand page" />
     <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
     <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
@@ -534,6 +529,8 @@
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix nu echt xD" />
     <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
     <MESSAGE value="Verkrijg mollie instance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verkrijg mollie instance" />
+    <MESSAGE value="begin schrijven klantinfo in database" />
+    <MESSAGE value="begin schrijven klantinfo in database v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="begin schrijven klantinfo in database v2" />
   </component>
 </project>
