@@ -18,5 +18,5 @@ GRANT INSERT ON wideworldimporters.customertransactions TO 'api-local'@'localhos
 GRANT UPDATE ON wideworldimporters.customertransactions TO 'api-local'@'localhost';
 
 /* Maakt ideal betalingsmogelijkheid aan in de database*/
-INSERT INTO Paymentmethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, Validto)
+INSERT INTO wideworldimporters.Paymentmethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, Validto)
 VALUES ( 419, "Ideal", 1, "2019-12-03", "9999-12-31 23:59:59");

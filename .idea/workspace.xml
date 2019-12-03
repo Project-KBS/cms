@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/bbb3.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/foto0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/foto1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/foto2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/foto3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/foto4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mp/product/1/untitled.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
