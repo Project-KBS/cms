@@ -7,7 +7,7 @@ class customer
      * zet alle beschikbare informatie van de klant in de database
      */
 
-    public static function insertCustomer($database, $vNaam, $tVoegsel, $aNaam, $straat, $hNummer, $woonplaats, $postcode){
+    public static function insertCustomer($database, $customerID, $vNaam, $tVoegsel, $aNaam, $straat, $hNummer, $woonplaats, $postcode){
 
         $query = "INSERT INTO customers (CustomerName, DeliveryAddressLine2,  PostalAddressLine2, PostalPostalCode)
                   VALUES (:vNaam :tVoegsel :aNaam, :straat :hNummer, :woonplaats, :postcode, :mailadres)";

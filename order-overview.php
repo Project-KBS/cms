@@ -117,10 +117,13 @@
                     <div class="col-4">
                         <a href="index.php">Verder winkelen</a>
                     </div>
-                    <div class="col-6"></div>
-                    <a href="checkout.php">
-                        <div class="ContinueButton">Afrekenen ></div>
-                    </a>
+                    <form name="form" method="post">
+                        <div class="col-6"></div>
+                        <input type="hidden" value="<?php print($totalprice); ?>">
+                        <a href="checkout.php">
+                            <div type="submit" class="ContinueButton">Afrekenen ></div>
+                        </a>
+                    </form>
                 </div>
                 <br><br>
             </div>
