@@ -1,8 +1,7 @@
 <?php
 
+class Customer {
 
-class customer
-{
     /**
      * zet alle beschikbare informatie van de klant in de database
      */
