@@ -126,7 +126,7 @@ session_start();
                                 </button>
 
                                 <script>
-                                    // Dit de verwijder knop
+                                    // Dit is de verwijder knop
                                     const verwijderen<?php print($teller); ?> = document.getElementById('verwijder<?php print($teller); ?>');
                                     // Dit is de rij met alles over het product
                                     const geheel<?php print($teller); ?> = document.getElementById('geheel<?php print($teller); ?>');
@@ -273,9 +273,12 @@ session_start();
 
                     ?>
 
-                        <h2>Geen items in winkelmand</h2>
+                        <h2>Uw winkelmand is leeg</h2>
                         <br>
-                        <p> HIER KOMT NOG TEKST BIJ NIKS IN DE WINKELWAGEN</p>
+                        <p>klik op de link om verder te winkelen.</p>
+                        <a href="index.php">
+                            <p>Verder winkelen</p>
+                        </a>
 
                     <?php
 
