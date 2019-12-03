@@ -26,6 +26,11 @@ GRANT INSERT ON wideworldimporters.customertransactions TO 'api-local'@'localhos
 /* Om de status van een betaling te veranderen */
 GRANT UPDATE ON wideworldimporters.customertransactions TO 'api-local'@'localhost';
 
+/* Om de paymentId/orderId combinatie op te slaan */
+GRANT INSERT ON wideworldimporters.invoices TO 'api-local'@'localhost';
+/* idem, maar dan om weer uit te lezen */
+GRANT SELECT ON wideworldimporters.invoices TO 'api-local'@'localhost';
+
 /* Maakt ideal betalingsmogelijkheid aan in de database*/
 INSERT INTO wideworldimporters.Paymentmethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, Validto)
 VALUES ( 419, "Ideal", 1, "2019-12-03", "9999-12-31 23:59:59");

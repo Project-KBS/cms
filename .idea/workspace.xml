@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/model/invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/transactie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/transactie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
@@ -13,7 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/mollie-api-php/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -65,16 +70,7 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/composer" />
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/mollie-api-php/vendor/psr/http-message" />
-    </include_path>
-  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
   <component name="ProjectId" id="1QyHczHLrqQmMsQ3ztJSpOm7Se3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -85,22 +81,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/model" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/db" />
-      <recent name="$PROJECT_DIR$/api/v1" />
-      <recent name="$PROJECT_DIR$/img/logo" />
-      <recent name="$PROJECT_DIR$/app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db" />
       <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
       <recent name="$PROJECT_DIR$/api/v1/product" />
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/model" />
+      <recent name="$PROJECT_DIR$/db" />
+      <recent name="$PROJECT_DIR$/api/v1" />
+      <recent name="$PROJECT_DIR$/img/logo" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -154,13 +151,7 @@
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
-    </task>
-    <task id="LOCAL-00055" summary="Return empty array instead of null">
-      <created>1574249814140</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1574249814141</updated>
+      <workItem from="1575399046298" duration="5584000" />
     </task>
     <task id="LOCAL-00056" summary="Aanpassing grootte video">
       <created>1574254604336</created>
@@ -498,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575389355527</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Customers toevoegen werkt!&#10;&#10;ongeveer...">
+      <created>1575391273369</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1575391273369</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +518,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="De winkelwagen werkt nu, en refresht de aantallen van winkelmand page" />
     <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
     <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
@@ -545,6 +542,7 @@
     <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
     <MESSAGE value="Verkrijg mollie instance" />
     <MESSAGE value="Fix setup.sql, database was niet genoemd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix setup.sql, database was niet genoemd" />
+    <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
   </component>
 </project>

@@ -2,6 +2,8 @@
 
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
+include_once("app/model/invoice.php");
+include_once("app/database.php");
 
 $mollie = Mollie::getApi();
 
@@ -19,10 +21,15 @@ if (filter_var($orderId, FILTER_VALIDATE_INT) == false || $orderId <= 1) {
     exit("Order ID is ongeldig!");
 }
 
-// check of de betaling bestaat
+// check of de betaling bestaat in de database en verkrijg de paymentId (dit heet CustomerPurchaseOrderNumber in de DB!)
+$stmt = Invoice::get(Database::getConnection(), $orderId);
+extract($stmt->fetch());
 
-// TODO verkrijg paymentId uit de database.... deze is waarschijnlijk gelinkt aan het ORDER ID !!!!!!!!
-$paymentId = 69;
+if (!isset($CustomerPurchaseOrderNumber)) {
+    exit("Geen order gevonden met het opgegeven ID!!!");
+}
+
+$paymentId = $CustomerPurchaseOrderNumber;
 
 try {
     $payment = $mollie->payments->get($paymentId);
@@ -33,7 +40,9 @@ try {
 
 // check of de betaling geslaagd is
 if ($payment->isPaid()) {
-    echo "Payment received.";
+    echo "BETALING IS GESLAAGD!!!! Je hebt betaald met " . $payment->method . " en wij hebben " . $payment->amount->value . " " . $payment->amount->currency . " ontvangen!!";
+} else {
+    echo "Betaling van " . $payment->amount->value . " " . $payment->amount->currency . " is niet geslaagd! :(";
 }
 
 ?>
