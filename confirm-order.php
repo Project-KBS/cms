@@ -9,14 +9,14 @@ $mollie = Mollie::getApi();
 
 // check of orderId aanwezig is in URL
 if (!isset($_GET["orderId"])) {
-    exit(1); // TODO laat error zien
+    exit("Order ID is niet aanwezig!");
 }
 
-$orderId = $_GET["orderId"];
+$orderId = intval($_GET["orderId"]);
 
 // check of orderId een getal is boven de nul
-if (filter_var($orderId, FILTER_VALIDATE_INT) == false || $orderId <= 0) {
-    exit(2); // TODO laat error zien (ongeldige order id)
+if (filter_var($orderId, FILTER_VALIDATE_INT) == false || $orderId <= 1) {
+    exit("Order ID is ongeldig!");
 }
 
 // check of de betaling bestaat
@@ -27,7 +27,7 @@ $paymentId = 69;
 try {
     $payment = $mollie->payments->get($paymentId);
 } catch (\Mollie\Api\Exceptions\ApiException $e) {
-    exit(3); // TODO laat error zien
+    exit("Order ID bestaat niet!");
 }
 
 

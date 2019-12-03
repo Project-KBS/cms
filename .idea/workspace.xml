@@ -4,6 +4,7 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +45,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -140,13 +141,6 @@
       <workItem from="1574928067512" duration="1382000" />
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
-    </task>
-    <task id="LOCAL-00053" summary="videoplayer java script">
-      <created>1574248086527</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1574248086527</updated>
     </task>
     <task id="LOCAL-00054" summary="Check if debugging is enabled before throwing error">
       <created>1574249681738</created>
@@ -484,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575293700284</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Verkrijg mollie instance">
+      <created>1575366318025</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1575366318025</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +507,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Form in winkelmand" />
     <MESSAGE value="Sla producten op in user sessie (nog niet getest want chrome doet kut)" />
     <MESSAGE value="De winkelwagen werkt nu, en refresht de aantallen van winkelmand page" />
     <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
@@ -531,6 +531,7 @@
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix" />
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix nu echt xD" />
     <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
+    <MESSAGE value="Verkrijg mollie instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verkrijg mollie instance" />
   </component>
 </project>

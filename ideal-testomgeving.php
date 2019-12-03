@@ -9,7 +9,9 @@ include_once("mollie-api-php/vendor/autoload.php");
 $mollie = Mollie::getApi();
 
 // genereer een uniek orderID
-$orderId = microtime() + rand(0, 999);
+$orderId = time() + rand(0, 99999);
+
+print($orderId . "\n\n");
 
 // een betaling aanmaken
 $payment = $mollie->payments->create([
