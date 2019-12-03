@@ -3,6 +3,7 @@
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 
+$mollie = Mollie::getApi();
 
 // bij deze pagina moet een GET parameter genaamd "orderId" zijn met integer value hoger dan 0.
 
