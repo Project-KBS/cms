@@ -10,7 +10,7 @@ include_once("app/database.php");
 customer::insertCustomer(Database::getConnection(),$_POST['Voornaam'],$_POST['Tussenvoegsel'],$_POST['Achternaam'],$_POST['Straatnaam'],$_POST['Huisnummer'],$_POST['Postcode'],$_POST['Woonplaats']);
 
 
-$customerId = 42069; /// FIXME
+$customerId = 960; /// FIXME
 $prijsExcl = 19.95;
 $btw       = 5.00;
 $prijsIncl = 24.95;
@@ -27,7 +27,7 @@ print($orderId . "\n\n");
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR", //deze waarde zorgt voor het type valuta van de betaling
-        "value" => $prijsIncl// deze waarde is het totaal inclusief BTW worden
+        "value" => "$prijsIncl"// deze waarde is het totaal inclusief BTW worden
     ],
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php?orderId=$orderId", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
