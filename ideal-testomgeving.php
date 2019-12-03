@@ -4,10 +4,16 @@
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/customer.php");
+include_once("app/model/transactie.php");
 include_once("app/database.php");
 
 customer::insertCustomer(Database::getConnection(),$_POST['Voornaam'],$_POST['Tussenvoegsel'],$_POST['Achternaam'],$_POST['Straatnaam'],$_POST['Huisnummer'],$_POST['Postcode'],$_POST['Woonplaats']);
 
+
+$customerId = 42069; /// FIXME
+$prijsExcl = 19.95;
+$btw       = 5.00;
+$prijsIncl = 24.95;
 
 // de mollie API activeren en een key zetten.
 $mollie = Mollie::getApi();
@@ -21,7 +27,7 @@ print($orderId . "\n\n");
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR", //deze waarde zorgt voor het type valuta van de betaling
-        "value" => "10.00"// deze waarde is het totaal inclusief BTW worden
+        "value" => $prijsIncl// deze waarde is het totaal inclusief BTW worden
     ],
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php?orderId=$orderId", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
@@ -32,9 +38,7 @@ $payment = $mollie->payments->create([
 ]);
 
 //nu moeten we het paymentID samen met het orderID opslaan om later te controleren of er betaald is
-// dit moeten we vervangen door onze eigen database
-//database_write($orderId, $payment->status);
-// TODO sla het paymentId op in de order database (LINK DEZE MET ORDER ID) zodat we hem in confirm-order.php weer kunnen krijgen
+Transactie::insert(Database::getConnection(), intval($payment->id), $customerId, $prijsExcl, $btw, $prijsIncl);
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
