@@ -37,3 +37,9 @@ if ($payment->isPaid()) {
 }
 
 ?>
+<!doctype html>
+<html>
+<head>
+    <?php
+        include ("tpl/head-tag-template.php");
+    ?>

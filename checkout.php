@@ -54,7 +54,7 @@
                                 <?php print($value); ?>:
                             </div>
                             <div class="col-9">
-                                <input type="text" placeholder="<?php print($value); ?>" <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
+                                <input type="text" value="<?php print($value);?>" placeholder="<?php print($value); ?>" <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
                             </div>
                         </div>
                         <br>

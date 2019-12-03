@@ -1,4 +1,7 @@
 <?php
+
+insertCustomer(getConnection(),$_POST['Voornaam'],$_POST['Tussenvoegsel'],$_POST['Achternaam'],$_POST['Straatnaam'],$_POST['Huisnummer'],$_POST['Postcode'],$_POST['Woonplaats']);
+
 // dit is een testontwerp en zo veilig als het achtereind van een paard natuurlijk
 
 include_once("app/mollie.php");
