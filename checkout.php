@@ -55,7 +55,7 @@
                                 <?php print($value); ?>:
                             </div>
                             <div class="col-9">     <!-- hij maakt voor elke waarde in input array een input aan, als het mail is, maakt hij er een type="mail" van-->
-                                <input type="<?php if($value==="Email"){print("email");} else{print("text");} ?>" <?php if(!IS_DEBUGGING_ENABLED){ print("placeholder='$value'");} else{print("value='test@test'");} ?> <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
+                                <input type="<?php if($value==="Email"){print("email");} else{print("text");} ?>" name="<?php print($value);?>" <?php if(!IS_DEBUGGING_ENABLED){ print("placeholder='$value'");} else{print("value='test@test'");} ?> <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
                             </div>
                         </div>
                         <br>
