@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,14 +155,8 @@
       <workItem from="1575279885027" duration="9769000" />
       <workItem from="1575399046298" duration="5584000" />
       <workItem from="1575468923653" duration="694000" />
-      <workItem from="1575469636623" duration="2810000" />
-    </task>
-    <task id="LOCAL-00061" summary="Foute class bij index.php container">
-      <created>1574274903287</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1574274903287</updated>
+      <workItem from="1575469636623" duration="3244000" />
+      <workItem from="1575476339538" duration="950000" />
     </task>
     <task id="LOCAL-00062" summary="Footertje">
       <created>1574277746304</created>
@@ -503,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575469130385</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="confirm-order pagina semi gefixt, nog wel wat te doen">
+      <created>1575472566021</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1575472566037</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +523,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Winkelmand verwijderknop in progress" />
     <MESSAGE value="-1" />
     <MESSAGE value="Verwijder knop werkt" />
     <MESSAGE value="Update winkelwagen wanneer nieuwe pagina" />
@@ -550,7 +547,8 @@
     <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
     <MESSAGE value="ideal totaalprijs gefixt" />
     <MESSAGE value="404 pagina start nu ook een session" />
-    <option name="LAST_COMMIT_MESSAGE" value="404 pagina start nu ook een session" />
+    <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
+    <option name="LAST_COMMIT_MESSAGE" value="confirm-order pagina semi gefixt, nog wel wat te doen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

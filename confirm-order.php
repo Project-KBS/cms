@@ -24,8 +24,8 @@ include_once("app/vendor.php");
 
     ?>
 </header>
-<div class="content-body">
-    <div class="order-confirm">
+<div id="pagina-container">
+    <div class="content-container-home">
         <?php
 
         $mollie = Mollie::getApi();
@@ -96,11 +96,15 @@ include_once("app/vendor.php");
                                 <?php print($MarketingComments); ?>
                             </div>
                         </div>
+                        <div id="filler" class="col-2 centerDivText">
+                        </div>
                     </div>
                     <div id="aantalInMand" class="col-2 centerDivText">
                         <div class-1>
                             Aantal: <?php print($aantal); ?>
                         </div>
+                    </div>
+                    <div id="filler" class="col-2 centerDivText">
                     </div>
                 </div>
                 <?php
