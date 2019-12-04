@@ -239,7 +239,7 @@ function specificaties(){
 
                             <div id="winkelwagen" name="winkelmandje">
                                 <form method="post" name="winkelmandje" action="">
-                                <input type="number" name="product:<?php print($StockItemID); ?>" id="hoeveelheid_input" min="1">
+                                <input type="number" name="product:<?php print($StockItemID); ?>" id="hoeveelheid_input" min="1" value="<?php print("1"); ?>">
                                 <input type="submit" value="Toevoegen aan winkelwagen">
                                 </form>
 
