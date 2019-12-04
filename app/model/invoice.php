@@ -21,11 +21,11 @@ class Invoice {
         $stmt = $database->prepare($query);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
-        $stmt->bindValue(":customerId",   $customerId,    PDO::PARAM_INT);
-        $stmt->bindValue(":billingId",    $customerId,    PDO::PARAM_INT);
-        $stmt->bindValue(":paymentId",    $paymentId,     PDO::PARAM_STR);
-        $stmt->bindValue(":orderId",      $orderId,       PDO::PARAM_INT);
-        $stmt->bindValue(":lastEditedBy", 1,        PDO::PARAM_INT); // TODO
+        $stmt->bindValue(":customerId",   $customerId,      PDO::PARAM_INT);
+        $stmt->bindValue(":billingId",    $customerId,      PDO::PARAM_INT);
+        $stmt->bindValue(":paymentId",    $paymentId,       PDO::PARAM_STR);
+        $stmt->bindValue(":orderId",      $orderId,         PDO::PARAM_INT);
+        $stmt->bindValue(":lastEditedBy", 1,                PDO::PARAM_INT); // TODO
 
         // Voer de query uit
         $stmt->execute();

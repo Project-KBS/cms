@@ -11,14 +11,8 @@ include_once("app/model/product.php"); // wordt gebruikt om informatie uit de da
 // Als deze param niet meegegeven is sturen we de user terug naar index.php
 if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
     header("Location: index.php");
-}
-
-
-function specificaties(){
 
 }
-
-// TODO ---------------------------------------------
 
 ?>
 
