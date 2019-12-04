@@ -30,9 +30,9 @@ class Customer {
         $id = self::getNextId($database);
         $naam = 0;
         if($tVoegsel===NULL){
-            $naam = $vNaam . " " . $tVoegsel . " " . $aNaam;
-        }else{
             $naam = $vNaam . " " . $aNaam;
+        }else{
+            $naam = $vNaam . " " . $tVoegsel . " " . $aNaam;
         }
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
