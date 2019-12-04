@@ -133,10 +133,12 @@
 <br><br>
 </div>
 <?php
-    }
-    if(!$winkelmandjeSet){
+    }else{
+
+        //Als er niks in het winkelmandje zit word je verzocht om terug te gaan naar de index pagina
         print("Je hebt niks in je winkelmandje, ga terug naar de startpagina<br>");
         print("<button class=\"Big-button\" onclick=\"location.href='index.php'\">Verder met shoppen</button>");
+
     }
 
     ?>

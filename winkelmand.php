@@ -268,7 +268,7 @@ session_start();
                     </div>
 
                     <?php
-
+                    //Als er niks in het winkelmandje zit word je verzocht om terug te gaan naar de index pagina
                     } else {
 
                     ?>

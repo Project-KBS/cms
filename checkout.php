@@ -38,6 +38,7 @@
                     <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
                     <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
                         <?php
+                            $winkelmandjeSet = false;
                             $inputArray = array(    "Voornaam",
                                                     "Tussenvoegsel",
                                                     "Achternaam",
@@ -47,19 +48,34 @@
                                                     "Woonplaats",
                                                     "Email"
                             );
+                        foreach (Cart::get() as $item => $aantal) {
+                            $winkelmandjeSet = true;
+                        }
+                        if($winkelmandjeSet){
+                            foreach($inputArray as $index => $value) {
+                                ?>
+                                <div class="row">
+                                    <div class="col-3 FormLabels">
+                                        <?php print($value); ?>:
+                                    </div>
+                                    <div class="col-9">
+                                        <!-- hij maakt voor elke waarde in input array een input aan, als het mail is, maakt hij er een type="mail" van-->
+                                        <input type="<?php if ($value === "Email") {
+                                            print("email");
+                                        } else {
+                                            print("text");
+                                        } ?>" name="<?php print($value); ?>" <?php if (!IS_DEBUGGING_ENABLED) {
+                                            print("placeholder='$value'");
+                                        } else {
+                                            print("value='test@test'");
+                                        } ?> <?php if ($value != "Tussenvoegsel") {
+                                            print("required='required'");
+                                        } ?>>
+                                    </div>
+                                </div>
+                                <br>
+                                <?php
 
-                            foreach($inputArray as $index => $value){
-                        ?>
-                        <div class="row">
-                            <div class="col-3 FormLabels">
-                                <?php print($value); ?>:
-                            </div>
-                            <div class="col-9">     <!-- hij maakt voor elke waarde in input array een input aan, als het mail is, maakt hij er een type="mail" van-->
-                                <input type="<?php if($value==="Email"){print("email");} else{print("text");} ?>" name="<?php print($value); ?>" <?php if(!IS_DEBUGGING_ENABLED){ print("placeholder='$value'");} else{print("value='test@test'");} ?> <?php if($value!="Tussenvoegsel"){print("required='required'");}?>>
-                            </div>
-                        </div>
-                        <br>
-                        <?php
                             }
                         ?>
                         <div class="row lineTop">
@@ -70,6 +86,16 @@
                                 <input type="submit" value="Betalen >" class="ContinueButton">
                             </a>
                         </div>
+                        <?php
+                            }else{
+                                //Als er niks in het winkelmandje zit word je verzocht om terug te gaan naar de index pagina
+                                print("Je hebt niks in je winkelmandje, ga terug naar de startpagina<br>");
+                                print("<button class=\"Big-button\" onclick=\"location.href='index.php'\">Verder met shoppen</button>");
+
+                            }
+
+
+                        ?>
                     </form>
                 </div>
 
@@ -77,7 +103,7 @@
         </div>
         <footer>
             <?php
-                //include("tpl/footer_template.php");
+                include("tpl/footer_template.php");
             ?>
         </footer>
     </body>
