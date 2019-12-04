@@ -49,59 +49,59 @@
                     foreach (Cart::get() as $item => $aantal){
 
 
-                        $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
+                $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
-                        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        extract($row);
-                        if($aantal>0) {
-                            $totalPriceExcl = round($totalprice + ($RecommendedRetailPrice * $aantal),2);
-                            $totalPriceInlc = round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2);
-                            $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1+ $TaxRate/100),2);
-                ?>
-                <div id="order-overview" class="row" style="padding-bottom: 2vh">
-                    <div  id="photo" class="col-2">
-                        <br>
-                        <img style="width: 100%" src="data:image/png;base64, <?php
-                                            if (isset($Photo) && $Photo != null) {
-                                                print($Photo);
-                                            } else {
-                                                print(MediaPortal::getCategoryImage($StockItemID));
-                                            }
-                                            ?>">
-                        <br><br>
-                    </div>
-                    <div id="product-info" class="col-4">
-                        <div class="ProductMand">
-                            <div>
-                                <h4><?php print($StockItemName); ?></h4>
-                            </div>
-                            <div>
-                                <?php print($MarketingComments); ?>
+                extract($row);
+                if ($aantal > 0) {
+                    $totalPriceExcl = round($totalprice + ($RecommendedRetailPrice * $aantal), 2);
+                    $totalPriceInlc = round($RecommendedRetailPrice * (1 + $TaxRate / 100) * $aantal, 2);
+                    $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2);
+                    ?>
+                    <div id="order-overview" class="row" style="padding-bottom: 2vh">
+                        <div id="photo" class="col-2">
+                            <br>
+                            <img style="width: 100%" src="data:image/png;base64, <?php
+                            if (isset($Photo) && $Photo != null) {
+                                print($Photo);
+                            } else {
+                                print(MediaPortal::getCategoryImage($StockItemID));
+                            }
+                            ?>">
+                            <br><br>
+                        </div>
+                        <div id="product-info" class="col-4">
+                            <div class="ProductMand">
+                                <div>
+                                    <h4><?php print($StockItemName); ?></h4>
+                                </div>
+                                <div>
+                                    <?php print($MarketingComments); ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="retailPrijs" class="col-2 centerDivText">
-                        € <?php print($roundedRecommendedRetailPrice); ?>
-                    </div>
-                    <div id="aantalInMand" class="col-2 centerDivText">
-                        <div class-1>
-                            Aantal: <?php print($aantal); ?>
+                        <div id="retailPrijs" class="col-2 centerDivText">
+                            € <?php print($roundedRecommendedRetailPrice); ?>
+                        </div>
+                        <div id="aantalInMand" class="col-2 centerDivText">
+                            <div class-1>
+                                Aantal: <?php print($aantal); ?>
+                            </div>
+                        </div>
+                        <div id="PrijsBTW" class="col-2 centerDivText">
+                            € <?php print($totalPriceInlc); ?>
                         </div>
                     </div>
-                    <div id="PrijsBTW" class="col-2 centerDivText">
-                        € <?php print($totalPriceInlc); ?>
-                    </div>
-                </div>
-                <?php
-                            $totalprice += $totalPriceInlc;
-                ?>
-                <hr>
-                <?php
-                        } elseif($aantal === 0){
-                            print("Je hebt niks in je winkelmandje");
-                        }
-                    }   $totalprice = round($totalprice,2);
+                    <?php
+                    $totalprice += $totalPriceInlc;
+                    ?>
+                    <hr>
+                    <?php
+                }
+                if ($aantal) {
+                    $totalprice = round($totalprice, 2);
+                }
                 ?>
                 <div class="row">
                     <div id="opvul" class="col-10"></div>
@@ -109,7 +109,7 @@
                         <!-- Prijzen totaal-->
                         <p id="prijs-excl">Exclusief btw: €<?php print($totalPriceExcl); ?></p>
                         <p id="prijs-incl">Inclusief btw: €<?php print($totalprice); ?></p>
-                        <p id="prijs-totaal">Totaalbedrag: €<?php print(round($totalprice,2)); ?></p>
+                        <p id="prijs-totaal">Totaalbedrag: €<?php print(round($totalprice, 2)); ?></p>
                     </div>
 
                 </div>
@@ -127,11 +127,16 @@
                 </div>
                 <br><br>
             </div>
-            <footer>
-                <?php
-                    include("tpl/footer_template.php");
-                ?>
-            </footer>
-        </div>
+            <?php
+            }
+                    if(!$aantal){
+                        print("Je hebt niks in je winkelmandje, ga terug naar de startpagina");
+                    }
+                    ?>
+        <footer>
+            <?php
+            include("tpl/footer_template.php");
+            ?>
+        </footer>
     </body>
 </html>

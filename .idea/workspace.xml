@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/mollie-api-php/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -47,9 +45,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -90,18 +88,18 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/db" />
-      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
-      <recent name="$PROJECT_DIR$/api/v1/product" />
-      <recent name="$PROJECT_DIR$/api/v1/categorie" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/model" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
+      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,13 +154,6 @@
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
       <workItem from="1575399046298" duration="5584000" />
-    </task>
-    <task id="LOCAL-00056" summary="Aanpassing grootte video">
-      <created>1574254604336</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1574254604337</updated>
     </task>
     <task id="LOCAL-00057" summary="Responsive product grid in index.php">
       <created>1574269238525</created>
@@ -500,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575391273369</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="order overview 'leeg' fixen">
+      <created>1575457124501</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1575457124501</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +520,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Het uitrekenen van totaalbedrag werkt" />
     <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
     <MESSAGE value="Start de sessie" />
@@ -547,6 +544,18 @@
     <MESSAGE value="Verkrijg mollie instance" />
     <MESSAGE value="Fix setup.sql, database was niet genoemd" />
     <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
+    <MESSAGE value="order overview 'leeg' fixen" />
+    <option name="LAST_COMMIT_MESSAGE" value="order overview 'leeg' fixen" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/order-overview.php</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
