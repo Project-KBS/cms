@@ -36,7 +36,7 @@
         <div class="content-container-home">
             <div class="contact-info">
                 <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
-                <form id="contact-info-form" method="post" >
+                <form id="contact-info-form" method="post" action="ideal-testomgeving.php" >
                     <?php
                     //Nodig om te checken of het allemaal geset is ???????????, TODO
                     if(isset($_POST['submit'])) {

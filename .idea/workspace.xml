@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,14 +155,7 @@
       <workItem from="1575399046298" duration="5584000" />
       <workItem from="1575468923653" duration="694000" />
       <workItem from="1575469636623" duration="3244000" />
-      <workItem from="1575476339538" duration="2174000" />
-    </task>
-    <task id="LOCAL-00063" summary="Fix default sorteer methode">
-      <created>1574279358273</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1574279358274</updated>
+      <workItem from="1575476339538" duration="2227000" />
     </task>
     <task id="LOCAL-00064" summary="Winkelwagen knop is liiitt yo">
       <created>1574290544344</created>
@@ -501,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575477470149</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
+      <created>1575478552706</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1575478552706</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +522,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="-1" />
     <MESSAGE value="Verwijder knop werkt" />
     <MESSAGE value="Update winkelwagen wanneer nieuwe pagina" />
     <MESSAGE value="checkout pagina buttons" />
@@ -548,7 +546,8 @@
     <MESSAGE value="ideal totaalprijs gefixt" />
     <MESSAGE value="404 pagina start nu ook een session" />
     <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
-    <option name="LAST_COMMIT_MESSAGE" value="confirm-order pagina semi gefixt, nog wel wat te doen" />
+    <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
