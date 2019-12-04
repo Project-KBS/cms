@@ -46,18 +46,24 @@
                 <div>Winkelmandje
 
                 <?php
-                    $telling = count(Cart::get());
+                    $telling = 0;
 
-                    if ($telling > 0) {
-                        if ($telling < 1000) {
-                            print("(".$telling.")");
+                foreach(Cart::get() as $index => $value){
+                    $telling += $value;
+                }
+
+                if ($telling > 0) {
+                            if ($telling < 1000) {
+                                print("(".$telling.")");
+
+                            }
+                            else{
+                                print("(1.000+)");
+                            }
 
                         }
-                        else{
-                            print("(1.000+)");
-                        }
 
-                    }
+
                 ?>
 
                 </div>

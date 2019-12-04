@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,13 +157,6 @@
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
       <workItem from="1575399046298" duration="5584000" />
-    </task>
-    <task id="LOCAL-00059" summary="Veel meer comments bij product.php javascripts + fix margins bij header">
-      <created>1574273623233</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1574273623233</updated>
     </task>
     <task id="LOCAL-00060" summary="Zoekpagina results in een flexbox">
       <created>1574274801895</created>
@@ -498,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575466791668</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="ideal totaalprijs gefixt">
+      <created>1575467120738</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1575467120738</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +523,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fix formatting in templates" />
     <MESSAGE value="Start de sessie" />
     <MESSAGE value="Winkelmand verwijderknop in progress" />
     <MESSAGE value="-1" />
@@ -545,7 +547,8 @@
     <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
     <MESSAGE value="order overview 'leeg' fixen" />
     <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
-    <option name="LAST_COMMIT_MESSAGE" value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
+    <MESSAGE value="ideal totaalprijs gefixt" />
+    <option name="LAST_COMMIT_MESSAGE" value="ideal totaalprijs gefixt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
