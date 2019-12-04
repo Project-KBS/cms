@@ -28,7 +28,12 @@ class Customer {
         $stmt = $database->prepare($query);
 
         $id = self::getNextId($database);
-        $naam = $vNaam . " " . $tVoegsel . " " . $aNaam;
+        $naam = 0;
+        if($tVoegsel===NULL){
+            $naam = $vNaam . " " . $tVoegsel . " " . $aNaam;
+        }else{
+            $naam = $vNaam . " " . $aNaam;
+        }
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":id",         $id,                                     PDO::PARAM_INT);
