@@ -54,7 +54,7 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 extract($row);
-                if ($aantal) {
+                if ($aantal > 0) {
                     $totalPriceExcl = round($totalprice + ($RecommendedRetailPrice * $aantal), 2);
                     $totalPriceInlc = round($RecommendedRetailPrice * (1 + $TaxRate / 100) * $aantal, 2);
                     $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2);
@@ -129,7 +129,7 @@
             </div>
             <?php
             }
-                    if(!$resultaat){
+                    if(!$aantal){
                         print("Je hebt niks in je winkelmandje, ga terug naar de startpagina");
                     }
                     ?>
