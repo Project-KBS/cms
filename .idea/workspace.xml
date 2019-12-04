@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,13 +154,6 @@
       <workItem from="1574980577724" duration="678000" />
       <workItem from="1575279885027" duration="9769000" />
       <workItem from="1575399046298" duration="5584000" />
-    </task>
-    <task id="LOCAL-00058" summary="Fix text-decoration bij product-display:hover">
-      <created>1574271286832</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1574271286832</updated>
     </task>
     <task id="LOCAL-00059" summary="Veel meer comments bij product.php javascripts + fix margins bij header">
       <created>1574273623233</created>
@@ -498,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575457322641</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is">
+      <created>1575466791668</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1575466791668</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +520,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Iemand had #responsive-container blijkbaar een class gemaakt???" />
     <MESSAGE value="Fix formatting in templates" />
     <MESSAGE value="Start de sessie" />
     <MESSAGE value="Winkelmand verwijderknop in progress" />
@@ -545,7 +544,8 @@
     <MESSAGE value="Fix setup.sql, database was niet genoemd" />
     <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
     <MESSAGE value="order overview 'leeg' fixen" />
-    <option name="LAST_COMMIT_MESSAGE" value="order overview 'leeg' fixen" />
+    <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
+    <option name="LAST_COMMIT_MESSAGE" value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

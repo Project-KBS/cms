@@ -32,7 +32,7 @@ foreach ($winkelwagen as $productId => $hoeveelheid) {
 
     $prijsExcl += $RecommendedRetailPrice;
     $btw       += $RecommendedRetailPrice * ($TaxRate / 100);
-    $prijsIncl += $RecommendedRetailPrice * (1 + $TaxRate / 100);
+    $prijsIncl += ($RecommendedRetailPrice * (1 + $TaxRate / 100) * $hoeveelheid);
 }
 
 // de mollie API activeren en een key zetten.
@@ -40,7 +40,7 @@ $mollie = Mollie::getApi();
 
 // genereer een uniek orderID
 $orderId = time(); // TODO haal nieuw order id uit database, microtime werkt niet omdat het een te lang getal is.
-
+print($hoeveelheid);
 // een betaling aanmaken
 $payment = $mollie->payments->create([
     "amount" => [
