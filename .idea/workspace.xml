@@ -157,14 +157,7 @@
       <workItem from="1575468923653" duration="694000" />
       <workItem from="1575469636623" duration="3244000" />
       <workItem from="1575476339538" duration="3194000" />
-      <workItem from="1575538444408" duration="919000" />
-    </task>
-    <task id="LOCAL-00065" summary="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten">
-      <created>1574329863492</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1574329863492</updated>
+      <workItem from="1575538444408" duration="999000" />
     </task>
     <task id="LOCAL-00066" summary="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten">
       <created>1574329936880</created>
@@ -502,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575478572434</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
+      <created>1575540292184</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1575540292185</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
