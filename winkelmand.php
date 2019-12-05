@@ -136,8 +136,8 @@ session_start();
                                     const form<?php print($teller); ?> = document.getElementById('update-aantal');
                                     const form_input<?php print($teller); ?> = document.getElementById('update-aantal-input');
 
-                                    verwijderen<?php print($teller); ?>.onclick = function(){
-                                        if(confirm("Wilt u dit product verwijderen?")){
+                                    verwijderen<?php print($teller); ?>.onclick = function() {
+                                        if (confirm("Wilt u dit product verwijderen?")) {
                                             geheel<?php print($teller); ?>.style.display = "none";
                                             test<?php print($teller); ?>.value = -1;
 
@@ -146,8 +146,6 @@ session_start();
                                             form_input<?php print($teller); ?>.value = "<?php print("-1"); ?>";
                                             form<?php print($teller); ?>.submit();
                                         }
-
-
                                     }
 
                                 </script>
@@ -188,6 +186,7 @@ session_start();
 
                                         if (hoeveelheid_input<?php print($teller);?>.value <= 0) {
                                             verwijderen<?php print($teller);?>.onclick(null);
+                                            hoeveelheid_input<?php print($teller);?>.value = 1;
                                         }
 
                                         // Bereken de prijs incl/excl btw opnieuw.

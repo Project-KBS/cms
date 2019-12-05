@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Update confirm message nog een keer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,13 +158,7 @@
       <workItem from="1575469636623" duration="3244000" />
       <workItem from="1575476339538" duration="3194000" />
       <workItem from="1575538444408" duration="999000" />
-    </task>
-    <task id="LOCAL-00066" summary="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten">
-      <created>1574329936880</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1574329936880</updated>
+      <workItem from="1575545520907" duration="803000" />
     </task>
     <task id="LOCAL-00067" summary="Winkelwagen class placeholder">
       <created>1574860523880</created>
@@ -501,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575540292185</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Update confirm message nog een keer">
+      <created>1575544206506</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1575544206506</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +525,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Update winkelwagen wanneer nieuwe pagina" />
     <MESSAGE value="checkout pagina buttons" />
     <MESSAGE value="checkout pagina buttons 2 (commit failed)" />
     <MESSAGE value="checkout pagina buttons 3 (commit failed)" />
@@ -548,7 +549,8 @@
     <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
     <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
     <MESSAGE value="Update confirm message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update confirm message" />
+    <MESSAGE value="Update confirm message nog een keer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update confirm message nog een keer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
