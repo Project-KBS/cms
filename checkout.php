@@ -38,26 +38,7 @@
                 <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
                 <form id="contact-info-form" method="post" action="ideal-testomgeving.php" >
                     <?php
-                    //Nodig om te checken of het allemaal geset is ???????????, TODO
-                    if(isset($_POST['submit'])) {
-                        $voornaam = $_POST['Voornaam'];
-                        $achternaam = $_POST['Achternaam'];
-                        $straatnaam = $_POST['Straatnaam'];
-                        $huisnummer = $_POST['Huisnummer'];
-                        $postcode = $_POST['Postcode'];
-                        $woonplaats = $_POST['Woonplaats'];
-                        $mail = $_POST['Email'];
-                    }
-                        $winkelmandjeSet = false;
-                        $inputArray = array(    "Voornaam",
-                                                "Tussenvoegsel",
-                                                "Achternaam",
-                                                "Straatnaam",
-                                                "Huisnummer",
-                                                "Postcode",
-                                                "Woonplaats",
-                                                "Email"
-                        );
+
                     foreach (Cart::get() as $item => $aantal) {
                         $winkelmandjeSet = true;
                     }

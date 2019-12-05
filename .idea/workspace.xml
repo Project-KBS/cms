@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -155,14 +156,8 @@
       <workItem from="1575399046298" duration="5584000" />
       <workItem from="1575468923653" duration="694000" />
       <workItem from="1575469636623" duration="3244000" />
-      <workItem from="1575476339538" duration="2227000" />
-    </task>
-    <task id="LOCAL-00064" summary="Winkelwagen knop is liiitt yo">
-      <created>1574290544344</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1574290544346</updated>
+      <workItem from="1575476339538" duration="3194000" />
+      <workItem from="1575538444408" duration="919000" />
     </task>
     <task id="LOCAL-00065" summary="Winkelwagen knop is liiitt yo&#10;Nu ook in de search, was ik vergeten">
       <created>1574329863492</created>
@@ -500,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575478552706</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
+      <created>1575478572434</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1575478572434</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
