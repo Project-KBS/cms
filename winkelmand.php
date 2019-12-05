@@ -137,7 +137,7 @@ session_start();
                                     const form_input<?php print($teller); ?> = document.getElementById('update-aantal-input');
 
                                     verwijderen<?php print($teller); ?>.onclick = function(){
-                                        if(confirm("Wilt u dit product verwijderen??")){
+                                        if(confirm("Wilt u dit product verwijderen?")){
                                             geheel<?php print($teller); ?>.style.display = "none";
                                             test<?php print($teller); ?>.value = -1;
 

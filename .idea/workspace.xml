@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-overview.php" beforeDir="false" afterPath="$PROJECT_DIR$/order-overview.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -525,7 +523,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Verwijder knop werkt" />
     <MESSAGE value="Update winkelwagen wanneer nieuwe pagina" />
     <MESSAGE value="checkout pagina buttons" />
     <MESSAGE value="checkout pagina buttons 2 (commit failed)" />
@@ -550,7 +547,8 @@
     <MESSAGE value="404 pagina start nu ook een session" />
     <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
     <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
+    <MESSAGE value="Update confirm message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update confirm message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
