@@ -276,12 +276,13 @@ session_start();
 
                     ?>
 
-                        <h2>Uw winkelmand is leeg</h2>
-                        <br>
-                        <p>klik op de link om verder te winkelen.</p>
-                        <a href="index.php">
-                            <p>Verder winkelen</p>
-                        </a>
+                        <div style="padding-bottom: 5vw">
+                            <h2>Uw winkelmand is leeg</h2>
+                            <br>
+                            <a href="index.php">
+                                <p>Klik hier om verder te winkelen</p>
+                            </a>
+                        </div>
 
                     <?php
 

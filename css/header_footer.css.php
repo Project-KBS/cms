@@ -14,6 +14,8 @@ include_once "../app/vendor.php";
 }
 
 #footer {
+    margin: 4vw 0 0 0;
+
     padding: 3vw;
 
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
