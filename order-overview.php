@@ -111,8 +111,6 @@
     </div>
     <div id="Totaal" class="col-2">
         <!-- Prijzen totaal-->
-        <p id="prijs-excl">Exclusief btw: €<?php print($totalPriceExcl); ?></p>
-        <p id="prijs-incl">Inclusief btw: €<?php print($totalprice); ?></p>
         <p id="prijs-totaal">Totaalbedrag: €<?php print(round($totalprice, 2)); ?></p>
     </div>
             </div>

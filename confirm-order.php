@@ -66,7 +66,10 @@ include_once("app/vendor.php");
         //Laat elk product in het winkelmandje zien
         // check of de betaling geslaagd is
         if ($payment->isPaid()) {
-            echo "BETALING IS GESLAAGD!!!! Je hebt betaald met " . $payment->method . " en wij hebben " . $payment->amount->value . " " . $payment->amount->currency . " ontvangen!!";
+            ?>
+            <h2>Bedankt voor uw bestelling! De betaling is succesvol afgerond!</h2><br>
+            <hr>
+        <?php
 
             foreach(Cart::get() as $item => $aantal) {
                 $stmt = Product::getbyid(Database::getConnection(), $item, 5);
@@ -107,6 +110,7 @@ include_once("app/vendor.php");
                     <div id="filler" class="col-2 centerDivText">
                     </div>
                 </div>
+                <hr>
                 <?php
              }
         } else {
