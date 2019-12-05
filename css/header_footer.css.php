@@ -249,3 +249,12 @@ form{
     margin-left: 70vw;
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
 }
+/* De opmaak voor de social media foto's*/
+.social-media-foto{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+    width:5vw;
+    height:5vw;
+
+}
