@@ -158,7 +158,6 @@ session_start();
                                 <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php print( round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2)); ?></p>
 
 
-                                <!-- Zorgt ervoor dat je geen negatief getal kan invullen-->
                                 <script>
                                     // Dit is het input veld
                                     const hoeveelheid_input<?php print($teller); ?> = document.getElementById('hoeveelheid<?php print($teller); ?>');
@@ -186,7 +185,11 @@ session_start();
 
                                         if (hoeveelheid_input<?php print($teller);?>.value <= 0) {
                                             verwijderen<?php print($teller);?>.onclick(null);
-                                            hoeveelheid_input<?php print($teller);?>.value = 1;
+                                            if (!(hoeveelheid_input<?php print($teller);?>.value === -1)) {
+                                                hoeveelheid_input<?php print($teller);?>.value = 1;
+                                                hoeveelheid_input<?php print($teller);?>.onchange(null);
+                                                functie_bereken();
+                                            }
                                         }
 
                                         // Bereken de prijs incl/excl btw opnieuw.
@@ -194,6 +197,7 @@ session_start();
                                     }
 
                                 </script>
+                                <!-- Zorgt ervoor dat je geen negatief getal kan invullen-->
 
                             </div>
 
