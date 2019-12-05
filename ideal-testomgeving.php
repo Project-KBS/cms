@@ -15,9 +15,17 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+$postVars = ["Voornaam", "Achternaam", "Straatnaam", "Huisnummer", "Postcode", "Woonplaats"];
+
+foreach ($postVars as $postVar) {
+    if (!isset($_POST[$postVar]) || $_POST[$postVar] == NULL) {
+        header("Location: index.php");
+        die("$postVar is ongeldig!");
+    }
+}
+
 // Verkrijg het ID van de klant (maakt automatisch nieuwe klant aan als dat nodig is)
 $customerId = Customer::insertCustomer(Database::getConnection(), $_POST['Voornaam'], $_POST['Tussenvoegsel'], $_POST['Achternaam'], $_POST['Straatnaam'], $_POST['Huisnummer'], $_POST['Postcode'], $_POST['Woonplaats']);
-
 
 
 $database    = Database::getConnection();
