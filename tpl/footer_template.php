@@ -4,11 +4,19 @@
 
         <h3>Social media</h3>
         <hr>
-
-        twitter<br>
-        facebook<br>
-        instagram<br>
-
+        <div id="footer-clickable" class="col-6">
+            <div id="footer-clickable-klein">
+                <a href=" ">
+                    <img src="../img/logo/twitter.jpg"      class="social-media-foto"><br><br>
+                </a>
+                <a href=" ">
+                    <img src="../img/logo/facebook.png"     class="social-media-foto"><br><br>
+                </a>
+                <a href=" ">
+                    <img src="../img/logo/instagram.jfif"   class="social-media-foto"><br><br>
+                </a>
+            </div>
+        </div>
     </div>
 
     <div id="footer-midden" class="col-4">
