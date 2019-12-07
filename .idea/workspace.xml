@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer/mollie.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +159,8 @@
       <workItem from="1575476339538" duration="3194000" />
       <workItem from="1575538444408" duration="999000" />
       <workItem from="1575545520907" duration="3619000" />
+      <workItem from="1575736438816" duration="9000" />
+      <workItem from="1575737724410" duration="2761000" />
     </task>
     <task id="LOCAL-00070" summary="Fix witte categorien">
       <created>1574866841448</created>
