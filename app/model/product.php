@@ -70,7 +70,7 @@ class Product {
         }
 
         $query = "SELECT
-                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
+                      p.StockItemID, p.StockItemName, s.SupplierName, c.ColorName, p.OuterPackageID, u.PackageTypeName UnitPackageTypeName, o.PackageTypeName OuterPackageTypeName,
                       p.Brand, p.Size, p.LeadTimeDays, p.QuantityPerOuter, p.IsChillerStock, p.Barcode, p.TaxRate, p.UnitPrice, p.RecommendedRetailPrice,
                       p.TypicalWeightPerUnit, p.MarketingComments, p.InternalComments, p.Photo, p.CustomFields, p.Tags, p.SearchDetails,
                       p.LastEditedBy, p.ValidFrom, p.ValidTo, gr.StockGroupName, h.QuantityOnHand, g.StockGroupID
