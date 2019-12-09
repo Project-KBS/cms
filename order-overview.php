@@ -57,7 +57,7 @@
         extract($row);
         if ($winkelmandjeSet) {
             $totalPriceExcl = round($totalprice + ($RecommendedRetailPrice * $aantal), 2);
-            $totalPriceInlc = round($RecommendedRetailPrice * (1 + $TaxRate / 100) * $aantal, 2);
+            $totalPriceIncl = round($RecommendedRetailPrice * (1 + $TaxRate / 100) * $aantal, 2);
             $roundedRecommendedRetailPrice = round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2);
             ?>
             <div id="order-overview" class="row" style="padding-bottom: 2vh">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div id="retailPrijs" class="col-2 centerDivText">
-                    € <?php print($roundedRecommendedRetailPrice); ?>
+                    € <?php printf("%0.2f",$roundedRecommendedRetailPrice); ?>
                 </div>
                 <div id="aantalInMand" class="col-2 centerDivText">
                     <div class-1>
@@ -91,19 +91,17 @@
                     </div>
                 </div>
                 <div id="PrijsBTW" class="col-2 centerDivText">
-                    € <?php print($totalPriceInlc); ?>
+                    € <?php printf("%0.2f",$totalPriceIncl); ?>
                 </div>
             </div>
             <?php
-            $totalprice += $totalPriceInlc;
+            $totalprice += $totalPriceIncl;
             ?>
             <hr>
             <?php
         }
     }
     if ($winkelmandjeSet) {
-    $totalprice = round($totalprice, 2);
-
     ?>
 <div class="row">
     <div id="opvul" class="col-10">
@@ -111,7 +109,7 @@
     </div>
     <div id="Totaal" class="col-2">
         <!-- Prijzen totaal-->
-        <p id="prijs-totaal">Totaalbedrag: €<?php print(round($totalprice, 2)); ?></p>
+        <p id="prijs-totaal">Totaalbedrag: €<?php printf("%0.2f",$totalprice); ?></p>
     </div>
             </div>
 <div class="row">
@@ -121,7 +119,7 @@
     <div class="col-6">
     </div>
     <form name="form" method="post">
-        <input type="hidden" value="<?php print($totalprice); ?>">
+        <input type="hidden" value="<?php printf("%0.2f",$totalprice); ?>">
         <a href="checkout.php">
             <div type="submit" class="ContinueButton">Afrekenen ></div>
         </a>

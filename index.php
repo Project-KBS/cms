@@ -79,7 +79,7 @@ session_start();
                                     <p><?php print($SearchDetails) ?></p>
 
                                     <div class="product-prijs">
-                                        <h5>€<?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h5>
+                                        <h5>€<?php printf("%0.2f",$RecommendedRetailPrice * (1 + $TaxRate / 100)); ?></h5>
                                     </div>
 
                                     <form method="POST" name="winkelmandje" action="">

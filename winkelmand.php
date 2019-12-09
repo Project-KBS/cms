@@ -155,7 +155,7 @@ session_start();
                             <!-- hier komen de aantallen en totaalprijzen-->
                             <div id="Prijs" class="col-5">
 
-                                <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php print( round($RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal,2)); ?></p>
+                                <p id="prijs<?php print($teller); ?>">Totaalprijs: € <?php printf( "%0.2f",$RecommendedRetailPrice * (1+ $TaxRate/100) * $aantal); ?></p>
 
 
                                 <script>

@@ -174,7 +174,7 @@ include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
                                     <h4><?php print($StockItemName) ?></h4>
                                     <p><?php print($SearchDetails) ?></p>
                                     <div class="product-prijs">
-                                        <h5>€<?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h5>
+                                        <h5>€<?php printf("%0.2f",$RecommendedRetailPrice * (1 + $TaxRate / 100)); ?></h5>
                                     </div>
                                     <form method="POST" name="winkelmandje" action="">
                                         <input type="hidden" name="product:<?php print($StockItemID); ?>" value="1">
