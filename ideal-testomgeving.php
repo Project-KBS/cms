@@ -5,6 +5,7 @@ include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/customer.php");
 include_once("app/model/product.php");
+include_once("app/model/order.php");
 include_once("app/model/transactie.php");
 include_once("app/model/invoice.php");
 include_once("app/database.php");
@@ -68,6 +69,7 @@ error_log("\n\n----> " . $payment->id . "\n");
 //nu moeten we het paymentID samen met het orderID opslaan om later te controleren of er betaald is
 //Transactie::insert(Database::getConnection(), $orderId, $customerId, $prijsExcl, $btw, $prijsIncl);
 Invoice::insert(Database::getConnection(), $customerId, $orderId, $payment->id);
+Order::insert(Database::getConnection(), $customerId);
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
 header("Location: " . $payment->getCheckoutUrl(), true, 303);
