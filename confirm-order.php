@@ -113,6 +113,7 @@ include_once("app/vendor.php");
                 <hr>
                 <?php
              }
+            session_destroy();
         } else {
             echo "Betaling van " . $payment->amount->value . " " . $payment->amount->currency . " is niet geslaagd! :(";
 
