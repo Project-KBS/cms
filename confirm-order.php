@@ -3,65 +3,68 @@
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/invoice.php");
-include_once("app/database.php");
+include_once("app/model/order.php");
+include_once("app/model/orderline.php");
 include_once("app/model/categorie.php");
+include_once("app/database.php");
 include_once("app/cart.php");
 include_once("app/vendor.php");
+
+$mollie = Mollie::getApi();
+// bij deze pagina moet een GET parameter genaamd "orderId" zijn met integer value hoger dan 0.
+
+// check of orderId aanwezig is in URL
+if (!isset($_GET["orderId"])) {
+    exit("Order ID is niet aanwezig!");
+}
+
+$orderId = intval($_GET["orderId"]);
+
+// check of orderId een getal is boven de nul
+if (filter_var($orderId, FILTER_VALIDATE_INT) == false || $orderId <= 1) {
+    exit("Order ID is ongeldig!");
+}
+
+// check of de betaling bestaat in de database en verkrijg de paymentId (dit heet CustomerPurchaseOrderNumber in de DB!)
+$stmt = Invoice::get(Database::getConnection(), $orderId);
+extract($stmt->fetch());
+
+if (!isset($CustomerPurchaseOrderNumber)) {
+    exit("Geen order gevonden met het opgegeven ID!!!");
+}
+
+$paymentId = $CustomerPurchaseOrderNumber;
+
+try {
+    $payment = $mollie->payments->get($paymentId);
+} catch (\Mollie\Api\Exceptions\ApiException $e) {
+    print($e->getMessage());
+    exit("Order ID bestaat niet!");
+}
 
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
-    <?php  include("tpl/head-tag-template.php");
+    <?php
+        include("tpl/head-tag-template.php");
 
+        if ($payment->isPaid()) {
+            session_destroy();
+        }
     ?>
 </head>
 
 <body>
 <header>
-    <?php include("tpl/header_template.php");
-
+    <?php
+        include("tpl/header_template.php");
     ?>
 </header>
 <div id="pagina-container">
     <div class="content-container-home">
         <?php
-
-        $mollie = Mollie::getApi();
-        // bij deze pagina moet een GET parameter genaamd "orderId" zijn met integer value hoger dan 0.
-
-        // check of orderId aanwezig is in URL
-        if (!isset($_GET["orderId"])) {
-            exit("Order ID is niet aanwezig!");
-        }
-
-        $orderId = intval($_GET["orderId"]);
-
-        // check of orderId een getal is boven de nul
-        if (filter_var($orderId, FILTER_VALIDATE_INT) == false || $orderId <= 1) {
-            exit("Order ID is ongeldig!");
-        }
-
-        // check of de betaling bestaat in de database en verkrijg de paymentId (dit heet CustomerPurchaseOrderNumber in de DB!)
-        $stmt = Invoice::get(Database::getConnection(), $orderId);
-        extract($stmt->fetch());
-
-        if (!isset($CustomerPurchaseOrderNumber)) {
-            exit("Geen order gevonden met het opgegeven ID!!!");
-        }
-
-        $paymentId = $CustomerPurchaseOrderNumber;
-
-        try {
-            $payment = $mollie->payments->get($paymentId);
-        } catch (\Mollie\Api\Exceptions\ApiException $e) {
-            exit("Order ID bestaat niet!");
-        }
-
-
-
-
 
         //Laat elk product in het winkelmandje zien
         // check of de betaling geslaagd is
@@ -71,8 +74,11 @@ include_once("app/vendor.php");
             <hr>
         <?php
 
-            foreach(Cart::get() as $item => $aantal) {
-                $stmt = Product::getbyid(Database::getConnection(), $item, 5);
+            $stmt = OrderLine::get(Database::getConnection(), $orderId);
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                extract($row);
+
+                $stmt = Product::getbyid(Database::getConnection(), $StockItemID, 5);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 extract($row);
@@ -104,7 +110,7 @@ include_once("app/vendor.php");
                     </div>
                     <div id="aantalInMand" class="col-2 centerDivText">
                         <div class-1>
-                            Aantal: <?php print($aantal); ?>
+                            Aantal: <?php print($Quantity); ?>
                         </div>
                     </div>
                     <div id="filler" class="col-2 centerDivText">
@@ -113,7 +119,6 @@ include_once("app/vendor.php");
                 <hr>
                 <?php
              }
-            session_destroy();
         } else {
             echo "Betaling van " . $payment->amount->value . " " . $payment->amount->currency . " is niet geslaagd! :(";
 

@@ -73,7 +73,7 @@ Invoice::insert($database, $customerId, $orderId, $payment->id);
 $orderTableId = Order::insert($database, $customerId);
 
 foreach ($winkelwagen as $productId => $hoeveelheid) {
-    OrderLine::insert($database, $orderTableId, $productId, $hoeveelheid);
+    OrderLine::insert($database, $orderId, $orderTableId, $productId, $hoeveelheid);
 }
 
 //de gebruiker wordt doorgestuurd naar een betalingspagina
