@@ -75,10 +75,11 @@ try {
         <?php
 
             $stmt = OrderLine::get(Database::getConnection(), $orderId);
+            print($stmt->rowCount());
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
 
-                $stmt = Product::getbyid(Database::getConnection(), $StockItemID, 5);
+                $stmt = Product::getbyid(Database::getConnection(), $StockItemID, 1);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 extract($row);

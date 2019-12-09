@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/orderline.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/orderline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,13 +152,6 @@
       <workItem from="1575545520907" duration="3619000" />
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
-    </task>
-    <task id="LOCAL-00072" summary="orderoverview basis neergelegd">
-      <created>1574931701892</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1574931701893</updated>
     </task>
     <task id="LOCAL-00073" summary="orderoverview basis neergelegd">
       <created>1574931739101</created>
@@ -496,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575893230503</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Uhh fix?">
+      <created>1575893505133</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1575893505133</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +518,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="begonnen met ideal integreren" />
     <MESSAGE value="begonnen met ideal integreren v2" />
     <MESSAGE value="begonnen met ideal integreren v3" />
     <MESSAGE value="ideal-testomgeving gecomment" />
@@ -543,7 +542,8 @@
     <MESSAGE value="Footer margin aangepast" />
     <MESSAGE value="session destroy toegevoegd bij succesvolle betaling" />
     <MESSAGE value="Nog niet getest!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nog niet getest!" />
+    <MESSAGE value="Uhh fix?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uhh fix?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
