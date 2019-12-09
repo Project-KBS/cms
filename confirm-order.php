@@ -74,15 +74,15 @@ try {
             <hr>
         <?php
 
-            $stmt = OrderLine::get(Database::getConnection(), $orderId);
-            print($stmt->rowCount());
+            $database = Database::getConnection();
+            // Verkrijg
+            $stmt = OrderLine::get($database, $orderId);
+
+            // Zolang er producten in de order lines staan
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
 
-                $stmt = Product::getbyid(Database::getConnection(), $StockItemID, 1);
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-                extract($row);
+                extract((Product::getbyid($database, $StockItemID, 1))->fetch(PDO::FETCH_ASSOC));
 
                 ?>
                 <div id="order-overview" class="row" style="padding-bottom: 2vh">

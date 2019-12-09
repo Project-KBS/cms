@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,16 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP">
+    <include_path>
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/composer" />
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/mollie-api-php/vendor/psr/http-message" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1QyHczHLrqQmMsQ3ztJSpOm7Se3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
