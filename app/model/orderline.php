@@ -24,9 +24,9 @@ class OrderLine {
         $stmt = $database->prepare($query);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
-        $stmt->bindValue(":orderId",      $orderId,           PDO::PARAM_INT);
+        $stmt->bindValue(":orderId",      $orderTableId,      PDO::PARAM_INT);
         $stmt->bindValue(":productId",    $productId,         PDO::PARAM_INT);
-        $stmt->bindValue(":description",  $orderTableId,      PDO::PARAM_INT);
+        $stmt->bindValue(":description",  $orderId,           PDO::PARAM_INT);
         $stmt->bindValue(":packageId",    $OuterPackageID,    PDO::PARAM_INT);
         $stmt->bindValue(":productQty",   $productQty,        PDO::PARAM_INT);
         $stmt->bindValue(":productTax",   $TaxRate,           PDO::PARAM_INT);
@@ -54,12 +54,12 @@ class OrderLine {
                   FROM
                       OrderLines l
                   WHERE
-                       l.OrderID = :orderId";
+                       l.description = :orderId";
 
         $stmt = $database->prepare($query);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
-        $stmt->bindValue(":orderId",   $orderId,    PDO::PARAM_INT);
+        $stmt->bindValue(":orderId",   $orderId,    PDO::PARAM_STR);
 
         // Voer de query uit
         $stmt->execute();

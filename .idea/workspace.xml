@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="NOG NIET GET`">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/orderline.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/orderline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +45,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="j" />
@@ -155,13 +152,6 @@
       <workItem from="1575545520907" duration="3619000" />
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
-    </task>
-    <task id="LOCAL-00071" summary="Bereken prijzen inclusief BTW">
-      <created>1574929270177</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1574929270178</updated>
     </task>
     <task id="LOCAL-00072" summary="orderoverview basis neergelegd">
       <created>1574931701892</created>
@@ -499,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575890597423</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Nog niet getest!">
+      <created>1575893230502</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1575893230503</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +518,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="knop op checkout in de form verwerkt" />
     <MESSAGE value="begonnen met ideal integreren" />
     <MESSAGE value="begonnen met ideal integreren v2" />
     <MESSAGE value="begonnen met ideal integreren v3" />
@@ -546,7 +542,8 @@
     <MESSAGE value="Hij berekent nu de correcte prijs als iets automatisch wordt verwijderd" />
     <MESSAGE value="Footer margin aangepast" />
     <MESSAGE value="session destroy toegevoegd bij succesvolle betaling" />
-    <option name="LAST_COMMIT_MESSAGE" value="session destroy toegevoegd bij succesvolle betaling" />
+    <MESSAGE value="Nog niet getest!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nog niet getest!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
