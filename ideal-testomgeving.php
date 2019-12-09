@@ -55,7 +55,7 @@ print($hoeveelheid);
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR", //deze waarde zorgt voor het type valuta van de betaling
-        "value" => strval(round($prijsIncl, 2))// deze waarde is het totaal inclusief BTW worden
+        "value" => sprintf("%0.2f",$prijsIncl)// deze waarde is het totaal inclusief BTW worden
     ],
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php?orderId=$orderId", // dit is de locatie waar Mollie de klant heenstuurt na de betaling
