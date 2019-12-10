@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,10 +45,10 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -63,7 +63,7 @@
     <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP">
     <include_path>
       <path value="$PROJECT_DIR$/mollie-api-php/vendor/composer" />
       <path value="$PROJECT_DIR$/mollie-api-php/vendor/ralouphie/getallheaders" />
@@ -83,23 +83,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/model" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db" />
+      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
+      <recent name="$PROJECT_DIR$/api/v1/product" />
+      <recent name="$PROJECT_DIR$/api/v1/categorie" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/model" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
       <recent name="$PROJECT_DIR$/app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/db" />
-      <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
-      <recent name="$PROJECT_DIR$/api/v1/product" />
-      <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -158,28 +158,9 @@
       <workItem from="1575469636623" duration="3244000" />
       <workItem from="1575476339538" duration="3194000" />
       <workItem from="1575538444408" duration="999000" />
-      <workItem from="1575545520907" duration="1691000" />
-    </task>
-    <task id="LOCAL-00070" summary="Fix witte categorien">
-      <created>1574866841448</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1574866841448</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Bereken prijzen inclusief BTW">
-      <created>1574929270177</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1574929270178</updated>
-    </task>
-    <task id="LOCAL-00072" summary="orderoverview basis neergelegd">
-      <created>1574931701892</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1574931701893</updated>
+      <workItem from="1575545520907" duration="3619000" />
+      <workItem from="1575736438816" duration="9000" />
+      <workItem from="1575737724410" duration="2761000" />
     </task>
     <task id="LOCAL-00073" summary="orderoverview basis neergelegd">
       <created>1574931739101</created>
@@ -496,14 +477,35 @@
       <option name="project" value="LOCAL" />
       <updated>1575546828422</updated>
     </task>
-    <task id="LOCAL-00118" summary="Social media in de footer voorzien van een foto">
-      <created>1575548174798</created>
+    <task id="LOCAL-00118" summary="Footer margin aangepast">
+      <created>1575547248511</created>
       <option name="number" value="00118" />
       <option name="presentableId" value="LOCAL-00118" />
       <option name="project" value="LOCAL" />
-      <updated>1575548174798</updated>
+      <updated>1575547248511</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="session destroy toegevoegd bij succesvolle betaling">
+      <created>1575890597422</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1575890597423</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Nog niet getest!">
+      <created>1575893230502</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1575893230503</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Afronding is nu wel op 2 decimalen">
+      <created>1575894863258</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1575894863260</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,9 +527,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="code schoonmaken" />
-    <MESSAGE value="knop op checkout in de form verwerkt" />
-    <MESSAGE value="begonnen met ideal integreren" />
     <MESSAGE value="begonnen met ideal integreren v2" />
     <MESSAGE value="begonnen met ideal integreren v3" />
     <MESSAGE value="ideal-testomgeving gecomment" />
@@ -549,8 +548,11 @@
     <MESSAGE value="Update confirm message nog een keer" />
     <MESSAGE value="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1." />
     <MESSAGE value="Hij berekent nu de correcte prijs als iets automatisch wordt verwijderd" />
-    <MESSAGE value="Social media in de footer voorzien van een foto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Social media in de footer voorzien van een foto" />
+    <MESSAGE value="Footer margin aangepast" />
+    <MESSAGE value="session destroy toegevoegd bij succesvolle betaling" />
+    <MESSAGE value="Nog niet getest!" />
+    <MESSAGE value="Afronding is nu wel op 2 decimalen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Afronding is nu wel op 2 decimalen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

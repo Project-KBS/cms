@@ -68,6 +68,8 @@ class Database {
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } else {
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                ini_set('display_errors', 0);
+                ini_set('log_errors', 1);
             }
         }
 
