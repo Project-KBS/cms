@@ -69,7 +69,7 @@
                                         print("placeholder='$value'");
                                     } else {
                                         print("value='test@test'");
-                                    } ?> <?php if ($value != "Tussenvoegsel") {
+                                    } if ($value != "Tussenvoegsel") {
                                         print("required='required'");
                                     } ?>>
                                 </div>
