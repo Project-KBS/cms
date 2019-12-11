@@ -1,13 +1,12 @@
 <?php
 
 
-class review
-{
+class review {
 
     public static function reviewSchrijven($database)
     {
         $query = "INSERT INTO review (`Email`, `StockItemID`, `Title`, `Description`, `Score`, `UpdatedWhen`, `CreatedWhen`)
-                VALUES ('job@job', '7', '45', '45', '456', current_timestamp(), current_timestamp())";
+                VALUES ('job@job', '48', '45', '45', '456', current_timestamp(), current_timestamp())";
         $stmt = $database->prepare($query);
         /*
        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
@@ -20,11 +19,8 @@ class review
 */
 
         //voer de query uit
-        try{
-            $stmt->execute();
-        } catch (Exception $ignored){
+        $stmt->execue();
 
-        }
-        return $stmt;
+        //return type void
     }
 }
