@@ -163,13 +163,6 @@
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
     </task>
-    <task id="LOCAL-00076" summary="Form in winkelmand">
-      <created>1574947806478</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1574947806479</updated>
-    </task>
     <task id="LOCAL-00077" summary="Sla producten op in user sessie (nog niet getest want chrome doet kut)">
       <created>1574949975836</created>
       <option name="number" value="00077" />
@@ -506,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576058850348</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Maak account en review tables aan">
+      <created>1576063738272</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1576063738272</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +528,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ideal-testomgeving gecomment" />
     <MESSAGE value="checkout.php foute merge gefixed" />
     <MESSAGE value="checkout.php foute merge gefixed v2" />
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix" />
@@ -553,7 +552,8 @@
     <MESSAGE value="Afronding is nu wel op 2 decimalen" />
     <MESSAGE value="debugging moet altijd false zijn,anders doet hij oa de product pagina het niet !! Weer terug veranderen naar false als je klaar bent met debuggen (app/constants.php)" />
     <MESSAGE value="Nieuwe logootjes totaal niet van bluecool gejat." />
-    <option name="LAST_COMMIT_MESSAGE" value="Nieuwe logootjes totaal niet van bluecool gejat." />
+    <MESSAGE value="Maak account en review tables aan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maak account en review tables aan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -84,7 +84,11 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Account` (
                                                 `LastIpAddress` VARCHAR(45) NOT NULL,
                                                 `LastUserAgent` VARCHAR(120) NOT NULL,
                                                 `CustomerID` INT(11) NULL,
-                                                PRIMARY KEY (`Email`))
+                                                PRIMARY KEY (`Email`),
+                                                FOREIGN KEY (`CustomerID`)
+                                                    REFERENCES `wideworldimporters`.`Customers` (`CustomerID`)
+                                                        ON UPDATE NO ACTION
+                                                        ON DELETE NO ACTION)
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
 
@@ -104,7 +108,11 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Review` (
                                                FOREIGN KEY (`Email`)
                                                    REFERENCES `wideworldimporters`.`Account` (`Email`)
                                                        ON UPDATE NO ACTION
-                                                       ON DELETE NO ACTION)
+                                                       ON DELETE NO ACTION,
+                                               FOREIGN KEY (`StockItemID`)
+                                                   REFERENCES `wideworldimporters`.`StockItems` (`StockItemID`)
+                                                   ON UPDATE NO ACTION
+                                                   ON DELETE NO ACTION)
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
 
@@ -114,5 +122,5 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 /* Maakt ideal betalingsmogelijkheid aan in de database*/
-INSERT INTO wideworldimporters.Paymentmethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, Validto)
+INSERT INTO wideworldimporters.PaymentMethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, ValidTo)
 VALUES ( 419, "Ideal", 1, "2019-12-03", "9999-12-31 23:59:59");
