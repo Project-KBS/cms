@@ -2,6 +2,11 @@
 // Uit deze php bestanden gebruiken wij functies of variabelen:
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
+include_once("app/model/categorie.php");        // wordt gebruikt voor database connectie
+include_once("app/model/account.php");        // wordt gebruikt voor database connectie
+include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
+include_once("app/security/IHashMethod.php");        // wordt gebruikt voor database connectie
+include_once("app/security/StandardHashMethod.php");        // wordt gebruikt voor database connectie
 
 ?>
 
@@ -31,7 +36,6 @@ include_once("app/database.php");        // wordt gebruikt voor database connect
     <!-- Inhoud pagina -->
     <div class="content-container-home">
         <form>
-
 
         </form>
 

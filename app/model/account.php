@@ -1,0 +1,80 @@
+<?php
+
+class Account {
+
+    /**
+     * Verkrijg alle data van een account.
+     *
+     * De password hash en hash methode worden niet gereturned om veiligheids redenen.
+     *
+     * @param PDO $database
+     * @param string $email
+     * @return PDOStatement
+     */
+    public static function get(PDO $database, string $email) : PDOStatement {
+
+        $query = "SELECT
+                      A.FirstName, A.MiddleName, A.LastName, A.CustomerID
+                      A.AddressStreet, A.AddressNumber, A.AddressToevoeging, A.AddressCity, A.AddressPostalCode,
+                      A.LastIpAddress, A.LastUserAgent
+                  FROM
+                      Account A
+                  WHERE
+                      A.Email = :email";
+
+        $stmt = $database->prepare($query);
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":email",         $email,        PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    /**
+     * zet alle beschikbare informatie van de klant in de database
+     *
+     * Het nieuwe Customer ID wordt gereturned.
+     */
+    public static function insert($database, $email, $plaintextPassword,
+                                             $firstName, $middleName, $lastName,
+                                             $addrStreet, $addrNumber, $addrToevoeging,
+                                             $addrCity, $addrPostal,
+                                             $lastIp, $lastUa) : void {
+
+        $query = "INSERT INTO
+                      Account
+                          (Email, PasswordHashResult, PasswordHashMethod,
+                           FirstName, MiddleName, LastName,
+                           AddressStreet, AddressNumber, AddressToevoeging, AddressCity, AddressPostalCode,
+                           LastIpAddress, LastUserAgent)
+                  VALUES
+                          (:email, :hashResult, :hashMethod,
+                           :firstName, :middleName, :lastName,
+                           :addrStreet, :addrNum, :addrExtra,
+                           :addrCity, :addrPostal,
+                           :lastIp, :lastUa)";
+
+        $stmt = $database->prepare($query);
+
+        $hashResult = StandardHashMethod::getInstance()->hash($plaintextPassword);
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
+        $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
+        $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
+        $stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
+        $stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
+        $stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
+        $stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
+        $stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
+        $stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
+        $stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
+        $stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
+        $stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
+        $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+}

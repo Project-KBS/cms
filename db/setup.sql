@@ -117,6 +117,15 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Review` (
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
 
+/* Om de paymentId/orderId combinatie op te slaan */
+GRANT INSERT ON wideworldimporters.Account TO 'api-local'@'localhost';
+/* idem, maar dan om weer uit te lezen */
+GRANT SELECT ON wideworldimporters.Account TO 'api-local'@'localhost';
+
+/* Om de paymentId/orderId combinatie op te slaan */
+GRANT INSERT ON wideworldimporters.Review TO 'api-local'@'localhost';
+/* idem, maar dan om weer uit te lezen */
+GRANT SELECT ON wideworldimporters.Review TO 'api-local'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
