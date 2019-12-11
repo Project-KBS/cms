@@ -15,8 +15,17 @@ class Invoice {
      */
     public static function insert(PDO $database, int $customerId, int $orderId, string $paymentId) {
 
-        $query = "INSERT INTO Invoices (InvoiceID, CustomerID,  BillToCustomerID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate,    IsCreditNote, TotalDryItems, TotalChillerItems, CustomerPurchaseOrderNumber, LastEditedBy,  LastEditedWhen)
-                  VALUES               (:orderId,  :customerId, :billingId,       1,                1,               1,                1,                   1,                CURRENT_DATE(), 0,            1,             1,                 :paymentId,                  :lastEditedBy, CURRENT_DATE())";
+        $query = "INSERT INTO
+                      Invoices
+                          (InvoiceID, CustomerID,  BillToCustomerID, DeliveryMethodID, ContactPersonID,
+                           AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate,
+                           IsCreditNote, TotalDryItems, TotalChillerItems, CustomerPurchaseOrderNumber,
+                           LastEditedBy,  LastEditedWhen)
+                  VALUES
+                          (:orderId,  :customerId, :billingId, 1, 1,
+                          1, 1, 1, CURRENT_DATE(),
+                          0, 1, 1, :paymentId,
+                          :lastEditedBy, CURRENT_DATE())";
 
         $stmt = $database->prepare($query);
 
@@ -51,7 +60,8 @@ class Invoice {
                       i.CustomerPurchaseOrderNumber, i.CustomerID
                   FROM
                       " . self::TABLE_NAME . " i
-                  WHERE i.InvoiceID = :orderId";
+                  WHERE
+                      i.InvoiceID = :orderId";
 
         $stmt = $database->prepare($query);
 

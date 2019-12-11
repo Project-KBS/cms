@@ -7,12 +7,12 @@ class Transactie {
     /**
      * Maak een nieuwe (onvoltooide) transactie aan in de database.
      *
-     * @param PDO $database Database connectie object
-     * @param int $orderId Order ID
-     * @param int $klantId Customer ID
-     * @param float $amountExcl Prijs exclusief btw
-     * @param float $amountTax Btw
-     * @param float $amountIncl Prijs inclusief btw
+     * @param PDO $database       Database connectie object
+     * @param int $orderId        Order ID
+     * @param int $klantId        Customer ID
+     * @param float $amountExcl   Prijs exclusief btw
+     * @param float $amountTax    Btw
+     * @param float $amountIncl   Prijs inclusief btw
      * @return void
      */
 
@@ -68,8 +68,10 @@ class Transactie {
                       t.AmountExcludingTax, t.TaxAmount, t.TransactionAmount, t.OutstandingBalance, t.FinalizationDate, t.isFinalized
                   FROM
                       " . self::TABLE_NAME . " t
-                  WHERE t.StockItemID = :id
-                  LIMIT :limiet";
+                  WHERE
+                      t.StockItemID = :id
+                  LIMIT
+                      :limiet";
 
         $stmt = $database->prepare($query);
 

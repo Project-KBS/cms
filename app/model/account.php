@@ -2,12 +2,14 @@
 
 class Account {
 
+    public const TABLE_NAME = "Account";
+
     /**
      * Verkrijg alle data van een account.
      *
      * De password hash en hash methode worden niet gereturned om veiligheids redenen.
      *
-     * @param PDO $database
+     * @param PDO    $database
      * @param string $email
      * @return PDOStatement
      */
@@ -33,15 +35,30 @@ class Account {
     }
 
     /**
-     * zet alle beschikbare informatie van de klant in de database
+     * Registreer een nieuw account in deze database.
      *
-     * Het nieuwe Customer ID wordt gereturned.
+     * Gooit een exception als al een account met deze email bestaat.
+     *
+     * @param PDO    $database
+     * @param string $email
+     * @param string $plaintextPassword
+     * @param string $firstName
+     * @param string $middleName
+     * @param string $lastName
+     * @param string $addrStreet
+     * @param int    $addrNumber
+     * @param string $addrToevoeging
+     * @param string $addrCity
+     * @param string $addrPostal
+     * @param string $lastIp
+     * @param string $lastUa
+     * @throws PDOException
      */
-    public static function insert($database, $email, $plaintextPassword,
-                                             $firstName, $middleName, $lastName,
-                                             $addrStreet, $addrNumber, $addrToevoeging,
-                                             $addrCity, $addrPostal,
-                                             $lastIp, $lastUa) : void {
+    public static function insert(PDO $database, string $email, string $plaintextPassword,
+                                                 string $firstName, string $middleName, string $lastName,
+                                                 string $addrStreet, int $addrNumber, string $addrToevoeging,
+                                                 string $addrCity, string $addrPostal,
+                                                 string $lastIp, string $lastUa) : void {
 
         $query = "INSERT INTO
                       Account
@@ -58,6 +75,7 @@ class Account {
 
         $stmt = $database->prepare($query);
 
+        // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
         $hashResult = StandardHashMethod::getInstance()->hash($plaintextPassword);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
