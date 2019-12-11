@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Review` (
                                                `Description` LONGTEXT NOT NULL,
                                                `Score` INT(2) NOT NULL,
                                                `UpdatedWhen` DATETIME NOT NULL DEFAULT NOW(),
-                                               `CreatedWhen` DATETIME NULL DEFAULT NOW(),
+                                               `CreatedWhen` DATETIME NOT NULL DEFAULT NOW(),
                                                PRIMARY KEY (`Email`, `StockItemID`),
                                                FOREIGN KEY (`Email`)
                                                    REFERENCES `wideworldimporters`.`Account` (`Email`)
