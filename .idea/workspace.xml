@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/transactie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/transactie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/review.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +46,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -103,6 +103,18 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -112,18 +124,6 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -163,13 +163,6 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
-    </task>
-    <task id="LOCAL-00079" summary="Het uitrekenen van totaalbedrag werkt">
-      <created>1574959596462</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1574959596462</updated>
     </task>
     <task id="LOCAL-00080" summary="Iemand had #responsive-container blijkbaar een class gemaakt???">
       <created>1574959673745</created>
@@ -507,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576069582872</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="help">
+      <created>1576071964151</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1576071964151</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +529,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix" />
     <MESSAGE value="checkout.php foute merge gefixed v3 laatste fix nu echt xD" />
     <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
     <MESSAGE value="Verkrijg mollie instance" />
@@ -554,7 +553,8 @@
     <MESSAGE value="Maak account en review tables aan" />
     <MESSAGE value="Nieuwe foreign keys met WWI tabellen" />
     <MESSAGE value="Reviews form attr naam gefixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reviews form attr naam gefixed" />
+    <MESSAGE value="help" />
+    <option name="LAST_COMMIT_MESSAGE" value="help" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576069582677">

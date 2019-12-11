@@ -2,9 +2,10 @@
 
 class Review {
 
-    public static function insert($database,  $StockItemID, $Title, $Description, $Score) {
-        $query =   'INSERT INTO review ("Email", "StockItemID", "Title", "Description", "Score","CreatedWhen")
-                    VALUES ("job@job", :StockItemID, :title, :description, :score, current_timestamp()';
+    public static function insert($database, $Email,  $StockItemID, $Title, $Description, $Score) {
+        $query =   "INSERT INTO review (Email,      StockItemID,    Title,      Description,    Score)
+                    VALUES (           :email,      :StockItemID,   :title,     :description,   :score)";
+
         $stmt = $database->prepare($query);
 
         //We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
@@ -12,7 +13,7 @@ class Review {
         //De email gebruiken we pas wanneer we een account kunnen aanmaken tot dan wordt het gehardcode
         //Je moet een mailadres invullen hier boven, die in je accounts staat in de database
 
-        //$stmt->bindValue(":email", $Email, PDO::PARAM_STR);
+        $stmt->bindValue(":email",       $Email,        PDO::PARAM_STR);
         $stmt->bindValue(":StockItemID", $StockItemID,  PDO::PARAM_INT);
         $stmt->bindValue(":title",       $Title,        PDO::PARAM_STR);
         $stmt->bindValue(":description", $Description,  PDO::PARAM_STR);
@@ -23,5 +24,17 @@ class Review {
         $stmt->execute();
 
         //return type void
+    }
+
+    public static function read($database, $StockItemID){
+        $query = "SELECT Email, UpdatedWhen, StockItemID, Title, Description, Score FROM review WHERE StockItemID = :StockItemID";
+
+        $stmt = $database->prepare($query);
+        //We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":StockItemID", $StockItemID, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return($stmt);
     }
 }

@@ -328,16 +328,35 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     <?php
 
                         if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
-
+                            $email = "job.vulkers@gmail.com";
                             $naam = $_POST['reviewerName'];
                             $title = $_POST['title'];
                             $cijfer = $_POST['cijfer'];
                             $reviewInputs = $_POST['reviewInputs'];
-
-                            Review::insert(Database::getConnection(), $_GET['id'], $title, $reviewInputs, $cijfer);
+                            //print_r($_POST);
+                            Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
                         }
-                    ?>
 
+
+                    ?>
+                    <hr>
+                    <h3>Reviews lezen</h3>
+                    <?php
+
+                    $stmt = Review::read(Database::getConnection(), $_GET['id']);
+
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                        extract($row);
+                        ?>
+                            <h3><?php print($Description);?></h3><br>
+                            <h3><?php print($Email);?></h3><br>
+                            <h3><?php print($Titel);?></h3><br>
+                            <h3><?php print($Score);?></h3><br>
+                            <h3><?php print($UpdatedWhen);?></h3><br>
+
+                        <?php
+                     }
+                    ?>
                 </div
 
             </div>
