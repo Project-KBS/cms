@@ -6,6 +6,7 @@ include_once("app/database.php");        // wordt gebruikt voor database connect
 include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
+include_once("app/model/review.php");
 
 // Deze pagina vereist een GET parameter: "id" met integer value van het product.
 // Als deze param niet meegegeven is sturen we de user terug naar index.php
@@ -305,7 +306,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                 }
 
                 ?>
-                <hr><hr>
+                <hr>
                 <h3>Schrijf een review</h3>
 
                 <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks.
@@ -313,6 +314,8 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                 <div id="review-container">
                     <form name="reviews" method="post">
                         <input type="text" name="reviewerName" class="reviewInputs" placeholder="Vul hier je naam in" required="required"><br>
+                        <input type="text" name="title" class="reviewInputs" placeholder="Titel van je review" required="required"><br>
+
                         <select name="cijfer" class="reviewInputs">
                             <?php
                             for($i=1;$i<=10;$i++){
@@ -322,14 +325,19 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                         <input type="textfield" class="reviewInputs" placeholder="Schrijf hier je review" required="required"><br>
                         <input type="submit" value="verzenden"><br>
                     </form>
-                    <?php   if(isset($_POST['verzenden'])){
-                                if(isset($_POST['reviewerName'], $_POST['reviewInputs'] )){
-                                    //Hier moet het verwerken van de form komen
-                                }
-                            }
+                    <?php
+                                    $naam = $_POST['reviewerName'];
+                                    $titel = $_POST['title'];
+                                    $cijfer = $_POST['cijfer'];
+                                    $description = $_POST['reviewInputs'];
+                                    if(isset($_POST['verzenden'])) {
+                                        $stmt = review::reviewSchrijven(Database::getConnection(), 'job@job', $_GET['id'], $titel, $description, $cijfer);
+
+                                        $stmt->execute();
+                                    }
                     ?>
 
-                </div>
+                </div
 
             </div>
 

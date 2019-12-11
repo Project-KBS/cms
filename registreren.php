@@ -22,51 +22,15 @@ include_once("app/database.php");        // wordt gebruikt voor database connect
 
 <!-- Hierin  -->
 <div id="pagina-container">
-
+    <div>
     <!-- Print de header (logo, navigatiebalken, etc.)-->
     <?php
-    include("tpl/header_template.php");
+        include("tpl/header_template.php");
     ?>
 
-
-    <!-- Inhoud pagina -->
-    <div class="content-container-home">
-        <form method="post">
-
-            <p>Email*</p>
-            <input type="email">
-
-            <p>Wachtwoord*</p>
-            <input type="password">
-
-            <p>Voornaam*</p>
-            <input type="text">
-
-            <p>Tussenvoegsel</p>
-            <input type="text">
-
-            <p>Achternaam*</p>
-            <input type="text">
-
-            <p>Straatnaam*</p>
-            <input type="text">
-
-            <p>Huisnummer*</p>
-            <input type="number">
-
-            <p>Toevoeging</p>
-            <input type="text">
-
-            <p>Postcode*</p>
-            <input type="text">
-
-            <p>Woonplaats*</p>
-            <input type="text">
-
-
-        </form>
     </div>
-</div>
+    <!-- Inhoud pagina -->
+    <h3>fdsfs</h3>
 
     <div class="footer-container">
         <?php
@@ -74,6 +38,7 @@ include_once("app/database.php");        // wordt gebruikt voor database connect
         ?>
 
     </div>
+
 
 </body>
 </html>

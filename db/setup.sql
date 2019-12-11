@@ -40,6 +40,9 @@ GRANT SELECT ON wideworldimporters.orders TO 'api-local'@'localhost';
 GRANT INSERT ON wideworldimporters.orderlines TO 'api-local'@'localhost';
 /* idem, maar dan om weer uit te lezen */
 GRANT SELECT ON wideworldimporters.orderlines TO 'api-local'@'localhost';
+/* geeft rechten voor de reviews en de account */
+GRANT INSERT ON wideworldimporters.review TO 'api-local'@'localhost';
+GRANT INSERT ON wideworldimporters.account TO 'api-local'@'localhost';
 
 
 /** Maak onze tabellen aan */
@@ -47,8 +50,6 @@ GRANT SELECT ON wideworldimporters.orderlines TO 'api-local'@'localhost';
 -- Wed 11 Dec 2019 12:12:29 PM CET
 -- Model: WWI Accounts    Version: 1.0
 -- MySQL Workbench Forward Engineering
-
-DROP SCHEMA IF EXISTS `mydb`;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
