@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +45,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -163,13 +162,6 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
-    </task>
-    <task id="LOCAL-00075" summary="Format winkelmand.php">
-      <created>1574947472546</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1574947472546</updated>
     </task>
     <task id="LOCAL-00076" summary="Form in winkelmand">
       <created>1574947806478</created>
@@ -507,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575986439852</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Nieuwe logootjes totaal niet van bluecool gejat.">
+      <created>1576058850347</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1576058850348</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +528,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="begonnen met ideal integreren v3" />
     <MESSAGE value="ideal-testomgeving gecomment" />
     <MESSAGE value="checkout.php foute merge gefixed" />
     <MESSAGE value="checkout.php foute merge gefixed v2" />
@@ -554,7 +552,8 @@
     <MESSAGE value="Nog niet getest!" />
     <MESSAGE value="Afronding is nu wel op 2 decimalen" />
     <MESSAGE value="debugging moet altijd false zijn,anders doet hij oa de product pagina het niet !! Weer terug veranderen naar false als je klaar bent met debuggen (app/constants.php)" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging moet altijd false zijn,anders doet hij oa de product pagina het niet !! Weer terug veranderen naar false als je klaar bent met debuggen (app/constants.php)" />
+    <MESSAGE value="Nieuwe logootjes totaal niet van bluecool gejat." />
+    <option name="LAST_COMMIT_MESSAGE" value="Nieuwe logootjes totaal niet van bluecool gejat." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
