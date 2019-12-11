@@ -204,3 +204,22 @@ input[type=number]::-webkit-outer-spin-button {
     border-top-style: solid;
     padding-top: 2%;
 }
+
+/*Hier onder is de css van de review formulier*/
+#review-container{
+    border: solid black 2px;
+    align-text: center;
+
+}
+#reviews{
+    width: 80%;
+    padding-left: 100%;
+}
+
+.reviewInputs{
+    width: 30%;
+}
+.reviewInputs[type=textfield]{
+    width: 80%;
+    height: 30vw;
+}
