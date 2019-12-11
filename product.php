@@ -312,7 +312,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                 <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks.
                      Hier na moeten we bezig met het verwerken in de database en de css-->
                 <div id="review-container">
-                    <form name="reviews" method="post">
+                    <form action="product.php?id=<?php print($_GET["id"]); ?>" name="reviews" method="post">
                         <input type="text" name="reviewerName" class="reviewInputs" placeholder="Vul hier je naam in"><br>
                         <input type="text" name="title" class="reviewInputs" placeholder="Titel van je review"><br>
 
@@ -323,12 +323,12 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                             } ?>
                         </select>
                         <input type="textfield" class="reviewInputs" placeholder="Schrijf hier je review" ><br>
-                        <input type="submit" value="verzenden"><br>
+                        <input type="submit" name="verzenden" value="verzenden"><br>
                     </form>
                     <?php
 
                         if(isset($_POST['verzenden'])) {
-                            review::reviewSchrijven(Database::getConnection());
+                            Review::insert(Database::getConnection());
                         }
                     ?>
 

@@ -7,19 +7,28 @@ class Transactie {
     /**
      * Maak een nieuwe (onvoltooide) transactie aan in de database.
      *
-     * @param PDO $database       Database connectie object
-     * @param int $orderId        Order ID
-     * @param int $klantId        Customer ID
-     * @param float $amountExcl   Prijs exclusief btw
-     * @param float $amountTax    Btw
-     * @param float $amountIncl   Prijs inclusief btw
-     * @return PDOStatement
+     * @param PDO $database Database connectie object
+     * @param int $orderId Order ID
+     * @param int $klantId Customer ID
+     * @param float $amountExcl Prijs exclusief btw
+     * @param float $amountTax Btw
+     * @param float $amountIncl Prijs inclusief btw
+     * @return void
      */
 
-    public static function insert(PDO $database, int $orderId, int $klantId, float $amountExcl, float $amountTax, float $amountIncl) {
+    public static function insert(PDO $database, int $orderId, int $klantId, float $amountExcl, float $amountTax, float $amountIncl) : void {
 
-        $query = "INSERT INTO CustomerTransactions (CustomerTransactionID, CustomerID, TransactionTypeID, InvoiceID, PaymentMethodID, TransactionDate, AmountExcludingTax, TaxAmount, TransactionAmount, OutstandingBalance, FinalizationDate, IsFinalized, LastEditedBy, LastEditedWhen)
-                  VALUES (:transId, :customerId, :typeId, :invoiceId, :methodId, CURRENT_DATE(), :amountExcl, :amountTax, :amountIncl, :balance, :dateFinal, :isFinal, :lastEditedBy, CURRENT_DATE())";
+        $query = "INSERT INTO
+                      CustomerTransactions
+                          (CustomerTransactionID, CustomerID, TransactionTypeID, InvoiceID, PaymentMethodID,
+                           TransactionDate, AmountExcludingTax, TaxAmount, TransactionAmount,
+                           OutstandingBalance, FinalizationDate, IsFinalized,
+                           LastEditedBy, LastEditedWhen)
+                  VALUES
+                          (:transId, :customerId, :typeId, :invoiceId, :methodId,
+                           CURRENT_DATE(), :amountExcl, :amountTax, :amountIncl,
+                           :balance, :dateFinal, :isFinal,
+                           :lastEditedBy, CURRENT_DATE())";
 
         $stmt = $database->prepare($query);
 
@@ -39,8 +48,6 @@ class Transactie {
 
         // Voer de query uit
         $stmt->execute();
-
-        return $stmt;
     }
 
     /**
