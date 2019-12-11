@@ -322,13 +322,19 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                                 print("<option value='$i'>$i</option>");
                             } ?>
                         </select>
-                        <input type="textfield" class="reviewInputs" placeholder="Schrijf hier je review" ><br>
+                        <input type="textfield" name="reviewInputs" class="reviewInputs" placeholder="Schrijf hier je review" ><br>
                         <input type="submit" name="verzenden" value="verzenden"><br>
                     </form>
                     <?php
 
-                        if(isset($_POST['verzenden'])) {
-                            Review::insert(Database::getConnection());
+                        if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
+
+                            $naam = $_POST['reviewerName'];
+                            $title = $_POST['title'];
+                            $cijfer = $_POST['cijfer'];
+                            $reviewInputs = $_POST['reviewInputs'];
+
+                            Review::insert(Database::getConnection(), $_GET['id'], $title, $reviewInputs, $cijfer);
                         }
                     ?>
 
