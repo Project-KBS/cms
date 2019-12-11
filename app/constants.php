@@ -5,7 +5,7 @@
  *
  * Gebruik dit dus alleen onder het testen, en niet in production!
  */
-const IS_DEBUGGING_ENABLED = false;
+const IS_DEBUGGING_ENABLED = true;
 
 /**
  * Dit is hoeveel producten er normaal worden getoond

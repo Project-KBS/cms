@@ -4,7 +4,6 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/review.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,18 +102,6 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -124,6 +111,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -557,10 +556,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="help" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576069582677">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576075234858">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576069582677" />
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576075234858" />
     <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

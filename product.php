@@ -327,8 +327,8 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     </form>
                     <?php
 
-                        if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
-                            $email = "job.vulkers@gmail.com";
+                    if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
+                            $email = "henk@email.nl";
                             $naam = $_POST['reviewerName'];
                             $title = $_POST['title'];
                             $cijfer = $_POST['cijfer'];
@@ -350,7 +350,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                         ?>
                             <h3><?php print($Description);?></h3><br>
                             <h3><?php print($Email);?></h3><br>
-                            <h3><?php print($Titel);?></h3><br>
+                            <h3><?php print($Title);?></h3><br>
                             <h3><?php print($Score);?></h3><br>
                             <h3><?php print($UpdatedWhen);?></h3><br>
 
