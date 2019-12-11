@@ -305,6 +305,32 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                 }
 
                 ?>
+                <hr><hr>
+                <h3>Schrijf een review</h3>
+
+                <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks.
+                     Hier na moeten we bezig met het verwerken in de database en de css-->
+                <div id="review-container">
+                    <form name="reviews" method="post">
+                        <input type="text" name="reviewerName" class="reviewInputs" placeholder="Vul hier je naam in" required="required"><br>
+                        <select name="cijfer" class="reviewInputs">
+                            <?php
+                            for($i=1;$i<=10;$i++){
+                                print("<option value='$i'>$i</option>");
+                            } ?>
+                        </select>
+                        <input type="textfield" class="reviewInputs" placeholder="Schrijf hier je review" required="required"><br>
+                        <input type="submit" value="verzenden"><br>
+                    </form>
+                    <?php   if(isset($_POST['verzenden'])){
+                                if(isset($_POST['reviewerName'], $_POST['reviewInputs'] )){
+                                    //Hier moet het verwerken van de form komen
+                                }
+                            }
+                    ?>
+
+                </div>
+
             </div>
 
         </div>
