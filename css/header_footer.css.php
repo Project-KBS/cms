@@ -249,12 +249,23 @@ form{
     margin-left: 70vw;
     background: <?php echo VENDOR_THEME_COLOR_BACKGROUND ?>;
 }
+
+#footer-clickable {
+    padding: 0;
+    margin: 0;
+}
+
+#footer-clickable-klein {
+    padding: 0;
+    margin: 0;
+}
+
 /* De opmaak voor de social media foto's*/
 .social-media-foto{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 
-    width:5vw;
-    height:5vw;
+    width:2vw;
+    height:2vw;
 
 }
