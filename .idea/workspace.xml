@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
-    </list>
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,9 +41,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -61,6 +58,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP">
     <include_path>
@@ -107,6 +110,18 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -116,18 +131,6 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -167,6 +170,13 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
+    </task>
+    <task id="LOCAL-00081" summary="Fix formatting in templates">
+      <created>1574962080859</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1574962080859</updated>
     </task>
     <task id="LOCAL-00082" summary="Start de sessie">
       <created>1575023925360</created>
@@ -504,14 +514,7 @@
       <option name="project" value="LOCAL" />
       <updated>1576077571662</updated>
     </task>
-    <task id="LOCAL-00130" summary="Inloggen en registreren buttons in header geactiveerd">
-      <created>1576144153384</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1576144153385</updated>
-    </task>
-    <option name="localTasksCounter" value="131" />
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,18 +560,18 @@
     <MESSAGE value="Reviews form attr naam gefixed" />
     <MESSAGE value="help" />
     <MESSAGE value="Form" />
-    <MESSAGE value="Inloggen en registreren buttons in header geactiveerd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inloggen en registreren buttons in header geactiveerd" />
+    <MESSAGE value="review schrijven zit nu achter een JS knop" />
+    <option name="LAST_COMMIT_MESSAGE" value="review schrijven zit nu achter een JS knop" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144153216">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144153216" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576144156239">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144001652" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144156239" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576069585066" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
