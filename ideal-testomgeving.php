@@ -9,6 +9,7 @@ include_once("app/model/order.php");
 include_once("app/model/orderline.php");
 include_once("app/model/transactie.php");
 include_once("app/model/invoice.php");
+include_once("app/security/Formvalidate.php");
 include_once("app/database.php");
 include_once("app/cart.php");
 
@@ -20,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
 $postVars = ["Voornaam", "Achternaam", "Straatnaam", "Huisnummer", "Postcode", "Woonplaats"];
 
 foreach ($postVars as $postVar) {
-    if (!isset($_POST[$postVar]) || $_POST[$postVar] == NULL) {
+    if (!isset($_POST[$postVar]) || $_POST[$postVar] == NULL || Form::$postVar($_POST[$postVar]) === false) {
         header("Location: index.php");
         die("$postVar is ongeldig!");
     }
