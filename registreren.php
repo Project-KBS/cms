@@ -7,6 +7,7 @@ include_once("app/model/account.php");        // wordt gebruikt voor database co
 include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
 include_once("app/security/IHashMethod.php");        // wordt gebruikt voor database connectie
 include_once("app/security/StandardHashMethod.php");        // wordt gebruikt voor database connectie
+include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
 ?>
 
@@ -121,6 +122,11 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
         if($value === true){
             if (!isset($_POST[$index])) {
                $insert = false;
+            } else {
+                if( Form::$index($_POST[$index]) === false ){
+                    $insert = false;
+                }
+
             }
         }
     }
