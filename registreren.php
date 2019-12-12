@@ -44,85 +44,107 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
     <div >
         <?php
         $form = array(
-            "Email",
-            "Wachtwoord",
-            "Voornaam",
-            "Tussenvoegsel",
-            "Achternaam",
-            "Straatnaam",
-            "Huisnummer",
-            "Toevoeging",
-            "Postcode",
-            "Woonplaats"
+            "Email" => true,
+            "Wachtwoord" => true,
+            "Voornaam" => true,
+            "Tussenvoegsel" => false,
+            "Achternaam" => true,
+            "Straatnaam"=> true,
+            "Huisnummer" => true,
+            "Toevoeging" => false,
+            "Postcode" => true,
+            "Woonplaats" => true
         );
         ?>
 
         <form id="register-form" method="post">
             <table cellpadding="10">
 
-            <?php foreach($form as $index => $value){
+                <?php foreach ($form as $index => $value) {
 
-                if($value === "Email" || $value === "Voornaam" || $value === "Straatnaam" || $value === "Postcode"){
+                    if ($index === "Email" || $index === "Voornaam" || $index === "Straatnaam" || $index === "Postcode") {
+                        ?>
+                        <tr>
+
+                        <?php
+                    }
                     ?>
-                    <tr>
-
-                    <?php
-                }
-                ?>
                     <td>
 
-                    <?php
-                print($value); ?>
+                        <?php
+                        print($index); ?>
 
-                </td>
-                <td>
+                    </td>
+                    <td>
 
-                <input
-                    type="<?php if($value === "Wachtwoord"){
-                        print("password");
-                    }elseif ($value === "Email"){
-                        print("email");
-                    } else{
-                        print("text");
-                    }?>"
+                        <input
+                            type="<?php if ($index === "Wachtwoord") {
+                                print("password");
+                            } elseif ($index === "Email") {
+                                print("email");
+                            } else {
+                                print("text");
+                            } ?>"
 
-                    name="<?php print($value); ?>"
+                            name="<?php print($index); ?>"
 
-                    <?php if (!IS_DEBUGGING_ENABLED) {
-                    print("placeholder='$value'");
-                    } else {
-                    print("value='test@test'");
-                    } if ($value === "Tussenvoegsel" || $value === "Toevoeging") {
-                    } else print("required='required'");
-                    ?>
-                >
+                            <?php if (!IS_DEBUGGING_ENABLED) {
+                                print("placeholder='$index'");
+                            } else {
+                                print("value='test@test'");
+                            }
+                            if ($index === "Tussenvoegsel" || $index === "Toevoeging") {
+                            } else print("required='required'");
+                            ?>>
+                    </td>
 
-                </td>
-
-                <?php if($value === "Wachtwoord" || $value === "Achternaam" || $value === "Toevoeging" || $value === "Woonplaats"){ ?>
-                </tr>
-                <?php
+                    <?php if ($index === "Wachtwoord" || $index === "Achternaam" || $index === "Toevoeging" || $index === "Woonplaats") { ?>
+                        </tr>
+                        <?php
+                    }
                 }
-            }
-            ?>
+                ?>
 
 
             </table>
 
-            <input type="submit" value="registreren" >
+            <input type="submit" value="registreren">
 
         </form>
 
     </div>
 
     <?php
-    Account::insert(Database::getConnection(),$_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
-        $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
+    $int = intval($_POST["Huisnummer"]);
+
+    if($int <= 0){
+        print("Foutmelding");
+    } else{
 
 
 
+    $insert = true;
+    foreach($form as $index => $value) {
+            if($value === true){
+                if (isset($_POST["$value"])) {
 
+                    $insert = false;
+                }
+
+            }
+
+    }
+    if($insert === true){
+        try{Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
+            $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
+            } catch(PDOException $exception){
+            print("Ongeldige input");
+        }
+    }
+
+    }
     ?>
+
 </div>
 
 
