@@ -46,7 +46,7 @@ class Account {
      * @param string $middleName
      * @param string $lastName
      * @param string $addrStreet
-     * @param int    $addrNumber
+     * @param string $addrNumber      Wordt tijdelijk geaccepteerd als string omdat hij ook zo gebind wordt.
      * @param string $addrToevoeging
      * @param string $addrCity
      * @param string $addrPostal
@@ -56,7 +56,7 @@ class Account {
      */
     public static function insert(PDO $database, string $email, string $plaintextPassword,
                                                  string $firstName, string $middleName, string $lastName,
-                                                 string $addrStreet, int $addrNumber, string $addrToevoeging,
+                                                 string $addrStreet, string $addrNumber, string $addrToevoeging,
                                                  string $addrCity, string $addrPostal,
                                                  string $lastIp, string $lastUa) : void {
 

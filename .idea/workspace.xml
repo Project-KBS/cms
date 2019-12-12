@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="review schrijven zit nu achter een JS knop">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,18 +113,6 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -136,6 +122,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -569,10 +567,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="review schrijven zit nu achter een JS knop" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576147635997">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144001652" />
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576147635997" />
+    <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576147628966">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="182" y="97" width="1536" height="830" key="DiffContextDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576147628966" />
+    <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog" timestamp="1576147631044">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576147631044" />
+    <state x="694" y="229" width="522" height="566" key="VCS.ChangeListViewerDialog" timestamp="1576145821604">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="694" y="229" width="522" height="566" key="VCS.ChangeListViewerDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576145821604" />
     <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
