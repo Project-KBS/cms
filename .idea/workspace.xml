@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reviews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-    </list>
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,13 +170,6 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
-    </task>
-    <task id="LOCAL-00084" summary="-1">
-      <created>1575025017614</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1575025017614</updated>
     </task>
     <task id="LOCAL-00085" summary="Verwijder knop werkt">
       <created>1575025995350</created>
@@ -518,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576147839868</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="reviews in een apart bestand gezet en ge-include">
+      <created>1576148425464</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1576148425464</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +536,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
     <MESSAGE value="order overview 'leeg' fixen" />
     <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
     <MESSAGE value="ideal totaalprijs gefixt" />
@@ -565,7 +560,8 @@
     <MESSAGE value="review schrijven zit nu achter een JS knop" />
     <MESSAGE value="Functions voor form security" />
     <MESSAGE value="willen we meer of minder reviews? MINDER!!! MINDER!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="willen we meer of minder reviews? MINDER!!! MINDER!!!" />
+    <MESSAGE value="reviews in een apart bestand gezet en ge-include" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviews in een apart bestand gezet en ge-include" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
