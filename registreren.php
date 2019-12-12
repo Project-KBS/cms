@@ -125,25 +125,24 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
             } else {
                 if( Form::$index($_POST[$index]) === false ){
                     $insert = false;
+                    print("Foute ". $index);
                 }
 
             }
         }
     }
     if ($insert === true) {
-        $int = intval($_POST["Huisnummer"]);
 
-        if($int <= 0){
-            print("Foutmelding huisnummmer fout");
-        } else {
-            try{
-                Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
+        try{
+            Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
                 $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
-            } catch(PDOException $exception) {
-                print ($exception->getMessage());
-                print("Ongeldige input");
-            }
         }
+
+        catch(PDOException $exception) {
+            print ($exception->getMessage());
+            print("Ongeldige input");
+        }
+
     }
     ?>
 

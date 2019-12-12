@@ -1,47 +1,84 @@
 <?php
 
 
+//Hierin worden de security maatregelen voor het formulier op registreren.php gedaan om te controleren of de input in de database opgeslagen kan worden
 class Form
 {
 
     public static function Email($input){
         $input = trim($input);
+        if(strlen($input) > 320){
+            return false;
+
+        }
 
 
         return true;
     }
 
     public static function Wachtwoord($input){
+        $input = trim($input);
+        if(strlen($input) > 255){
+            return false;
 
+        }
         return true;
     }
 
     public static function Voornaam($input){
+        $input = trim($input);
+        if(strlen($input) > 45){
+            return false;
+
+        }
 
         return true;
     }
 
     public static function Tussenvoegsel($input){
+        $input = trim($input);
+        if(strlen($input) > 30){
+            return false;
+
+        }
 
         return true;
     }
 
     public static function Achternaam($input){
+        $input = trim($input);
+        if(strlen($input) > 45){
+            return false;
+
+        }
 
         return true;
     }
 
     public static function Straatnaam($input){
+        $input = trim($input);
+        if(strlen($input) > 45){
+            return false;
+
+        }
 
         return true;
     }
 
     public static function Huisnummer($input){
+        if(intval($input) <= 0){
+            return false;
+        }
 
         return true;
     }
 
     public static function Toevoeging($input){
+        $input = trim($input);
+        if(strlen($input) > 45){
+            return false;
+
+        }
 
         return true;
     }
@@ -70,6 +107,11 @@ class Form
     }
 
     public static function Woonplaats($input){
+        $input = trim($input);
+        if(strlen($input) > 45){
+            return false;
+
+        }
 
     return true;
 }
