@@ -5,6 +5,8 @@ class Form
 {
 
     public static function Email($input){
+        $input = trim($input);
+
 
         return true;
     }
@@ -45,6 +47,24 @@ class Form
     }
 
     public static function Postcode($input){
+        $input = str_replace(" ","", $input);
+        if(strlen($input) === 6){
+
+            for($i=0; $i <= 3; $i++){
+                if(!is_numeric($input[$i])){
+                    return false;
+                }
+            }
+
+            for($i=4; $i<=5; $i++){
+                if(!ctype_alpha($input[$i]."")){
+                    return false;
+                }
+            }
+
+        } else {
+            return false;
+        }
 
         return true;
     }
