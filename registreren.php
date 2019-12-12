@@ -91,7 +91,7 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
                             <?php if (!IS_DEBUGGING_ENABLED) {
                                 print("placeholder='$index'");
                             } else {
-                                print("value='test@test'");
+                                print("value='test@t'");
                             }
                             if ($index === "Tussenvoegsel" || $index === "Toevoeging") {
                             } else print("required='required'");
@@ -115,33 +115,29 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
     </div>
 
     <?php
-    $int = intval($_POST["Huisnummer"]);
-
-    if($int <= 0){
-        print("Foutmelding");
-    } else{
-
-
 
     $insert = true;
     foreach($form as $index => $value) {
-            if($value === true){
-                if (isset($_POST["$value"])) {
-
-                    $insert = false;
-                }
-
+        if($value === true){
+            if (!isset($_POST[$index])) {
+               $insert = false;
             }
-
-    }
-    if($insert === true){
-        try{Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
-            $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
-            } catch(PDOException $exception){
-            print("Ongeldige input");
         }
     }
+    if ($insert === true) {
+        $int = intval($_POST["Huisnummer"]);
 
+        if($int <= 0){
+            print("Foutmelding huisnummmer fout");
+        } else {
+            try{
+                Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
+                $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
+            } catch(PDOException $exception) {
+                print ($exception->getMessage());
+                print("Ongeldige input");
+            }
+        }
     }
     ?>
 
