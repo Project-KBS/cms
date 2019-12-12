@@ -16,7 +16,7 @@
             } ?>
         </select><br>
 
-        <input type="textarea" name="reviewInputs" class="reviewInputs" placeholder="Schrijf hier je review" style="height:20vw;" ><br>
+        <textarea name="reviewInputs" class="reviewInputs" placeholder="Schrijf hier je review" style="height:20vw;" ></textarea><br>
         <input type="submit" name="verzenden" value="verzenden"><br>
     </form>
     <?php
@@ -57,6 +57,7 @@
                 <p><?php print($Description); ?></p><br>
 
                 <h5><?php print($UpdatedWhen); ?></h5><br>
+                <hr>
             </div>
             <?php
         }else{
@@ -68,6 +69,7 @@
                 <p><?php print($Description); ?></p><br>
 
                 <h5><?php print($UpdatedWhen); ?></h5><br>
+                <hr>
             </div>
             <?php
         }
