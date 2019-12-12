@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Nieuwe database">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,18 +113,6 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -131,6 +122,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -170,6 +173,7 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
+      <workItem from="1576158603381" duration="390000" />
     </task>
     <task id="LOCAL-00085" summary="Verwijder knop werkt">
       <created>1575025995350</created>
@@ -564,14 +568,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="reviews in een apart bestand gezet en ge-include" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576158970989">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144001652" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576158970989" />
+    <state x="694" y="229" key="VCS.ChangeListViewerDialog" timestamp="1576151000110">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576069585066" />
+    <state x="694" y="229" key="VCS.ChangeListViewerDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576151000110" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576151107914">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576151107914" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
