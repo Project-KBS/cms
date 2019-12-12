@@ -9,20 +9,7 @@
              </a>
         </div>
      </div>
-    <?php
-    //Maakt een array van de item namen, dit wordt gebruikt om suggesties  te geven tijdens het typen.
-    //Hier moet ik nog verder naar kijken.
-    include_once ("app/model/product.php");
 
-    $stmt = (Product::read(Database::getConnection()));
-    $namen = [];
-
-    while ($product = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($product);
-        $namen[] = $StockItemName;
-    }
-
-    ?>
     <!-- Navigatie balk met website navigatie (home, contact, etc..)-->
     <div id="navigatie-site">
 
@@ -43,36 +30,40 @@
             </form>
 
             <a href="winkelmand.php" class="flex-push">
-                <div>Winkelmandje
+                <div>
+                    Winkelmandje
 
                 <?php
                     $telling = 0;
 
-                foreach(Cart::get() as $index => $value){
-                    $telling += $value;
-                }
+                    foreach(Cart::get() as $index => $value){
+                        $telling += $value;
+                    }
 
-                if ($telling > 0) {
-                            if ($telling < 1000) {
-                                print("(".$telling.")");
-
-                            }
-                            else{
-                                print("(1.000+)");
-                            }
-
+                    if ($telling > 0) {
+                        if ($telling < 1000) {
+                            print("(".$telling.")");
+                        } else {
+                            print("(1.000+)");
                         }
-
+                    }
 
                 ?>
 
                 </div>
             </a>
-            <!--
-            INLOGGEN EN REGISTREREN HEB IK ER UIT GECOMMENT WANT DEZE ZIJN WE NOG NIET NODIG!
-            <a href="inloggen.php"><div>Inloggen</div></a>
-            <a href="registreren.php"><div>Registreren</div></a>
-            -->
+
+            <a id="button-inloggen" href="inloggen.php">
+                <div>
+                    Inloggen
+                </div>
+            </a>
+
+            <a id="button-registreren" href="registreren.php">
+                <div>
+                    Registreren
+                </div>
+            </a>
 
         </div>
 

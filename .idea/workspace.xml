@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Form">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +78,12 @@
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -98,18 +108,6 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -119,6 +117,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -552,10 +562,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Form" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576075234858">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576075234858" />
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144001652" />
     <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

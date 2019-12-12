@@ -70,7 +70,7 @@ try {
         // check of de betaling geslaagd is
         if ($payment->isPaid()) {
             ?>
-            <h2>Bedankt voor uw bestelling! De betaling is succesvol afgerond!</h2><br>
+            <h2>Bedankt voor uw bestelling! De betasling is succesvol afgerond!</h2><br>
             <hr>
         <?php
 
