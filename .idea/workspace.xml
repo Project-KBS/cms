@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Form">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
-    </list>
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,8 +41,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="j" />
@@ -62,6 +58,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP">
     <include_path>
@@ -108,6 +110,18 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -117,18 +131,6 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -534,7 +536,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="checkout.php foute merge gefixed v.over_nine_thousand laatste fix nu echt xDDDDD" />
     <MESSAGE value="Verkrijg mollie instance" />
     <MESSAGE value="Fix setup.sql, database was niet genoemd" />
     <MESSAGE value="Customers toevoegen werkt!&#10;&#10;ongeveer..." />
@@ -559,7 +560,8 @@
     <MESSAGE value="Reviews form attr naam gefixed" />
     <MESSAGE value="help" />
     <MESSAGE value="Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Form" />
+    <MESSAGE value="review schrijven zit nu achter een JS knop" />
+    <option name="LAST_COMMIT_MESSAGE" value="review schrijven zit nu achter een JS knop" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
