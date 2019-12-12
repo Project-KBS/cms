@@ -138,6 +138,7 @@ form{
     padding: 0.7rem 1.6rem;
     padding-right: 0px;
     border: none;
+    outline: none;
 }
 #knop{
 

@@ -211,13 +211,12 @@ input[type=number]::-webkit-outer-spin-button {
     align-text: center;
 
 }
-#reviews{
-    width: 80%;
-    padding-left: 100%;
+.reviews{
+
 }
 
 .reviewInputs{
-    width: 30%;
+    width: 70%;
 }
 .reviewInputs[type=textfield]{
     width: 80%;
