@@ -330,7 +330,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     <?php
 
                     if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
-                            $email = "henk@email.nl";
+                            $email = "ronaldbijsma@gmail.com";
                             $naam = $_POST['reviewerName'];
                             $title = $_POST['title'];
                             $cijfer = $_POST['cijfer'];
@@ -346,22 +346,55 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     <hr>
                     <?php
 
+                    //maak een switch om de eerste review te veranderen
+                    $weergaveswitch=0;
+
                     $stmt = Review::read(Database::getConnection(), $_GET['id']);
 
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         extract($row);
                         //opmaak hard nodig!!
-                        ?>
-                            <h3><?php print($Title);?></h3><br>
-                            <h5><?php print($Email);?></h5><br>
-                            <h5><?php print($Score);?></h5><br>
-                            <h5><?php print($Description);?></h5><br>
+                        if($weergaveswitch===0) {
+                            $weergaveswitch = 1;
 
-                            <h5><?php print($UpdatedWhen);?></h5><br>
+                            ?>
+                            <div>
+                                <h3><?php print($Title); ?></h3><br>
+                                <h5><?php print($Email); ?></h5><br>
+                                <h5><?php print($Score); ?></h5><br>
+                                <p><?php print($Description); ?></p><br>
 
-                        <?php
+                                <h5><?php print($UpdatedWhen); ?></h5><br>
+                            </div>
+                            <?php
+                        }else{
+                            ?>
+                            <div id="weergave">
+                                <h3><?php print($Title); ?></h3><br>
+                                <h5><?php print($Email); ?></h5><br>
+                                <h5><?php print($Score); ?></h5><br>
+                                <p><?php print($Description); ?></p><br>
+
+                                <h5><?php print($UpdatedWhen); ?></h5><br>
+                            </div>
+                            <?php
+                        }
                      }
                     ?>
+                    <script>
+                        function WeergaveSwitch() {
+                            var x = document.getElementById("weergave");
+                            if (x.style.display === "none") {
+                                x.style.display = "block";
+                                document.getElementById("weergaveknop").innerHTML = "Minder weergeven";
+                            } else {
+                                x.style.display = "none";
+                                document.getElementById("weergaveknop").innerHTML = "Alles weergeven";
+                            }
+                        }
+                        WeergaveSwitch()
+                    </script>
+                    <button id="weergaveknop" onclick="WeergaveSwitch()">Alles weergeven</button>
                 </div
 
             </div>
