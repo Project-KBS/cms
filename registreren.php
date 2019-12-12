@@ -92,7 +92,7 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
                             <?php if (!IS_DEBUGGING_ENABLED) {
                                 print("placeholder='$index'");
                             } else {
-                                print("value='test@t'");
+                                print("value='test@test'");
                             }
                             if ($index === "Tussenvoegsel" || $index === "Toevoeging") {
                             } else print("required='required'");
@@ -125,7 +125,7 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
             } else {
                 if( Form::$index($_POST[$index]) === false ){
                     $insert = false;
-                    print("Foute ". $index);
+                    print("Foute ". $index. "<br>");
                 }
 
             }
@@ -139,8 +139,9 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
         }
 
         catch(PDOException $exception) {
-            print ($exception->getMessage());
+
             print("Ongeldige input");
+
         }
 
     }
