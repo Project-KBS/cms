@@ -304,65 +304,9 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     // Voor de veiligheid en tegen errors geeft dit een foutmelding aan de gebruiker wanneer een product niet bestaat van dat ID
                     include("tpl/Foutproduct.html");
                 }
-
+                include("reviews.php")
                 ?>
-                <hr>
-                <h3>Schrijf een review</h3>
-               <!--var id = document.getElementById('review-container'); if(id.style.display=='none'){id.style.display == 'block'; document.getElementById('jsKnop').style.display == 'none' }-->
-                <input type="button" onclick="var id = document.getElementById('reviews'); if(id.style.display == 'block'){ id.style.display = 'none';} else{ id.style.display = 'block';}" value="Wilt u een review schrijven?" />
 
-                <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks-->
-                <div id="review-container">
-                    <form action="product.php?id=<?php print($_GET["id"]); ?>" id="reviews" method="post" style="display:none; width: 50vw%; margin-left: 20%">
-                        <input type="text" name="reviewerName" class="reviewInputs" placeholder="Vul hier je naam in"><br>
-                        <input type="text" name="title" class="reviewInputs" placeholder="Titel van je review"><br>
-
-                        <select name="cijfer" class="reviewInputs">
-                            <?php
-                            for($i=1;$i<=10;$i++){
-                                print("<option value='$i'>$i</option>");
-                            } ?>
-                        </select><br>
-
-                        <input type="textarea" name="reviewInputs" class="reviewInputs" placeholder="Schrijf hier je review" style="height:20vw;" ><br>
-                        <input type="submit" name="verzenden" value="verzenden"><br>
-                    </form>
-                    <?php
-
-                    if(isset($_POST['verzenden'], $_POST['reviewerName'],$_POST['title'], $_POST['reviewInputs'])) {
-                            $email = "henk@email.nl";
-                            $naam = $_POST['reviewerName'];
-                            $title = $_POST['title'];
-                            $cijfer = $_POST['cijfer'];
-                            $reviewInputs = $_POST['reviewInputs'];
-                            //print_r($_POST);
-                            Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
-                        }
-
-
-                    ?>
-                    <hr>
-                    <h3>Reviews lezen</h3>
-                    <hr>
-                    <?php
-
-                    $stmt = Review::read(Database::getConnection(), $_GET['id']);
-
-                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                        extract($row);
-                        //opmaak hard nodig!!
-                        ?>
-                            <h3><?php print($Title);?></h3><br>
-                            <h5><?php print($Email);?></h5><br>
-                            <h5><?php print($Score);?></h5><br>
-                            <h5><?php print($Description);?></h5><br>
-
-                            <h5><?php print($UpdatedWhen);?></h5><br>
-
-                        <?php
-                     }
-                    ?>
-                </div
 
             </div>
 
