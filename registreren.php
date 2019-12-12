@@ -61,10 +61,7 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
             <table cellpadding="10">
 
             <?php foreach($form as $index => $value){
-                switch($value){
 
-
-                }
                 if($value === "Email" || $value === "Voornaam" || $value === "Straatnaam" || $value === "Postcode"){
                     ?>
                     <tr>
@@ -72,7 +69,6 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
                     <?php
                 }
                 ?>
-
                     <td>
 
                     <?php
@@ -81,31 +77,24 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
                 </td>
                 <td>
 
-                <input type="
-                <?php
-                switch($value){
-                    case "Email":
-                    print("email");
-                    break;
-
-                    case "Wachtwoord":
-                    print("password");
-                    break;
-
-                    default;
+                <input
+                    type="<?php if($value === "Wachtwoord"){
+                        print("password");
+                    }elseif ($value === "Email"){
+                        print("email");
+                    } else{
                         print("text");
-                        break;
+                    }?>"
 
-                } ?>"
-                       name="<?php print($value); ?>"
+                    name="<?php print($value); ?>"
 
                     <?php if (!IS_DEBUGGING_ENABLED) {
                     print("placeholder='$value'");
                     } else {
                     print("value='test@test'");
-                    } if ($value != "Tussenvoegsel") {
-                        print("required='required'");
-                } ?>
+                    } if ($value === "Tussenvoegsel" || $value === "Toevoeging") {
+                    } else print("required='required'");
+                    ?>
                 >
 
                 </td>
@@ -120,14 +109,14 @@ include_once("app/security/StandardHashMethod.php");        // wordt gebruikt vo
 
             </table>
 
-            <input type="submit" value="registreren">
+            <input type="submit" value="registreren" >
 
         </form>
 
     </div>
 
     <?php
-    account::insert($_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
+    Account::insert(Database::getConnection(),$_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
         $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
 
 
