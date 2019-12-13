@@ -24,10 +24,13 @@ class Account {
                   WHERE
                       A.Email = :email";
 
+
         $stmt = $database->prepare($query);
+
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":email",         $email,        PDO::PARAM_STR);
+
 
         $stmt->execute();
 
@@ -79,7 +82,7 @@ class Account {
         $hashResult = StandardHashMethod::getInstance()->hash($plaintextPassword);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
-        $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
+
         $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
         $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
         $stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
@@ -95,4 +98,47 @@ class Account {
 
         $stmt->execute();
     }
+
+
+
+
+
+    // Moet nog gecontroleerd worden of wachtwoord wel goed geupdate wordt! IN ACCOUNT.php
+    // Moet kijken als je geen wachtwoord wil updaten of hij die dan niet op null zet
+    public static function update(PDO $database, string $email, string $plaintextPassword,
+                                  string $firstName, string $middleName, string $lastName,
+                                  string $addrStreet, string $addrNumber, string $addrToevoeging,
+                                  string $addrCity, string $addrPostal,
+                                  string $lastIp, string $lastUa) : void {
+
+
+        $query = "Update Account
+                    SET PasswordHashResult = 'hashresult', PasswordHashMethod = 'hashmethod', Firstname = 'firstname', Middlename = 'middlename', 
+                    Lastname = 'lastname', Adressstreet = 'adrrstreet', AddressNumber ='addrnum', AddressToevoeging = 'addrextra', 
+                    AddressCity = 'addrcity', AddressPostalCode ='addrpostal', LastIpAddress ='lastip', LastUserAgent = 'lastua'
+                    WHERE A.Email = :email";
+
+        $stmt = $database->prepare($query);
+
+        // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
+        $hashResult = StandardHashmethod::getInstance()->hash($plaintextPassword);
+
+
+        $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
+        $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
+        $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
+        $stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
+        $stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
+        $stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
+        $stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
+        $stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
+        $stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
+        $stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
+        $stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
+        $stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
+        $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
+        $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
+
+    }
+
 }
