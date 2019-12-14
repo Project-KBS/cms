@@ -112,11 +112,12 @@ class Account {
                                   string $lastIp, string $lastUa) : void {
 
 
-        $query = "Update Account A
+        $query = "UPDATE Account A
                     SET 
-                        A.PasswordHashResult = ':hashresult', A.PasswordHashMethod = ':hashmethod', A.Firstname = ':firstname', A.Middlename = ':middlename', 
-                        A.Lastname = ':lastname', A.Adressstreet = ':adrrstreet', A.AddressNumber =':addrnum', A.AddressToevoeging = ':addrextra', 
-                        A.AddressCity = ':addrcity', A.AddressPostalCode =':addrpostal', A.LastIpAddress =':lastip', A.LastUserAgent = ':lastua'
+                        A.PasswordHashResult = ':hashResult', A.PasswordHashMethod = ':hashMethod',
+                        A.FirstName = ':firstName', A.MiddleName = ':middleName', A.LastName = ':lastName',
+                        A.AddressStreet = ':addrStreet', A.AddressNumber =':addrNum', A.AddressToevoeging = ':addrExtra', 
+                        A.AddressCity = ':addrCity', A.AddressPostalCode =':addrPostal', A.LastIpAddress =':lastIp', A.LastUserAgent = ':lastUa'
                     WHERE 
                         A.Email = :email";
 
@@ -138,7 +139,6 @@ class Account {
         $stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
         $stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
         $stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
-        $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
         $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
 
 
