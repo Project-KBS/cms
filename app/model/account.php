@@ -111,6 +111,8 @@ class Account {
                                   string $addrCity, string $addrPostal,
                                   string $lastIp, string $lastUa) : void {
 
+        //$properties = array("FirstName" => $firstName);
+
 
         $query = "UPDATE Account A
                     SET 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Correcte UPDATE syntax">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
     </list>
@@ -179,13 +178,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00086" summary="Update winkelwagen wanneer nieuwe pagina">
-      <created>1575028007513</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1575028007513</updated>
     </task>
     <task id="LOCAL-00087" summary="Update winkelwagen wanneer nieuwe pagina">
       <created>1575034522845</created>
@@ -523,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576149399245</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="Correcte syntax in account update">
+      <created>1576367682543</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1576367682544</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +544,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
     <MESSAGE value="ideal totaalprijs gefixt" />
     <MESSAGE value="404 pagina start nu ook een session" />
     <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
@@ -570,7 +568,8 @@
     <MESSAGE value="willen we meer of minder reviews? MINDER!!! MINDER!!!" />
     <MESSAGE value="reviews in een apart bestand gezet en ge-include" />
     <MESSAGE value="Registreren foutmelding corrigeren" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registreren foutmelding corrigeren" />
+    <MESSAGE value="Correcte syntax in account update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcte syntax in account update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
