@@ -16,7 +16,7 @@ class Account {
     public static function get(PDO $database, string $email) : PDOStatement {
 
         $query = "SELECT
-                      A.FirstName, A.MiddleName, A.LastName, A.CustomerID
+                      A.FirstName, A.MiddleName, A.LastName, A.CustomerID,
                       A.AddressStreet, A.AddressNumber, A.AddressToevoeging, A.AddressCity, A.AddressPostalCode,
                       A.LastIpAddress, A.LastUserAgent
                   FROM
@@ -112,11 +112,13 @@ class Account {
                                   string $lastIp, string $lastUa) : void {
 
 
-        $query = "Update Account
-                    SET PasswordHashResult = 'hashresult', PasswordHashMethod = 'hashmethod', Firstname = 'firstname', Middlename = 'middlename', 
-                    Lastname = 'lastname', Adressstreet = 'adrrstreet', AddressNumber ='addrnum', AddressToevoeging = 'addrextra', 
-                    AddressCity = 'addrcity', AddressPostalCode ='addrpostal', LastIpAddress ='lastip', LastUserAgent = 'lastua'
-                    WHERE A.Email = :email";
+        $query = "Update Account A
+                    SET 
+                        A.PasswordHashResult = ':hashresult', A.PasswordHashMethod = ':hashmethod', A.Firstname = ':firstname', A.Middlename = ':middlename', 
+                        A.Lastname = ':lastname', A.Adressstreet = ':adrrstreet', A.AddressNumber =':addrnum', A.AddressToevoeging = ':addrextra', 
+                        A.AddressCity = ':addrcity', A.AddressPostalCode =':addrpostal', A.LastIpAddress =':lastip', A.LastUserAgent = ':lastua'
+                    WHERE 
+                        A.Email = :email";
 
         $stmt = $database->prepare($query);
 
@@ -138,6 +140,9 @@ class Account {
         $stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
         $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
         $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
+
+
+        $stmt->execute();
 
     }
 

@@ -9,6 +9,8 @@ include_once("app/security/IHashMethod.php");        // Voor het hashen van wach
 include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
 include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
+
+
 ?>
 
 <!doctype html>
@@ -46,18 +48,26 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
         <?php
 
 
+        // Oproepen van de huidige gegevens die dan weer geprint zullen worden
+        $stmt = Account::get(Database::getConnection(),"test@test");
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        extract($row);
+
+        print_r($row);
+
+
         //array maken voor de loop om input velden met text te maken
         $form = array(
-            "Wachtwoord",
-            "Nieuwe Wachtwoord",
-            "Voornaam",
-            "Tussenvoegsel",
-            "Achternaam" ,
-            "Straatnaam",
-            "Huisnummer" ,
-            "Toevoeging" ,
-            "Postcode" ,
-            "Woonplaats"
+            "Wachtwoord" => 0,
+            "Nieuwe Wachtwoord" => 0,
+            "Voornaam" => $FirstName ,
+            "Tussenvoegsel" => $MiddleName,
+            "Achternaam" => $LastName,
+            "Straatnaam" => $AddressStreet,
+            "Huisnummer" => $AddressNumber,
+            "Toevoeging" => $AddressToevoeging,
+            "Postcode" => $AddressPostalCode,
+            "Woonplaats" => $AddressCity
         );
         ?>
 
@@ -68,11 +78,10 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
                 <?php foreach ($form as $index => $value) {
 
 
-                    if ($value === "Wachtwoord" || $value === "Voornaam" || $value === "Straatnaam" || $value === "Postcode") {
+                    if ($index === "Wachtwoord" || $index === "Voornaam" || $index === "Straatnaam" || $index === "Postcode") {
                         ?>
                         <!-- Begin van table rows om overeen te komen met schermontwerp-->
                         <tr>
-
 
                         <?php
                     }
@@ -81,7 +90,7 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
                     <td>
 
                         <?php
-                        print($value); ?>
+                        print($index); ?>
 
                     </td>
 
@@ -90,28 +99,28 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
 
                         <!--Bij debugging print hij test@test om makkelijker velden te auto fillen -->
                         <input
-                            type="<?php if ($value === "Wachtwoord" || $value ==="Nieuwe Wachtwoord") {
+                            type="<?php if ($index === "Wachtwoord" || $index ==="Nieuwe Wachtwoord") {
                                 print("password");
                             } else {
                                 print("text");
                             } ?>"
 
-                            name="<?php print($index); ?>"
+                            name="<?php print($value); ?>"
 
                             <?php
-                            if($value === "Wachtwoord" || $value ==="Nieuwe Wachtwoord"){
+                            if($index === "Wachtwoord" || $index ==="Nieuwe Wachtwoord"){
 
                             } else{
                                 if (!IS_DEBUGGING_ENABLED) {
                                     //Moet getten uit de database en dan huidige informatie hier invullen
-                                    print("value = 'Opgevraagde data HIER'");
+                                    print("value = '$value'");
                                 } else {
                                     print("value='test@test'");
                                 }
                             }
 
                             // Als de verplichte velden niet ingevuld zijn geeft hij aan dat ze nog ingevuld moeten worden
-                            if ($value === "Tussenvoegsel" || $value === "Toevoeging" || $value === "Nieuwe Wachtwoord") {
+                            if ($index === "Tussenvoegsel" || $index === "Toevoeging" || $index === "Nieuwe Wachtwoord") {
                             } else print("required='required'");
                             ?>>
                     </td>
@@ -135,13 +144,34 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
 
     <?php
 
-    if($_POST["Wachtwoord"] === "Huidige wachtwoord die nog moet opvragen uit database"){
+    if(isset($_POST["Wachtwoord"])){
+        $insert = true;
 
 
 
+        if($_POST["Wachtwoord"] === "Huidige wachtwoord die nog moet opvragen uit database"){
+
+            if ($insert === true) {
+
+                try{
+                    //Account::update(Database::getConnection(), ;
+                }
+
+                catch(PDOException $exception) {
+                    // Bij een fout in het proces krijg je ongeldige input terug
+                    print("Ongeldige input");
+
+                }
 
 
+
+            }
+        } else{
+            print("Verkeerd wachtwoord");
+        }
     }
+
+
 
 
 /*

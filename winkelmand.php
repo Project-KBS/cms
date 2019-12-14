@@ -78,11 +78,12 @@ session_start();
                 $isResultaat = false;
                 foreach (Cart::get() as $item => $aantal) {
                     $isResultaat = true;
+
                     $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
                     extract($row);
+
                         ?>
 
                     <div id="geheel<?php print($teller); ?>" class="row" style="padding-bottom: 2vh">
