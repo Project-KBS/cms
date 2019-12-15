@@ -4,6 +4,8 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,13 +180,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00087" summary="Update winkelwagen wanneer nieuwe pagina">
-      <created>1575034522845</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1575034522845</updated>
     </task>
     <task id="LOCAL-00088" summary="Update winkelwagen wanneer nieuwe pagina">
       <created>1575034875764</created>
@@ -522,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576367682544</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="Correcte syntax in account update">
+      <created>1576367797321</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1576367797321</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -83,6 +83,7 @@ class Account {
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
 
+        $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
         $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
         $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
         $stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
@@ -111,38 +112,62 @@ class Account {
                                   string $addrCity, string $addrPostal,
                                   string $lastIp, string $lastUa) : void {
 
-        //$properties = array("FirstName" => $firstName);
+        $hashResult = null;
+        if ($plaintextPassword != null) {
+            // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
+            $hashResult = StandardHashmethod::getInstance()->hash($plaintextPassword);
+        }
 
+        $properties = array("PasswordHashResult"=> "hashResult->getHash()",
+                            "PasswordHashMethod" => "hashResult->getMethod()",
+                            "FirstName"         => "firstName",
+                            "MiddleName"        => "middleName",
+                            "LastName"          => "lastName",
+                            "AddressStreet"     => "addrStreet",
+                            "AddressNumber"     => "addrNumber",
+                            "AddressToevoeging" => "addrToevoeging",
+                            "AddressCity"       => "addrCity",
+                            "AddressPostalCode" => "addrPostal",
+                            "LastIpAddress"     => "lastIp",
+                            "LastUserAgent"     => "lastUa");
 
+        $queryPropertyString = " ";
+
+        foreach ($properties as $propertyName => $propertyVar) {
+            if (isset(${$propertyVar}) && ${$propertyVar} != null) {
+                $queryPropertyString .= sprintf("A.%s = :%s,", $propertyName, "prepared$propertyName");
+            }
+        }
+
+        // Aangezien $queryPropertyString alleen maar wordt opgebouwd van
+        // predefined property names kan er hier geen sql injection plaatsvinden.
         $query = "UPDATE Account A
-                    SET 
-                        A.PasswordHashResult = ':hashResult', A.PasswordHashMethod = ':hashMethod',
-                        A.FirstName = ':firstName', A.MiddleName = ':middleName', A.LastName = ':lastName',
-                        A.AddressStreet = ':addrStreet', A.AddressNumber =':addrNum', A.AddressToevoeging = ':addrExtra', 
-                        A.AddressCity = ':addrCity', A.AddressPostalCode =':addrPostal', A.LastIpAddress =':lastIp', A.LastUserAgent = ':lastUa'
+                    SET
+                        " . $queryPropertyString . "
                     WHERE 
                         A.Email = :email";
 
         $stmt = $database->prepare($query);
 
-        // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
-        $hashResult = StandardHashmethod::getInstance()->hash($plaintextPassword);
-
+        foreach ($properties as $propertyName => $propertyVar) {
+            if (isset(${$propertyVar}) && ${$propertyVar} != null) {
+                $stmt->bindValue(":prepared$propertyName", "${$propertyVar}", PDO::PARAM_STR);
+            }
+        }
 
         $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
-        $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
-        $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
-        $stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
-        $stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
-        $stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
-        $stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
-        $stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
-        $stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
-        $stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
-        $stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
-        $stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
-        $stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
-
+        //$stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
+        //$stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
+        //$stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
+        //$stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
+        //$stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
+        //$stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
+        //$stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
+        //$stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
 
         $stmt->execute();
 
