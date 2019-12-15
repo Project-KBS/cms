@@ -112,7 +112,20 @@
                                 </div>
                             </div>
 
-                            <input type="email" id="invoer-email" name="emailadres" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="E-mailadres">
+                            <input type="email"
+                                   id="invoer-email"
+                                   name="emailadres"
+                                   required aria-required="true"
+                                   class="form-control form-control-lg"
+                                   aria-describedby="emailHelp"
+                                   placeholder="E-mailadres"
+
+                                    <?php
+                                        if (isset($_POST["emailadres"]) && $_POST["emailadres"] != null) {
+                                            printf('value="%s"', $_POST["emailadres"]);
+                                        }
+                                    ?>
+                            >
 
                         </div>
 
@@ -136,7 +149,7 @@
                                 </div>
                             </div>
 
-                            <input type="password" id="invoer-wachtwoord" name="wachtwoord" class="form-control form-control-lg" placeholder="Wachtwoord">
+                            <input type="password" id="invoer-wachtwoord" required aria-required="true" name="wachtwoord" class="form-control form-control-lg" placeholder="Wachtwoord">
 
                         </div>
 

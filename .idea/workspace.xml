@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Voeg required attributen toe op inlog form">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,13 +178,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00091" summary="code schoonmaken">
-      <created>1575039081393</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1575039081393</updated>
     </task>
     <task id="LOCAL-00092" summary="knop op checkout in de form verwerkt">
       <created>1575280414869</created>
@@ -521,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576377390320</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Fix include crash in registreren.php">
+      <created>1576377552261</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1576377552261</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +544,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
     <MESSAGE value="Update confirm message" />
     <MESSAGE value="Update confirm message nog een keer" />
     <MESSAGE value="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1." />
@@ -568,7 +568,8 @@
     <MESSAGE value="Fix registeren query en redirect gebruiker" />
     <MESSAGE value="Inloggen, uitloggen, en andere authenticatie" />
     <MESSAGE value="Footer wat aangepast met linkjes er bij" />
-    <option name="LAST_COMMIT_MESSAGE" value="Footer wat aangepast met linkjes er bij" />
+    <MESSAGE value="Fix include crash in registreren.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix include crash in registreren.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
