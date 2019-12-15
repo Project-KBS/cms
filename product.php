@@ -19,6 +19,7 @@
 
 <!doctype html>
 <html class="no-js" lang="">
+
     <head>
         <?php
 
@@ -27,6 +28,7 @@
 
         ?>
     </head>
+
     <body>
         <!-- Onze website werkt niet met Internet Explorer 9 en lager-->
         <!--[if IE]>
@@ -42,12 +44,12 @@
             ?>
 
             <!-- Inhoud van de pagina -->
-            <div class="content-container">
+            <div class="content-container" style="margin-top: 2.75vw;">
 
                 <?php
 
                 $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
-                if($stmt->rowCount()> 0) {
+                if ($stmt->rowCount() > 0) {
 
                     $categories = array();
 
@@ -70,10 +72,10 @@
                         <?php print($StockItemName); ?>
                     </h1>
 
-                    <h3>
+                    <h4 style="font-weight: normal; color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>; margin-bottom: 1.7vw">
                         <?php
                             //PRINT alle categorieën
-                            if (count($categories) > 1){
+                            if (count($categories) > 1) {
                                 print("Categorieën: ");
                             } else {
                                 print("Categorie: ");
@@ -88,10 +90,12 @@
                                 }
                             }
                         ?>
-                    </h3>
+                    </h4>
 
                     <div id="geheel" class="row">
-                        <div id="links" class="col-6"  >
+
+                        <div id="links" class="col-6">
+
                             <div id="linksboven">
 
                                 <!-- Dit is de hoofdfoto (grote foto) -->
@@ -101,7 +105,8 @@
                                                                     } else {
                                                                         print(MediaPortal::getCategoryImage($StockGroupID));
                                                                     }
-                                                                 ?>" id="Productphoto" class="Productphoto" ><br>
+                                                                 ?>" id="Productphoto" class="Productphoto" alt="Productfoto">
+                                <br>
 
                                 <!-- Dit is de hoofdvideo (grote video) die pas zichtbaar wordt als je op een video thumbnail klikt -->
                                 <video id="Productvideo" class="Productphoto" style="display: none" controls>
@@ -110,6 +115,7 @@
                                 </video>
 
                             </div>
+
                             <div id="linksonder">
 
                                 <script>
@@ -221,14 +227,14 @@
 
                         </div>
 
-                        <div id="rechts" class="col-6" style=" padding: 0">
+                        <div id="rechts" class="col-6" style="padding: 0">
 
                             <!-- Print de prijs-->
-                            <h1>
+                            <h2 style="color: <?php echo VENDOR_THEME_COLOR_HIGHLIGHT ?>">
                                 € <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)); ?>
-                            </h1>
+                            </h2>
 
-                            <h3>
+                            <p>
                                 <?php
 
                                     // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
@@ -239,21 +245,34 @@
                                     }
 
                                 ?>
-                            </h3>
+                            </p>
 
-                            <div id="winkelwagen" name="winkelmandje">
+                            <div id="winkelwagen" style="margin-bottom: 2rem">
 
                                 <form method="post" name="winkelmandje" action="">
 
-                                    <input type="number"
-                                           name="product:<?php print($StockItemID); ?>"
-                                           id="hoeveelheid_input"
-                                           min="1"
-                                           value="<?php print("1"); ?>">
+                                    <div class="row">
 
-                                    <input
-                                        type="submit"
-                                        value="Toevoegen aan winkelwagen">
+                                        <div class="col-6" style="padding-right: 0">
+
+                                            <input type="number"
+                                                   name="product:<?php print($StockItemID); ?>"
+                                                   id="hoeveelheid_input"
+                                                   min="1"
+                                                   value="<?php print("1"); ?>"
+                                                   class="form-control"
+                                                   style="margin: 0 !important;">
+
+                                        </div>
+
+                                        <div class="col-6">
+
+                                            <input type="submit"
+                                                   value="Toevoegen aan winkelwagen"
+                                                   class="btn btn-primary bootstrap-btn">
+                                        </div>
+
+                                    </div>
 
                                 </form>
 
@@ -272,6 +291,7 @@
                                     }
                                 </script>
                             </div>
+
                             <h3>Productomschrijving</h3>
 
                             <?php

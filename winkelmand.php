@@ -137,7 +137,7 @@
                                 <button id="verwijder<?php print($teller); ?>"
                                         type="button"
                                         style="width: 100%; margin-top: 0.5em"
-                                        class="btn btn-secondary">
+                                        class="btn btn-outline-secondary">
                                     Verwijder
                                 </button>
 
@@ -281,23 +281,31 @@
                     <div id="verstuur" class="col-2">
 
                         <!-- Submit knop en betaalmethoden afbeeldingen -->
-                        <input type="submit" value="Verder naar bestellen">
+                        <input type="submit"
+                               value="Verder naar bestellen"
+                               class="btn btn-primary bootstrap-btn"
+                               style="margin-bottom: 1.2rem">
 
                         <img src="img/logo/ideal.png" style="max-width: 60%">
+
                     </div>
 
                     <?php
+
                     //Als er niks in het winkelmandje zit word je verzocht om terug te gaan naar de index pagina
                     } else {
 
                     ?>
 
                         <div style="padding-bottom: 5vw">
+
                             <h2>Uw winkelmand is leeg</h2>
                             <br>
+
                             <a href="index.php">
                                 <p>Klik hier om verder te winkelen</p>
                             </a>
+
                         </div>
 
                     <?php

@@ -20,11 +20,19 @@
             <form autocomplete="off" action="search.php?page=1" name="zoekForm" method="get">
 
                 <a>
-                    <input type="text" placeholder="Typ om te zoeken" name="search" id="search" style="margin-right: 0; padding-right: 0;">
+                    <input type="text"
+                           placeholder="Typ om te zoeken"
+                           name="search"
+                           id="search"
+                           style="margin-right: 0; padding-right: 0;">
                 </a>
 
                 <a>
-                    <input type="submit" value="Search" name="knop" id="knop">
+                    <input type="submit"
+                           value="Search"
+                           name="knop"
+                           id="knop"
+                           style="border-radius: 0 !important;">
                 </a>
 
             </form>

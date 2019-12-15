@@ -45,33 +45,33 @@
                                 <label>
                                     Producten per pagina:
 
-                                    <select name = "Hoeveelheid">
+                                    <select name="Hoeveelheid" class="form-control form-control-sm">
                                         <!-- TODO dit kan met een for-each loop! -->
                                         <!-- Het stukje php tussen de <select> zorgt er voor dat de gekozen hoeveelheid in het vakje blijft staan nadat je op OK hebt gedrukt-->
-                                        <option value = "10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
-                                        <option value = "25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
-                                        <option value = "50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
+                                        <option value="10" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '10') ? 'selected="selected"' : ''; ?>>10</option>
+                                        <option value="25" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '25') ? 'selected="selected"' : ''; ?>>25</option>
+                                        <option value="50" <?php echo (isset($_GET['Hoeveelheid']) && $_GET['Hoeveelheid'] == '50') ? 'selected="selected"' : ''; ?>>50</option>
                                     </select>
                                 </label>
 
                                 <label>
                                     Sorteren:
 
-                                    <select name = "Sort">
+                                    <select name="Sort" class="form-control form-control-sm">
                                         <!-- TODO dit kan met een for-each loop! -->
-                                        <option value = "NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
-                                        <option value = "NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
-                                        <option value = "PrijsASC" <?php echo ((isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC')||(!isset($_GET["Sort"]))) ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
-                                        <option value = "PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
+                                        <option value="NaamASC"  <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamASC') ? 'selected="selected"' : ''; ?>>A-Z</option>
+                                        <option value="NaamDESC" <?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'NaamDESC') ? 'selected="selected"' : ''; ?>>Z-A</option>
+                                        <option value="PrijsASC" <?php echo ((isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsASC')||(!isset($_GET["Sort"]))) ? 'selected="selected"' : ''; ?>>Prijs oplopend</option>
+                                        <option value="PrijsDESC"<?php echo (isset($_GET['Sort']) && $_GET['Sort'] == 'PrijsDESC') ? 'selected="selected"' : ''; ?>>Prijs aflopend</option>
                                     </select>
                                 </label>
 
                                 <label>
                                     Categorie:
 
-                                    <select name = "Categorie">
+                                    <select name="Categorie" class="form-control form-control-sm">
 
-                                        <option value = "0" <?php echo (isset($_GET['Categorie']) && $_GET['Categorie'] == '0') ? 'selected="selected"' : ''; ?>>
+                                        <option value="0" <?php echo (isset($_GET['Categorie']) && $_GET['Categorie'] == '0') ? 'selected="selected"' : ''; ?>>
                                             Geen filter
                                         </option>
 
@@ -107,11 +107,14 @@
                                                     if (isset($_GET["search"])) {
                                                         echo $_GET["search"];
                                                     }
-                                              ?>" />
+                                              ?>"
+                                />
 
                                 <input type="submit"
                                        name="submit"
-                                       value="ok" />
+                                       value="Toepassen"
+                                       class="btn btn-outline-secondary btn-sm"
+                                />
 
                             </p>
                         </fieldset>
@@ -227,10 +230,11 @@
 
                                         <input type="hidden"
                                                name="product:<?php print($StockItemID); ?>"
-                                               value="1">
+                                               value="1"
+                                               class="form-control">
 
                                         <input type="submit"
-                                               class="WinkelwagenKnop"
+                                               class="WinkelwagenKnop btn btn-primary bootstrap-btn"
                                                value="Toevoegen aan winkelmandje">
 
                                     </form>

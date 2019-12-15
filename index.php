@@ -80,13 +80,35 @@
                                     <p><?php print($SearchDetails) ?></p>
 
                                     <div class="product-prijs">
-                                        <h5>€<?php printf("%0.2f",$RecommendedRetailPrice * (1 + $TaxRate / 100)); ?></h5>
+                                        <h5>
+                                            €<?php printf("%0.2f",$RecommendedRetailPrice * (1 + $TaxRate / 100)); ?>
+                                        </h5>
                                     </div>
 
                                     <form method="POST" name="winkelmandje" action="">
-                                        <input type="hidden" name="product:<?php print($StockItemID); ?>" value="1">
-                                        <input type="submit" class="WinkelwagenKnop" value="Toevoegen aan winkelmandje">
 
+                                        <input type="hidden"
+                                               name="product:<?php print($StockItemID); ?>"
+                                               value="1"
+                                               class="form-control">
+
+                                        <input type="submit"
+                                               class="WinkelwagenKnop btn btn-primary
+                                                     <?php
+                                                         if (isset($_POST["product:" . $StockItemID])) {
+                                                             print("btn-success");
+                                                         } else {
+                                                             print("bootstrap-btn");
+                                                         }
+                                                     ?>
+                                                     "
+                                               value="<?php
+                                                         if (isset($_POST["product:" . $StockItemID])) {
+                                                             print("Toegevoegd!");
+                                                         } else {
+                                                             print("Toevoegen aan winkelwagentje");
+                                                         }
+                                                     ?>">
 
                                     </form>
 
