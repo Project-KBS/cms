@@ -21,8 +21,9 @@
 <html class="no-js" lang="">
     <head>
         <?php
-        //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
-        include("tpl/head-tag-template.php");
+
+            //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
+            include("tpl/head-tag-template.php");
 
         ?>
     </head>
@@ -65,25 +66,28 @@
                     //Opmaak van de pagina
                     ?>
 
-                    <h1> <?php print($StockItemName) ?></h1>
+                    <h1>
+                        <?php print($StockItemName); ?>
+                    </h1>
 
-                    <h3> <?php
-                        //PRINT alle categorieën
-                        if(count($categories) >1){
-                            Print("Categorieën: ");
-                        } else {
-                            print("Categorie: ");
-                        }
-                        $first = true;
-                        foreach ($categories as $index => $value) {
-                            if($first){
-                                print($value);
-                                $first = false;
-                        } else {
-                                print( ", " . $value );
+                    <h3>
+                        <?php
+                            //PRINT alle categorieën
+                            if (count($categories) > 1){
+                                print("Categorieën: ");
+                            } else {
+                                print("Categorie: ");
                             }
-                    }
-                    ?>
+                            $first = true;
+                            foreach ($categories as $index => $value) {
+                                if ($first) {
+                                    $first = false;
+                                    print($value);
+                                } else {
+                                    print( ", " . $value );
+                                }
+                            }
+                        ?>
                     </h3>
 
                     <div id="geheel" class="row">
@@ -213,29 +217,44 @@
                                 ?>
                                 </div>
 
-
                             </div>
 
                         </div>
 
                         <div id="rechts" class="col-6" style=" padding: 0">
-                            <!-- Print de prijs-->
-                            <h1>€ <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h1>
 
-                            <h3> <?php
-                                // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
-                                if($QuantityOnHand > 0) {
-                                    print("Op voorraad");
-                                } else {
-                                    print("In de backorder");
-                                }
+                            <!-- Print de prijs-->
+                            <h1>
+                                € <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)); ?>
+                            </h1>
+
+                            <h3>
+                                <?php
+
+                                    // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
+                                    if($QuantityOnHand > 0) {
+                                        print("Op voorraad");
+                                    } else {
+                                        print("In de backorder");
+                                    }
+
                                 ?>
                             </h3>
 
                             <div id="winkelwagen" name="winkelmandje">
+
                                 <form method="post" name="winkelmandje" action="">
-                                <input type="number" name="product:<?php print($StockItemID); ?>" id="hoeveelheid_input" min="1" value="<?php print("1"); ?>">
-                                <input type="submit" value="Toevoegen aan winkelwagen">
+
+                                    <input type="number"
+                                           name="product:<?php print($StockItemID); ?>"
+                                           id="hoeveelheid_input"
+                                           min="1"
+                                           value="<?php print("1"); ?>">
+
+                                    <input
+                                        type="submit"
+                                        value="Toevoegen aan winkelwagen">
+
                                 </form>
 
 
@@ -256,42 +275,48 @@
                             <h3>Productomschrijving</h3>
 
                             <?php
-                            //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
-                            if(isset($MarketingComments) && $MarketingComments != null){
-                                print($MarketingComments);
-                            }
-                            else {
-                                print("Er is geen productomschrijving beschikbaar.");
-                            }
+                                //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
+                                if (isset($MarketingComments) && $MarketingComments != null) {
+                                    print($MarketingComments);
+                                } else {
+                                    print("Er is geen productomschrijving beschikbaar.");
+                                }
                             ?>
 
                             <hr>
 
                             <h3>Productspecificaties</h3>
                             <?php
-                            //Controleert of de waarde bestaat en daarna of het geen null waarde is.
-                            //Daarna wordt de informatie geprint
-                            if(isset($SupplierName) && $SupplierName != null) {
-                                print("Leverancier: $SupplierName <br>");
-                            }
-                            if(isset($ColorName) && $ColorName != null) {
-                                print("Kleur: $ColorName <br>");
-                            }
-                            if(isset($Brand) && $Brand!=null){
-                                print("Merk: $Brand <br>");
-                            }
-                            if(isset($Size) && $Size !=null){
-                                print("Grootte: $Size<br>");
-                            }
-                            if(isset($QuantityPerOuter) && $QuantityPerOuter != null){
-                                print("Het aantal per verpakking: $QuantityPerOuter <br>");
-                            }
-                            if(isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
-                                print("Het gewicht: $TypicalWeightPerUnit Kg<br>");
-                            }
-                            if(isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
-                                print("Gekoeld: Ja<br>");
-                            }
+
+                                //Controleert of de waarde bestaat en daarna of het geen null waarde is.
+                                //Daarna wordt de informatie geprint
+                                if (isset($SupplierName) && $SupplierName != null) {
+                                    print("Leverancier: $SupplierName <br>");
+                                }
+
+                                if (isset($ColorName) && $ColorName != null) {
+                                    print("Kleur: $ColorName <br>");
+                                }
+
+                                if (isset($Brand) && $Brand!=null){
+                                    print("Merk: $Brand <br>");
+                                }
+
+                                if (isset($Size) && $Size !=null){
+                                    print("Grootte: $Size<br>");
+                                }
+
+                                if (isset($QuantityPerOuter) && $QuantityPerOuter != null){
+                                    print("Het aantal per verpakking: $QuantityPerOuter <br>");
+                                }
+
+                                if (isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
+                                    print("Het gewicht: $TypicalWeightPerUnit Kg<br>");
+                                }
+
+                                if (isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
+                                    print("Gekoeld: Ja<br>");
+                                }
 
                             ?>
 
@@ -300,11 +325,14 @@
                     </div>
 
                 <?php
+
                 } else {
                     // Voor de veiligheid en tegen errors geeft dit een foutmelding aan de gebruiker wanneer een product niet bestaat van dat ID
                     include("tpl/Foutproduct.html");
                 }
-                include("reviews.php")
+
+                include("tpl/reviews.php")
+
                 ?>
 
 

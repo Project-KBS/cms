@@ -13,12 +13,14 @@
 
 <!doctype html>
 <html class="no-js" lang="">
+
     <head>
         <?php
             //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
             include("tpl/head-tag-template.php");
         ?>
     </head>
+
     <body>
 
     <!-- Onze website werkt niet met Internet Explorer 9 en lager, laat een waarschuwing zien -->
@@ -59,6 +61,9 @@
 
                 <script>
 
+                    /**
+                     * Wrapper klasse voor een input veld met bijbehorende eigenschappen
+                     */
                     class InputVeld {
 
                         constructor(element, prijs, taxrate) {
@@ -99,7 +104,7 @@
                                                        } else {
                                                            print(MediaPortal::getCategoryImage($StockGroupID));
                                                        }
-                                                        ?>" id="Productphoto" class="Productphoto" >
+                                                        ?>" id="Productphoto" class="Productphoto" alt="Productfoto">
 
                             </div>
 
@@ -120,10 +125,19 @@
                             </div>
 
                             <div id="Aantal" class="col-1">
-                                <input style="width: 100%" type="number" id="hoeveelheid<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>">
+
+                                <input style="width: 100%"
+                                       class="form-control"
+                                       type="number"
+                                       id="hoeveelheid<?php print($teller); ?>"
+                                       name="<?php print($StockItemID); ?>"
+                                       value="<?php print($aantal); ?>">
 
                                 <!-- Verwijder uit winkelwagen knop -->
-                                <button id="verwijder<?php print($teller); ?>" type="button"  style="width: 100%; margin-top: 0.5em">
+                                <button id="verwijder<?php print($teller); ?>"
+                                        type="button"
+                                        style="width: 100%; margin-top: 0.5em"
+                                        class="btn btn-secondary">
                                     Verwijder
                                 </button>
 

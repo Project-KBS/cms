@@ -7,6 +7,7 @@ include_once("app/model/invoice.php");
 include_once("app/model/order.php");
 include_once("app/model/orderline.php");
 include_once("app/model/categorie.php");
+include_once("app/model/product.php");
 include_once("app/database.php");
 include_once("app/cart.php");
 include_once("app/vendor.php");
@@ -47,6 +48,7 @@ try {
 
 <!doctype html>
 <html lang="en">
+
 <head>
     <?php
         include("tpl/head-tag-template.php");
@@ -58,11 +60,13 @@ try {
 </head>
 
 <body>
+
 <header>
     <?php
         include("tpl/header_template.php");
     ?>
 </header>
+
 <div id="pagina-container">
     <div class="content-container-home">
         <?php
@@ -71,8 +75,13 @@ try {
         // check of de betaling geslaagd is
         if ($payment->isPaid()) {
             ?>
-            <h2>Bedankt voor uw bestelling! De betasling is succesvol afgerond!</h2><br>
-            <hr>
+
+            <h2>
+                Bedankt voor uw bestelling! De betaling is succesvol afgerond!
+            </h2>
+
+            <br><hr>
+
         <?php
 
             $database = Database::getConnection();
@@ -87,42 +96,60 @@ try {
 
                 ?>
                 <div id="order-overview" class="row" style="padding-bottom: 2vh">
+
                     <div id="photo" class="col-2">
-                        <br>
                         <img style="width: 100%" src="data:image/png;base64, <?php
-                        if (isset($Photo) && $Photo != null) {
-                            print($Photo);
-                        } else {
-                            print(MediaPortal::getCategoryImage($StockItemID));
-                        }
-                        ?>">
-                        <br><br>
+                                                                         if (isset($Photo) && $Photo != null) {
+                                                                             print($Photo);
+                                                                         } else {
+                                                                             print(MediaPortal::getCategoryImage($StockItemID));
+                                                                         }
+                                                                     ?>"
+                             alt="Productfoto"
+                        />
                     </div>
-                    <div id="product-info" class="col-4">
+
+                    <div id="product-info" class="col-6">
+
                         <div class="ProductMand">
+
                             <div>
-                                <h4><?php print($StockItemName); ?></h4>
+                                <h4>
+                                    <?php print($StockItemName); ?>
+                                </h4>
                             </div>
+
                             <div>
                                 <?php print($MarketingComments); ?>
                             </div>
+
                         </div>
+
                         <div id="filler" class="col-2 centerDivText">
+
                         </div>
                     </div>
+
                     <div id="aantalInMand" class="col-2 centerDivText">
-                        <div class-1>
+                        <div class="col-1">
                             Aantal: <?php print($Quantity); ?>
                         </div>
                     </div>
-                    <div id="filler" class="col-2 centerDivText">
-                    </div>
+
                 </div>
                 <hr>
                 <?php
              }
+
         } else {
-            echo "Betaling van " . $payment->amount->value . " " . $payment->amount->currency . " is niet geslaagd! :(";
+
+            ?>
+
+            <h2>
+                Betaling van <?php print($payment->amount->value . " " .$payment->amount->currency); ?> is niet geslaagd.
+            </h2>
+
+            <?php
 
         }
         ?>

@@ -159,19 +159,19 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 20px auto 0;
     text-align: center;
 }
-.WinkelwagenKnop{
+.WinkelwagenKnop {
     width: 100%;
     height: 3vw;
     align-content: center;
     align-self: flex-end;
 }
 
-.ProductMand{
+.ProductMand {
     margin: 5%;
     width: 60%;
 }
 
-.ContinueButton{
+.ContinueButton {
     background-color: #24b51f;
     color: white;
     border-radius: 1em;
@@ -183,7 +183,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-decoration-color: white;
 }
 
-.ContinueButton:hover{
+.ContinueButton:hover {
     background-color: #1d9c19;
     color: white;
     border-radius: 1em;
@@ -194,11 +194,12 @@ input[type=number]::-webkit-outer-spin-button {
     width: 200%;
 }
 
-.FormLabels{
+.FormLabels {
     text-align: right;
 }
 
-#photo{
+#photo {
+    padding: 2rem 0;
     width: 100%;
 }
 
@@ -206,11 +207,11 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 6%;
 }
 
-.iDealLogo{
+.iDealLogo {
     max-width: 100%;
 }
 
-.lineTop{
+.lineTop {
     border-top-color: black;
     border-top-width: 1px;
     border-top-style: solid;
@@ -218,19 +219,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /*Hier onder is de css van de review formulier*/
-#review-container{
-    border: solid black 2px;
+#review-container {
+    padding: 1.5rem 0;
     align-text: center;
-
-}
-.reviews{
-
 }
 
-.reviewInputs{
+.reviews {
+
+}
+
+.reviewInputs {
     width: 70%;
 }
-.reviewInputs[type=textfield]{
+
+.reviewInputs[type=textfield] {
     width: 80%;
     height: 30vw;
 }

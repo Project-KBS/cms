@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/reviews.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +117,7 @@
       <recent name="$PROJECT_DIR$/img/logo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tpl" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
       <recent name="$PROJECT_DIR$/api/v1/product" />
@@ -180,13 +187,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00093" summary="begonnen met ideal integreren">
-      <created>1575282539686</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1575282539686</updated>
     </task>
     <task id="LOCAL-00094" summary="begonnen met ideal integreren v2">
       <created>1575282695243</created>
@@ -524,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576417931966</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="Extra padding wanneer de navigatiebalk naar fixed position gaat.">
+      <created>1576429797240</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1576429797240</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +553,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Update confirm message nog een keer" />
     <MESSAGE value="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1." />
     <MESSAGE value="Hij berekent nu de correcte prijs als iets automatisch wordt verwijderd" />
     <MESSAGE value="Footer margin aangepast" />
@@ -571,7 +577,8 @@
     <MESSAGE value="Footer wat aangepast met linkjes er bij" />
     <MESSAGE value="Fix include crash in registreren.php" />
     <MESSAGE value="Voeg required attributen toe op inlog form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Voeg required attributen toe op inlog form" />
+    <MESSAGE value="Extra padding wanneer de navigatiebalk naar fixed position gaat." />
+    <option name="LAST_COMMIT_MESSAGE" value="Extra padding wanneer de navigatiebalk naar fixed position gaat." />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
