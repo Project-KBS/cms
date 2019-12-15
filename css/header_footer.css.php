@@ -162,6 +162,10 @@ form{
     width: 100%;
 }
 
+.stick-filler {
+    padding-bottom: 4.5rem;
+}
+
 /** Vergroot en/of verkleint naar de resolutie van het apparaat (zie de media queries hieronder) */
 .responsive-container {
     display: table;

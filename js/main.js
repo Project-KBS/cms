@@ -13,17 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
         return offsetTop;
     };
 
-    const navigatiebalk = document.getElementById("navigatie-categorieen");
+    // De balk met categorieeen.
+    const navigatiebalk   = document.getElementById("navigatie-categorieen");
+    // De bovenste balk met het WWI-logo.
+    const headerbalk      = document.getElementById("header-inline");
+    // De offset in pixels vanaf de bovenkant van de pagina naar de categoriebalk.
     const standaardOffset = getOffsetTop(navigatiebalk);
 
     /**
      * Deze functie wordt gecalled als de user scrollt (zie window.onscroll).
      */
     function onNavScroll() {
+
         if (window.pageYOffset >= standaardOffset) {
-            navigatiebalk.classList.add("stick")
+
+            // Zorg dat de categoriebalk blijft 'hangen' bovenaan het scherm
+            navigatiebalk.classList.add("stick");
+
+            // Omdat de categoriebalk op "position:fixed" wordt gezet, wordt de header minder groot!!!
+            // Voorkom dit door een extra padding (genaamd "filler") toe te voegen.
+            headerbalk.classList.add("stick-filler");
+
         } else {
+            // Revert de wijzigingen die hierboven zijn gemaakt
             navigatiebalk.classList.remove("stick");
+            headerbalk.classList.remove("stick-filler");
         }
     }
 
@@ -31,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.onscroll = function() {
         onNavScroll()
     };
-    
+
 });
 /* --- */
 

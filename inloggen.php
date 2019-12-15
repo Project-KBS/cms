@@ -101,7 +101,7 @@
                     <div class="form-group">
 
                         <label for="invoer-email" class="col-form-label-lg">
-                            Email address
+                            E-mailadres
                         </label>
 
                         <div class="input-group mb-2">
@@ -118,7 +118,7 @@
                                    required aria-required="true"
                                    class="form-control form-control-lg"
                                    aria-describedby="emailHelp"
-                                   placeholder="E-mailadres"
+                                   placeholder="Voer hier uw e-mailadres in..."
 
                                     <?php
                                         if (isset($_POST["emailadres"]) && $_POST["emailadres"] != null) {
@@ -149,7 +149,13 @@
                                 </div>
                             </div>
 
-                            <input type="password" id="invoer-wachtwoord" required aria-required="true" name="wachtwoord" class="form-control form-control-lg" placeholder="Wachtwoord">
+                            <input type="password"
+                                   id="invoer-wachtwoord"
+                                   required aria-required="true"
+                                   name="wachtwoord"
+                                   class="form-control form-control-lg"
+                                   placeholder="Voer hier uw wachtwoord in..."
+                            >
 
                         </div>
 
