@@ -16,9 +16,21 @@ include_once "../app/vendor.php";
     opacity: 15;
 }
 
+.bootstrap-btn {
+    width: 100%;
+    background-color: <?php echo VENDOR_THEME_COLOR_PRIMARY ?> !important;
+    border-color: <?php echo VENDOR_THEME_COLOR_PRIMARY ?> !important;
+}
+
 .content-container-home {
     width: 80vw;
     margin-left: 10vw;
+    margin-top: 5vh;
+}
+
+.content-container-narrow {
+    width: 50vw;
+    margin-left: 25vw;
     margin-top: 5vh;
 }
 

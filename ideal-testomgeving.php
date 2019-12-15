@@ -1,6 +1,7 @@
 <?php
 // dit is een testontwerp en zo veilig als het achtereind van een paard natuurlijk
 
+include_once("app/authentication.php");
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/customer.php");

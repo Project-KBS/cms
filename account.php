@@ -1,15 +1,15 @@
 <?php
-// Uit deze php bestanden gebruiken wij functies of variabelen:
-include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
-include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
-include_once("app/model/account.php");        // wordt gebruikt voor database connectie
-include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
-include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
-include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
-include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
-
+    // Uit deze php bestanden gebruiken wij functies of variabelen:
+    include_once("app/authentication.php");  // Accounts en login
+    include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
+    include_once("app/database.php");        // wordt gebruikt voor database connectie
+    include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+    include_once("app/model/account.php");        // wordt gebruikt voor database connectie
+    include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
+    include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
+    include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
+    include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
 ?>
 

@@ -1,5 +1,6 @@
 <?php
 
+include_once("app/authentication.php");
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/invoice.php");

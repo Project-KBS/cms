@@ -53,17 +53,41 @@
                 </div>
             </a>
 
-            <a id="button-inloggen" href="inloggen.php">
-                <div>
-                    Inloggen
-                </div>
-            </a>
+            <?php
+                if (Authentication::isLoggedIn()) {
+            ?>
 
-            <a id="button-registreren" href="registreren.php">
-                <div>
-                    Registreren
-                </div>
-            </a>
+                <a id="button-account" href="account.php">
+                    <div>
+                        Mijn Account
+                    </div>
+                </a>
+
+                <a id="button-uitloggen" href="uitloggen.php">
+                    <div>
+                        Uitloggen
+                    </div>
+                </a>
+
+            <?php
+                } else {
+            ?>
+
+                <a id="button-inloggen" href="inloggen.php">
+                    <div>
+                        Inloggen
+                    </div>
+                </a>
+
+                <a id="button-registreren" href="registreren.php">
+                    <div>
+                        Registreren
+                    </div>
+                </a>
+
+            <?php
+                }
+            ?>
 
         </div>
 

@@ -1,19 +1,19 @@
 <?php
 
-// Uit deze php bestanden gebruiken wij functies of variabelen:
-include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
-include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
-include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
-include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
-include_once("app/model/review.php"); //wordt gebruikt om de review class te includen
+    // Uit deze php bestanden gebruiken wij functies of variabelen:
+    include_once("app/authentication.php");  // Accounts en login
+    include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
+    include_once("app/database.php");        // wordt gebruikt voor database connectie
+    include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+    include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+    include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
+    include_once("app/model/review.php"); //wordt gebruikt om de review class te includen
 
-// Deze pagina vereist een GET parameter: "id" met integer value van het product.
-// Als deze param niet meegegeven is sturen we de user terug naar index.php
-if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
-    header("Location: index.php");
-
-}
+    // Deze pagina vereist een GET parameter: "id" met integer value van het product.
+    // Als deze param niet meegegeven is sturen we de user terug naar index.php
+    if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
+        header("Location: index.php");
+    }
 
 ?>
 

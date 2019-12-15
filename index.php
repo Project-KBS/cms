@@ -1,10 +1,12 @@
 <?php
-// Uit deze php bestanden gebruiken wij functies of variabelen:
-include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
-include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
-include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
-include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+
+    // Uit deze php bestanden gebruiken wij functies of variabelen:
+    include_once("app/authentication.php");  // Accounts en login
+    include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
+    include_once("app/database.php");        // wordt gebruikt voor database connectie
+    include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+    include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
+    include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 
 ?>
 

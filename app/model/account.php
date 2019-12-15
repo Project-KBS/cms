@@ -7,8 +7,6 @@ class Account {
     /**
      * Verkrijg alle data van een account.
      *
-     * De password hash en hash methode worden niet gereturned om veiligheids redenen.
-     *
      * @param PDO    $database
      * @param string $email
      * @return PDOStatement
@@ -16,6 +14,7 @@ class Account {
     public static function get(PDO $database, string $email) : PDOStatement {
 
         $query = "SELECT
+                      A.PasswordHashResult, A.PasswordHashMethod,
                       A.FirstName, A.MiddleName, A.LastName, A.CustomerID,
                       A.AddressStreet, A.AddressNumber, A.AddressToevoeging, A.AddressCity, A.AddressPostalCode,
                       A.LastIpAddress, A.LastUserAgent
@@ -77,6 +76,8 @@ class Account {
                            :lastIp, :lastUa)";
 
         $stmt = $database->prepare($query);
+
+        error_log($plaintextPassword);
 
         // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
         $hashResult = StandardHashMethod::getInstance()->hash($plaintextPassword);

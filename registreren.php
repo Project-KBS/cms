@@ -177,8 +177,8 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
                                                        $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
 
             // Verstuur de gebruiker naar het login scherm (header werkt meestal niet omdat er al data verstuurd is)
-            header ("Location: url=inloggen.php");
-            print("<meta http-equiv='refresh' content='0;url=inloggen.php'>");
+            header("Location: inloggen.php");
+            print("<meta http-equiv='refresh' content='0;inloggen.php'>");
 
         } catch(PDOException $exception) {
             // Bij een fout in het proces krijg je ongeldige input terug
