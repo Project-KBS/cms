@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/authentication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/forms.css.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitloggen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/security/IHashMethod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/security/IHashMethod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/security/StandardHashMethod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/security/StandardHashMethod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/vendor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirm-order.php" beforeDir="false" afterPath="$PROJECT_DIR$/confirm-order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/winkelmand.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelmand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,13 +179,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00089" summary="checkout pagina buttons 2 (commit failed)">
-      <created>1575037333009</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1575037333009</updated>
     </task>
     <task id="LOCAL-00090" summary="checkout pagina buttons 3 (commit failed)">
       <created>1575037884993</created>
@@ -540,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576370099854</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Inloggen, uitloggen, en andere authenticatie">
+      <created>1576376933815</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1576376933815</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +545,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="404 pagina start nu ook een session" />
     <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
     <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
     <MESSAGE value="Update confirm message" />
@@ -587,7 +569,8 @@
     <MESSAGE value="Registreren foutmelding corrigeren" />
     <MESSAGE value="Correcte syntax in account update" />
     <MESSAGE value="Fix registeren query en redirect gebruiker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix registeren query en redirect gebruiker" />
+    <MESSAGE value="Inloggen, uitloggen, en andere authenticatie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inloggen, uitloggen, en andere authenticatie" />
   </component>
   <component name="WindowStateProjectService">
     <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">

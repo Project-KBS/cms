@@ -262,11 +262,11 @@ form{
 }
 
 /* De opmaak voor de social media foto's*/
-.social-media-foto{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.social-media-foto {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    opacity: 75%;
 
     width:2vw;
     height:2vw;
-
 }
