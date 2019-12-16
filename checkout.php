@@ -71,11 +71,12 @@
                                 <div class="col-9">
                                     <!-- hij maakt voor elke waarde in input array een input aan, als het mail is, maakt hij er een type="mail" van-->
                                     <input type="<?php
-                                                     if ($value === "Email") {
-                                                         print("email");
-                                                     } else {
-                                                         print("text");
-                                                     }  ?>"
+                                                      if ($value === "Email") {
+                                                          print("email");
+                                                      } else {
+                                                          print("text");
+                                                      }
+                                                  ?>"
                                            name="<?php print($value); ?>"
                                            <?php
                                                if (!IS_DEBUGGING_ENABLED) {
@@ -112,10 +113,12 @@
 
 
                         <div class="col-2">
-                        <input type="submit"
-                               value="Betalen >"
-                               class="ContinueButton"
-                        />
+
+                            <input type="submit"
+                                   value="Betalen >"
+                                   class="ContinueButton"
+                            />
+
                         </div>
 
                     </div>

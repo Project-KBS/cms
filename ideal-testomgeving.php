@@ -5,6 +5,7 @@ include_once("app/authentication.php");
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/customer.php");
+include_once("app/model/mailsubscriber.php");
 include_once("app/model/product.php");
 include_once("app/model/order.php");
 include_once("app/model/orderline.php");
@@ -19,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-$postVars = ["Voornaam", "Achternaam", "Straatnaam", "Huisnummer", "Postcode", "Woonplaats"];
+$postVars = ["Voornaam", "Achternaam", "Straatnaam", "Huisnummer", "Postcode", "Woonplaats", "Email"];
 
 foreach ($postVars as $postVar) {
     if (!isset($_POST[$postVar]) || $_POST[$postVar] == NULL || Form::$postVar($_POST[$postVar]) === false) {
@@ -44,6 +45,9 @@ $winkelwagen = Cart::get();
 $prijsExcl = 0;
 $btw       = 0;
 $prijsIncl = 0;
+
+// Als hij al in de tabel staat returnt hij false maar dat boeit ons niets.
+MailSubscriber::insert($database, $_POST["Email"], $customerId, 0);
 
 foreach ($winkelwagen as $productId => $hoeveelheid) {
     extract(Product::getbyid($database, $productId)->fetch(PDO::FETCH_ASSOC));

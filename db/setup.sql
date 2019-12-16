@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Review` (
     DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `wideworldimporters`.`MailSubscriber` (
-                                                                     `id` INT NOT NULL,
+                                                                     `id` INT NOT NULL AUTO_INCREMENT,
                                                                      `Email` VARCHAR(320) NOT NULL UNIQUE,
                                                                      `CustomerID` INT(11) NOT NULL UNIQUE,
                                                                      `IsSubscribed` TINYINT NOT NULL DEFAULT 0,
