@@ -17,6 +17,8 @@
         session_start();
     }
 
+
+
     $email = Authentication::getEmail();
     if (!Authentication::isLoggedIn() || $email == null) {
         header("Location: index.php", true, 303);

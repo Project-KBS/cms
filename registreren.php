@@ -73,7 +73,7 @@ include_once("app/field.php");                          // voor field in array
 
     <div>
         <!-- Form voor de inputs van gegevens om een account te maken -->
-        <form id="register-form" method="post">
+        <form id="register-form" method="post" action="">
 
         <?php
         foreach ($secties as $naam => $veldenArray) {
@@ -96,7 +96,7 @@ include_once("app/field.php");                          // voor field in array
 
                     <?php
 
-                    foreach ($veldenarray as $veld) {
+                    foreach ($veldenArray as $veld) {
                         ?>
 
                         <div class="account-form-field-container col-4">
@@ -105,13 +105,13 @@ include_once("app/field.php");                          // voor field in array
 
                                         <span class="account-form-field-title"
                                               style="color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>">
-                                            <?php print($veld); ?>
+                                            <?php print($veld->getNaam()); ?>
                                         </span>
 
                                 <input type="text"
                                        class="account-form-field-input form-control w-100"
                                     <?php
-                                    print($veld);
+
                                     if ($veld->isRequired()) {
                                         print("required");
                                     }
@@ -157,7 +157,7 @@ include_once("app/field.php");                          // voor field in array
 
 
     <?php
-    /*
+
 
     //De insert variabele wordt naar false gezet als een input niet geldig is
     $insert = true;
@@ -202,7 +202,8 @@ include_once("app/field.php");                          // voor field in array
         }
 
     }
-*/
+
+
     ?>
 
 </div>
