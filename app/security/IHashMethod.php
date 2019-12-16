@@ -9,4 +9,6 @@ interface IHashMethod {
 
     public function hash(string $input) : HashResult;
 
+    public function verify(string $hash, string $input) : bool;
+
 }

@@ -24,4 +24,7 @@ class StandardHashMethod implements IHashMethod {
         return new HashResult($hashed, self::NAAM, StandardHashMethod::class);
     }
 
+    public function verify(string $hash, string $input) : bool {
+        return password_verify($input, $hash);
+    }
 }
