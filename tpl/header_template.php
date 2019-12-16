@@ -25,7 +25,80 @@
                            name="search"
                            id="search"
                            style="margin-right: 0; padding-right: 0;">
+
+                    <div id="search-results"
+                         class="flex-column">
+
+                    </div>
                 </a>
+
+                <script>
+                        const jq_search_results = $('#search-results');
+                        const div_search_results = jq_search_results[0];
+                        const jq_search_bar = $('#search');
+                        const div_search_bar = document.getElementById("search");//jq_search_bar[0];
+
+                        function functie_update_breedte() {
+                            jq_search_results.css("width", jq_search_bar.width() + div_search_bar.paddingLeft);
+                        }
+
+                        $(window).resize(functie_update_breedte());
+                        $(document).ready(functie_update_breedte());
+
+                        function refresh() {
+                            let zoekterm = div_search_bar.value.trim();
+
+                            // Verwijder alle elementen uit de zoekresultaten
+                            div_search_results.innerHTML = "";
+
+                            if (zoekterm.length > 0) {
+
+                                // Voer een nieuwe AJAX query uit naar de search product endpoint
+                                $.ajax({
+                                    type: 'GET',
+                                    url: '/api/v1/product/search.php',
+                                    data: {
+                                        zoekterm: zoekterm,
+                                        limit: 7,
+                                        short: true
+                                    },
+                                    dataType: 'json',
+                                    success: function (data) {
+                                        // for-each loop voor alle gereturnde producten
+                                        $.each(data, function (index, element) {
+                                            // Maak een nieuw flex child aan voor ieder product
+                                            $("<a href='/product.php?id=" + element.id + "'><div class='search-results-entry'>" +
+                                                  "<p>" + element.name + "</p>" +
+                                              "</div></a>").appendTo(jq_search_results);
+                                        });
+                                    }
+                                });
+                            } else {
+                                $("<div class='search-results-entry'>" +
+                                      "<p>Voer een zoekterm in...</p>" +
+                                  "</div>").appendTo(jq_search_results);
+                            }
+                        }
+
+                        window.onload = function() {
+                            jq_search_results.hide();
+                        };
+
+                        jq_search_bar.keyup(function () {
+                            refresh();
+                        });
+
+                        div_search_bar.onfocus = function() {
+                            jq_search_results.fadeIn(80);
+                        };
+
+                        div_search_bar.onblur = function() {
+                            jq_search_results.fadeOut(80);
+                        };
+
+                        refresh();
+
+                </script>
 
                 <a>
                     <input type="submit"

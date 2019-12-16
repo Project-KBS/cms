@@ -81,8 +81,12 @@ if ($stmt->rowCount()> 0) {
         array_push($result["records"], $item);
     }
 
-    // Return producten
-    respond_array(200, $result);
+    if (isset($_GET["short"])) {
+        print(json_encode($result["records"]));
+    } else {
+        // Return producten
+        respond_array(200, $result);
+    }
 
 // Geen producten gevonden, geef een error.
 } else {
