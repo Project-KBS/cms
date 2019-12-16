@@ -11,6 +11,7 @@
     include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
     include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
     include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
+    include_once("app/field.php");                          // voor field in array
 
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -68,58 +69,6 @@
             print_r($row);
         }
 
-        class Field {
-
-            /**
-             * @var string
-             */
-            public $naam;
-
-            /**
-             * @var mixed
-             */
-            public $var;
-
-            /**
-             * @var bool
-             */
-            public $required;
-
-            /**
-             * Field constructor.
-             *
-             * @param $naam
-             * @param $var
-             * @param $required
-             */
-            public function __construct(string $naam, $var, bool $required) {
-                $this->naam = $naam;
-                $this->var = $var;
-                $this->required = $required;
-            }
-
-            /**
-             * @return string
-             */
-            public function getNaam() : string {
-                return $this->naam;
-            }
-
-            /**
-             * @return mixed
-             */
-            public function getVar() {
-                return $this->var;
-            }
-
-            /**
-             * @return bool
-             */
-            public function isRequired() : bool {
-                return $this->required;
-            }
-
-        }
 
         /**
          * @var array string => Field[]
@@ -128,11 +77,11 @@
             "Authenticatie" => [new Field("Huidige wachtwoord", null,          true),
                                 new Field("Nieuwe wachtwoord",  null,          true)],
             "Naam"          => [new Field("Voornaam",           $FirstName,         true),
-                                new Field("Tussenvoegsel",      $MiddleName,        true),
+                                new Field("Tussenvoegsel",      $MiddleName,        false),
                                 new Field("Achternaam",         $LastName,          true)],
             "Adres"         => [new Field("Straatnaam",         $AddressStreet,     true),
                                 new Field("Huisnummer",         $AddressNumber,     true),
-                                new Field("Toevoeging",         $AddressToevoeging, true),
+                                new Field("Toevoeging",         $AddressToevoeging, false),
                                 new Field("Postcode",           $AddressPostalCode, true),
                                 new Field("Woonplaats",         $AddressCity,       true)]
         );
@@ -252,46 +201,6 @@
     }
 
 
-
-
-/*
-    //De insert variabele wordt naar false gezet als een input niet geldig is
-    $insert = false;
-
-    foreach($form as $index => $value) {
-        // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
-        if($value === true){
-            // Als een waarde niet is ingevuld zal de insert een false geven
-            if (!isset($_POST[$index])) {
-                $insert = false;
-            } else {
-                //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
-                //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
-                //Bij huisnummer wordt een controle gedaan of het een integer is
-                if( Form::$index($_POST[$index]) === false ){
-                    $insert = false;
-                    print("Foute ". $index. "<br>");
-                }
-
-            }
-        }
-    }
-    // Als aan alle checks wordt voldaan zal er een poging worden gedaan om te inserten in de database
-    if ($insert === true) {
-
-        try{
-            Account::update(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
-                $_POST["Straatnaam"], $_POST["Huisnummer"], $_POST["Toevoeging"], $_POST["Woonplaats"], $_POST["Postcode"], " ", " ");
-        }
-
-        catch(PDOException $exception) {
-            // Bij een fout in het proces krijg je ongeldige input terug
-            print("Ongeldige input");
-
-        }
-
-    }
-*/
     ?>
 
 </div>

@@ -9,6 +9,7 @@ include_once("app/security/HashResult.php");        // wordt gebruikt voor datab
 include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
 include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
 include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
+include_once("app/field.php");                          // voor field in array
 
 ?>
 
@@ -42,110 +43,100 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
 </div>
 
 
-<div class="content-container-home">
+<div class="content-container-narrow">
+    <div>
     <!-- Inhoud pagina -->
-    <h3>Registreren</h3>
-    <br>
+    <?php
 
-    <div >
-        <?php
+    //array maken voor de loop om input velden met text te maken
+    $secties = array(
+        "Inloggegevens" => [new Field("Email",          true),
+                            new Field("Wachtwoord",     true)],
 
-        //array maken voor de loop om input velden met text te maken
-        $form = array(
-            "Email"         => true,
-            "Wachtwoord"    => true,
-            "Voornaam"      => true,
-            "Tussenvoegsel" => false,
-            "Achternaam"    => true,
-            "Straatnaam"    => true,
-            "Huisnummer"    => true,
-            "Toevoeging"    => false,
-            "Postcode"      => true,
-            "Woonplaats"    => true
-        );
+        "Naam"          => [new Field("Voornaam",       true),
+            new Field("Tussenvoegsel", false),
+            new Field ("Achternaam", true)],
+
+        "Adres"         =>[ new Field("Straatnaam",     true),
+                            new Field("Huisnummer",     true),
+                            new Field("Toevoeging",     false),
+                            new Field("Postcode",       true),
+                            new Field("Woonplaats",     true)]
+    );
+
+
+
+
+        foreach ($secties as $naam => $veldenArray) {
 
         ?>
 
-        <!-- Form voor de inputs van gegevens om een account te maken -->
-        <form id="register-form" method="post">
-            <table cellpadding="10">
+        <hr style="margin: 1.5rem 0" />
+
+        <div id="account-form-<?php print($naam); ?>">
+
+            <h4 class="account-form-title"
+                style="margin-bottom: 1.0rem">
+                <?php print($naam); ?>
+            </h4>
+
+            <!-- Form voor de inputs van gegevens om een account te maken -->
+            <form id="register-form" method="post">
+
+                <div class="row">
+
 
                 <?php
 
-                    foreach ($form as $index => $value) {
-
-                    if ($index === "Email" || $index === "Voornaam" || $index === "Straatnaam" || $index === "Postcode") {
-                        ?>
-                        <!-- Begin van table rows om overeen te komen met schermontwerp-->
-                        <tr>
-
-                        <?php
-                    }
+                foreach($veldenArray as $veld){
                     ?>
-                    <!-- Maakt in de table een print van de naam van het gevraagde gegeven-->
-                    <td>
+                    <div class="account-form-field-container col-4">
 
-                        <?php
-                            print($index);
-                        ?>
+                        <label class="account-form-field-label w-100">
 
-                    </td>
+                                        <span class="account-form-field-title"
+                                              style="color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>">
+                                            <?php print($veld->getNaam()); ?>
+                                        </span>
 
-                    <!-- Maakt de inputvelden in de table en verandert het type naar de gewenste soort input -->
-                    <td>
-
-                        <!--Bij debugging print hij test@test om makkelijker velden te auto fillen -->
-                        <input
-                            type="
-                            <?php
-
-                                if ($index === "Wachtwoord") {
-                                    print("password");
-                                } elseif ($index === "Email") {
-                                    print("email");
-                                } else {
-                                    print("text");
+                            <input type="text"
+                                   class="account-form-field-input form-control w-100"
+                                <?php
+                                if ($veld->getVar() != null) {
+                                    printf('value="%s"', $veld->getVar());
                                 }
-
-                            ?>"
-
-
-                            name="<?php print($index); ?>"
-
-
-                            <?php
-
-                                if (!IS_DEBUGGING_ENABLED) {
-                                    print("placeholder='$index'");
-                                } else {
-                                    print("value='test@test'");
+                                if ($veld->isRequired()) {
+                                    print("required");
                                 }
-
-                                // Als de verplichte velden niet ingevuld zijn geeft hij aan dat ze nog ingevuld moeten worden
-                                if ($index !== "Tussenvoegsel" && $index !== "Toevoeging") {
-                                    print("required='required'");
-                                }
-                            ?>
-                        >
-                    </td>
-
-                    <!-- Einde van table rows -->
-                    <?php
-                        if ($index === "Wachtwoord" || $index === "Achternaam" || $index === "Toevoeging" || $index === "Woonplaats") { ?>
-                            </tr>
-                        <?php
-                    }
-                }
-                ?>
+                                ?>
+                            />
 
 
-            </table>
+                        </label>
 
-            <input type="submit" value="registreren">
+                    </div>
+
+                <?php } ?>
+
+                <div class="row">
+
+                    <!-- Opvuller -->
+                    <div class="col-9">
+
+                    </div>
+
+                    <div class="col-3">
+                        <input type="submit"
+                               value="Update informatie"
+                               class="btn btn-secondary w-100"
+                               style="margin-top: 1.2rem">
+                    </div>
+                </div>
 
         </form>
 
     </div>
+</div>
 
     <?php
 
@@ -196,6 +187,7 @@ include_once("app/security/Formvalidate.php");        // Ter controle van formul
     ?>
 
 </div>
+
 
 <div class="footer-container">
 

@@ -9,7 +9,7 @@
 
             <div id="footer-clickable-klein">
 
-                <a id="twitter-foto" href="https://www.twitter.com/wideworldimporters">
+                <a id="twitter-foto" href="https://www.twitter.com/Windesheiminfo">
 
                     <div class="row" style="padding: 0">
 
@@ -27,7 +27,7 @@
                     <br />
                 </a>
 
-                <a id="facebook-foto" href="https://www.facebook.com/wideworldimporters">
+                <a id="facebook-foto" href="https://www.facebook.com/hogeschoolwindesheim">
 
                     <div class="row" style="padding: 0">
 
@@ -46,7 +46,7 @@
                     <br />
                 </a>
 
-                <a id="youtube-foto" href="https://www.youtube.com/wideworldimporters">
+                <a id="youtube-foto" href="https://www.youtube.com/hogeschoolwindesheim">
 
                     <div class="row" style="padding: 0">
 
@@ -77,8 +77,9 @@
         <hr>
 
         <p>
-            Wij zijn een importeur en distributeur van groothandelsartikelen zoals kleding, speelgoed en etenswaren.
-            Ons bedrijf is gevestigd in de baai van San Francisco in de Verenigde Staten.
+            Wij zijn WWI. We opereren al jaren als groothandel voor bedrijven maar zijn sinds kort actief als webshop.
+            We zijn trots op onze producten en geloven in kwaliteit. In ieder huis vindt een product van WWI zijn thuis.
+            Ondanks onze grootte zien klanten ons als kleinschalig en betrokken. Persoonlijk klantcontact staat bij ons hoog in het vaandel.
         </p>
 
     </div>
@@ -88,10 +89,20 @@
         <h3>Contactgegevens</h3>
         <hr>
 
+        <p>
+            Wide World Importers<br>
+            Whatsapp: 06-51423256 <br>
+            info@wideworldimporters.nl<br>
+            Postbus 10090<br>
+            8000 GB  Zwolle<br><br>
+            KvK-nummer:   53815033 <br>
+            BTW-nummer: NL 851029206 B01
+        </p>
+
         <!-- Vul ff met niets zodat we het kunnen uittesten -->
         <?php
 
-            for($x=0; $x<10;$x++){
+            for($x=0; $x<2;$x++){
                 print("<br>");
             }
 
