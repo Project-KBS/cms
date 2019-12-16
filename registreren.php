@@ -108,7 +108,8 @@ include_once("app/field.php");                          // voor field in array
                                             <?php print($veld->getNaam()); ?>
                                         </span>
 
-                                <input type="text"
+                                <input name="<?php print($veld->getNaam()); ?>"
+                                       type="text"
                                        class="account-form-field-input form-control w-100"
                                     <?php
 
@@ -162,12 +163,17 @@ include_once("app/field.php");                          // voor field in array
     //De insert variabele wordt naar false gezet als een input niet geldig is
     $insert = true;
 
+    print("X1\n");
+
     foreach ($secties as $naam => $veldArray) {
+        print("X2\n");
 
 
         foreach($veldArray as $veld){
+            print("X3\n");
             // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
             if ($veld->isRequired()){
+                print("X4\n");
                 // Als een waarde niet is ingevuld zal de insert een false geven
                 if (!isset($_POST[$veld->getNaam()])) {
                     $insert = false;
@@ -175,9 +181,11 @@ include_once("app/field.php");                          // voor field in array
                     //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
                     //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
                     //Bij huisnummer wordt een controle gedaan of het een integer is
-                    if (Form::$veld->getNaam()($_POST[$veld->getNaam()]) === false) {
+                    // Lokale var moet aangemaakt worden anders verkloot PHP het.
+                    $str = $veld->getNaam();
+                    if (Form::$str($_POST[$str]) === false) {
                         $insert = false;
-                        print("Foute ". $veld->getNaam(). "<br>");
+                        print("Foute ". $str . "<br>");
                     }
                 }
             }
