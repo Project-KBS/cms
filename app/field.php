@@ -9,6 +9,11 @@ class Field
     public $naam;
 
     /**
+     * @var string
+     */
+    public $type;
+
+    /**
      * @var mixed
      */
     public $var;
@@ -26,13 +31,16 @@ class Field
     /**
      * Field constructor.
      *
-     * @param $naam
-     * @param $var
-     * @param $required
+     * @param string $naam
+     * @param string $type
+     * @param string $id
+     * @param mixed $var
+     * @param bool $required
      */
-    public function __construct(string $naam, string $id, $var, bool $required)
+    public function __construct(string $naam, string $type, string $id, $var, bool $required)
     {
         $this->naam = $naam;
+        $this->type = $type;
         $this->id = $id;
         $this->var = $var;
         $this->required = $required;
@@ -42,7 +50,7 @@ class Field
     /**
      * @return string
      */
-    public function getNaam(): string
+    public function getNaam() : string
     {
         return $this->naam;
     }
@@ -50,7 +58,15 @@ class Field
     /**
      * @return string
      */
-    public function getId(): string
+    public function getType() : string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId() : string
     {
         return $this->id;
     }

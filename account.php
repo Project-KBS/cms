@@ -79,16 +79,16 @@
          * @var array string => Field[]
          */
         $secties = array(
-            "Authenticatie" => [new Field("Huidige wachtwoord", "",               null,               true),
-                                new Field("Nieuwe wachtwoord",  "",               null,               true)],
-            "Naam"          => [new Field("Voornaam",           "firstName",      $FirstName,         true),
-                                new Field("Tussenvoegsel",      "middleName",     $MiddleName,        false),
-                                new Field("Achternaam",         "lastName",       $LastName,          true)],
-            "Adres"         => [new Field("Straatnaam",         "addrStreet",     $AddressStreet,     true),
-                                new Field("Huisnummer",         "addrNumber",     $AddressNumber,     true),
-                                new Field("Toevoeging",         "addrToevoeging", $AddressToevoeging, false),
-                                new Field("Postcode",           "addrPostal",     $AddressPostalCode, true),
-                                new Field("Woonplaats",         "addrCity",       $AddressCity,       true)]
+            "Authenticatie" => [new Field("Huidige wachtwoord", "password", "",               null,               true),
+                                new Field("Nieuwe wachtwoord",  "password", "",               null,               true)],
+            "Naam"          => [new Field("Voornaam",           "text",     "firstName",      $FirstName,         true),
+                                new Field("Tussenvoegsel",      "text",     "middleName",     $MiddleName,        false),
+                                new Field("Achternaam",         "text",     "lastName",       $LastName,          true)],
+            "Adres"         => [new Field("Straatnaam",         "text",     "addrStreet",     $AddressStreet,     true),
+                                new Field("Huisnummer",         "text",     "addrNumber",     $AddressNumber,     true),
+                                new Field("Toevoeging",         "text",     "addrToevoeging", $AddressToevoeging, false),
+                                new Field("Postcode",           "text",     "addrPostal",     $AddressPostalCode, true),
+                                new Field("Woonplaats",         "text",     "addrCity",       $AddressCity,       true)]
         );
 
         $changedValues = array();
@@ -107,7 +107,7 @@
         }
 
         if (count($changedValues) > 0) {
-            Account::update(Database::getConnection(), $email, null, $changedValues);
+            Account::update(Database::getConnection(), $email, null /* TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1*/, $changedValues);
             header("Location: account.php");
             print('<meta http-equiv="refresh" content="0;account.php">
                            <script type="text/javascript">
@@ -151,7 +151,7 @@
                                         </span>
 
                                         <input name="<?php print($veld->getNaam()); ?>"
-                                               type="text"
+                                               type="<?php print($veld->getType()); ?>"
                                                class="account-form-field-input form-control w-100"
                                                <?php
                                                    if ($veld->getVar() != null) {

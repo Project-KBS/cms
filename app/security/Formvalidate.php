@@ -12,6 +12,10 @@ class Form
 
         }
 
+        if (strpos($input, "") <= 0) {
+
+        }
+
 
         return true;
     }
