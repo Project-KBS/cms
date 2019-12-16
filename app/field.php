@@ -1,58 +1,80 @@
-<?php class Field {
+<?php
 
-/**
-* @var string
-*/
-public $naam;
+class Field
+{
 
-/**
-* @var mixed
-*/
-public $var;
+    /**
+     * @var string
+     */
+    public $naam;
 
-/**
-* @var bool
-*/
-public $required;
+    /**
+     * @var mixed
+     */
+    public $var;
 
-/**
-* Field constructor.
-*
-* @param $naam
-* @param $var
-* @param $required
-*/
-public function __construct(string $naam, $var, bool $required) {
-$this->naam = $naam;
-$this->var = $var;
-$this->required = $required;
+    /**
+     * @var string
+     */
+    public $id;
+
+    /**
+     * @var bool
+     */
+    public $required;
+
+    /**
+     * Field constructor.
+     *
+     * @param $naam
+     * @param $var
+     * @param $required
+     */
+    public function __construct(string $naam, string $id, $var, bool $required)
+    {
+        $this->naam = $naam;
+        $this->id = $id;
+        $this->var = $var;
+        $this->required = $required;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getNaam(): string
+    {
+        return $this->naam;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVar()
+    {
+        return $this->var;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRequired(): bool
+    {
+        return $this->required;
+    }
+
 }
 
-
-/**
-* @return string
-*/
-public function getNaam() : string {
-return $this->naam;
-}
-
-/**
-* @return mixed
-*/
-public function getVar() {
-return $this->var;
-}
-
-/**
-* @return bool
-*/
-public function isRequired() : bool {
-return $this->required;
-}
-
-}
-
-class Register{
+class Register
+{
 
     /**
      * @var string
@@ -70,7 +92,8 @@ class Register{
      * @param $naam
      * @param $required
      */
-    public function __construct(string $naam, bool $required) {
+    public function __construct(string $naam, bool $required)
+    {
         $this->naam = $naam;
         $this->required = $required;
     }
@@ -78,16 +101,17 @@ class Register{
     /**
      * @return string
      */
-    public function getNaam() : string {
+    public function getNaam(): string
+    {
         return $this->naam;
     }
-
 
 
     /**
      * @return bool
      */
-    public function isRequired() : bool {
+    public function isRequired(): bool
+    {
         return $this->required;
     }
 }

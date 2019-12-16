@@ -63,29 +63,58 @@
         // Oproepen van de huidige gegevens die dan weer geprint zullen worden
         $stmt = Account::get(Database::getConnection(), $email);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$row) {
+            die("Ongecontroleerde fout opgetreden.");
+        }
         extract($row);
 
         if (IS_DEBUGGING_ENABLED) {
             print_r($row);
         }
 
-
         /**
          * @var array string => Field[]
          */
         $secties = array(
-            "Authenticatie" => [new Field("Huidige wachtwoord", null,          true),
-                                new Field("Nieuwe wachtwoord",  null,          true)],
-            "Naam"          => [new Field("Voornaam",           $FirstName,         true),
-                                new Field("Tussenvoegsel",      $MiddleName,        false),
-                                new Field("Achternaam",         $LastName,          true)],
-            "Adres"         => [new Field("Straatnaam",         $AddressStreet,     true),
-                                new Field("Huisnummer",         $AddressNumber,     true),
-                                new Field("Toevoeging",         $AddressToevoeging, false),
-                                new Field("Postcode",           $AddressPostalCode, true),
-                                new Field("Woonplaats",         $AddressCity,       true)]
+            "Authenticatie" => [new Field("Huidige wachtwoord", "",               null,               true),
+                                new Field("Nieuwe wachtwoord",  "",               null,               true)],
+            "Naam"          => [new Field("Voornaam",           "firstName",      $FirstName,         true),
+                                new Field("Tussenvoegsel",      "middleName",     $MiddleName,        false),
+                                new Field("Achternaam",         "lastName",       $LastName,          true)],
+            "Adres"         => [new Field("Straatnaam",         "addrStreet",     $AddressStreet,     true),
+                                new Field("Huisnummer",         "addrNumber",     $AddressNumber,     true),
+                                new Field("Toevoeging",         "addrToevoeging", $AddressToevoeging, false),
+                                new Field("Postcode",           "addrPostal",     $AddressPostalCode, true),
+                                new Field("Woonplaats",         "addrCity",       $AddressCity,       true)]
         );
 
+        $changedValues = array();
+
+        // Check en update de values als ze gepost zijn.
+        foreach ($secties as $naam => $veldenArray) {
+            foreach ($veldenArray as $veld) {
+                if (isset($_POST[$veld->getNaam()]) && $_POST[$veld->getNaam()] != null) {
+                    $changedValues[$veld->getId()] = $_POST[$veld->getNaam()];
+                }
+            }
+        }
+
+        if (IS_DEBUGGING_ENABLED) {
+            var_dump($changedValues);
+        }
+
+        if (count($changedValues) > 0) {
+            Account::update(Database::getConnection(), $email, null, $changedValues);
+            header("Location: account.php");
+            print('<meta http-equiv="refresh" content="0;account.php">
+                           <script type="text/javascript">
+                               window.location = "account.php";
+                           </script>');
+            die("Refresh de pagina a.u.b.");
+        }
+
+        // Genereer de HTML layout
         foreach ($secties as $naam => $veldenArray) {
 
             ?>
@@ -119,7 +148,8 @@
                                             <?php print($veld->getNaam()); ?>
                                         </span>
 
-                                        <input type="text"
+                                        <input name="<?php print($veld->getNaam()); ?>"
+                                               type="text"
                                                class="account-form-field-input form-control w-100"
                                                <?php
                                                    if ($veld->getVar() != null) {

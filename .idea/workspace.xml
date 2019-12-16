@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/field.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/field.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,18 +118,6 @@
       <recent name="$PROJECT_DIR$/img/logo" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -146,6 +136,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -583,10 +585,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Werkt momenteel niet help" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576491857666">
+    <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576491857666" />
+    <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576502379914" />
     <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576499778646">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
@@ -603,13 +605,17 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576499781496" />
+    <state x="605" y="248" width="709" height="528" key="find.popup" timestamp="1576503857572">
+      <screen x="0" y="27" width="1920" height="1000" />
+    </state>
+    <state x="605" y="248" width="709" height="528" key="find.popup/0.27.1920.1000@0.27.1920.1000" timestamp="1576503857572" />
     <state x="624" y="233" key="run.anything.popup" timestamp="1576494429604">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="624" y="233" key="run.anything.popup/0.27.1920.1000@0.27.1920.1000" timestamp="1576494429604" />
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1576491485262">
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1576502153270">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.27.1920.1000@0.27.1920.1000" timestamp="1576491485262" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.27.1920.1000@0.27.1920.1000" timestamp="1576502153270" />
   </component>
 </project>

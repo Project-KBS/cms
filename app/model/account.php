@@ -101,17 +101,7 @@ class Account {
         $stmt->execute();
     }
 
-
-
-
-
-    // Moet nog gecontroleerd worden of wachtwoord wel goed geupdate wordt! IN ACCOUNT.php
-    // Moet kijken als je geen wachtwoord wil updaten of hij die dan niet op null zet
-    public static function update(PDO $database, string $email, string $plaintextPassword,
-                                  string $firstName, string $middleName, string $lastName,
-                                  string $addrStreet, string $addrNumber, string $addrToevoeging,
-                                  string $addrCity, string $addrPostal,
-                                  string $lastIp, string $lastUa) : void {
+    public static function update(PDO $database, string $email, $plaintextPassword, array $changedValues) : void {
 
         $hashResult = null;
         if ($plaintextPassword != null) {
@@ -119,24 +109,28 @@ class Account {
             $hashResult = StandardHashmethod::getInstance()->hash($plaintextPassword);
         }
 
-        $properties = array("PasswordHashResult"=> "hashResult->getHash()",
+        $properties = array("PasswordHashResult" => "hashResult->getHash()",
                             "PasswordHashMethod" => "hashResult->getMethod()",
-                            "FirstName"         => "firstName",
-                            "MiddleName"        => "middleName",
-                            "LastName"          => "lastName",
-                            "AddressStreet"     => "addrStreet",
-                            "AddressNumber"     => "addrNumber",
-                            "AddressToevoeging" => "addrToevoeging",
-                            "AddressCity"       => "addrCity",
-                            "AddressPostalCode" => "addrPostal",
-                            "LastIpAddress"     => "lastIp",
-                            "LastUserAgent"     => "lastUa");
+                            "FirstName"          => "firstName",
+                            "MiddleName"         => "middleName",
+                            "LastName"           => "lastName",
+                            "AddressStreet"      => "addrStreet",
+                            "AddressNumber"      => "addrNumber",
+                            "AddressToevoeging"  => "addrToevoeging",
+                            "AddressCity"        => "addrCity",
+                            "AddressPostalCode"  => "addrPostal",
+                            "LastIpAddress"      => "lastIp",
+                            "LastUserAgent"      => "lastUa");
 
         $queryPropertyString = " ";
 
+        extract($changedValues);
+
+        $first = true;
         foreach ($properties as $propertyName => $propertyVar) {
             if (isset(${$propertyVar}) && ${$propertyVar} != null) {
-                $queryPropertyString .= sprintf("A.%s = :%s,", $propertyName, "prepared$propertyName");
+                $queryPropertyString .= sprintf("%sA.%s = :%s", $first ? "" : ",", $propertyName, "prepared$propertyName");
+                $first = false;
             }
         }
 
@@ -145,8 +139,8 @@ class Account {
         $query = "UPDATE Account A
                     SET
                         " . $queryPropertyString . "
-                    WHERE 
-                        A.Email = :email";
+                    WHERE
+                        Email = :email";
 
         $stmt = $database->prepare($query);
 
@@ -157,18 +151,6 @@ class Account {
         }
 
         $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
-        //$stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
-        //$stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
-        //$stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
-        //$stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
-        //$stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
-        //$stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
-        //$stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
-        //$stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
-        //$stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
-        //$stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
-        //$stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
-        //$stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
 
         $stmt->execute();
 
