@@ -4,6 +4,7 @@
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/authentication.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,13 +188,6 @@
       <workItem from="1576157454444" duration="1155000" />
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
-    </task>
-    <task id="LOCAL-00097" summary="checkout.php foute merge gefixed">
-      <created>1575290383462</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1575290383462</updated>
     </task>
     <task id="LOCAL-00098" summary="checkout.php foute merge gefixed v2">
       <created>1575290482422</created>
@@ -531,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576494481670</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="Cleanup oude code en insert default value voor alle velden">
+      <created>1576494618656</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1576494618656</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +554,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="session destroy toegevoegd bij succesvolle betaling" />
     <MESSAGE value="Nog niet getest!" />
     <MESSAGE value="Afronding is nu wel op 2 decimalen" />
     <MESSAGE value="debugging moet altijd false zijn,anders doet hij oa de product pagina het niet !! Weer terug veranderen naar false als je klaar bent met debuggen (app/constants.php)" />
@@ -578,17 +578,18 @@
     <MESSAGE value="Algemene code cleanup + move template naar tpl map" />
     <MESSAGE value="Gebruik overal Bootstrap knoppen / velden" />
     <MESSAGE value="Form model op accountpagina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Form model op accountpagina" />
+    <MESSAGE value="Cleanup oude code en insert default value voor alle velden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup oude code en insert default value voor alle velden" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576491857666">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576491857666" />
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576494481431">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576494938375">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576494481431" />
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576494938375" />
     <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576489985429">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
@@ -597,10 +598,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576489986887" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576494484155">
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576494620684">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576494484155" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576494620684" />
     <state x="624" y="233" key="run.anything.popup" timestamp="1576494429604">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

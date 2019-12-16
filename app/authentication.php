@@ -65,6 +65,18 @@ class Authentication {
     }
 
     /**
+     * Verkrijg e-mail van de ingelogde gebruiker, of null als niemand ingelogd is.
+     *
+     * @return string|null
+     */
+    public static function getEmail() : string {
+        if (!isset($_SESSION[self::KEY_EMAIL])) {
+            return null;
+        }
+        return $_SESSION[self::KEY_EMAIL];
+    }
+
+    /**
      * Van deze klasse mogen geen instanties gemaakt worden, dus maak de constructor privé.
      */
     private function __construct() {

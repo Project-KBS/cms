@@ -12,14 +12,20 @@
     include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
     include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
+    $email = Authentication::getEmail();
+    if (!Authentication::isLoggedIn() || $email == null) {
+        header("Location: index.php", true, 303);
+        die();
+    }
+
 ?>
 
 <!doctype html>
 <html class="no-js" lang="">
 <head>
     <?php
-    //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
-    include("tpl/head-tag-template.php");
+        //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
+        include("tpl/head-tag-template.php");
 
     ?>
 </head>
@@ -50,7 +56,7 @@
         <?php
 
         // Oproepen van de huidige gegevens die dan weer geprint zullen worden
-        $stmt = Account::get(Database::getConnection(),"test@test");
+        $stmt = Account::get(Database::getConnection(), $email);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
 
