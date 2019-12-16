@@ -10,26 +10,30 @@
 
             Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
         }
-
         ?>
 
         <hr>
-        <h3>Schrijf een review</h3>
 
-        <input type="button"
-               onclick="const div_reviews = document.getElementById('reviews');
-                        if (div_reviews.style.display === 'block') {
-                            div_reviews.style.display = 'none';
-                        } else {
-                            div_reviews.style.display = 'block';
-                        }"
-               value="Wilt u een review schrijven?"
-        />
-
-        <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks-->
         <div id="review-container">
+            <?php
+            //Als je bent ingelogd dan laat de pagina de optie zien om een review te schrijven.
+            //Anders laat hij een tekst zien die zegt dat je ingelogd moet zijn om een review te schrijven
+            if(Authentication::isLoggedIn() === true){
+                ?>
+            <h3>Schrijf een review</h3>
 
-            <form action="product.php?id=<?php print($_GET["id"]); ?>" id="reviews" method="post"
+            <input type="button"
+                   onclick="const div_reviews = document.getElementById('reviews');
+                    if (div_reviews.style.display === 'block') {
+                        div_reviews.style.display = 'none';
+                    } else {
+                        div_reviews.style.display = 'block';
+                    }"
+                   value="Wilt u een review schrijven?"
+            />
+                <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks-->
+
+                <form action="product.php?id=<?php print($_GET["id"]); ?>" id="reviews" method="post"
                   style="display:none; width: 50vw%; margin-left: 20%">
 
                 <input type="text"
@@ -64,6 +68,11 @@
 
                 <br>
             </form>
+            <?php
+
+            //Sluit tag van het if-statement om te checken of je bent ingelogd.
+                }
+            ?>
 
             <hr>
             <h3>Reviews lezen</h3>
@@ -125,5 +134,5 @@
         </div>
 
         <?php
-    }
-?>
+            }
+        ?>
