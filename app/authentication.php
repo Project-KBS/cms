@@ -35,13 +35,15 @@ class Authentication {
             return false;
         }
 
-        if (!password_verify($password, $PasswordHashResult)) {
-            return false;
+        foreach (IHashMethod::AVAILABLE_METHODES as $methode) {
+            if ($methode::getName() === $PasswordHashMethod &&
+                $methode::getInstance()->verify($PasswordHashResult, $password)) {
+                $_SESSION[self::KEY_EMAIL] = $email;
+                return true;
+            }
         }
 
-        $_SESSION[self::KEY_EMAIL] = $email;
-
-        return true;
+        return false;
     }
 
     /**
