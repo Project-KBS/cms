@@ -50,18 +50,18 @@ include_once("app/field.php");                          // voor field in array
 
     //array maken voor de loop om input velden met text te maken
     $secties = array(
-        "Inloggegevens" => [new Field("Email",          true),
-                            new Field("Wachtwoord",     true)],
+        "Inloggegevens" => [new Register("Email",          true),
+                            new Register("Wachtwoord",     true)],
 
-        "Naam"          => [new Field("Voornaam",       true),
-            new Field("Tussenvoegsel", false),
-            new Field ("Achternaam", true)],
+        "Naam"          => [new Register("Voornaam",       true),
+                            new Register("Tussenvoegsel", false),
+                            new Register ("Achternaam", true)],
 
-        "Adres"         =>[ new Field("Straatnaam",     true),
-                            new Field("Huisnummer",     true),
-                            new Field("Toevoeging",     false),
-                            new Field("Postcode",       true),
-                            new Field("Woonplaats",     true)]
+        "Adres"         =>[ new Register("Straatnaam",     true),
+                            new Register("Huisnummer",     true),
+                            new Register("Toevoeging",     false),
+                            new Register("Postcode",       true),
+                            new Register("Woonplaats",     true)]
     );
 
 
@@ -69,9 +69,10 @@ include_once("app/field.php");                          // voor field in array
 
         foreach ($secties as $naam => $veldenArray) {
 
-        ?>
+    ?>
 
-        <hr style="margin: 1.5rem 0" />
+
+        <hr style="margin: 1.5rem 0"/>
 
         <div id="account-form-<?php print($naam); ?>">
 
@@ -86,37 +87,36 @@ include_once("app/field.php");                          // voor field in array
                 <div class="row">
 
 
-                <?php
+                    <?php
 
-                foreach($veldenArray as $veld){
-                    ?>
-                    <div class="account-form-field-container col-4">
+                    foreach ($veldenarray as $veld) {
+                        ?>
+                        <div class="account-form-field-container col-4">
 
-                        <label class="account-form-field-label w-100">
+                            <label class="account-form-field-label w-100">
 
                                         <span class="account-form-field-title"
                                               style="color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>">
                                             <?php print($veld->getNaam()); ?>
                                         </span>
 
-                            <input type="text"
-                                   class="account-form-field-input form-control w-100"
-                                <?php
-                                if ($veld->getVar() != null) {
-                                    printf('value="%s"', $veld->getVar());
-                                }
-                                if ($veld->isRequired()) {
-                                    print("required");
-                                }
-                                ?>
-                            />
+                                <input type="text"
+                                       class="account-form-field-input form-control w-100"
+                                    <?php
+                                    print($veld);
+                                    if ($veld->isRequired()) {
+                                        print("required");
+                                    }
+                                    ?>
+                                />
 
 
-                        </label>
+                            </label>
 
-                    </div>
+                        </div>
 
-                <?php } ?>
+                    <?php }
+        }?>
 
                 <div class="row">
 
@@ -127,7 +127,7 @@ include_once("app/field.php");                          // voor field in array
 
                     <div class="col-3">
                         <input type="submit"
-                               value="Update informatie"
+                               value="Registreer"
                                class="btn btn-secondary w-100"
                                style="margin-top: 1.2rem">
                     </div>
@@ -136,6 +136,7 @@ include_once("app/field.php");                          // voor field in array
         </form>
 
     </div>
+
 </div>
 
     <?php
