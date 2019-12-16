@@ -2,6 +2,7 @@
 
     // Uit deze php bestanden gebruiken wij functies of variabelen:
     include_once("app/authentication.php");  // Accounts en login
+    include_once("app/constants.php");          // wordt gebruikt voor website beschrijving
     include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
     include_once("app/database.php");        // wordt gebruikt voor database connectie
     include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
@@ -33,16 +34,17 @@
     <div>
         <!-- Print de header (logo, navigatiebalken, etc.)-->
         <?php
-        include("tpl/header_template.php");
+            include("tpl/header_template.php");
         ?>
 
     </div>
 </div>
 
 
-<div class="content-container-home">
+<div class="content-container-narrow">
     <!-- Inhoud pagina -->
     <h3>Account informatie</h3><br>
+    <p>Op deze pagina kunt u de gegevens wijzigen en inzien welke gelinkt zijn aan uw persoonlijke account.</p>
 
     <div>
         <?php
@@ -53,8 +55,9 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
 
-        print_r($row);
-
+        if (IS_DEBUGGING_ENABLED) {
+            print_r($row);
+        }
 
         //array maken voor de loop om input velden met text te maken
         $form = array(
@@ -69,76 +72,158 @@
             "Postcode" => $AddressPostalCode,
             "Woonplaats" => $AddressCity
         );
-        ?>
 
-        <!-- Form voor de inputs van gegevens om een account te maken -->
-        <form id="account-form" method="post">
-            <table cellpadding="10">
+        class Field {
 
-                <?php foreach ($form as $index => $value) {
+            /**
+             * @var string
+             */
+            public $naam;
 
+            /**
+             * @var mixed
+             */
+            public $var;
 
-                    if ($index === "Wachtwoord" || $index === "Voornaam" || $index === "Straatnaam" || $index === "Postcode") {
-                        ?>
-                        <!-- Begin van table rows om overeen te komen met schermontwerp-->
-                        <tr>
+            /**
+             * @var bool
+             */
+            public $required;
 
-                        <?php
-                    }
-                    ?>
-                    <!-- Maakt in de table een print van de naam van het gevraagde gegeven-->
-                    <td>
+            /**
+             * Field constructor.
+             *
+             * @param $naam
+             * @param $var
+             * @param $required
+             */
+            public function __construct(string $naam, $var, bool $required) {
+                $this->naam = $naam;
+                $this->var = $var;
+                $this->required = $required;
+            }
 
-                        <?php
-                        print($index); ?>
+            /**
+             * @return string
+             */
+            public function getNaam() : string {
+                return $this->naam;
+            }
 
-                    </td>
+            /**
+             * @return mixed
+             */
+            public function getVar() {
+                return $this->var;
+            }
 
-                    <!-- Maakt de inputvelden in de table en verandert het type naar de gewenste soort input -->
-                    <td>
+            /**
+             * @return bool
+             */
+            public function isRequired() : bool {
+                return $this->required;
+            }
 
-                        <!--Bij debugging print hij test@test om makkelijker velden te auto fillen -->
-                        <input
-                            type="<?php if ($index === "Wachtwoord" || $index ==="Nieuwe Wachtwoord") {
-                                print("password");
-                            } else {
-                                print("text");
-                            } ?>"
+        }
 
-                            name="<?php print($value); ?>"
+        /**
+         * @var array string => Field[]
+         */
+        $secties = array(
+            "Authenticatie" => [new Field("Huidige wachtwoord", null,          true),
+                                new Field("Nieuwe wachtwoord",  null,          true)],
+            "Naam"          => [new Field("Voornaam",           $FirstName,         true),
+                                new Field("Tussenvoegsel",      $MiddleName,        true),
+                                new Field("Achternaam",         $LastName,          true)],
+            "Adres"         => [new Field("Straatnaam",         $AddressStreet,     true),
+                                new Field("Huisnummer",         $AddressNumber,     true),
+                                new Field("Toevoeging",         $AddressToevoeging, true),
+                                new Field("Postcode",           $AddressPostalCode, true),
+                                new Field("Woonplaats",         $AddressCity,       true)]
+        );
+
+        foreach ($secties as $naam => $veldenArray) {
+
+            ?>
+
+            <hr style="margin: 1.5rem 0" />
+
+            <div id="account-form-<?php print($naam); ?>">
+
+                <h4 class="account-form-title"
+                    style="margin-bottom: 1.0rem">
+                    <?php print($naam); ?>
+                </h4>
+
+                <!-- Form voor de inputs van gegevens om een account te maken -->
+                <form action="" method="post">
+
+                    <div class="row">
+
+                    <?php
+
+                        foreach ($veldenArray as $veld) {
+
+                            ?>
+
+                                <div class="account-form-field-container col-4">
+
+                                    <label class="account-form-field-label w-100">
+
+                                        <span class="account-form-field-title"
+                                              style="color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>">
+                                            <?php print($veld->getNaam()); ?>
+                                        </span>
+
+                                        <input type="text"
+                                               class="account-form-field-input form-control w-100"
+                                               <?php
+                                                   if ($veld->getVar() != null) {
+                                                       print($veld->getVar());
+                                                   }
+                                                   if ($veld->isRequired()) {
+                                                       print("required");
+                                                   }
+                                               ?>
+                                        />
+
+                                    </label>
+
+                                </div>
 
                             <?php
-                            if($index === "Wachtwoord" || $index ==="Nieuwe Wachtwoord"){
 
-                            } else{
-                                if (!IS_DEBUGGING_ENABLED) {
-                                    //Moet getten uit de database en dan huidige informatie hier invullen
-                                    print("value = '$value'");
-                                } else {
-                                    print("value='test@test'");
-                                }
-                            }
+                        }
 
-                            // Als de verplichte velden niet ingevuld zijn geeft hij aan dat ze nog ingevuld moeten worden
-                            if ($index === "Tussenvoegsel" || $index === "Toevoeging" || $index === "Nieuwe Wachtwoord") {
-                            } else print("required='required'");
-                            ?>>
-                    </td>
+                    ?>
 
-                    <!-- Einde van table rows -->
-                    <?php if ($index === "Nieuwe Wachtwoord" || $index === "Achternaam" || $index === "Toevoeging" || $index === "Woonplaats") { ?>
-                        </tr>
-                        <?php
-                    }
-                }
-                ?>
+                    </div>
 
+                    <div class="row">
 
-            </table>
+                        <!-- Opvuller -->
+                        <div class="col-9">
 
-            <input type="submit" value="Update informatie">
+                        </div>
 
-        </form>
+                        <div class="col-3">
+                            <input type="submit"
+                                   value="Update informatie"
+                                   class="btn btn-secondary w-100"
+                                   style="margin-top: 1.2rem">
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <?php
+
+        }
+
+        ?>
 
     </div>
 
