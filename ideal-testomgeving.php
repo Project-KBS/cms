@@ -1,6 +1,7 @@
 <?php
 // dit is een testontwerp en zo veilig als het achtereind van een paard natuurlijk
 
+include_once("app/authentication.php");
 include_once("app/mollie.php");
 include_once("mollie-api-php/vendor/autoload.php");
 include_once("app/model/customer.php");
@@ -28,7 +29,13 @@ foreach ($postVars as $postVar) {
 }
 
 // Verkrijg het ID van de klant (maakt automatisch nieuwe klant aan als dat nodig is)
-$customerId = Customer::insertCustomer(Database::getConnection(), $_POST['Voornaam'], $_POST['Tussenvoegsel'], $_POST['Achternaam'], $_POST['Straatnaam'], $_POST['Huisnummer'], $_POST['Postcode'], $_POST['Woonplaats']);
+$customerId = Customer::insertCustomer(Database::getConnection(), $_POST['Voornaam'],
+                                                                  $_POST['Tussenvoegsel'],
+                                                                  $_POST['Achternaam'],
+                                                                  $_POST['Straatnaam'],
+                                                                  $_POST['Huisnummer'],
+                                                                  $_POST['Postcode'],
+                                                                  $_POST['Woonplaats']);
 
 
 $database    = Database::getConnection();
@@ -52,11 +59,12 @@ $mollie = Mollie::getApi();
 // genereer een uniek orderID
 $orderId = time(); // TODO haal nieuw order id uit database, microtime werkt niet omdat het een te lang getal is.
 print($hoeveelheid);
+
 // een betaling aanmaken
 $payment = $mollie->payments->create([
     "amount" => [
         "currency" => "EUR", //deze waarde zorgt voor het type valuta van de betaling
-        "value" => sprintf("%0.2f",$prijsIncl)// deze waarde is het totaal inclusief BTW worden
+        "value" => sprintf("%0.2f", $prijsIncl)// deze waarde is het totaal inclusief BTW worden
     ],
     "description" => "Wide World Importers bestelling", // dit is de beschrijving van de betaling bij het bankafschrift van de klant
     "redirectUrl" => "http://localhost/confirm-order.php?orderId=$orderId", // dit is de locatie waar Mollie de klant heenstuurt na de betaling

@@ -7,8 +7,6 @@ class Account {
     /**
      * Verkrijg alle data van een account.
      *
-     * De password hash en hash methode worden niet gereturned om veiligheids redenen.
-     *
      * @param PDO    $database
      * @param string $email
      * @return PDOStatement
@@ -16,7 +14,8 @@ class Account {
     public static function get(PDO $database, string $email) : PDOStatement {
 
         $query = "SELECT
-                      A.FirstName, A.MiddleName, A.LastName, A.CustomerID
+                      A.PasswordHashResult, A.PasswordHashMethod,
+                      A.FirstName, A.MiddleName, A.LastName, A.CustomerID,
                       A.AddressStreet, A.AddressNumber, A.AddressToevoeging, A.AddressCity, A.AddressPostalCode,
                       A.LastIpAddress, A.LastUserAgent
                   FROM
@@ -24,10 +23,13 @@ class Account {
                   WHERE
                       A.Email = :email";
 
+
         $stmt = $database->prepare($query);
+
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
         $stmt->bindValue(":email",         $email,        PDO::PARAM_STR);
+
 
         $stmt->execute();
 
@@ -75,10 +77,13 @@ class Account {
 
         $stmt = $database->prepare($query);
 
+        error_log($plaintextPassword);
+
         // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
         $hashResult = StandardHashMethod::getInstance()->hash($plaintextPassword);
 
         // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+
         $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
         $stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
         $stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
@@ -95,4 +100,78 @@ class Account {
 
         $stmt->execute();
     }
+
+
+
+
+
+    // Moet nog gecontroleerd worden of wachtwoord wel goed geupdate wordt! IN ACCOUNT.php
+    // Moet kijken als je geen wachtwoord wil updaten of hij die dan niet op null zet
+    public static function update(PDO $database, string $email, string $plaintextPassword,
+                                  string $firstName, string $middleName, string $lastName,
+                                  string $addrStreet, string $addrNumber, string $addrToevoeging,
+                                  string $addrCity, string $addrPostal,
+                                  string $lastIp, string $lastUa) : void {
+
+        $hashResult = null;
+        if ($plaintextPassword != null) {
+            // Mocht er een nieuwe hash methode moeten komen kan deze lijn eenvoudig vervangen worden
+            $hashResult = StandardHashmethod::getInstance()->hash($plaintextPassword);
+        }
+
+        $properties = array("PasswordHashResult"=> "hashResult->getHash()",
+                            "PasswordHashMethod" => "hashResult->getMethod()",
+                            "FirstName"         => "firstName",
+                            "MiddleName"        => "middleName",
+                            "LastName"          => "lastName",
+                            "AddressStreet"     => "addrStreet",
+                            "AddressNumber"     => "addrNumber",
+                            "AddressToevoeging" => "addrToevoeging",
+                            "AddressCity"       => "addrCity",
+                            "AddressPostalCode" => "addrPostal",
+                            "LastIpAddress"     => "lastIp",
+                            "LastUserAgent"     => "lastUa");
+
+        $queryPropertyString = " ";
+
+        foreach ($properties as $propertyName => $propertyVar) {
+            if (isset(${$propertyVar}) && ${$propertyVar} != null) {
+                $queryPropertyString .= sprintf("A.%s = :%s,", $propertyName, "prepared$propertyName");
+            }
+        }
+
+        // Aangezien $queryPropertyString alleen maar wordt opgebouwd van
+        // predefined property names kan er hier geen sql injection plaatsvinden.
+        $query = "UPDATE Account A
+                    SET
+                        " . $queryPropertyString . "
+                    WHERE 
+                        A.Email = :email";
+
+        $stmt = $database->prepare($query);
+
+        foreach ($properties as $propertyName => $propertyVar) {
+            if (isset(${$propertyVar}) && ${$propertyVar} != null) {
+                $stmt->bindValue(":prepared$propertyName", "${$propertyVar}", PDO::PARAM_STR);
+            }
+        }
+
+        $stmt->bindValue(":email",       $email,                                   PDO::PARAM_STR);
+        //$stmt->bindValue(":hashResult",  $hashResult->getHash(),                   PDO::PARAM_STR);
+        //$stmt->bindValue(":hashMethod",  $hashResult->getMethod(),                 PDO::PARAM_STR);
+        //$stmt->bindValue(":firstName",   $firstName,                               PDO::PARAM_STR);
+        //$stmt->bindValue(":middleName",  $middleName,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":lastName",    $lastName,                                PDO::PARAM_STR);
+        //$stmt->bindValue(":addrStreet",  $addrStreet,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":addrNum",     $addrNumber,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":addrExtra",   $addrToevoeging,                          PDO::PARAM_STR);
+        //$stmt->bindValue(":addrCity",    $addrCity,                                PDO::PARAM_STR);
+        //$stmt->bindValue(":addrPostal",  $addrPostal,                              PDO::PARAM_STR);
+        //$stmt->bindValue(":lastIp",      $lastIp,                                  PDO::PARAM_STR);
+        //$stmt->bindValue(":lastUa",      $lastUa,                                  PDO::PARAM_STR);
+
+        $stmt->execute();
+
+    }
+
 }

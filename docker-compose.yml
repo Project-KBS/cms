@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+    webserver:
+        build: '.'
+#        depends_on:
+#            - database
+        ports:
+            - "8081:80"
+#        volumes:
+#            - .:/app/
+        network_mode: "host"
+#    database:
+#        image: mysql:5.7
+#        ports:
+#            - "3306:3306"
+#        environment:
+#            MYSQL_ROOT_PASSWORD: verander_wachtwoord
+#            MYSQL_DATABASE: WideWorldImporters
+#            MYSQL_USER: api-local
+#            MYSQL_PASSWORD:

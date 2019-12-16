@@ -20,11 +20,19 @@
             <form autocomplete="off" action="search.php?page=1" name="zoekForm" method="get">
 
                 <a>
-                    <input type="text" placeholder="Typ om te zoeken" name="search" id="search" style="margin-right: 0; padding-right: 0;">
+                    <input type="text"
+                           placeholder="Typ om te zoeken"
+                           name="search"
+                           id="search"
+                           style="margin-right: 0; padding-right: 0;">
                 </a>
 
                 <a>
-                    <input type="submit" value="Search" name="knop" id="knop">
+                    <input type="submit"
+                           value="Search"
+                           name="knop"
+                           id="knop"
+                           style="border-radius: 0 !important;">
                 </a>
 
             </form>
@@ -53,17 +61,41 @@
                 </div>
             </a>
 
-            <a id="button-inloggen" href="inloggen.php">
-                <div>
-                    Inloggen
-                </div>
-            </a>
+            <?php
+                if (Authentication::isLoggedIn()) {
+            ?>
 
-            <a id="button-registreren" href="registreren.php">
-                <div>
-                    Registreren
-                </div>
-            </a>
+                <a id="button-account" href="account.php">
+                    <div>
+                        Mijn Account
+                    </div>
+                </a>
+
+                <a id="button-uitloggen" href="uitloggen.php">
+                    <div>
+                        Uitloggen
+                    </div>
+                </a>
+
+            <?php
+                } else {
+            ?>
+
+                <a id="button-inloggen" href="inloggen.php">
+                    <div>
+                        Inloggen
+                    </div>
+                </a>
+
+                <a id="button-registreren" href="registreren.php">
+                    <div>
+                        Registreren
+                    </div>
+                </a>
+
+            <?php
+                }
+            ?>
 
         </div>
 

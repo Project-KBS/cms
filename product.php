@@ -1,31 +1,34 @@
 <?php
 
-// Uit deze php bestanden gebruiken wij functies of variabelen:
-include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
-include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
-include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
-include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
-include_once("app/model/review.php"); //wordt gebruikt om de review class te includen
+    // Uit deze php bestanden gebruiken wij functies of variabelen:
+    include_once("app/authentication.php");  // Accounts en login
+    include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
+    include_once("app/database.php");        // wordt gebruikt voor database connectie
+    include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+    include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+    include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
+    include_once("app/model/review.php"); //wordt gebruikt om de review class te includen
 
-// Deze pagina vereist een GET parameter: "id" met integer value van het product.
-// Als deze param niet meegegeven is sturen we de user terug naar index.php
-if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
-    header("Location: index.php");
-
-}
+    // Deze pagina vereist een GET parameter: "id" met integer value van het product.
+    // Als deze param niet meegegeven is sturen we de user terug naar index.php
+    if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false) {
+        header("Location: index.php");
+    }
 
 ?>
 
 <!doctype html>
 <html class="no-js" lang="">
+
     <head>
         <?php
-        //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
-        include("tpl/head-tag-template.php");
+
+            //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
+            include("tpl/head-tag-template.php");
 
         ?>
     </head>
+
     <body>
         <!-- Onze website werkt niet met Internet Explorer 9 en lager-->
         <!--[if IE]>
@@ -41,12 +44,12 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
             ?>
 
             <!-- Inhoud van de pagina -->
-            <div class="content-container">
+            <div class="content-container" style="margin-top: 2.75vw;">
 
                 <?php
 
                 $stmt = (Product::getbyid(Database::getConnection(), $_GET["id"], 5));
-                if($stmt->rowCount()> 0) {
+                if ($stmt->rowCount() > 0) {
 
                     $categories = array();
 
@@ -65,29 +68,34 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     //Opmaak van de pagina
                     ?>
 
-                    <h1> <?php print($StockItemName) ?></h1>
+                    <h1>
+                        <?php print($StockItemName); ?>
+                    </h1>
 
-                    <h3> <?php
-                        //PRINT alle categorieën
-                        if(count($categories) >1){
-                            Print("Categorieën: ");
-                        } else {
-                            print("Categorie: ");
-                        }
-                        $first = true;
-                        foreach ($categories as $index => $value) {
-                            if($first){
-                                print($value);
-                                $first = false;
-                        } else {
-                                print( ", " . $value );
+                    <h4 style="font-weight: normal; color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>; margin-bottom: 1.7vw">
+                        <?php
+                            //PRINT alle categorieën
+                            if (count($categories) > 1) {
+                                print("Categorieën: ");
+                            } else {
+                                print("Categorie: ");
                             }
-                    }
-                    ?>
-                    </h3>
+                            $first = true;
+                            foreach ($categories as $index => $value) {
+                                if ($first) {
+                                    $first = false;
+                                    print($value);
+                                } else {
+                                    print( ", " . $value );
+                                }
+                            }
+                        ?>
+                    </h4>
 
                     <div id="geheel" class="row">
-                        <div id="links" class="col-6"  >
+
+                        <div id="links" class="col-6">
+
                             <div id="linksboven">
 
                                 <!-- Dit is de hoofdfoto (grote foto) -->
@@ -97,7 +105,8 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                                                                     } else {
                                                                         print(MediaPortal::getCategoryImage($StockGroupID));
                                                                     }
-                                                                 ?>" id="Productphoto" class="Productphoto" ><br>
+                                                                 ?>" id="Productphoto" class="Productphoto" alt="Productfoto">
+                                <br>
 
                                 <!-- Dit is de hoofdvideo (grote video) die pas zichtbaar wordt als je op een video thumbnail klikt -->
                                 <video id="Productvideo" class="Productphoto" style="display: none" controls>
@@ -106,6 +115,7 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                                 </video>
 
                             </div>
+
                             <div id="linksonder">
 
                                 <script>
@@ -213,29 +223,57 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                                 ?>
                                 </div>
 
-
                             </div>
 
                         </div>
 
-                        <div id="rechts" class="col-6" style=" padding: 0">
+                        <div id="rechts" class="col-6" style="padding: 0">
+
                             <!-- Print de prijs-->
-                            <h1>€ <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)) ?></h1>
+                            <h2 style="color: <?php echo VENDOR_THEME_COLOR_HIGHLIGHT ?>">
+                                € <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)); ?>
+                            </h2>
 
-                            <h3> <?php
-                                // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
-                                if($QuantityOnHand > 0) {
-                                    print("Op voorraad");
-                                } else {
-                                    print("In de backorder");
-                                }
+                            <p>
+                                <?php
+
+                                    // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
+                                    if($QuantityOnHand > 0) {
+                                        print("Op voorraad");
+                                    } else {
+                                        print("In de backorder");
+                                    }
+
                                 ?>
-                            </h3>
+                            </p>
 
-                            <div id="winkelwagen" name="winkelmandje">
+                            <div id="winkelwagen" style="margin-bottom: 2rem">
+
                                 <form method="post" name="winkelmandje" action="">
-                                <input type="number" name="product:<?php print($StockItemID); ?>" id="hoeveelheid_input" min="1" value="<?php print("1"); ?>">
-                                <input type="submit" value="Toevoegen aan winkelwagen">
+
+                                    <div class="row">
+
+                                        <div class="col-6" style="padding-right: 0">
+
+                                            <input type="number"
+                                                   name="product:<?php print($StockItemID); ?>"
+                                                   id="hoeveelheid_input"
+                                                   min="1"
+                                                   value="<?php print("1"); ?>"
+                                                   class="form-control"
+                                                   style="margin: 0 !important;">
+
+                                        </div>
+
+                                        <div class="col-6">
+
+                                            <input type="submit"
+                                                   value="Toevoegen aan winkelwagen"
+                                                   class="btn btn-primary bootstrap-btn">
+                                        </div>
+
+                                    </div>
+
                                 </form>
 
 
@@ -253,45 +291,52 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                                     }
                                 </script>
                             </div>
+
                             <h3>Productomschrijving</h3>
 
                             <?php
-                            //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
-                            if(isset($MarketingComments) && $MarketingComments != null){
-                                print($MarketingComments);
-                            }
-                            else {
-                                print("Er is geen productomschrijving beschikbaar.");
-                            }
+                                //Als er een omschrijving bestaat print deze dat uit en anders blijft omschrijving leeg
+                                if (isset($MarketingComments) && $MarketingComments != null) {
+                                    print($MarketingComments);
+                                } else {
+                                    print("Er is geen productomschrijving beschikbaar.");
+                                }
                             ?>
 
                             <hr>
 
                             <h3>Productspecificaties</h3>
                             <?php
-                            //Controleert of de waarde bestaat en daarna of het geen null waarde is.
-                            //Daarna wordt de informatie geprint
-                            if(isset($SupplierName) && $SupplierName != null) {
-                                print("Leverancier: $SupplierName <br>");
-                            }
-                            if(isset($ColorName) && $ColorName != null) {
-                                print("Kleur: $ColorName <br>");
-                            }
-                            if(isset($Brand) && $Brand!=null){
-                                print("Merk: $Brand <br>");
-                            }
-                            if(isset($Size) && $Size !=null){
-                                print("Grootte: $Size<br>");
-                            }
-                            if(isset($QuantityPerOuter) && $QuantityPerOuter != null){
-                                print("Het aantal per verpakking: $QuantityPerOuter <br>");
-                            }
-                            if(isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
-                                print("Het gewicht: $TypicalWeightPerUnit Kg<br>");
-                            }
-                            if(isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
-                                print("Gekoeld: Ja<br>");
-                            }
+
+                                //Controleert of de waarde bestaat en daarna of het geen null waarde is.
+                                //Daarna wordt de informatie geprint
+                                if (isset($SupplierName) && $SupplierName != null) {
+                                    print("Leverancier: $SupplierName <br>");
+                                }
+
+                                if (isset($ColorName) && $ColorName != null) {
+                                    print("Kleur: $ColorName <br>");
+                                }
+
+                                if (isset($Brand) && $Brand!=null){
+                                    print("Merk: $Brand <br>");
+                                }
+
+                                if (isset($Size) && $Size !=null){
+                                    print("Grootte: $Size<br>");
+                                }
+
+                                if (isset($QuantityPerOuter) && $QuantityPerOuter != null){
+                                    print("Het aantal per verpakking: $QuantityPerOuter <br>");
+                                }
+
+                                if (isset($TypicalWeightPerUnit) && $TypicalWeightPerUnit != null){
+                                    print("Het gewicht: $TypicalWeightPerUnit Kg<br>");
+                                }
+
+                                if (isset($IsChillerStock) && $IsChillerStock != null &&$IsChillerStock != 0){
+                                    print("Gekoeld: Ja<br>");
+                                }
 
                             ?>
 
@@ -300,11 +345,14 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                     </div>
 
                 <?php
+
                 } else {
                     // Voor de veiligheid en tegen errors geeft dit een foutmelding aan de gebruiker wanneer een product niet bestaat van dat ID
                     include("tpl/Foutproduct.html");
                 }
-                include("reviews.php")
+
+                include("tpl/reviews.php")
+
                 ?>
 
 

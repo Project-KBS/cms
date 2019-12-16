@@ -1,23 +1,26 @@
 <?php
-// Uit deze php bestanden gebruiken wij functies of variabelen:
-include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
-include_once("app/database.php");        // wordt gebruikt voor database connectie
-include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
-include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
-include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
-include_once("app/cart.php");            // Wordt gebruikt om de huidige test producten te gebruiken
 
-session_start();
+    // Uit deze php bestanden gebruiken wij functies of variabelen:
+    include_once("app/authentication.php");  // Accounts en login
+    include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
+    include_once("app/database.php");        // wordt gebruikt voor database connectie
+    include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
+    include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
+    include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
+    include_once("app/cart.php");            // Wordt gebruikt om de huidige test producten te gebruiken
+
 ?>
 
 <!doctype html>
 <html class="no-js" lang="">
+
     <head>
         <?php
             //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
             include("tpl/head-tag-template.php");
         ?>
     </head>
+
     <body>
 
     <!-- Onze website werkt niet met Internet Explorer 9 en lager, laat een waarschuwing zien -->
@@ -58,6 +61,9 @@ session_start();
 
                 <script>
 
+                    /**
+                     * Wrapper klasse voor een input veld met bijbehorende eigenschappen
+                     */
                     class InputVeld {
 
                         constructor(element, prijs, taxrate) {
@@ -78,11 +84,12 @@ session_start();
                 $isResultaat = false;
                 foreach (Cart::get() as $item => $aantal) {
                     $isResultaat = true;
+
                     $stmt = (Product::getbyid(Database::getConnection(), $item, 5));
 
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
                     extract($row);
+
                         ?>
 
                     <div id="geheel<?php print($teller); ?>" class="row" style="padding-bottom: 2vh">
@@ -97,7 +104,7 @@ session_start();
                                                        } else {
                                                            print(MediaPortal::getCategoryImage($StockGroupID));
                                                        }
-                                                        ?>" id="Productphoto" class="Productphoto" >
+                                                        ?>" id="Productphoto" class="Productphoto" alt="Productfoto">
 
                             </div>
 
@@ -118,10 +125,19 @@ session_start();
                             </div>
 
                             <div id="Aantal" class="col-1">
-                                <input style="width: 100%" type="number" id="hoeveelheid<?php print($teller); ?>" name="<?php print($StockItemID); ?>" value="<?php print($aantal); ?>">
+
+                                <input style="width: 100%"
+                                       class="form-control"
+                                       type="number"
+                                       id="hoeveelheid<?php print($teller); ?>"
+                                       name="<?php print($StockItemID); ?>"
+                                       value="<?php print($aantal); ?>">
 
                                 <!-- Verwijder uit winkelwagen knop -->
-                                <button id="verwijder<?php print($teller); ?>" type="button"  style="width: 100%; margin-top: 0.5em">
+                                <button id="verwijder<?php print($teller); ?>"
+                                        type="button"
+                                        style="width: 100%; margin-top: 0.5em"
+                                        class="btn btn-outline-secondary">
                                     Verwijder
                                 </button>
 
@@ -265,23 +281,31 @@ session_start();
                     <div id="verstuur" class="col-2">
 
                         <!-- Submit knop en betaalmethoden afbeeldingen -->
-                        <input type="submit" value="Verder naar bestellen">
+                        <input type="submit"
+                               value="Verder naar bestellen"
+                               class="btn btn-primary bootstrap-btn"
+                               style="margin-bottom: 1.2rem">
 
                         <img src="img/logo/ideal.png" style="max-width: 60%">
+
                     </div>
 
                     <?php
+
                     //Als er niks in het winkelmandje zit word je verzocht om terug te gaan naar de index pagina
                     } else {
 
                     ?>
 
                         <div style="padding-bottom: 5vw">
+
                             <h2>Uw winkelmand is leeg</h2>
                             <br>
+
                             <a href="index.php">
                                 <p>Klik hier om verder te winkelen</p>
                             </a>
+
                         </div>
 
                     <?php

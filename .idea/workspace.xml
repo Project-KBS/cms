@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Nieuwe database">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/mollie-api-php/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -44,10 +46,11 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
-        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;j" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
+        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
+        <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
       </list>
@@ -68,7 +71,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP XAMPP">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/mollie-api-php/vendor/composer" />
       <path value="$PROJECT_DIR$/mollie-api-php/vendor/ralouphie/getallheaders" />
@@ -94,46 +97,56 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/model" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="$PROJECT_DIR$/api/v1" />
       <recent name="$PROJECT_DIR$/img/logo" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tpl" />
       <recent name="$PROJECT_DIR$/db" />
       <recent name="C:\xampp\htdocs\WebshopWWI\js\" />
       <recent name="$PROJECT_DIR$/api/v1/product" />
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -173,84 +186,9 @@
       <workItem from="1575736438816" duration="9000" />
       <workItem from="1575737724410" duration="2761000" />
       <workItem from="1575982158886" duration="1547000" />
-      <workItem from="1576158603381" duration="390000" />
-    </task>
-    <task id="LOCAL-00085" summary="Verwijder knop werkt">
-      <created>1575025995350</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1575025995351</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Update winkelwagen wanneer nieuwe pagina">
-      <created>1575028007513</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1575028007513</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Update winkelwagen wanneer nieuwe pagina">
-      <created>1575034522845</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1575034522845</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Update winkelwagen wanneer nieuwe pagina">
-      <created>1575034875764</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1575034875764</updated>
-    </task>
-    <task id="LOCAL-00089" summary="checkout pagina buttons 2 (commit failed)">
-      <created>1575037333009</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1575037333009</updated>
-    </task>
-    <task id="LOCAL-00090" summary="checkout pagina buttons 3 (commit failed)">
-      <created>1575037884993</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1575037884993</updated>
-    </task>
-    <task id="LOCAL-00091" summary="code schoonmaken">
-      <created>1575039081393</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1575039081393</updated>
-    </task>
-    <task id="LOCAL-00092" summary="knop op checkout in de form verwerkt">
-      <created>1575280414869</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1575280414869</updated>
-    </task>
-    <task id="LOCAL-00093" summary="begonnen met ideal integreren">
-      <created>1575282539686</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1575282539686</updated>
-    </task>
-    <task id="LOCAL-00094" summary="begonnen met ideal integreren v2">
-      <created>1575282695243</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1575282695243</updated>
-    </task>
-    <task id="LOCAL-00095" summary="begonnen met ideal integreren v3">
-      <created>1575284768165</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1575284768165</updated>
+      <workItem from="1576157454444" duration="1155000" />
+      <workItem from="1576229448969" duration="7001000" />
+      <workItem from="1576330584182" duration="4969000" />
     </task>
     <task id="LOCAL-00096" summary="ideal-testomgeving gecomment">
       <created>1575289605676</created>
@@ -518,7 +456,84 @@
       <option name="project" value="LOCAL" />
       <updated>1576148425464</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Registreren foutmelding corrigeren">
+      <created>1576149399245</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1576149399245</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Correcte syntax in account update">
+      <created>1576367682543</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1576367682544</updated>
+    </task>
+    <task id="LOCAL-00136" summary="Correcte syntax in account update">
+      <created>1576367797321</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1576367797321</updated>
+    </task>
+    <task id="LOCAL-00137" summary="Fix registeren query en redirect gebruiker">
+      <created>1576370099854</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1576370099854</updated>
+    </task>
+    <task id="LOCAL-00138" summary="Inloggen, uitloggen, en andere authenticatie">
+      <created>1576376933815</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1576376933815</updated>
+    </task>
+    <task id="LOCAL-00139" summary="Footer wat aangepast met linkjes er bij">
+      <created>1576377390320</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1576377390320</updated>
+    </task>
+    <task id="LOCAL-00140" summary="Fix include crash in registreren.php">
+      <created>1576377552261</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1576377552261</updated>
+    </task>
+    <task id="LOCAL-00141" summary="Voeg required attributen toe op inlog form">
+      <created>1576417931966</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1576417931966</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Extra padding wanneer de navigatiebalk naar fixed position gaat.">
+      <created>1576429797240</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1576429797240</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Algemene code cleanup + move template naar tpl map">
+      <created>1576436743591</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1576436743591</updated>
+    </task>
+    <task id="LOCAL-00144" summary="Gebruik overal Bootstrap knoppen / velden">
+      <created>1576439547287</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1576439547287</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,16 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="order overview 'leeg' fixen" />
-    <MESSAGE value="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is" />
-    <MESSAGE value="ideal totaalprijs gefixt" />
-    <MESSAGE value="404 pagina start nu ook een session" />
-    <MESSAGE value="confirm-order pagina semi gefixt, nog wel wat te doen" />
-    <MESSAGE value="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem" />
-    <MESSAGE value="Update confirm message" />
-    <MESSAGE value="Update confirm message nog een keer" />
-    <MESSAGE value="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1." />
-    <MESSAGE value="Hij berekent nu de correcte prijs als iets automatisch wordt verwijderd" />
     <MESSAGE value="Footer margin aangepast" />
     <MESSAGE value="session destroy toegevoegd bij succesvolle betaling" />
     <MESSAGE value="Nog niet getest!" />
@@ -565,31 +570,26 @@
     <MESSAGE value="Functions voor form security" />
     <MESSAGE value="willen we meer of minder reviews? MINDER!!! MINDER!!!" />
     <MESSAGE value="reviews in een apart bestand gezet en ge-include" />
-    <option name="LAST_COMMIT_MESSAGE" value="reviews in een apart bestand gezet en ge-include" />
+    <MESSAGE value="Registreren foutmelding corrigeren" />
+    <MESSAGE value="Correcte syntax in account update" />
+    <MESSAGE value="Fix registeren query en redirect gebruiker" />
+    <MESSAGE value="Inloggen, uitloggen, en andere authenticatie" />
+    <MESSAGE value="Footer wat aangepast met linkjes er bij" />
+    <MESSAGE value="Fix include crash in registreren.php" />
+    <MESSAGE value="Voeg required attributen toe op inlog form" />
+    <MESSAGE value="Extra padding wanneer de navigatiebalk naar fixed position gaat." />
+    <MESSAGE value="Algemene code cleanup + move template naar tpl map" />
+    <MESSAGE value="Gebruik overal Bootstrap knoppen / velden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gebruik overal Bootstrap knoppen / velden" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576158970989">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2" timestamp="1576144001652">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576158970989" />
-    <state x="694" y="229" key="VCS.ChangeListViewerDialog" timestamp="1576151000110">
+    <state x="525" y="108" width="860" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576144001652" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576069585066">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="694" y="229" key="VCS.ChangeListViewerDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576151000110" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576151107914">
-      <screen x="0" y="27" width="1920" height="1000" />
-    </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576151107914" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/order-overview.php</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576069585066" />
   </component>
 </project>

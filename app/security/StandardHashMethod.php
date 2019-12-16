@@ -14,6 +14,10 @@ class StandardHashMethod implements IHashMethod {
         return self::$INSTANCE;
     }
 
+    public static function getName() : string {
+        return self::NAAM;
+    }
+
     public function hash(string $input) : HashResult {
         $hashed = password_hash($input,  self::ALGORITME);
 

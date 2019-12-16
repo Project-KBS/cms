@@ -66,8 +66,10 @@ class Database {
             // Als de debug modus aan staat, laat alle PDO exceptions zien aan de gebruiker, anders niet.
             if (IS_DEBUGGING_ENABLED) {
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                ini_set('display_errors', 1);
+                ini_set('log_errors', 1);
             } else {
-                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 ini_set('display_errors', 0);
                 ini_set('log_errors', 1);
             }

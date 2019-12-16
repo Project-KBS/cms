@@ -162,6 +162,10 @@ form{
     width: 100%;
 }
 
+.stick-filler {
+    padding-bottom: 4.5rem;
+}
+
 /** Vergroot en/of verkleint naar de resolutie van het apparaat (zie de media queries hieronder) */
 .responsive-container {
     display: table;
@@ -262,11 +266,11 @@ form{
 }
 
 /* De opmaak voor de social media foto's*/
-.social-media-foto{
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.social-media-foto {
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    opacity: 75%;
 
     width:2vw;
     height:2vw;
-
 }
