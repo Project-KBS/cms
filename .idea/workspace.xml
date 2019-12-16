@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/field.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/field.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tpl/footer_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/footer_template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +45,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
+        <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;j" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
@@ -191,13 +189,6 @@
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
-    </task>
-    <task id="LOCAL-00103" summary="Fix setup.sql, database was niet genoemd">
-      <created>1575389355527</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1575389355527</updated>
     </task>
     <task id="LOCAL-00104" summary="Customers toevoegen werkt!&#10;&#10;ongeveer...">
       <created>1575391273369</created>
@@ -535,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576501153823</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="Account beheren doet het hopelijk... moet nog ff gecheckt worden">
+      <created>1576503969154</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1576503969154</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Nieuwe foreign keys met WWI tabellen" />
     <MESSAGE value="Reviews form attr naam gefixed" />
     <MESSAGE value="help" />
     <MESSAGE value="Form" />
@@ -582,17 +579,18 @@
     <MESSAGE value="Lookup en gebruik de juiste bijbehorende password verify method" />
     <MESSAGE value="MailSubscriber tabel in setup.sql met de juiste rechten" />
     <MESSAGE value="Werkt momenteel niet help" />
-    <option name="LAST_COMMIT_MESSAGE" value="Werkt momenteel niet help" />
+    <MESSAGE value="Account beheren doet het hopelijk... moet nog ff gecheckt worden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Account beheren doet het hopelijk... moet nog ff gecheckt worden" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576502379914" />
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576499778646">
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576503969068">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576499778646" />
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576503969068" />
     <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576489985429">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
@@ -601,10 +599,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576489986887" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576499781496">
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576503979442">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576499781496" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576503979442" />
     <state x="605" y="248" width="709" height="528" key="find.popup" timestamp="1576503857572">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

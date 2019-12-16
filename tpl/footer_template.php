@@ -77,7 +77,7 @@
         <hr>
 
         <p>
-            Wij zijn WWI. We opereren al jaren als groothandel voor bedrijven maar zijn sinds kort actief als webshop.
+            Wij opereren al jaren als groothandel voor bedrijven maar zijn sinds kort actief als webshop.
             We zijn trots op onze producten en geloven in kwaliteit. In ieder huis vindt een product van WWI zijn thuis.
             Ondanks onze grootte zien klanten ons als kleinschalig en betrokken. Persoonlijk klantcontact staat bij ons hoog in het vaandel.
         </p>
@@ -91,7 +91,7 @@
 
         <p>
             Wide World Importers<br>
-            Whatsapp: 06-51423256 <br>
+            WhatsApp: +31 6 51423256<br>
             info@wideworldimporters.nl<br>
             Postbus 10090<br>
             8000 GB  Zwolle<br><br>
