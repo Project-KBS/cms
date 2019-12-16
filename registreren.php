@@ -57,8 +57,8 @@ include_once("app/field.php");                          // voor field in array
                             new Register("Wachtwoord",     true)],
 
         "Naam"          => [new Register("Voornaam",       true),
-                            new Register("Tussenvoegsel", false),
-                            new Register ("Achternaam", true)],
+                            new Register("Tussenvoegsel",   false),
+                            new Register ("Achternaam",     true)],
 
         "Adres"         =>[ new Register("Straatnaam",     true),
                             new Register("Huisnummer",     true),
@@ -73,7 +73,7 @@ include_once("app/field.php");                          // voor field in array
 
     <div>
         <!-- Form voor de inputs van gegevens om een account te maken -->
-        <form id="register-form" method="post" action="">
+        <form id="register-form" method="post" action="registreren.php">
 
         <?php
         foreach ($secties as $naam => $veldenArray) {
@@ -162,19 +162,23 @@ include_once("app/field.php");                          // voor field in array
     //De insert variabele wordt naar false gezet als een input niet geldig is
     $insert = true;
 
-    foreach ($form as $index => $value) {
-        // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
-        if ($value === true){
-            // Als een waarde niet is ingevuld zal de insert een false geven
-            if (!isset($_POST[$index])) {
-               $insert = false;
-            } else {
-                //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
-                //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
-                //Bij huisnummer wordt een controle gedaan of het een integer is
-                if (Form::$index($_POST[$index]) === false) {
+    foreach ($secties as $naam => $veldArray) {
+
+
+        foreach($veldArray as $veld){
+            // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
+            if ($veld->isRequired()){
+                // Als een waarde niet is ingevuld zal de insert een false geven
+                if (!isset($_POST[$veld->getNaam()])) {
                     $insert = false;
-                    print("Foute ". $index. "<br>");
+                } else {
+                    //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
+                    //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
+                    //Bij huisnummer wordt een controle gedaan of het een integer is
+                    if (Form::$veld->getNaam()($_POST[$veld->getNaam()]) === false) {
+                        $insert = false;
+                        print("Foute ". $veld->getNaam(). "<br>");
+                    }
                 }
             }
         }
