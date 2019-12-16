@@ -113,6 +113,23 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`Review` (
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = utf8;
 
+CREATE TABLE IF NOT EXISTS `wideworldimporters`.`MailSubscriber` (
+                                                                     `id` INT NOT NULL,
+                                                                     `Email` VARCHAR(320) NOT NULL UNIQUE,
+                                                                     `CustomerID` INT(11) NOT NULL UNIQUE,
+                                                                     `IsSubscribed` TINYINT NOT NULL DEFAULT 0,
+                                                                     PRIMARY KEY (`id`),
+                                                                     FOREIGN KEY (`Email`)
+                                                                         REFERENCES `wideworldimporters`.`Account` (`Email`)
+                                                                         ON UPDATE NO ACTION
+                                                                         ON DELETE NO ACTION,
+                                                                     FOREIGN KEY (`CustomerID`)
+                                                                         REFERENCES `wideworldimporters`.`Customers` (`CustomerID`)
+                                                                         ON UPDATE NO ACTION
+                                                                         ON DELETE NO ACTION)
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8;
+
 /** VOOR DEGENE DIE AFGELOPEN MIDDAG DE CODE OPGEFUCKT HEEFT: DEZE GRANTS MOETEN __NADAT__ DE TABELLEN ZIJN AANGEMAAKT*/
 
 /* Om de paymentId/orderId combinatie op te slaan */
@@ -125,7 +142,12 @@ GRANT SELECT ON wideworldimporters.Account TO 'api-local'@'localhost';
 /* Om de paymentId/orderId combinatie op te slaan */
 GRANT INSERT ON wideworldimporters.Review TO 'api-local'@'localhost';
 /* idem, maar dan om weer uit te lezen */
+GRANT UPDATE ON wideworldimporters.Review TO 'api-local'@'localhost';
+/* idem, maar dan om weer uit te lezen */
 GRANT SELECT ON wideworldimporters.Review TO 'api-local'@'localhost';
+
+/* Om de paymentId/orderId combinatie op te slaan */
+GRANT INSERT ON wideworldimporters.MailSubscriber TO 'api-local'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -133,4 +155,4 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 /* Maakt ideal betalingsmogelijkheid aan in de database*/
 INSERT INTO wideworldimporters.PaymentMethods (PaymentMethodID, PaymentMethodName, LastEditedBy, ValidFrom, ValidTo)
-VALUES ( 419, "Ideal", 1, "2019-12-03", "9999-12-31 23:59:59");
+VALUES (419, "Ideal", 1, "2019-12-03", "9999-12-31 23:59:59");

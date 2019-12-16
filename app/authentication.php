@@ -7,6 +7,11 @@
  */
 class Authentication {
 
+    /**
+     * De key van de email value in de sessie array.
+     *
+     * @var string
+     */
     private const KEY_EMAIL = "auth_email";
 
     /**
@@ -75,11 +80,14 @@ class Authentication {
         if (isset($_SESSION[self::KEY_EMAIL])) {
             return $_SESSION[self::KEY_EMAIL];
         }
+
         return null;
     }
 
     /**
      * Van deze klasse mogen geen instanties gemaakt worden, dus maak de constructor privé.
+     *
+     * @deprecated
      */
     private function __construct() {
         throw new AssertionError("Gebruik een statische method !!!");
@@ -87,6 +95,8 @@ class Authentication {
 
     /**
      * Instanties van deze klasse mogen niet gekloond worden, dus maak clone() privé.
+     *
+     * @deprecated
      */
     private function __clone() {
         throw new AssertionError("Het is niet toegestaan om deze klasse te klonen!");
