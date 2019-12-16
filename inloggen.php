@@ -138,7 +138,7 @@
                     <div class="form-group">
 
                         <label for="invoer-wachtwoord" class="col-form-label-lg">
-                            Password
+                            Wachtwoord
                         </label>
 
                         <div class="input-group mb-2">
