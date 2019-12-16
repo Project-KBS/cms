@@ -113,6 +113,10 @@ include_once("app/field.php");                          // voor field in array
                                        class="account-form-field-input form-control w-100"
                                     <?php
 
+                                    if(isset($_POST[$veld->getNaam()])){
+                                        printf('value="%s"', $_POST[$veld->getNaam()]);
+                                    }
+
                                     if ($veld->isRequired()) {
                                         print("required");
                                     }
@@ -143,7 +147,7 @@ include_once("app/field.php");                          // voor field in array
                     <div class="col-3">
                         <input type="submit"
                                value="Registreer"
-                               class="btn btn-secondary w-100"
+                               class="btn btn-primary w-100 bootstrap-btn"
                                style="margin-top: 1.2rem">
                     </div>
                 </div>
@@ -163,17 +167,17 @@ include_once("app/field.php");                          // voor field in array
     //De insert variabele wordt naar false gezet als een input niet geldig is
     $insert = true;
 
-    print("X1\n");
+
 
     foreach ($secties as $naam => $veldArray) {
-        print("X2\n");
+
 
 
         foreach($veldArray as $veld){
-            print("X3\n");
+
             // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
             if ($veld->isRequired()){
-                print("X4\n");
+
                 // Als een waarde niet is ingevuld zal de insert een false geven
                 if (!isset($_POST[$veld->getNaam()])) {
                     $insert = false;

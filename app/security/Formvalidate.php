@@ -7,7 +7,7 @@ class Form
 
     public static function Email($input){
         $input = trim($input);
-        if(strlen($input) > 320){
+        if(strlen($input) > 320 || strlen($input)<1){
             return false;
 
         }
@@ -18,7 +18,7 @@ class Form
 
     public static function Wachtwoord($input){
         $input = trim($input);
-        if(strlen($input) > 255){
+        if(strlen($input) > 255 || strlen($input)<1){
             return false;
 
         }
@@ -27,7 +27,7 @@ class Form
 
     public static function Voornaam($input){
         $input = trim($input);
-        if(strlen($input) > 45){
+        if(strlen($input) > 45 || strlen($input)<1){
             return false;
 
         }
@@ -37,7 +37,7 @@ class Form
 
     public static function Tussenvoegsel($input){
         $input = trim($input);
-        if(strlen($input) > 30){
+        if(strlen($input) > 30 || strlen($input)<1){
             return false;
 
         }
@@ -47,7 +47,7 @@ class Form
 
     public static function Achternaam($input){
         $input = trim($input);
-        if(strlen($input) > 45){
+        if(strlen($input) > 45 || strlen($input)<1){
             return false;
 
         }
@@ -57,7 +57,7 @@ class Form
 
     public static function Straatnaam($input){
         $input = trim($input);
-        if(strlen($input) > 45){
+        if(strlen($input) > 45 || strlen($input)<1){
             return false;
 
         }
@@ -75,7 +75,7 @@ class Form
 
     public static function Toevoeging($input){
         $input = trim($input);
-        if(strlen($input) > 45){
+        if(strlen($input) > 45 || strlen($input)<1){
             return false;
 
         }
@@ -108,7 +108,7 @@ class Form
 
     public static function Woonplaats($input){
         $input = trim($input);
-        if(strlen($input) > 45){
+        if(strlen($input) > 45 || strlen($input)<1){
             return false;
 
         }
