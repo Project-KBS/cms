@@ -49,7 +49,6 @@
     <div>
         <?php
 
-
         // Oproepen van de huidige gegevens die dan weer geprint zullen worden
         $stmt = Account::get(Database::getConnection(),"test@test");
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -58,20 +57,6 @@
         if (IS_DEBUGGING_ENABLED) {
             print_r($row);
         }
-
-        //array maken voor de loop om input velden met text te maken
-        $form = array(
-            "Wachtwoord" => 0,
-            "Nieuwe Wachtwoord" => 0,
-            "Voornaam" => $FirstName ,
-            "Tussenvoegsel" => $MiddleName,
-            "Achternaam" => $LastName,
-            "Straatnaam" => $AddressStreet,
-            "Huisnummer" => $AddressNumber,
-            "Toevoeging" => $AddressToevoeging,
-            "Postcode" => $AddressPostalCode,
-            "Woonplaats" => $AddressCity
-        );
 
         class Field {
 
@@ -179,7 +164,7 @@
                                                class="account-form-field-input form-control w-100"
                                                <?php
                                                    if ($veld->getVar() != null) {
-                                                       print($veld->getVar());
+                                                       printf('value="%s"', $veld->getVar());
                                                    }
                                                    if ($veld->isRequired()) {
                                                        print("required");
