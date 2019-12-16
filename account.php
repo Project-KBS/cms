@@ -12,6 +12,10 @@
     include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
     include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
 
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     $email = Authentication::getEmail();
     if (!Authentication::isLoggedIn() || $email == null) {
         header("Location: index.php", true, 303);

@@ -69,11 +69,11 @@ class Authentication {
      *
      * @return string|null
      */
-    public static function getEmail() : string {
-        if (!isset($_SESSION[self::KEY_EMAIL])) {
-            return null;
+    public static function getEmail() {
+        if (isset($_SESSION[self::KEY_EMAIL])) {
+            return $_SESSION[self::KEY_EMAIL];
         }
-        return $_SESSION[self::KEY_EMAIL];
+        return null;
     }
 
     /**
