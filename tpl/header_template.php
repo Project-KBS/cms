@@ -1,6 +1,16 @@
 <!-- Header die aan de bovenkant van de pagina bevindt -->
 <div id="header">
 
+    <?php
+        if (IS_DEBUGGING_ENABLED) {
+            ?>
+                <div id="warning" class="w-100">
+                    <p class="m-0">Debugging modus staat aan. De website reageert mogelijk anders dan in productiemodus.</p>
+                </div>
+            <?php
+        }
+    ?>
+
     <!-- Dit gedeelte van de header komt in een lijn te staan met de body content -->
     <div id="header-inline" class="responsive-container">
         <div id="promotie">

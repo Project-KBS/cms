@@ -191,6 +191,7 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     font-weight: bold;
     font-family: "Tw Cen MT";
+    font-family: "Tw Cen MT";
     width: 200%;
 }
 
