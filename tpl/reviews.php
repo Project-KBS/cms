@@ -3,12 +3,14 @@
     if (isset($_GET["id"])) {
 
         if (isset($_POST['title'], $_POST["cijfer"], $_POST['reviewInputs'])) {
-
             $title = $_POST['title'];
             $cijfer = $_POST['cijfer'];
             $reviewInputs = $_POST['reviewInputs'];
-
-            Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+            if(isset($_POST['edit'])) {
+                Review::update(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+            } else {
+                Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+            }
         }
         ?>
 
@@ -56,9 +58,7 @@
                 <textarea name="reviewInputs"
                           class="reviewInputs"
                           placeholder="Schrijf hier je review"
-                          style="height:20vw;">
-
-                </textarea>
+                          style="height:20vw;"></textarea>
 
                 <br>
 
@@ -105,7 +105,7 @@
                                 <div class="col-8"></div>
                                 <div class="col-4">
                                     <!-- bewerken moet nog gebeuren -->
-                                    <button type="button" href="/edit-review.php">Bewerken</button>
+                                    <a href="/edit-review.php?id=<?php print($_GET["id"]); ?>">Bewerken</a>
                                 </div>
                             </div>
                             <?php
@@ -131,7 +131,7 @@
                                 <div class="col-8"></div>
                                 <div class="col-4">
                                     <!-- bewerken moet nog gebeuren -->
-                                    <button type="button" href="/edit-review.php">Bewerken</button>
+                                    <a> href="/edit-review.php?id=<?php print($_GET["id"]); ?>">Bewerken</a>
                                 </div>
                             </div>
                             <?php
