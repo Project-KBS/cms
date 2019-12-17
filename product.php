@@ -350,9 +350,9 @@
                     // Voor de veiligheid en tegen errors geeft dit een foutmelding aan de gebruiker wanneer een product niet bestaat van dat ID
                     include("tpl/Foutproduct.html");
                 }
-
-                include("tpl/reviews.php")
-
+                if ($stmt->rowCount() > 0) {
+                    include("tpl/reviews.php");
+                }
                 ?>
 
 
