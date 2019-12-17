@@ -167,7 +167,8 @@ form{
 
 .search-results-entry {
     margin: 0.15rem 0; !important;
-    padding: 0; !important;
+    padding: 0.7rem 0 !important;
+    padding-right: 1.85rem !important;
     height: auto !important;
 }
 
@@ -177,7 +178,7 @@ form{
 }
 
 .search-results-entry img {
-    max-height: 4rem;
+    max-height: 4.75rem;
 }
 
 .search-results-entry-price {

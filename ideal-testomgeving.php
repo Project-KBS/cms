@@ -11,7 +11,7 @@ include_once("app/model/order.php");
 include_once("app/model/orderline.php");
 include_once("app/model/transactie.php");
 include_once("app/model/invoice.php");
-include_once("app/security/Formvalidate.php");
+include_once("app/security/FormValidation.php");
 include_once("app/database.php");
 include_once("app/cart.php");
 

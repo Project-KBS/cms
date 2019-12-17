@@ -8,7 +8,7 @@ include_once("app/model/account.php");        // wordt gebruikt voor database co
 include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
 include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
 include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
-include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
+include_once("app/security/FormValidation.php");        // Ter controle van formulieren
 include_once("app/field.php");                          // voor field in array
 
 ?>

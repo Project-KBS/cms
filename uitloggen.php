@@ -9,7 +9,7 @@
     include_once("app/security/HashResult.php");        // wordt gebruikt voor database connectie
     include_once("app/security/IHashMethod.php");        // Voor het hashen van wachtwoorden
     include_once("app/security/StandardHashMethod.php");        // Voor het hashen van wachtwoorden
-    include_once("app/security/Formvalidate.php");        // Ter controle van formulieren
+    include_once("app/security/FormValidation.php");        // Ter controle van formulieren
     include_once("app/authentication.php");   // wordt gebruikt voor producten ophalen uit DB
     include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 
