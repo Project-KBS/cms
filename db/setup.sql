@@ -200,6 +200,11 @@ GRANT INSERT ON wideworldimporters.Review TO 'api-local'@'localhost';
 GRANT UPDATE ON wideworldimporters.Review TO 'api-local'@'localhost';
 
 /*
+ * En voor de europese wetgeving: om reviews te verwijderen
+ */
+GRANT DELETE ON wideworldimporters.Review TO 'api-local'@'localhost';
+
+/*
  * idem, maar dan om weer uit te lezen
  */
 GRANT SELECT ON wideworldimporters.Review TO 'api-local'@'localhost';

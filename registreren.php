@@ -220,7 +220,10 @@ include_once("app/field.php");                          // voor field in array
 
             // Verstuur de gebruiker naar het login scherm (header werkt meestal niet omdat er al data verstuurd is)
             header("Location: inloggen.php");
-            print("<meta http-equiv='refresh' content='0;inloggen.php'>");
+            print('<meta http-equiv="refresh" content="0;inloggen.php">
+                   <script type="text/javascript">
+                       window.location = "inloggen.php";
+                   </script>');
 
         } catch (PDOException $exception) {
             // Bij een fout in het proces krijg je ongeldige input terug

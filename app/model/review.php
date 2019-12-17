@@ -27,7 +27,12 @@ class Review {
     }
 
     public static function read($database, $StockItemID){
-        $query = "SELECT Email, UpdatedWhen, StockItemID, Title, Description, Score FROM review WHERE StockItemID = :StockItemID";
+        $query = "SELECT
+                      Email, UpdatedWhen, StockItemID, Title, Description, Score
+                  FROM
+                      Review
+                  WHERE
+                      StockItemID = :StockItemID";
 
         $stmt = $database->prepare($query);
         //We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen

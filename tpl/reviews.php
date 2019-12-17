@@ -149,29 +149,57 @@
                                             </a>
 
                                         </div>
-                                        <div class="col-4">
-                                            <form id="delete-review" method="POST">
-                                                <input type="submit" class="delete-review" name="delete-review" value="Verwijderen">
-                                            </form>
-                                            <?php
-                                            //Als je op de verwijder knop drukt, voert hij de delete functie uit
-                                            if(isset($_POST['delete-review'])){
 
-                                                Review::delete(Database::getConnection(), $_GET['id'], Authentication::getEmail());
-                                            }
+                                        <div class="col-4">
+
+                                            <form id="delete-review" method="POST">
+
+                                                <input type="submit"
+                                                       class="delete-review"
+                                                       name="delete-review"
+                                                       value="Verwijderen"
+                                                />
+
+                                                <input type="hidden"
+                                                       name="csrf_token"
+                                                       value="<?php print($csrf_token); ?>"
+                                                />
+
+                                            </form>
+
+                                            <?php
+
+                                                $currentProductId = intval($_GET["id"]);
+
+                                                //Als je op de verwijder knop drukt, voert hij de delete functie uit
+                                                if (isset($_POST['delete-review']) && isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+
+                                                    Review::delete(Database::getConnection(), $currentProductId, Authentication::getEmail());
+
+                                                    // Refresh de pagina om alle reviews te updaten
+                                                    header("Location: product.php?id=$currentProductId");
+                                                    printf('<meta http-equiv="refresh" content="0;product.php?id=%d">
+                                                           <script type="text/javascript">
+                                                               window.location = "product.php?id=%d";
+                                                           </script>', $currentProductId, $currentProductId);
+                                                }
 
                                             ?>
+
                                         </div>
 
                                     </div>
+
                                 <?php
                             }
                         ?>
+
                         <hr>
+
                     </div>
                     <?php
                 } else {
-                    if($reviewCount > $defaultLimit){
+                    if ($reviewCount > $defaultLimit){
                         ?>
 
                         <!-- Geen CSRF-protectie omdat het een selector form is. -->
@@ -182,8 +210,6 @@
         </div>
                         <?php
                     }
-
-                exit;
                 }
             }
     }
