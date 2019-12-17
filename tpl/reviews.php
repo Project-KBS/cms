@@ -84,11 +84,17 @@
 
             $stmt = Review::read(Database::getConnection(), $_GET['id']);
 
+            //zet een limit voor reviews als die nog niet bestaat
+            if(!isset($_POST{"defaultLimit"})) {
+                $_POST["defaultLimit"] = 1;
+            }
+            $defaultLimit = $_POST["defaultLimit"];
+
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $reviewCount++;
                 extract($row);
                 //opmaak hard nodig!!
-                if ($reviewCount<3) {
+                if ($reviewCount<=$defaultLimit) {
 
                     ?>
                     <div>
@@ -104,7 +110,6 @@
                             <div class="row">
                                 <div class="col-8"></div>
                                 <div class="col-4">
-                                    <!-- bewerken moet nog gebeuren -->
                                     <a href="/edit-review.php?id=<?php print($_GET["id"]); ?>">Bewerken</a>
                                 </div>
                             </div>
@@ -115,57 +120,18 @@
                     </div>
                     <?php
                 } else {
-
-                    ?>
-                    <div id="weergave">
-                        <h3><?php print($Title); ?></h3><br>
-                        <h5><?php print($Email); ?></h5><br>
-                        <h5><?php print($Score); ?></h5><br>
-                        <p><?php print($Description); ?></p><br>
-
-                        <h5><?php print($UpdatedWhen); ?></h5><br>
-                        <?php
-                        if($email===$Email){
-                            ?>
-                            <div class="row">
-                                <div class="col-8"></div>
-                                <div class="col-4">
-                                    <!-- bewerken moet nog gebeuren -->
-                                    <a> href="/edit-review.php?id=<?php print($_GET["id"]); ?>">Bewerken</a>
-                                </div>
-                            </div>
-                            <?php
-                        }
+                    if($reviewCount>$defaultLimit){
                         ?>
-                        <hr>
-                    </div>
-                    <?php
-                }
-            }
-            ?>
-            <?php
-            if($reviewCount>2){
-                ?>
-                <script>
-                    function WeergaveSwitch() {
-                        var x = document.getElementById("weergave");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                            document.getElementById("weergaveknop").innerHTML = "Minder weergeven";
-                        } else {
-                            x.style.display = "none";
-                            document.getElementById("weergaveknop").innerHTML = "Alle <?php print($reviewCount);?> reviews weergeven";
-                        }
+                        <form action="" method="post">
+                            <input type="hidden" name="defaultLimit" value="<?php print($_POST["defaultLimit"]+5);?>">
+                            <input type="submit" value="meer weergeven">
+                        </form>
+        </div>
+                        <?php
                     }
 
-                    WeergaveSwitch()
-                </script>
-                <button id="weergaveknop" onclick="WeergaveSwitch()">Alle <?php print($reviewCount);?> reviews weergeven</button>
-                <?php
+                exit;
+                }
             }
-            ?>
-        </div>
-
-        <?php
-            }
-        ?>
+    }
+    ?>
