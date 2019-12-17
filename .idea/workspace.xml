@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+    <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="Input veld type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v1/product/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/product/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,18 +115,6 @@
       <recent name="$PROJECT_DIR$/api/v1/categorie" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="database.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/database.php">
       <method v="2" />
@@ -147,6 +133,18 @@
         <item itemvalue="PHP Script.database.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -190,6 +188,7 @@
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
+      <workItem from="1576576157454" duration="21000" />
     </task>
     <task id="LOCAL-00107" summary="'niks in winkelmandje' text toegevoegd als je winkelmandje leeg is">
       <created>1575466791668</created>
@@ -588,10 +587,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576502379914" />
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576503969068">
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576576108807">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576503969068" />
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576576108807" />
     <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576489985429">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
