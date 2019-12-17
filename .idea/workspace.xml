@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/security/Formvalidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/security/FormValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/header_footer.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/header_footer.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/liveSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/header_template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/header_template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/uitloggen.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,13 +189,6 @@
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
       <workItem from="1576576157454" duration="5129000" />
-    </task>
-    <task id="LOCAL-00113" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
-      <created>1575478572434</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1575478572434</updated>
     </task>
     <task id="LOCAL-00114" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
       <created>1575540292184</created>
@@ -541,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576587640056</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Rename FormValidation + fix column width in live search">
+      <created>1576588515859</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1576588515860</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Correcte syntax in account update" />
     <MESSAGE value="Fix registeren query en redirect gebruiker" />
     <MESSAGE value="Inloggen, uitloggen, en andere authenticatie" />
     <MESSAGE value="Footer wat aangepast met linkjes er bij" />
@@ -588,17 +579,18 @@
     <MESSAGE value="Account verwijderen" />
     <MESSAGE value="reviews aanpassen pagina voor debug" />
     <MESSAGE value="Foto en prijs in live search results + shadow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Foto en prijs in live search results + shadow" />
+    <MESSAGE value="Rename FormValidation + fix column width in live search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename FormValidation + fix column width in live search" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576502379914" />
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576588467464">
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576589026214">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576588467464" />
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576589026214" />
     <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576489985429">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
@@ -607,10 +599,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576489986887" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576587641397">
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576588517116">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576587641397" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576588517116" />
     <state x="605" y="248" width="868" height="596" key="find.popup" timestamp="1576587764698">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>

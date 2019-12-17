@@ -48,9 +48,6 @@
                         function refresh() {
                             let zoekterm = div_search_bar.value.trim();
 
-                            // Verwijder alle elementen uit de zoekresultaten
-                            div_search_results.innerHTML = "";
-
                             if (zoekterm.length > 0) {
 
                                 // Voer een nieuwe AJAX query uit naar de search product endpoint
@@ -64,13 +61,16 @@
                                     },
                                     dataType: 'json',
                                     success: function (data) {
+                                        // Verwijder alle huidige elementen uit de zoekresultaten
+                                        div_search_results.innerHTML = "";
+
                                         // for-each loop voor alle gereturnde producten
                                         $.each(data, function (index, element) {
                                             // Maak een nieuw flex child aan voor ieder product
                                             $("<a href='/product.php?id=" + element.id + "' class='w-100' '>" +
                                                   "<div class='row search-results-entry w-100'>" +
                                                       "<div class='col-3'><img src='data:image/png;base64," + element.photo + "'/></div>" +
-                                                      "<div class='col-7'><p style='width: 100%'>" + element.name + "</p></div>" +
+                                                      "<div class='col-7'><p class='w-100' style='text-align: left'>" + element.name + "</p></div>" +
                                                       "<div class='col-2 search-results-entry-price'>€" + element.price_recommended + "</div>" +
                                                   "</div>" +
                                               "</a>").appendTo(jq_search_results);
@@ -78,6 +78,9 @@
                                     }
                                 });
                             } else {
+                                // Verwijder alle elementen uit de zoekresultaten
+                                div_search_results.innerHTML = "";
+
                                 $("<div class='search-results-entry'>" +
                                       "<p>Voer een zoekterm in...</p>" +
                                   "</div>").appendTo(jq_search_results);
