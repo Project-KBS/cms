@@ -228,6 +228,11 @@
                            value="delete"
                     />
 
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="<?php print($csrf_token);?>"
+                    />
+
                     <input type="submit"
                            value="Verwijder account"
                            class="btn btn-danger w-100"
@@ -241,19 +246,24 @@
 
         <?php
 
-            // Als de gebruiker op een actieknop heeft gedrukt (TODO CSRF)
+            // Als de gebruiker op een actieknop heeft gedrukt
             if (isset($_POST["action"]) && strlen(strval($_POST["action"])) > 0) {
-                switch (strval($_POST["action"])) {
-                    // Verwijder account
-                    case "delete":
-                        Account::delete(Database::getConnection(), $email);
-                        Authentication::logout();
-                        header("Location: account.php");
-                        print('<meta http-equiv="refresh" content="0;account.php">
-                               <script type="text/javascript">
-                                   window.location = "account.php";
-                               </script>');
-                        break;
+
+                // Als de CSRF token goed is
+                if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+
+                    switch (strval($_POST["action"])) {
+                        // Verwijder account
+                        case "delete":
+                            Account::delete(Database::getConnection(), $email);
+                            Authentication::logout();
+                            header("Location: account.php");
+                            print('<meta http-equiv="refresh" content="0;account.php">
+                                  <script type="text/javascript">
+                                      window.location = "account.php";
+                                  </script>');
+                            break;
+                    }
                 }
             }
 
@@ -265,8 +275,9 @@
 
 
 <div class="footer-container">
+
     <?php
-    include("tpl/footer_template.php");
+        include("tpl/footer_template.php");
     ?>
 
 </div>
