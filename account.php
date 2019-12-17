@@ -163,7 +163,7 @@
 
                                         <span class="account-form-field-title"
                                               style="color: <?php print(VENDOR_THEME_COLOR_TEXT_DISABLED); ?>">
-                                            <?php print($veld->getNaam()); ?>
+                                            <?php print(str_replace("_", " ", $veld->getNaam())); ?>
                                         </span>
 
                                         <input name="<?php print($veld->getNaam()); ?>"
@@ -233,11 +233,23 @@
                            value="<?php print($csrf_token);?>"
                     />
 
-                    <input type="submit"
-                           value="Verwijder account"
-                           class="btn btn-danger w-100"
-                    />
+                    <div class="row">
 
+                        <!-- Opvuller -->
+                        <div class="col-9">
+
+                        </div>
+
+                        <div class="col-3">
+
+                            <input type="submit"
+                                   value="Verwijder account"
+                                   class="btn btn-danger w-100"
+                            />
+
+                        </div>
+
+                    </div>
                 </form>
 
             </div>
