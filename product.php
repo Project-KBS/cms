@@ -261,7 +261,8 @@
                                                    min="1"
                                                    value="<?php print("1"); ?>"
                                                    class="form-control"
-                                                   style="margin: 0 !important;">
+                                                   style="margin: 0 !important;"
+                                            />
 
                                         </div>
 
@@ -269,10 +270,16 @@
 
                                             <input type="submit"
                                                    value="Toevoegen aan winkelwagen"
-                                                   class="btn btn-primary bootstrap-btn">
+                                                   class="btn btn-primary bootstrap-btn"
+                                            />
                                         </div>
 
                                     </div>
+
+                                    <input type="hidden"
+                                           name="csrf_token"
+                                           value="<?php print($csrf_token);?>"
+                                    />
 
                                 </form>
 
@@ -290,6 +297,7 @@
                                         }
                                     }
                                 </script>
+
                             </div>
 
                             <h3>Productomschrijving</h3>

@@ -90,7 +90,8 @@
                                         <input type="hidden"
                                                name="product:<?php print($StockItemID); ?>"
                                                value="1"
-                                               class="form-control">
+                                               class="form-control"
+                                        />
 
                                         <input type="submit"
                                                class="WinkelwagenKnop btn btn-primary
@@ -108,7 +109,13 @@
                                                          } else {
                                                              print("Toevoegen aan winkelwagentje");
                                                          }
-                                                     ?>">
+                                                     ?>"
+                                        />
+
+                                        <input type="hidden"
+                                               name="csrf_token"
+                                               value="<?php print($csrf_token);?>"
+                                        />
 
                                     </form>
 

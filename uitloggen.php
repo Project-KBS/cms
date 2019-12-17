@@ -66,16 +66,6 @@
 
                 </div>
 
-                <form method="post" action="index.php">
-
-                    <div id="form-footer">
-
-                        <button type="submit" class="btn btn-primary bootstrap-btn">Log in</button>
-
-                    </div>
-
-                </form>
-
                 <meta http-equiv="refresh" content="0;index.php">
 
                 <script type="text/javascript">

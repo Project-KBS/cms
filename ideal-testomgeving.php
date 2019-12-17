@@ -24,9 +24,22 @@ $postVars = ["Voornaam", "Achternaam", "Straatnaam", "Huisnummer", "Postcode", "
 
 foreach ($postVars as $postVar) {
     if (!isset($_POST[$postVar]) || $_POST[$postVar] == NULL || Form::$postVar($_POST[$postVar]) === false) {
-        header("Location: index.php");
+
+        if (!IS_DEBUGGING_ENABLED) {
+            header("Location: checkout.php");
+        }
+
         die("$postVar is ongeldig!");
     }
+}
+
+if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+
+    if (!IS_DEBUGGING_ENABLED) {
+        header("Location: index.php");
+    }
+
+    die("CSRF token is ongeldig.");
 }
 
 // Verkrijg het ID van de klant (maakt automatisch nieuwe klant aan als dat nodig is)

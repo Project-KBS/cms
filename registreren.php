@@ -72,10 +72,11 @@ include_once("app/field.php");                          // voor field in array
         <!-- Form voor de inputs van gegevens om een account te maken -->
         <form id="register-form" method="post" action="registreren.php">
 
-        <?php
-        foreach ($secties as $naam => $veldenArray) {
+            <?php
 
-    ?>
+                foreach ($secties as $naam => $veldenArray) {
+
+            ?>
 
             <hr style="margin: 1.5rem 0"/>
 
@@ -130,13 +131,17 @@ include_once("app/field.php");                          // voor field in array
                         </div>
 
 
-                    <?php } ?>
+                <?php
+                    }
+                ?>
 
                 </div>
 
         </div>
 
-        <?php } ?>
+            <?php
+                }
+            ?>
 
                 <div class="row">
 
@@ -154,7 +159,10 @@ include_once("app/field.php");                          // voor field in array
                     </div>
                 </div>
 
-
+            <input type="hidden"
+                   name="csrf_token"
+                   value="<?php print($csrf_token);?>"
+            />
 
         </form>
 
@@ -167,6 +175,8 @@ include_once("app/field.php");                          // voor field in array
 
 
     //De insert variabele wordt naar false gezet als een input niet geldig is
+    // Ook als de CSRF token ongeldig is wordt hij op false gezet.
+    //$insert = (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])); --- DOET NOG NIET !!??
     $insert = true;
 
     //loop om elke sectie te checken
@@ -188,7 +198,9 @@ include_once("app/field.php");                          // voor field in array
                 if (isset($_POST[$veld->getNaam()])) {
                     $str = $veld->getNaam();
 
-                    if (Form::$str($_POST[$str]) === false) {
+                    // Roep bijbehorende methode aan in de Form class (security/FormValidation.php)
+                    // Deze func geeft een boolean weer
+                    if (!Form::$str($_POST[$str])) {
                         $insert = false;
                         print("Foute " . $str . "<br>");
                     }
@@ -200,7 +212,7 @@ include_once("app/field.php");                          // voor field in array
 
 
     // Als aan alle checks wordt voldaan zal er een poging worden gedaan om te inserten in de database
-    if ($insert === true) {
+    if ($insert) {
 
         try {
             Account::insert(Database::getConnection(), $_POST["Email"], $_POST["Wachtwoord"], $_POST["Voornaam"], $_POST["Tussenvoegsel"], $_POST["Achternaam"],
@@ -210,7 +222,7 @@ include_once("app/field.php");                          // voor field in array
             header("Location: inloggen.php");
             print("<meta http-equiv='refresh' content='0;inloggen.php'>");
 
-        } catch(PDOException $exception) {
+        } catch (PDOException $exception) {
             // Bij een fout in het proces krijg je ongeldige input terug
             print("Ongeldige input, of er bestaat al een account met dit e-mailadres.");
 

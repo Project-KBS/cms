@@ -70,21 +70,28 @@ class Cart {
     }
 
     /**
-     * Deze functie updatet de aantallen van de producten in $_SESSION naar $_POST
+     * Deze functie updatet de aantallen van de producten in $_SESSION naar $_POST <br /><br />
+     *
+     * Let op: de CSRF token moet geldig zijn en in de sessie zitten.
      *
      * @return void
      */
     public static function update() {
-        foreach ($_POST as $index => $value) {
-            $index_num = intval(str_replace(self::SESSION_PREFIX, "", $index));
-            $value_num = intval($value);
+        // Als de CSRF token geldig is
+        if (isset($_POST["csrf_token"]) && isset($_SESSION["csrf_token"])
+            && hash_equals($_SESSION["csrf_token"], $_POST["csrf_token"])) {
 
-            // Check of ze beide integers integers zijn en groter dan 0
-            if ($index_num > 0) {
-                if ($value_num > 0) {
-                    self::add($index_num, $value_num);
-                } else if ($value_num === -1) {
-                    self::delete($index_num);
+            foreach ($_POST as $index => $value) {
+                $index_num = intval(str_replace(self::SESSION_PREFIX, "", $index));
+                $value_num = intval($value);
+
+                // Check of ze beide integers integers zijn en groter dan 0
+                if ($index_num > 0) {
+                    if ($value_num > 0) {
+                        self::add($index_num, $value_num);
+                    } else if ($value_num === -1) {
+                        self::delete($index_num);
+                    }
                 }
             }
         }

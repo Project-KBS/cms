@@ -45,49 +45,48 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
             <!-- Inhoud van de pagina -->
             <div class="content-container" style="margin-top: 2.75vw;">
             <?php
-            $title=0;
-            $score=0;
-            $description=0;
-            $stmt = Review::readOne(Database::getConnection(), $_GET['id'], Authentication::getEmail());
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
-                $title=$Title;
-                $score=$Score;
-                $description=$Description;
-            }
+                extract((Review::readOne(Database::getConnection(), $_GET['id'], Authentication::getEmail()))->fetch(PDO::FETCH_ASSOC));
             ?>
+
                 <form action="product.php?id=<?php print($_GET["id"]); ?>" id="reviews" method="post">
 
                     <input type="text"
                            name="title"
                            class="reviewInputs"
                            placeholder="Titel van je review"
-                           value="<?php print($title);?>"
+                           value="<?php print($Title);?>"
                     />
                     <br>
 
                     <select name="cijfer" class="reviewInputs">
                         <?php
 
-                        for ($i = 1; $i <= 10; $i++) {
-                            print("<option value='$i' ");
-                            if($i==$score){
-                                print("selected='true'");
+                            for ($i = 1; $i <= 10; $i++) {
+                                printf("<option value='%d' %s>%d</option>", $i, ($i == $Score ? "selected='true'" : ""), $i);
                             }
-                            print(">$i</option>");
-                        }
 
                         ?>
-                    </select><br>
+                    </select>
+
+                    <br>
 
                     <textarea name="reviewInputs"
                               class="reviewInputs"
                               placeholder="Schrijf hier je review"
-                              style="height:20vw;"><?php print($description);?></textarea>
+                              style="height:20vw;">
+
+                        <?php print($Description);?>
+
+                    </textarea>
 
                     <br>
 
                     <input type="hidden" name="edit" value="1">
+
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="<?php print($csrf_token);?>"
+                    />
 
                     <input type="submit"
                            name="verzenden"

@@ -6,7 +6,22 @@
     include_once("app/model/product.php");   // wordt gebruikt voor producten ophalen uit DB
     include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
     include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op te halen
+
+    if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+
+        if (!IS_DEBUGGING_ENABLED) {
+            header("Location: winkelmand.php");
+        }
+
+        die("CSRF token ongeldig.");
+    }
 ?>
+
+<!--
+
+    Deze code ziet er niet uit mannen, kan iemand dit ff opschonen aub. -M
+
+-->
 
 <!doctype html>
 <html lang="en">
@@ -118,12 +133,9 @@
     </div>
     <div class="col-6">
     </div>
-    <form name="form" method="post">
-        <input type="hidden" value="<?php printf("%0.2f",$totalprice); ?>">
         <a href="checkout.php">
             <div type="submit" class="ContinueButton">Afrekenen ></div>
         </a>
-    </form>
 </div>
 <br><br>
 </div>

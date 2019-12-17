@@ -122,14 +122,18 @@
             }
         }
 
-        if (count($changedValues) > 0) {
-            Account::update(Database::getConnection(), $email, $nieuweWachtwoord, $changedValues);
-            header("Location: account.php");
-            print('<meta http-equiv="refresh" content="0;account.php">
-                           <script type="text/javascript">
-                               window.location = "account.php";
-                           </script>');
-            die("Refresh de pagina a.u.b.");
+        if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+
+            if (count($changedValues) > 0) {
+                Account::update(Database::getConnection(), $email, $nieuweWachtwoord, $changedValues);
+                header("Location: account.php");
+                print('<meta http-equiv="refresh" content="0;account.php">
+                       <script type="text/javascript">
+                           window.location = "account.php";
+                       </script>');
+                die("Refresh de pagina a.u.b.");
+            }
+
         }
 
         // Genereer de HTML layout
@@ -207,6 +211,11 @@
 
                     </div>
 
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="<?php print($csrf_token);?>"
+                    />
+
                 </form>
 
             </div>
@@ -277,6 +286,7 @@
                             break;
                     }
                 }
+
             }
 
         ?>

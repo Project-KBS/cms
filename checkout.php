@@ -38,10 +38,9 @@
         </header>
         <div class="content-container-home">
             <div class="contact-info">
-                <!-- Moet nog veilig worden gemaakt, en ik weet op dit moment nog niet waarnaar de action moet.-->
+
                 <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
                     <?php
-                    //Nodig om te checken of het allemaal geset is ???????????, TODO
                     $winkelmandjeSet = false;
                     $inputArray = array(    "Voornaam",
                                             "Tussenvoegsel",
@@ -93,6 +92,7 @@
                                 </div>
 
                             </div>
+
                             <br>
 
                             <?php
@@ -111,6 +111,10 @@
 
                         </div>
 
+                        <input type="hidden"
+                               name="csrf_token"
+                               value="<?php print($csrf_token);?>"
+                        />
 
                         <div class="col-2">
 

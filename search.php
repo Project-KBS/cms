@@ -15,14 +15,16 @@
 
     <head>
         <?php
-        //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
-        include("tpl/head-tag-template.php");
+
+            //Hier include je de head-tag-template, alles wat in de header komt pas je aan in "tpl/head-tag-template.php"
+            include("tpl/head-tag-template.php");
 
         ?>
     </head>
 
     <body>
-        <!-- Onze website werkt niet met Internet Explorer 9 en lager-->
+
+    <!-- Onze website werkt niet met Internet Explorer 9 en lager-->
         <!--[if IE]>
             <div id="warning" class="fixed-top"><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience and security.</p></div>
         <![endif]-->
@@ -38,7 +40,10 @@
             <!-- Inhoud pagina -->
             <div class="content-container-home">
                 <div style="text-align: center">
+
                     <h1>Zoekresultaten</h1>
+
+                    <!-- Geen CSRF protection omdat het alleen maar selector velden zijn. -->
                     <form name="filter" method="get">
                         <fieldset>
                             <p>
@@ -123,62 +128,60 @@
 
             <?php
                 // Check of er een zoekterm is opgegeven in de URL
-                if (1==1) { // <-------- FIXME wie de fuck heeft dit gedaan
+                if (isset($_GET['search'])) {
+                    $zoekterm = trim($_GET['search']);
+                } else {
+                    $zoekterm = "";
+                }
 
-                    if (isset($_GET['search'])) {
-                        $zoekterm = trim($_GET['search']);
-                    } else {
-                        $zoekterm = "";
+                //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
+                //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
+                // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt (zie constants.php)
+                $aantalPerPaginaFilter = DEFAULT_PRODUCT_RETURN_AMOUNT;
+                if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
+                    $aantalPerPaginaFilter = intval($_GET['Hoeveelheid']);
+                }
+                // defaults voor wanneer het filter niet is ingevuld
+                $orderByFilter = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
+
+                //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
+                if (isset($_GET["page"]) && filter_var($_GET["page"], FILTER_VALIDATE_INT) == true) {
+                    $selectedPage = intval($_GET["page"]);
+                } else {
+                    $selectedPage = 1;
+                }
+
+                //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
+                //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
+                $startFrom = ($selectedPage - 1) * $aantalPerPaginaFilter;
+
+                //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
+                if (isset($_GET['Sort'])) {
+                    switch ($_GET['Sort']) {
+                        case "NaamASC";
+                            $orderByFilter = "p.StockItemName ASC";
+                            break;
+                        case "NaamDESC";
+                            $orderByFilter = "p.StockItemName DESC";
+                            break;
+                        case "PrijsASC";
+                            $orderByFilter = "p.RecommendedRetailPrice ASC";
+                            break;
+                        case "PrijsDESC";
+                            $orderByFilter = "p.RecommendedRetailPrice DESC";
+                            break;
                     }
+                }
 
-                    //Kijkt hoeveel de opgegeven hoeveelheid zichtbare producten is en maakt er een variabele van.
-                    //Het variabele $aantal wordt meegenomen waar de zoek() functie wordt toegepast
-                    // Als Hoeveelheid niet geset is of niet een nummer is wordt DEFAULT_PRODUCT_RETURN_AMOUNT gebruikt (zie constants.php)
-                    $aantalPerPaginaFilter = DEFAULT_PRODUCT_RETURN_AMOUNT;
-                    if (isset($_GET['Hoeveelheid']) && filter_var($_GET["Hoeveelheid"], FILTER_VALIDATE_INT) == true) {
-                        $aantalPerPaginaFilter = $_GET['Hoeveelheid'];
-                    }
-                    // defaults voor wanneer het filter niet is ingevuld
-                    $orderByFilter = "p.RecommendedRetailPrice " . DEFAULT_PRODUCT_SORT_ORDER;
+                // Moeten we categorie-specifiek zoeken?
+                if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
+                    $selectedCategory = intval($_GET["Categorie"]);
+                } else {
+                    $selectedCategory = null;
+                }
 
-                    //Checkt welke pagina er geselecteerd is, anders wordt autmoatisch pagina 1 geladen.
-                    if (isset($_GET["page"]) && filter_var($_GET["page"], FILTER_VALIDATE_INT) == true) {
-                        $selectedPage = $_GET["page"];
-                    } else {
-                        $selectedPage = 1;
-                    }
-
-                    //Berekent vanaf welke index de query dingen moet laat zien, stel $start_from is 20, dan gaat hij vanaf index (20-1) 19 dus dingen laten zien.
-                    //Dus als je dan bijv. pagina 2 hebt, en 20 per pagina, wordt $start_from 20,
-                    $startFrom = ($selectedPage - 1) * $aantalPerPaginaFilter;
-
-                    //Deze switch-case zorgt er voor dat de lijst op de juiste volgorde wordt gesorteerd.
-                    if (isset($_GET['Sort'])) {
-                        switch ($_GET['Sort']) {
-                            case "NaamASC";
-                                $orderByFilter = "p.StockItemName ASC";
-                                break;
-                            case "NaamDESC";
-                                $orderByFilter = "p.StockItemName DESC";
-                                break;
-                            case "PrijsASC";
-                                $orderByFilter = "p.RecommendedRetailPrice ASC";
-                                break;
-                            case "PrijsDESC";
-                                $orderByFilter = "p.RecommendedRetailPrice DESC";
-                                break;
-                        }
-                    }
-
-                    // Moeten we categorie-specifiek zoeken?
-                    if (isset($_GET["Categorie"]) && filter_var($_GET["Categorie"], FILTER_VALIDATE_INT) == true) {
-                        $selectedCategory = $_GET["Categorie"];
-                    } else {
-                        $selectedCategory = null;
-                    }
-
-                    // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
-                    $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
+                // Alle SQL magie en PDO connectie shit gebeurt in `Product::zoek()` dus in deze file hebben we geen queries meer nodig. We kunnen direct lezen van de statement zoals hieronder:
+                $stmt = (Product::zoek(Database::getConnection(), $zoekterm, $selectedCategory, $orderByFilter, $startFrom, $aantalPerPaginaFilter));
 
             ?>
 
@@ -209,7 +212,8 @@
                                                                         } else {
                                                                             print(MediaPortal::getCategoryImage($StockItemID));
                                                                         }
-                                                                      ?>">
+                                                                      ?>"
+                                         alt="Productfoto">
 
                                 </div>
 
@@ -231,11 +235,18 @@
                                         <input type="hidden"
                                                name="product:<?php print($StockItemID); ?>"
                                                value="1"
-                                               class="form-control">
+                                               class="form-control"
+                                        />
 
                                         <input type="submit"
                                                class="WinkelwagenKnop btn btn-primary bootstrap-btn"
-                                               value="Toevoegen aan winkelmandje">
+                                               value="Toevoegen aan winkelmandje"
+                                        />
+
+                                        <input type="hidden"
+                                               name="csrf_token"
+                                               value="<?php print($csrf_token);?>"
+                                        />
 
                                     </form>
 
@@ -274,13 +285,6 @@
                     ?>
 
                 </div>
-
-                <?php
-
-                } else {
-                    print("Geen zoekterm opgegeven");
-                }
-                ?>
 
             </div>
 

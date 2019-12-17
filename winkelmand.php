@@ -43,7 +43,18 @@
     ?>
 
     <form id="update-aantal" style="display: none" method="POST" action="winkelmand.php">
-        <input id="update-aantal-input" type="hidden" name="" value="-1">
+
+        <input type="hidden"
+               name="csrf_token"
+               value="<?php print($csrf_token);?>"
+        />
+
+        <input id="update-aantal-input"
+               type="hidden"
+               name=""
+               value="-1"
+        />
+
     </form>
 
     <!-- Hierin  -->
@@ -316,6 +327,11 @@
 
             </div>
 
+                <input type="hidden"
+                       name="csrf_token"
+                       value="<?php print($csrf_token);?>"
+                />
+
             </form>
 
         </div>
@@ -323,9 +339,12 @@
     </div>
 
     <div class="footer-container">
+
         <?php
+
             // Dit is de footer
             include("tpl/footer_template.php");
+
         ?>
     </div>
 

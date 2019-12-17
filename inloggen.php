@@ -31,7 +31,10 @@
             if (isset($_POST["emailadres"]) && $_POST["emailadres"] != null &&
                 isset($_POST["wachtwoord"]) && $_POST["wachtwoord"] != null) {
 
-                $result = Authentication::login(Database::getConnection(), $_POST["emailadres"], $_POST["wachtwoord"]);
+                // Check of de CSRF-protection token geldig is
+                if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
+                    $result = Authentication::login(Database::getConnection(), $_POST["emailadres"], $_POST["wachtwoord"]);
+                }
             }
 
             if (Authentication::isLoggedIn()) {
@@ -78,6 +81,7 @@
 
                 </div>
 
+                <!-- CSRF-protection omdat een aanvaller anders met een malicious account kan inloggen. -->
                 <form id="form-main" method="post">
 
                     <?php
@@ -121,11 +125,13 @@
                                    placeholder="Voer hier uw e-mailadres in..."
 
                                     <?php
+
                                         if (isset($_POST["emailadres"]) && $_POST["emailadres"] != null) {
                                             printf('value="%s"', $_POST["emailadres"]);
                                         }
+
                                     ?>
-                            >
+                            />
 
                         </div>
 
@@ -155,7 +161,7 @@
                                    name="wachtwoord"
                                    class="form-control form-control-lg"
                                    placeholder="Voer hier uw wachtwoord in..."
-                            >
+                            />
 
                         </div>
 
@@ -165,9 +171,18 @@
 
                     </div>
 
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="<?php print($csrf_token);?>"
+                    />
+
                     <div id="form-footer">
 
-                        <button type="submit" class="btn btn-primary bootstrap-btn">Log in</button>
+                        <button type="submit"
+                                class="btn btn-primary bootstrap-btn">
+
+                            Log in
+                        </button>
 
                     </div>
 
