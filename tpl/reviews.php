@@ -101,7 +101,9 @@
             <hr>
             <h3>Reviews lezen</h3>
 
+
             <?php
+
 
             //maak een counter om aan te geven hoeveel reviews er zijn
             $reviewCount = 0;
@@ -136,7 +138,7 @@
                                 ?>
                                     <div class="row">
 
-                                        <div class="col-8">
+                                        <div class="col-4">
 
                                         </div>
 
@@ -146,6 +148,19 @@
                                                 Bewerken
                                             </a>
 
+                                        </div>
+                                        <div class="col-4">
+                                            <form id="delete-review" method="POST">
+                                                <input type="submit" class="delete-review" name="delete-review" value="Verwijderen">
+                                            </form>
+                                            <?php
+                                            //Als je op de verwijder knop drukt, voert hij de delete functie uit
+                                            if(isset($_POST['delete-review'])){
+
+                                                Review::delete(Database::getConnection(), $_GET['id'], Authentication::getEmail());
+                                            }
+
+                                            ?>
                                         </div>
 
                                     </div>

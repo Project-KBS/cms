@@ -78,4 +78,25 @@ class Review {
 
         return($stmt);
     }
+
+    public static function delete($database, $StockItemID, $Email){
+
+        $query =   "DELETE
+                    FROM review 
+                    WHERE StockItemID = :StockItemID AND Email = :email";
+
+        $stmt = $database->prepare($query);
+
+        //We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt = $database->prepare($query);
+
+        //We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":StockItemID", $StockItemID, PDO::PARAM_INT);
+        $stmt->bindValue(":email",       $Email,       PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return($stmt);
+    }
 }
+
