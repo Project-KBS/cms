@@ -185,10 +185,13 @@ include_once("app/field.php");                          // voor field in array
                 //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
                 //Bij huisnummer wordt een controle gedaan of het een integer is
                 // Lokale var moet aangemaakt worden anders verkloot PHP het.
-                $str = $veld->getNaam();
-                if (Form::$str($_POST[$str]) === false) {
-                    $insert = false;
-                    print("Foute " . $str . "<br>");
+                if (isset($_POST[$veld->getNaam()])) {
+                    $str = $veld->getNaam();
+
+                    if (Form::$str($_POST[$str]) === false) {
+                        $insert = false;
+                        print("Foute " . $str . "<br>");
+                    }
                 }
             }
         }
