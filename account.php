@@ -66,8 +66,14 @@
         $stmt = Account::get(Database::getConnection(), $email);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        // Het account is verwijderd maar de sessie is nog niet geupdatet (dit komt bijna nooit voor)
         if (!$row) {
             Authentication::logout();
+            header("Location: index.php");
+            print('<meta http-equiv="refresh" content="0;index.php">
+                               <script type="text/javascript">
+                                   window.location = "index.php";
+                               </script>');
             die("Ongecontroleerde fout opgetreden.");
         }
         extract($row);
