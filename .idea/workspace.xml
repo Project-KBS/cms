@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/head-tag-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/head-tag-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-review.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-review.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +44,10 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;j" />
-        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -190,13 +189,6 @@
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
       <workItem from="1576576157454" duration="5129000" />
-    </task>
-    <task id="LOCAL-00111" summary="confirm-order pagina semi gefixt, nog wel wat te doen">
-      <created>1575477470148</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1575477470149</updated>
     </task>
     <task id="LOCAL-00112" summary="checkout.php heeft nog wat beveiligings dingen nodig volgens Matthijs, maar volgens mij is het priem">
       <created>1575478552706</created>
@@ -534,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576581224447</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="reviews aanpassen pagina voor debug">
+      <created>1576584671254</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1576584671254</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="reviews in een apart bestand gezet en ge-include" />
     <MESSAGE value="Registreren foutmelding corrigeren" />
     <MESSAGE value="Correcte syntax in account update" />
     <MESSAGE value="Fix registeren query en redirect gebruiker" />
@@ -581,7 +579,8 @@
     <MESSAGE value="Wachtwoord wijzigen op accountpagina werkt" />
     <MESSAGE value="Delete rechten op WideWorldImporters.Account + meer docs" />
     <MESSAGE value="Account verwijderen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Account verwijderen" />
+    <MESSAGE value="reviews aanpassen pagina voor debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviews aanpassen pagina voor debug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
