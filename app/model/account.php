@@ -127,12 +127,20 @@ class Account {
         extract($changedValues);
 
         $first = true;
+        if ($hashResult != null) {
+            foreach (["PasswordHashResult", "PasswordHashMethod"] as $propertyName) {
+                $queryPropertyString .= sprintf("%sA.%s = :%s", $first ? "" : ",", $propertyName, "prepared$propertyName");
+                $first = false;
+            }
+        }
+
         foreach ($properties as $propertyName => $propertyVar) {
             if (isset(${$propertyVar}) && ${$propertyVar} != null) {
                 $queryPropertyString .= sprintf("%sA.%s = :%s", $first ? "" : ",", $propertyName, "prepared$propertyName");
                 $first = false;
             }
         }
+
 
         // Aangezien $queryPropertyString alleen maar wordt opgebouwd van
         // predefined property names kan er hier geen sql injection plaatsvinden.
@@ -141,12 +149,20 @@ class Account {
                         " . $queryPropertyString . "
                     WHERE
                         Email = :email";
+        printf("\nQUERY: \n%s\n\n", $query);
 
         $stmt = $database->prepare($query);
 
         foreach ($properties as $propertyName => $propertyVar) {
             if (isset(${$propertyVar}) && ${$propertyVar} != null) {
                 $stmt->bindValue(":prepared$propertyName", "${$propertyVar}", PDO::PARAM_STR);
+            }
+        }
+
+        if ($hashResult != null) {
+            foreach (["PasswordHashResult" => $hashResult->getHash(), "PasswordHashMethod" => $hashResult->getMethod()] as $propertyName => $propertyValue) {
+                $stmt->bindValue(":prepared$propertyName", $propertyValue, PDO::PARAM_STR);
+                $first = false;
             }
         }
 

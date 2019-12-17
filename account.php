@@ -73,14 +73,15 @@
 
         if (IS_DEBUGGING_ENABLED) {
             print_r($row);
+            print("<br><br>");
         }
 
         /**
          * @var array string => Field[]
          */
         $secties = array(
-            "Authenticatie" => [new Field("Huidige wachtwoord", "password", "",               null,               true),
-                                new Field("Nieuwe wachtwoord",  "password", "",               null,               true)],
+            "Authenticatie" => [new Field("Huidige_wachtwoord", "password", "",               null,               true),
+                                new Field("Nieuwe_wachtwoord",  "password", "",               null,               true)],
             "Naam"          => [new Field("Voornaam",           "text",     "firstName",      $FirstName,         true),
                                 new Field("Tussenvoegsel",      "text",     "middleName",     $MiddleName,        false),
                                 new Field("Achternaam",         "text",     "lastName",       $LastName,          true)],
@@ -96,7 +97,7 @@
         // Check en update de values als ze gepost zijn.
         foreach ($secties as $naam => $veldenArray) {
             foreach ($veldenArray as $veld) {
-                if (isset($_POST[$veld->getNaam()]) && $_POST[$veld->getNaam()] != null) {
+                if (isset($_POST[$veld->getNaam()]) && $_POST[$veld->getNaam()] != null && strlen($veld->getId()) > 0) {
                     $changedValues[$veld->getId()] = $_POST[$veld->getNaam()];
                 }
             }
@@ -106,8 +107,16 @@
             var_dump($changedValues);
         }
 
+        $nieuweWachtwoord = null;
+        if (isset($_POST["Huidige_wachtwoord"]) && isset($_POST["Nieuwe_wachtwoord"])) {
+            if (Authentication::login(Database::getConnection(), $email, strval($_POST["Huidige_wachtwoord"]))) {
+                $nieuweWachtwoord = strval($_POST["Nieuwe_wachtwoord"]);
+                $changedValues["new_pass"] = true;
+            }
+        }
+
         if (count($changedValues) > 0) {
-            Account::update(Database::getConnection(), $email, null /* TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1*/, $changedValues);
+            Account::update(Database::getConnection(), $email, $nieuweWachtwoord, $changedValues);
             header("Location: account.php");
             print('<meta http-equiv="refresh" content="0;account.php">
                            <script type="text/javascript">
