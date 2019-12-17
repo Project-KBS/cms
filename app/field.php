@@ -97,6 +97,12 @@ class Register
      */
     public $naam;
 
+
+    /**
+     * @var string
+     */
+    public $type;
+
     /**
      * @var bool
      */
@@ -105,14 +111,26 @@ class Register
     /**
      * Field constructor.
      *
-     * @param $naam
-     * @param $required
+     * @param string $naam
+     * @param string $type
+     * @param bool $required
      */
-    public function __construct(string $naam, bool $required)
+    public function __construct(string $naam, string $type, bool $required)
     {
         $this->naam = $naam;
+        $this->type = $type;
         $this->required = $required;
+
     }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
 
     /**
      * @return string

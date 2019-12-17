@@ -34,6 +34,10 @@ include_once("app/cart.php");
     // Start de sessie als hij nog niet gestart is
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
+        if (empty($_SESSION['token'])) {
+            $_SESSION['token'] = bin2hex(random_bytes(32));
+        }
+        $token = $_SESSION['token'];
     }
 
     Cart::update();

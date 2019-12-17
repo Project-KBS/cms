@@ -11,11 +11,10 @@ class Form
             return false;
 
         }
-
-        if (strpos($input, "") <= 0) {
-
+        // controleert of de email wel een @ en . heeft
+        if(filter_var("$input", FILTER_VALIDATE_EMAIL) === false ){
+            return false;
         }
-
 
         return true;
     }
@@ -41,7 +40,7 @@ class Form
 
     public static function Tussenvoegsel($input){
         $input = trim($input);
-        if(strlen($input) > 30 || strlen($input)<1){
+        if(strlen($input) > 30 ){
             return false;
 
         }
@@ -79,7 +78,7 @@ class Form
 
     public static function Toevoeging($input){
         $input = trim($input);
-        if(strlen($input) > 45 || strlen($input)<1){
+        if(strlen($input) > 45 ){
             return false;
 
         }
@@ -91,12 +90,14 @@ class Form
         $input = str_replace(" ","", $input);
         if(strlen($input) === 6){
 
+            //Controleert of de eerste 4 waarden cijfers zijn
             for($i=0; $i <= 3; $i++){
                 if(!is_numeric($input[$i])){
                     return false;
                 }
             }
 
+            // controleert of de laatste 2 waarden in het alfabet voorkomen
             for($i=4; $i<=5; $i++){
                 if(!ctype_alpha($input[$i]."")){
                     return false;

@@ -46,25 +46,22 @@ include_once("app/field.php");                          // voor field in array
 <div class="content-container-narrow">
     <!-- Inhoud pagina -->
 
-
-
-
     <?php
 
-    //array maken voor de loop om input velden met text te maken
+    //array maken voor de loop om naam, type en een boolean voor required mee te geven
     $secties = array(
-        "Inloggegevens" => [new Register("Email",          true),
-                            new Register("Wachtwoord",     true)],
+        "Inloggegevens" => [new Register("Email",           "email",        true),
+                            new Register("Wachtwoord",      "password",     true)],
 
-        "Naam"          => [new Register("Voornaam",       true),
-                            new Register("Tussenvoegsel",   false),
-                            new Register ("Achternaam",     true)],
+        "Naam"          => [new Register("Voornaam",        "text",         true),
+                            new Register("Tussenvoegsel",   "text",         false),
+                            new Register ("Achternaam",     "text",         true)],
 
-        "Adres"         =>[ new Register("Straatnaam",     true),
-                            new Register("Huisnummer",     true),
-                            new Register("Toevoeging",     false),
-                            new Register("Postcode",       true),
-                            new Register("Woonplaats",     true)]
+        "Adres"         =>[ new Register("Straatnaam",      "text",         true),
+                            new Register("Huisnummer",      "text",         true),
+                            new Register("Toevoeging",      "text",         false),
+                            new Register("Postcode",        "text",         true),
+                            new Register("Woonplaats",      "text",         true)]
     );
 
 
@@ -80,15 +77,15 @@ include_once("app/field.php");                          // voor field in array
 
     ?>
 
+            <hr style="margin: 1.5rem 0"/>
 
-        <hr style="margin: 1.5rem 0"/>
+            <div>
 
-        <div>
-
-            <h4 class="account-form-title"
-                style="margin-bottom: 1.0rem">
-                <?php print($naam); ?>
-            </h4>
+                <!-- De titels van tussenkopjes-->
+                <h4 class="account-form-title"
+                    style="margin-bottom: 1.0rem">
+                    <?php print($naam); ?>
+                </h4>
 
 
 
@@ -96,6 +93,7 @@ include_once("app/field.php");                          // voor field in array
 
                     <?php
 
+                    // voor elk veld wordt een input gemaakt en de naam geprint
                     foreach ($veldenArray as $veld) {
                         ?>
 
@@ -108,15 +106,18 @@ include_once("app/field.php");                          // voor field in array
                                             <?php print($veld->getNaam()); ?>
                                         </span>
 
+                                <!-- Past de input type aan naar de waarde aangegeven in de array $secties-->
                                 <input name="<?php print($veld->getNaam()); ?>"
-                                       type="text"
+                                       type="<?php print($veld->getType()); ?>"
                                        class="account-form-field-input form-control w-100"
                                     <?php
 
+                                    // Bij een foute submit wordt de waarde die in de velden stond opnieuw geprint zodat niet alles opnieuw getypt moet worden
                                     if(isset($_POST[$veld->getNaam()])){
                                         printf('value="%s"', $_POST[$veld->getNaam()]);
                                     }
 
+                                    // In de array $secties staan booleans die hier worden gebruikt voor een true of false bij required veld
                                     if ($veld->isRequired()) {
                                         print("required");
                                     }
@@ -144,6 +145,7 @@ include_once("app/field.php");                          // voor field in array
 
                     </div>
 
+                    <!-- Submit knop -->
                     <div class="col-3">
                         <input type="submit"
                                value="Registreer"
@@ -167,34 +169,32 @@ include_once("app/field.php");                          // voor field in array
     //De insert variabele wordt naar false gezet als een input niet geldig is
     $insert = true;
 
-
-
+    //loop om elke sectie te checken
     foreach ($secties as $naam => $veldArray) {
 
+        //loop om een controle te voeren over alle ingevulde velden
+        foreach($veldArray as $veld) {
 
-
-        foreach($veldArray as $veld){
-
-            // De $value uit form wordt opgeslagen als true of false om de required fields bij te houden
-            if ($veld->isRequired()){
-
-                // Als een waarde niet is ingevuld zal de insert een false geven
-                if (!isset($_POST[$veld->getNaam()])) {
+            // uit de array $secties worden de booleans opgevraagd om te kijken of de velden verplicht waren
+            // indien verplicht wordt gecontroleerd of deze is ingevuld
+            // Als een waarde niet is ingevuld zal de insert een false geven
+            if (!isset($_POST[$veld->getNaam()]) && $veld->isRequired()) {
+                $insert = false;
+            } else {
+                //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
+                //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
+                //Bij huisnummer wordt een controle gedaan of het een integer is
+                // Lokale var moet aangemaakt worden anders verkloot PHP het.
+                $str = $veld->getNaam();
+                if (Form::$str($_POST[$str]) === false) {
                     $insert = false;
-                } else {
-                    //Controleert voor elke waarde of ze voldoen aan de eisen van de grootte
-                    //Bij postcode wordt er controle gedaan of er 4 integers staan en daarna 2 alfabetische waarden
-                    //Bij huisnummer wordt een controle gedaan of het een integer is
-                    // Lokale var moet aangemaakt worden anders verkloot PHP het.
-                    $str = $veld->getNaam();
-                    if (Form::$str($_POST[$str]) === false) {
-                        $insert = false;
-                        print("Foute ". $str . "<br>");
-                    }
+                    print("Foute " . $str . "<br>");
                 }
             }
         }
     }
+
+
 
     // Als aan alle checks wordt voldaan zal er een poging worden gedaan om te inserten in de database
     if ($insert === true) {
