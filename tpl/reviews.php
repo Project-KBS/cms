@@ -1,9 +1,9 @@
 <?php
-
+    $email = Authentication::getEmail();
     if (isset($_GET["id"])) {
 
         if (isset($_POST['title'], $_POST["cijfer"], $_POST['reviewInputs'])) {
-            $email = "ronaldbijsma@gmail.com";
+
             $title = $_POST['title'];
             $cijfer = $_POST['cijfer'];
             $reviewInputs = $_POST['reviewInputs'];
@@ -79,16 +79,16 @@
 
             <?php
 
-            //maak een switch om de eerste review te veranderen
-            $weergaveswitch = 0;
+            //maak een counter om aan te geven hoeveel reviews er zijn
+            $reviewCount =0;
 
             $stmt = Review::read(Database::getConnection(), $_GET['id']);
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $reviewCount++;
                 extract($row);
                 //opmaak hard nodig!!
-                if ($weergaveswitch === 0) {
-                    $weergaveswitch = 1;
+                if ($reviewCount<3) {
 
                     ?>
                     <div>
@@ -98,10 +98,24 @@
                         <p><?php print($Description); ?></p><br>
 
                         <h5><?php print($UpdatedWhen); ?></h5><br>
+                        <?php
+                        if($email===$Email){
+                            ?>
+                            <div class="row">
+                                <div class="col-8"></div>
+                                <div class="col-4">
+                                    <!-- bewerken moet nog gebeuren -->
+                                    <button type="button" href="/edit-review.php">Bewerken</button>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <hr>
                     </div>
                     <?php
                 } else {
+
                     ?>
                     <div id="weergave">
                         <h3><?php print($Title); ?></h3><br>
@@ -110,27 +124,46 @@
                         <p><?php print($Description); ?></p><br>
 
                         <h5><?php print($UpdatedWhen); ?></h5><br>
+                        <?php
+                        if($email===$Email){
+                            ?>
+                            <div class="row">
+                                <div class="col-8"></div>
+                                <div class="col-4">
+                                    <!-- bewerken moet nog gebeuren -->
+                                    <button type="button" href="/edit-review.php">Bewerken</button>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <hr>
                     </div>
                     <?php
                 }
             }
             ?>
-            <script>
-                function WeergaveSwitch() {
-                    var x = document.getElementById("weergave");
-                    if (x.style.display === "none") {
-                        x.style.display = "block";
-                        document.getElementById("weergaveknop").innerHTML = "Minder weergeven";
-                    } else {
-                        x.style.display = "none";
-                        document.getElementById("weergaveknop").innerHTML = "Alles weergeven";
+            <?php
+            if($reviewCount>2){
+                ?>
+                <script>
+                    function WeergaveSwitch() {
+                        var x = document.getElementById("weergave");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            document.getElementById("weergaveknop").innerHTML = "Minder weergeven";
+                        } else {
+                            x.style.display = "none";
+                            document.getElementById("weergaveknop").innerHTML = "Alle <?php print($reviewCount);?> reviews weergeven";
+                        }
                     }
-                }
 
-                WeergaveSwitch()
-            </script>
-            <button id="weergaveknop" onclick="WeergaveSwitch()">Alles weergeven</button>
+                    WeergaveSwitch()
+                </script>
+                <button id="weergaveknop" onclick="WeergaveSwitch()">Alle <?php print($reviewCount);?> reviews weergeven</button>
+                <?php
+            }
+            ?>
         </div>
 
         <?php
