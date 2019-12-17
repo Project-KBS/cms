@@ -172,4 +172,29 @@ class Account {
 
     }
 
+    /**
+     * Verkrijg alle data van een account.
+     *
+     * @param PDO    $database
+     * @param string $email
+     * @return PDOStatement
+     */
+    public static function delete(PDO $database, string $email) : void {
+
+        $query = "DELETE FROM
+                      Account
+                  WHERE
+                      Email = :email";
+
+
+        $stmt = $database->prepare($query);
+
+
+        // We voegen de variabelen niet direct in de SQL query, maar binden ze later, dit doen we om SQL injection te voorkomen
+        $stmt->bindValue(":email",         $email,        PDO::PARAM_STR);
+
+
+        $stmt->execute();
+    }
+
 }

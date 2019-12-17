@@ -67,6 +67,7 @@
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$row) {
+            Authentication::logout();
             die("Ongecontroleerde fout opgetreden.");
         }
         extract($row);
@@ -210,39 +211,49 @@
 
         ?>
 
-    </div>
+        <div id="account-actions">
 
-    <?php
+            <div id="account-actions-delete" style="margin: 1.4rem 0">
 
-    if(isset($_POST["Wachtwoord"])){
-        $insert = true;
+                <form action="" method="post">
 
+                    <input type="hidden"
+                           name="action"
+                           value="delete"
+                    />
 
+                    <input type="submit"
+                           value="Verwijder account"
+                           class="btn btn-danger w-100"
+                    />
 
-        if($_POST["Wachtwoord"] === "Huidige wachtwoord die nog moet opvragen uit database"){
+                </form>
 
-            if ($insert === true) {
+            </div>
 
-                try{
-                    //Account::update(Database::getConnection(), ;
+        </div>
+
+        <?php
+
+            // Als de gebruiker op een actieknop heeft gedrukt (TODO CSRF)
+            if (isset($_POST["action"]) && strlen(strval($_POST["action"])) > 0) {
+                switch (strval($_POST["action"])) {
+                    // Verwijder account
+                    case "delete":
+                        Account::delete(Database::getConnection(), $email);
+                        Authentication::logout();
+                        header("Location: account.php");
+                        print('<meta http-equiv="refresh" content="0;account.php">
+                               <script type="text/javascript">
+                                   window.location = "account.php";
+                               </script>');
+                        break;
                 }
-
-                catch(PDOException $exception) {
-                    // Bij een fout in het proces krijg je ongeldige input terug
-                    print("Ongeldige input");
-
-                }
-
-
-
             }
-        } else{
-            print("Verkeerd wachtwoord");
-        }
-    }
 
+        ?>
 
-    ?>
+    </div>
 
 </div>
 
