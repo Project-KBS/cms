@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,14 +189,7 @@
       <workItem from="1576229448969" duration="7001000" />
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
-      <workItem from="1576576157454" duration="2514000" />
-    </task>
-    <task id="LOCAL-00108" summary="ideal totaalprijs gefixt">
-      <created>1575467120738</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1575467120738</updated>
+      <workItem from="1576576157454" duration="3459000" />
     </task>
     <task id="LOCAL-00109" summary="404 pagina start nu ook een session">
       <created>1575469130385</created>
@@ -535,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576576197370</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="Wachtwoord wijzigen op accountpagina werkt">
+      <created>1576578684284</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1576578684285</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +556,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="review schrijven zit nu achter een JS knop" />
     <MESSAGE value="Functions voor form security" />
     <MESSAGE value="willen we meer of minder reviews? MINDER!!! MINDER!!!" />
     <MESSAGE value="reviews in een apart bestand gezet en ge-include" />
@@ -582,17 +580,18 @@
     <MESSAGE value="RIP mijn reputatie" />
     <MESSAGE value="Search endpoint voor Product API" />
     <MESSAGE value="Input veld type in accounts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input veld type in accounts" />
+    <MESSAGE value="Wachtwoord wijzigen op accountpagina werkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wachtwoord wijzigen op accountpagina werkt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1000@0.27.1920.1000" timestamp="1576502379914" />
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576576197093">
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2" timestamp="1576578684164">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576576197093" />
+    <state x="423" y="108" width="1010" height="807" key="CommitChangelistDialog2/0.27.1920.1000@0.27.1920.1000" timestamp="1576578684164" />
     <state x="182" y="97" width="1536" height="830" key="DiffContextDialog" timestamp="1576489985429">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
@@ -601,10 +600,10 @@
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
     <state x="813" y="225" width="284" height="574" key="RollbackChangesDialog/0.27.1920.1000@0.27.1920.1000" timestamp="1576489986887" />
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576576207666">
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1576578685672">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
-    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576576207666" />
+    <state x="555" y="248" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.1000@0.27.1920.1000" timestamp="1576578685672" />
     <state x="605" y="248" width="709" height="528" key="find.popup" timestamp="1576503857572">
       <screen x="0" y="27" width="1920" height="1000" />
     </state>
