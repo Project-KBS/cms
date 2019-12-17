@@ -133,13 +133,45 @@ include_once "../app/vendor.php";
 form{
     background-color: white;
 }
+
 #search {
     width: 25vw;
-    padding: 0.7rem 1.6rem;
-    padding-right: 0px;
+    padding: 0.7rem 0 0.7rem 1.6rem;
     border: none;
     outline: none;
 }
+
+#search-results {
+    /*border: 0 solid <?php print(VENDOR_THEME_COLOR_TEXT_HIDDEN); ?>;
+    border-top-width: 1px;*/
+    padding: 0.75rem 1.5rem !important;
+    display: flex;
+    position: absolute;
+    height: auto !important;
+    overflow: auto;
+    z-index: 69;
+    background: lightgray;
+}
+
+#search-results * {
+    color: black;
+}
+
+#search-results:hover,
+#search-results div:hover {
+    background: lightgray !important;
+}
+
+.search-results-entry {
+    margin: 0.15rem 0;
+    height: auto !important;
+}
+
+.search-results-entry p {
+    margin: 0;
+    padding: 0;
+}
+
 #knop{
 
     width: 6vw;
@@ -222,7 +254,6 @@ form{
     margin-left: auto;
     margin-right: auto;
 }
-
 
 /* Hier begint de css van de footer
  */
