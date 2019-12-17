@@ -59,7 +59,7 @@
                                     url: '/api/v1/product/search.php',
                                     data: {
                                         zoekterm: zoekterm,
-                                        limit: 7,
+                                        limit: 5,
                                         short: true
                                     },
                                     dataType: 'json',
@@ -67,9 +67,13 @@
                                         // for-each loop voor alle gereturnde producten
                                         $.each(data, function (index, element) {
                                             // Maak een nieuw flex child aan voor ieder product
-                                            $("<a href='/product.php?id=" + element.id + "'><div class='search-results-entry'>" +
-                                                  "<p>" + element.name + "</p>" +
-                                              "</div></a>").appendTo(jq_search_results);
+                                            $("<a href='/product.php?id=" + element.id + "'>" +
+                                                  "<div class='search-results-entry row'>" +
+                                                      "<div class='col-3'><img src='data:image/png;base64," + element.photo + "'/></div>" +
+                                                      "<div class='col-7'>" + element.name + "</div>" +
+                                                      "<div class='col-2 search-results-entry-price'>€" + element.price_recommended + "</div>" +
+                                                  "</div>" +
+                                              "</a>").appendTo(jq_search_results);
                                         });
                                     }
                                 });
