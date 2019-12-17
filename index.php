@@ -74,6 +74,12 @@
 
                                 </div>
 
+                                <div class="beschikbaar-button w-100">
+                                    <?php if($Tags === '["Limited Stock"]'){ ?>
+                                        <button class="btn btn-danger btn-lg" style="width: 100%">  Beperkt beschikbaar koop nu!</button>
+                                    <?php } ?>
+                                </div>
+
                                 <div class="product-beschrijving">
 
                                     <h4><?php print($StockItemName) ?></h4>

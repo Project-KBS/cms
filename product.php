@@ -229,6 +229,9 @@
 
                         <div id="rechts" class="col-6" style="padding: 0">
 
+
+
+
                             <!-- Print de prijs-->
                             <h2 style="color: <?php echo VENDOR_THEME_COLOR_HIGHLIGHT ?>">
                                 € <?php print(round($RecommendedRetailPrice * (1 + $TaxRate / 100), 2)); ?>
@@ -238,9 +241,18 @@
                                 <?php
 
                                     // print of een product op voorraad is als de voorraad >0 is, anders print deze dat het product in de backorder zit
+                                    // Als een product de tag "Limited Stock" heeft zal een urgentie bericht worden getoond ipv een voorraad
                                     if($QuantityOnHand > 0) {
-                                        print("Op voorraad");
+                                        if($Tags === '["Limited Stock"]'){ ?>
+                                            <button class="btn btn-danger btn-lg" style="margin-top: 10px; margin-bottom: 10px">  Beperkt beschikbaar koop nu!</button>
+                                        <?php }
+                                        else{
+                                            print("Op voorraad");
+                                        }
                                     } else {
+                                        if($Tags === '["Limited Stock"]'){ ?>
+                                            <button class="btn btn-danger btn-lg" style="margin-bottom: 10px">  Dit product is uitverkocht</button>
+                                        <?php }
                                         print("In de backorder");
                                     }
 
