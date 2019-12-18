@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/reviews.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +44,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
-        <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;j" />
         <option value="j" />
@@ -191,13 +189,6 @@
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
       <workItem from="1576576157454" duration="5129000" />
-    </task>
-    <task id="LOCAL-00115" summary="Update confirm message nog een keer">
-      <created>1575544206506</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1575544206506</updated>
     </task>
     <task id="LOCAL-00116" summary="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1.">
       <created>1575546398899</created>
@@ -535,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576589048528</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="opmaak en css van reviews.php">
+      <created>1576681505243</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1576681505244</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Inloggen, uitloggen, en andere authenticatie" />
     <MESSAGE value="Footer wat aangepast met linkjes er bij" />
     <MESSAGE value="Fix include crash in registreren.php" />
     <MESSAGE value="Voeg required attributen toe op inlog form" />
@@ -582,7 +579,8 @@
     <MESSAGE value="Foto en prijs in live search results + shadow" />
     <MESSAGE value="Rename FormValidation + fix column width in live search" />
     <MESSAGE value="Verwijder huidige search results pas direct voordat ze geupdatet worden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verwijder huidige search results pas direct voordat ze geupdatet worden" />
+    <MESSAGE value="opmaak en css van reviews.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="opmaak en css van reviews.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">

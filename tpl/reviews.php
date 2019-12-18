@@ -23,7 +23,7 @@
 
         ?>
 
-        <hr>
+
 
         <div id="review-container">
         <?php
@@ -33,7 +33,7 @@
         if (Authentication::isLoggedIn() === true) {
 
             ?>
-
+            <hr>
             <h3>Schrijf een review</h3>
 
             <input type="button"
