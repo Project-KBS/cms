@@ -11,10 +11,18 @@
                 $cijfer = $_POST['cijfer'];
                 $reviewInputs = $_POST['reviewInputs'];
 
-                if (isset($_POST['edit'])) {
-                    Review::update(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
-                } elseif (isset($_POST['verzenden'])) {
-                    Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+                // TODO error handling hiervoor
+                try {
+                    if (isset($_POST['edit'])) {
+                        Review::update(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+                    } elseif (isset($_POST['verzenden'])) {
+                        Review::insert(Database::getConnection(), $email, $_GET['id'], $title, $reviewInputs, $cijfer);
+                    }
+                } catch (Exception $ignored) {
+                    // Print de error als debugging aan staat
+                    if (IS_DEBUGGING_ENABLED) {
+                        printf("Error: %s", $ignored->getMessage());
+                    }
                 }
             }
 
@@ -26,101 +34,117 @@
 
 
         <div id="review-container">
+
+            <hr>
+            <h3>Schrijf een review</h3>
         <?php
 
         //Als je bent ingelogd dan laat de pagina de optie zien om een review te schrijven.
         //Anders laat hij een tekst zien die zegt dat je ingelogd moet zijn om een review te schrijven
-        if (Authentication::isLoggedIn() === true) {
+        if (Authentication::isLoggedIn()) {
 
-            ?>
-            <hr>
-            <h3>Schrijf een review</h3>
+            if (isset($_GET["id"]) && (Review::readOne(Database::getConnection(), $_GET['id'], Authentication::getEmail()))->rowCount() > 0) {
 
-            <input type="button"
-                   class="btn btn-primary bootstrap-btn"
-                   style="margin: 2rem 0"
-                   onclick="const div_reviews = document.getElementById('reviews');
-                        if (div_reviews.style.display === 'block') {
-                            div_reviews.style.display = 'none';
-                        } else {
-                            div_reviews.style.display = 'block';
-                        }"
-                   value="Wilt u een review schrijven?"
-            />
-            <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks-->
+                ?>
 
-            <form action="product.php?id=<?php print($_GET["id"]); ?>"
-                  id="reviews"
-                  method="post"
-                  style="display:none; width: 100%; padding: 1.7rem; border-radius: 0.4rem; background: <?php print(VENDOR_THEME_COLOR_BACKGROUNDL); ?>;">
-
-                <small id="emailHelp"
-                       class="form-text text-muted form-section-title"
-                       style="color: #292929 !important;">
-
-                    Omschrijf jouw ervaring in een paar woorden:
-                </small>
-
-                <input type="text"
-                       name="title"
-                       class="reviewInputs form-control form-control-lg"
-                       style="width: 100%"
-                       placeholder="Titel van je review"
+                <input type="button"
+                       class="btn btn-warning w-100"
+                       style="margin: 2rem 0"
+                       value="U hebt al een review geschreven voor dit product."
                 />
 
-                <br>
+                <?php
 
-                <small id="emailHelp"
-                       class="form-text text-muted form-section-title"
-                       style="color: #292929 !important;">
+            } else {
 
-                    Hoe zou je het product aanbevelen op de schaal van 1 tot 10?
-                </small>
+                ?>
 
-                <select name="cijfer"
-                        class="reviewInputs form-control form-control-lg"
-                        style="width: 100%">
-                    <?php
-
-                        for ($i = 1; $i <= 10; $i++) {
-                            print("<option value='$i'>$i</option>");
-                        }
-
-                    ?>
-                </select>
-
-                <br>
-
-                <small id="emailHelp"
-                       class="form-text text-muted form-section-title"
-                       style="color: #292929 !important;">
-
-                    Vat je ervaring met het product samen in een kleine tekst:
-                </small>
-
-                <textarea name="reviewInputs"
-                          class="reviewInputs form-control form-control-lg"
-                          placeholder="Schrijf hier je review"
-                          style="height: 15vw"></textarea>
-
-                <br>
-
-                <input type="hidden"
-                       name="csrf_token"
-                       value="<?php print($csrf_token); ?>"
-                />
-
-                <input type="submit"
+                <input type="button"
                        class="btn btn-primary bootstrap-btn"
-                       style="width: 100%"
-                       name="verzenden"
-                       value="Verzenden"
+                       style="margin: 2rem 0"
+                       onclick="const div_reviews = document.getElementById('reviews');
+                                if (div_reviews.style.display === 'block') {
+                                    div_reviews.style.display = 'none';
+                                } else {
+                                    div_reviews.style.display = 'block';
+                                }"
+                       value="Wilt u een review schrijven?"
                 />
+                <!-- Dit is de form om een review te schrijven, het is momenteel nog niet opgemaakt en hij doet nog niks-->
 
-                <br>
-            </form>
+                <form action="product.php?id=<?php print($_GET["id"]); ?>"
+                      id="reviews"
+                      method="post"
+                      style="display:none; width: 100%; padding: 1.7rem; border-radius: 0.4rem; background: <?php print(VENDOR_THEME_COLOR_BACKGROUNDL); ?>;">
 
-            <?php
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Omschrijf jouw ervaring in een paar woorden:
+                    </small>
+
+                    <input type="text"
+                           name="title"
+                           class="reviewInputs form-control form-control-lg"
+                           style="width: 100%"
+                           placeholder="Titel van je review"
+                    />
+
+                    <br>
+
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Hoe zou je het product aanbevelen op de schaal van 1 tot 10?
+                    </small>
+
+                    <select name="cijfer"
+                            class="reviewInputs form-control form-control-lg"
+                            style="width: 100%">
+                        <?php
+
+                            for ($i = 1; $i <= 10; $i++) {
+                                print("<option value='$i'>$i</option>");
+                            }
+
+                        ?>
+                    </select>
+
+                    <br>
+
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Vat je ervaring met het product samen in een kleine tekst:
+                    </small>
+
+                    <textarea name="reviewInputs"
+                              class="reviewInputs form-control form-control-lg"
+                              placeholder="Schrijf hier je review"
+                              style="height: 15vw"></textarea>
+
+                    <br>
+
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="<?php print($csrf_token); ?>"
+                    />
+
+                    <input type="submit"
+                           class="btn btn-primary bootstrap-btn"
+                           style="width: 100%"
+                           name="verzenden"
+                           value="Verzenden"
+                    />
+
+                    <br>
+                </form>
+
+                <?php
+            }
 
             //Sluit tag van het if-statement om te checken of je bent ingelogd.
         }

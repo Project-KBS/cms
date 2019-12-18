@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/forms.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/forms.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.php" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit-review.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inloggen.php" beforeDir="false" afterPath="$PROJECT_DIR$/inloggen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/head-tag-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/head-tag-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/reviews.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +44,10 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Ronald &lt;ronaldbijsma@gmail.com&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;" />
         <option value="JobVulkers &lt;55084678+jobvulkers@users.noreply.github.com&gt;" />
-        <option value="hypothermic &lt;admin@hypothermic.nl&gt;" />
         <option value="Jeroen Stek &lt;s1146515@student.windesheim.nl&gt;j" />
         <option value="j" />
         <option value="JobVulkers &lt;job.vulkers@gmail.com&gt;" />
@@ -194,13 +189,6 @@
       <workItem from="1576330584182" duration="4969000" />
       <workItem from="1576496840508" duration="4159000" />
       <workItem from="1576576157454" duration="5129000" />
-    </task>
-    <task id="LOCAL-00116" summary="Als verwijder dialog gecancelled werd dan ging hij niet terug naar 1.">
-      <created>1575546398899</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1575546398900</updated>
     </task>
     <task id="LOCAL-00117" summary="Hij berekent nu de correcte prijs als iets automatisch wordt verwijderd">
       <created>1575546828422</created>
@@ -538,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576681505244</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Zet reviews en edit-review forms om naar bootstrap">
+      <created>1576696347458</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1576696347459</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Footer wat aangepast met linkjes er bij" />
     <MESSAGE value="Fix include crash in registreren.php" />
     <MESSAGE value="Voeg required attributen toe op inlog form" />
     <MESSAGE value="Extra padding wanneer de navigatiebalk naar fixed position gaat." />
@@ -585,7 +579,8 @@
     <MESSAGE value="Rename FormValidation + fix column width in live search" />
     <MESSAGE value="Verwijder huidige search results pas direct voordat ze geupdatet worden" />
     <MESSAGE value="opmaak en css van reviews.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="opmaak en css van reviews.php" />
+    <MESSAGE value="Zet reviews en edit-review forms om naar bootstrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zet reviews en edit-review forms om naar bootstrap" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">
