@@ -37,6 +37,7 @@
             <h3>Schrijf een review</h3>
 
             <input type="button"
+                   class="write-review"
                    onclick="const div_reviews = document.getElementById('reviews');
                         if (div_reviews.style.display === 'block') {
                             div_reviews.style.display = 'none';
@@ -88,6 +89,7 @@
                 />
 
                 <input type="submit"
+                       class="write-review"
                        name="verzenden"
                        value="verzenden"
                 />
@@ -103,7 +105,7 @@
 
         <hr>
         <h3>Reviews lezen</h3>
-
+        <hr>
 
         <?php
 
@@ -131,12 +133,18 @@
 
                         ?>
                         <div>
-                            <h3><?php print($Title); ?></h3><br>
-                            <h5><?php print($Email); ?></h5><br>
-                            <h5><?php print($Score); ?></h5><br>
-                            <p><?php print($Description); ?></p><br>
+                            <h3><?php print($Title); ?></h3>
+                            <h5>Score: <?php print($Score); ?></h5>
+                            <p><?php print($Description); ?></p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5><?php print($UpdatedWhen); ?></h5>
+                                </div>
+                                <div class="col-6">
+                                    <h5><?php print($Email); ?></h5>
+                                </div>
+                            </div>
 
-                            <h5><?php print($UpdatedWhen); ?></h5>
                             <br>
 
                             <?php
@@ -148,9 +156,9 @@
 
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-4 bewerken-button-div">
 
-                                        <a href="/edit-review.php?id=<?php print($_GET["id"]); ?>">
+                                        <a class="bewerken-button" href="/edit-review.php?id=<?php print($_GET["id"]); ?>">
                                             Bewerken
                                         </a>
 
@@ -212,11 +220,12 @@
                             <form action="" method="post">
                                 <input type="hidden" name="defaultLimit"
                                        value="<?php print($_POST["defaultLimit"] + 5); ?>">
-                                <input type="submit" value="meer weergeven">
+                                <input type="submit" class="meer-weergeven" value="meer weergeven">
                             </form>
                             </div>
                             <?php
                         }
+                        break 1;
                     }
                 }
         //Als er 0 rows kunnen worden opgehaald laat hij het onderstaande zien.
