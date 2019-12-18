@@ -5,7 +5,7 @@
         // Klopt CSRF-protection token?
         if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
 
-            if (isset($_POST['title'], $_POST["cijfer"], $_POST['reviewInputs'])) {
+            if (isset($_POST['title'], $_POST["cijfer"], $_POST['reviewInputs']) && strlen(trim($_POST["title"])) > 0 && strlen(trim($_POST["reviewInputs"])) > 0) {
 
                 $title = $_POST['title'];
                 $cijfer = $_POST['cijfer'];
@@ -19,7 +19,7 @@
             }
 
         }
-        }
+    }
 
         ?>
 
