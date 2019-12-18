@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registreren.php" beforeDir="false" afterPath="$PROJECT_DIR$/registreren.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tpl/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/reviews.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
