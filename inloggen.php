@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- CSRF-protection omdat een aanvaller anders met een malicious account kan inloggen. -->
-                <form id="form-main" method="post">
+                <form id="form-main" class="form-main" method="post">
 
                     <?php
 

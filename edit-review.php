@@ -3,6 +3,7 @@
 include_once("app/authentication.php");  // Accounts en login
 include_once("app/vendor.php");          // wordt gebruikt voor website beschrijving
 include_once("app/database.php");        // wordt gebruikt voor database connectie
+include_once("app/constants.php");        // wordt gebruikt voor database connectie
 include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
 include_once("app/model/categorie.php"); // wordt gebruikt voor categorieen ophalen uit DB
 include_once("app/model/product.php"); // wordt gebruikt om informatie uit de database te halen
@@ -48,17 +49,38 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
                 extract((Review::readOne(Database::getConnection(), $_GET['id'], Authentication::getEmail()))->fetch(PDO::FETCH_ASSOC));
             ?>
 
-                <form action="product.php?id=<?php print($_GET["id"]); ?>" id="reviews" method="post">
+                <h1>Review bewerken</h1>
+
+                <form action="product.php?id=<?php print($_GET["id"]); ?>"
+                      id="reviews"
+                      method="post"
+                      style="width: 100%; padding: 1.7rem; border-radius: 0.4rem; background: <?php print(VENDOR_THEME_COLOR_BACKGROUNDL); ?>;">
+
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Omschrijf jouw ervaring in een paar woorden:
+                    </small>
 
                     <input type="text"
                            name="title"
-                           class="reviewInputs"
+                           class="reviewInputs form-control form-control-lg"
                            placeholder="Titel van je review"
-                           value="<?php print($Title);?>"
+                           value="<?php print(trim(htmlspecialchars($Title))); ?>"
                     />
+
                     <br>
 
-                    <select name="cijfer" class="reviewInputs">
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Hoe zou je het product aanbevelen op de schaal van 1 tot 10?
+                    </small>
+
+                    <select name="cijfer"
+                            class="reviewInputs form-control form-control-lg">
                         <?php
 
                             for ($i = 1; $i <= 10; $i++) {
@@ -70,14 +92,17 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
 
                     <br>
 
+                    <small id="emailHelp"
+                           class="form-text text-muted form-section-title"
+                           style="color: #292929 !important;">
+
+                        Vat je ervaring met het product samen in een kleine tekst:
+                    </small>
+
                     <textarea name="reviewInputs"
-                              class="reviewInputs"
+                              class="reviewInputs form-control form-control-lg"
                               placeholder="Schrijf hier je review"
-                              style="height:20vw;">
-
-                        <?php print($Description);?>
-
-                    </textarea>
+                              style="height: 15vw;"><?php print(htmlspecialchars($Description)); ?></textarea>
 
                     <br>
 
@@ -90,7 +115,9 @@ if (!isset($_GET["id"]) || filter_var($_GET["id"], FILTER_VALIDATE_INT) == false
 
                     <input type="submit"
                            name="verzenden"
-                           value="verzenden">
+                           value="Verzenden"
+                           class="btn btn-primary bootstrap-btn"
+                    />
 
                     <br>
                 </form>

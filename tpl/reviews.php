@@ -37,7 +37,8 @@
             <h3>Schrijf een review</h3>
 
             <input type="button"
-                   class="write-review"
+                   class="btn btn-primary bootstrap-btn"
+                   style="margin: 2rem 0"
                    onclick="const div_reviews = document.getElementById('reviews');
                         if (div_reviews.style.display === 'block') {
                             div_reviews.style.display = 'none';
@@ -51,35 +52,56 @@
             <form action="product.php?id=<?php print($_GET["id"]); ?>"
                   id="reviews"
                   method="post"
-                  style="display:none; width: 50vw%; margin-left: 20%">
+                  style="display:none; width: 100%; padding: 1.7rem; border-radius: 0.4rem; background: <?php print(VENDOR_THEME_COLOR_BACKGROUNDL); ?>;">
+
+                <small id="emailHelp"
+                       class="form-text text-muted form-section-title"
+                       style="color: #292929 !important;">
+
+                    Omschrijf jouw ervaring in een paar woorden:
+                </small>
 
                 <input type="text"
                        name="title"
-                       class="reviewInputs"
+                       class="reviewInputs form-control form-control-lg"
+                       style="width: 100%"
                        placeholder="Titel van je review"
                 />
 
                 <br>
 
+                <small id="emailHelp"
+                       class="form-text text-muted form-section-title"
+                       style="color: #292929 !important;">
+
+                    Hoe zou je het product aanbevelen op de schaal van 1 tot 10?
+                </small>
+
                 <select name="cijfer"
-                        class="reviewInputs">
+                        class="reviewInputs form-control form-control-lg"
+                        style="width: 100%">
                     <?php
 
-                    for ($i = 1; $i <= 10; $i++) {
-                        print("<option value='$i'>$i</option>");
-                    }
+                        for ($i = 1; $i <= 10; $i++) {
+                            print("<option value='$i'>$i</option>");
+                        }
 
                     ?>
                 </select>
 
                 <br>
 
-                <textarea name="reviewInputs"
-                          class="reviewInputs"
-                          placeholder="Schrijf hier je review"
-                          style="height: 20vw;">
+                <small id="emailHelp"
+                       class="form-text text-muted form-section-title"
+                       style="color: #292929 !important;">
 
-                    </textarea>
+                    Vat je ervaring met het product samen in een kleine tekst:
+                </small>
+
+                <textarea name="reviewInputs"
+                          class="reviewInputs form-control form-control-lg"
+                          placeholder="Schrijf hier je review"
+                          style="height: 15vw"></textarea>
 
                 <br>
 
@@ -89,9 +111,10 @@
                 />
 
                 <input type="submit"
-                       class="write-review"
+                       class="btn btn-primary bootstrap-btn"
+                       style="width: 100%"
                        name="verzenden"
-                       value="verzenden"
+                       value="Verzenden"
                 />
 
                 <br>
@@ -133,16 +156,27 @@
 
                         ?>
                         <div>
-                            <h3><?php print($Title); ?></h3>
-                            <h5>Score: <?php print($Score); ?></h5>
-                            <p><?php print($Description); ?></p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5><?php print($UpdatedWhen); ?></h5>
-                                </div>
-                                <div class="col-6">
-                                    <h5><?php print($Email); ?></h5>
-                                </div>
+
+                            <div class="review-entry-view form-main">
+
+                                <h3 class="mt-2">
+                                    "<?php print($Title); ?>"
+                                </h3>
+
+                                <h5 class="text-dark">
+                                    <?php print($Email); ?> beoordeelde dit product met een <?php print($Score); ?>.0
+                                </h5>
+
+                                <hr>
+
+                                <p class="mt-4">
+                                    <?php print($Description); ?>
+                                </p>
+
+                                <p class="mt-4 text-muted">
+                                    Laatst geüpdatet op <?php print($UpdatedWhen); ?>
+                                </p>
+
                             </div>
 
                             <br>
@@ -152,24 +186,24 @@
                                 ?>
                                 <div class="row">
 
-                                    <div class="col-4">
+                                    <div class="col-8">
 
                                     </div>
 
-                                    <div class="col-4 bewerken-button-div">
+                                    <div class="col-2 bewerken-button-div">
 
-                                        <a class="bewerken-button" href="/edit-review.php?id=<?php print($_GET["id"]); ?>">
+                                        <a class="btn btn-primary bootstrap-btn" href="/edit-review.php?id=<?php print($_GET["id"]); ?>">
                                             Bewerken
                                         </a>
 
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-2">
 
-                                        <form id="delete-review" method="POST">
+                                        <form id="delete-review" method="POST" class="w-100">
 
                                             <input type="submit"
-                                                   class="delete-review"
+                                                   class="btn btn-danger w-100"
                                                    name="delete-review"
                                                    value="Verwijderen"
                                             />

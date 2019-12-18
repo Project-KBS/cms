@@ -19,6 +19,7 @@ include_once("app/cart.php");
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css.php">
 <link rel="stylesheet" type="text/css" href="css/header_footer.css.php">
+<link rel="stylesheet" type="text/css" href="css/forms.css.php">
 
 <!-- Alle JavaScript dependencies-->
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
