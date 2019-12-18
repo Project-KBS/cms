@@ -7,6 +7,14 @@
     include_once("app/mediaportal.php");     // wordt gebruikt voor categorie foto's
     include_once("app/cart.php");            // wordt gebruikt om de cart-inhoud op te halen
 
+
+    // IS DIT VEILIG !!!???!?!????
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    $csrf_token = $_SESSION['csrf_token'];
+
+
     if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
 
         if (!IS_DEBUGGING_ENABLED) {
