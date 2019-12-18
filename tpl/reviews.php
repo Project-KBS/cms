@@ -147,12 +147,24 @@
             }
 
             //Sluit tag van het if-statement om te checken of je bent ingelogd.
+        } else {
+
+            ?>
+
+                <input type="button"
+                       class="btn btn-secondary w-100"
+                       style="margin: 2rem 0"
+                       value="Log in om een review te schrijven"
+                       onclick="window.location='inloggen.php';"
+                />
+
+            <?php
+
         }
         ?>
 
         <hr>
         <h3>Reviews lezen</h3>
-        <hr>
 
         <?php
 
