@@ -33,15 +33,6 @@ foreach ($postVars as $postVar) {
     }
 }
 
-if (isset($_POST["csrf_token"]) && hash_equals($csrf_token, $_POST["csrf_token"])) {
-
-    if (!IS_DEBUGGING_ENABLED) {
-        header("Location: index.php");
-    }
-
-    die("CSRF token is ongeldig.");
-}
-
 // Verkrijg het ID van de klant (maakt automatisch nieuwe klant aan als dat nodig is)
 $customerId = Customer::insertCustomer(Database::getConnection(), $_POST['Voornaam'],
                                                                   $_POST['Tussenvoegsel'],
