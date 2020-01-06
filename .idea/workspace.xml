@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d99d59f8-9657-49cf-a873-02579f5c9599" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ideal-testomgeving.php" beforeDir="false" afterPath="$PROJECT_DIR$/ideal-testomgeving.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,13 +191,6 @@
       <workItem from="1576496840508" duration="4159000" />
       <workItem from="1576576157454" duration="5129000" />
       <workItem from="1576750152791" duration="8000" />
-    </task>
-    <task id="LOCAL-00118" summary="Footer margin aangepast">
-      <created>1575547248511</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1575547248511</updated>
     </task>
     <task id="LOCAL-00119" summary="session destroy toegevoegd bij succesvolle betaling">
       <created>1575890597422</created>
@@ -537,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576696957430</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="Revert een paar aanpassingen omdat ze niet werken">
+      <created>1578306079840</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1578306079841</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +557,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Voeg required attributen toe op inlog form" />
     <MESSAGE value="Extra padding wanneer de navigatiebalk naar fixed position gaat." />
     <MESSAGE value="Algemene code cleanup + move template naar tpl map" />
     <MESSAGE value="Gebruik overal Bootstrap knoppen / velden" />
@@ -584,7 +581,8 @@
     <MESSAGE value="opmaak en css van reviews.php" />
     <MESSAGE value="Zet reviews en edit-review forms om naar bootstrap" />
     <MESSAGE value="Fix error wanneer user voor de 2e keer een review schrijft bij hetzelfde product" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix error wanneer user voor de 2e keer een review schrijft bij hetzelfde product" />
+    <MESSAGE value="Revert een paar aanpassingen omdat ze niet werken" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert een paar aanpassingen omdat ze niet werken" />
   </component>
   <component name="WindowStateProjectService">
     <state x="768" y="231" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576502379914">

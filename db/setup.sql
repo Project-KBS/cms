@@ -158,10 +158,10 @@ CREATE TABLE IF NOT EXISTS `wideworldimporters`.`MailSubscriber` (
                                                                      `CustomerID` INT(11) NOT NULL UNIQUE,
                                                                      `IsSubscribed` TINYINT NOT NULL DEFAULT 0,
                                                                      PRIMARY KEY (`id`),
-                                                                     FOREIGN KEY (`Email`)
+                                                                     /*FOREIGN KEY (`Email`)
                                                                          REFERENCES `wideworldimporters`.`Account` (`Email`)
                                                                          ON UPDATE NO ACTION
-                                                                         ON DELETE NO ACTION,
+                                                                         ON DELETE NO ACTION,*/
                                                                      FOREIGN KEY (`CustomerID`)
                                                                          REFERENCES `wideworldimporters`.`Customers` (`CustomerID`)
                                                                          ON UPDATE NO ACTION
