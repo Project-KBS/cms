@@ -42,15 +42,19 @@
                 <form id="contact-info-form" method="post" action="ideal-testomgeving.php">
                     <?php
                     $winkelmandjeSet = false;
-                    $inputArray = array(    "Voornaam",
-                                            "Tussenvoegsel",
-                                            "Achternaam",
-                                            "Straatnaam",
-                                            "Huisnummer",
-                                            "Postcode",
-                                            "Woonplaats",
-                                            "Email"
+                    $inputArray = array(    "FirstName" => "Voornaam",
+                                            "MiddleName" => "Tussenvoegsel",
+                                            "LastName" => "Achternaam",
+                                            "AddressStreet" => "Straatnaam",
+                                            "AddressNumber" => "Huisnummer",
+                                            "AddressPostalCode" => "Postcode",
+                                            "AddressCity" => "Woonplaats",
+                                            "Email" => "Email"
                     );
+
+                    /*if (Authentication::isLoggedIn()) {
+                        extract((Account::get(Database::getConnection(), Authentication::getEmail()))->fetch(PDO::FETCH_ASSOC));
+                    }*/
 
                     foreach (Cart::get() as $item => $aantal) {
                         $winkelmandjeSet = true;
@@ -80,6 +84,9 @@
                                            <?php
                                                if (!IS_DEBUGGING_ENABLED) {
                                                    print("placeholder='$value'");
+                                                   if (isset(${$value})) {
+                                                       print(${$value});
+                                                   }
                                                } else {
                                                    print("value='test@test'");
                                                }

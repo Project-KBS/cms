@@ -29,7 +29,7 @@ class Order {
         $orderId = self::getNextId($database);
 
         // FIXME expected delivery date en IsUndersupplyBackordered
-        $query = "INSERT INTO Orders (OrderID,                                   CustomerID,  ContactPersonID, SalespersonPersonID, OrderDate,      ExpectedDeliveryDate, IsUndersupplyBackordered, LastEditedBy,  LastEditedWhen, Mail)
+        $query = "INSERT INTO Orders (OrderID,                                   CustomerID,  ContactPersonID, SalespersonPersonID, OrderDate,      ExpectedDeliveryDate, IsUndersupplyBackordered, LastEditedBy,  LastEditedWhen)
                   VALUES             (:orderId, :customerId, :contactId,      1,                   CURRENT_DATE(), CURRENT_DATE(),       1,                        :lastEditedBy, CURRENT_DATE())";
 
         $stmt = $database->prepare($query);

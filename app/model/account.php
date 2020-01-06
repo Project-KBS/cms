@@ -14,7 +14,7 @@ class Account {
     public static function get(PDO $database, string $email) : PDOStatement {
 
         $query = "SELECT
-                      A.PasswordHashResult, A.PasswordHashMethod,
+                      A.Email, A.PasswordHashResult, A.PasswordHashMethod,
                       A.FirstName, A.MiddleName, A.LastName, A.CustomerID,
                       A.AddressStreet, A.AddressNumber, A.AddressToevoeging, A.AddressCity, A.AddressPostalCode,
                       A.LastIpAddress, A.LastUserAgent

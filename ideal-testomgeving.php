@@ -51,7 +51,7 @@ $btw       = 0;
 $prijsIncl = 0;
 
 // Als hij al in de tabel staat returnt hij false maar dat boeit ons niets.
-MailSubscriber::insert($database, $_POST["Email"], $customerId, 0);
+//MailSubscriber::insert($database, $_POST["Email"], $customerId, 0);
 
 foreach ($winkelwagen as $productId => $hoeveelheid) {
     extract(Product::getbyid($database, $productId)->fetch(PDO::FETCH_ASSOC));
